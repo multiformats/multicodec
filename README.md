@@ -1,14 +1,23 @@
-# multicodec - self-describing codings
+multicodec
+==========
 
-multicodec is one of the self-describing multiformats. It's designed to address the perennial problem:
+[![](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](http://ipn.io) [![](https://img.shields.io/badge/project-IPFS-blue.svg?style=flat-square)](http://ipfs.io/) [![](https://img.shields.io/badge/freenode-%23ipfs-blue.svg?style=flat-square)](http://webchat.freenode.net/?channels=%23ipfs)
+
+> self-describing protocol/encoding streams (note: a file is a stream). It's designed to address the perennial problem:
 
 > I have a bitstring, what codec is the data coded with!?
 
-Instead of arguing about which data serialization library is the best, let's just pick the simplest one now, and build _upgradability_ into the system. Choices are never _forever_. Eventually all systems are changed. So, embrace this fact of reality, and build change into your system now.
+> Instead of arguing about which data serialization library is the best, let's just pick the simplest one now, and build _upgradability_ into the system. Choices are never _forever_. Eventually all systems are changed. So, embrace this fact of reality, and build change into your system now.
 
-multicodec frees you from the tyranny of past mistakes. Someone wise said "every choice (in computing) is eventually incorrect". Instead of trying to figure it all out beforehand, or continue using something that we can all agree no longer fits, why not allow the system to _evolve_ and _grow_ with the use cases of today, not yesterday.
+> multicodec frees you from the tyranny of past mistakes. Someone wise said "every choice (in computing) is eventually incorrect". Instead of trying to figure it all out beforehand, or continue using something that we can all agree no longer fits, why not allow the system to _evolve_ and _grow_ with the use cases of today, not yesterday.
 
-## How does it work?
+## Motivation
+
+To decode an incoming stream of data, a program must either (a) know the format of the data a priori, or (b) learn the format from the data itself. (a) precludes running protocols that may provide one of many kinds of formats without prior agreement on which. multistream makes (b) neat using self-description.
+
+Moreover, this self-description allows straightforward layering of protocols without having to implement support in the parent (or encapsulating) one.
+
+## How does it work? - Protocol Description
 
 `multicodec` is a _self-describing multiformat_, it wraps other formats with a tiny bit of self-description:
 
@@ -79,6 +88,34 @@ prefix - codec - desc
 // images
 0x052f706e672f - /png/
 ```
+
+## The protocol path
+
+`multicodec` allows us to specify different protocols in a universal namespace, that way being able to recognize, multiplex, and embed them easily. We use the notion of a `path` instead of an `id` because it is meant to be a Unix-friendly URI.
+
+A good path name should be decipherable -- meaning that if some machine or developer -- who has no idea about your protocol -- encounters the path string, they should be able to look it up and resolve how to use it.
+
+An example of a good path name is:
+
+```
+/bittorrent.org/1.0
+```
+
+An example of a _great_ path name is:
+
+```
+/ipfs/Qmaa4Rw81a3a1VEx4LxB7HADUAXvZFhCoRdBzsMZyZmqHD/ipfs.protocol
+/http/w3id.org/ipfs/ipfs-1.1.0.json
+```
+
+These path names happen to be resolvable -- not just in a "multicodec muxer(e.g [multistream]())" but -- in the internet as a whole (provided the program (or OS) knows how to use the `/ipfs` and `/http` protocols).
+
+## Implementations
+
+- [go-multicodec](https://github.com/jbenet/go-multicodec)
+- [go-multistream](https://github.com/whyrusleeping/go-multistream) - Implements multistream, which uses multicodec for stream negotiation
+- [node-multistream](https://github.com/diasdavid/multistream) - Implements multistream, which uses multicodec for stream negotiation
+
 
 # FAQ
 
