@@ -115,6 +115,7 @@ These path names happen to be resolvable -- not just in a "multicodec muxer(e.g 
 - [go-multicodec](https://github.com/jbenet/go-multicodec)
 - [go-multistream](https://github.com/whyrusleeping/go-multistream) - Implements multistream, which uses multicodec for stream negotiation
 - [node-multistream](https://github.com/diasdavid/multistream) - Implements multistream, which uses multicodec for stream negotiation
+- [clj-multicodec](https://github.com/greglook/clj-multicodec)
 
 
 # FAQ
