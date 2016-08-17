@@ -136,4 +136,4 @@ Programs have a harder time. You can't keep piping json into a protobuf decoder 
 Because they're the same thing. Which one of these is the encoder and which the decoder?
 
     5555 ----[ THING ]---> 8888
-    5555 <---[ THING ]---- 5555
+    5555 <---[ THING ]---- 8888
