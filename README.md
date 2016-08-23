@@ -1,17 +1,33 @@
-multicodec
-==========
+# multicodec
 
-[![](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](http://ipn.io) [![](https://img.shields.io/badge/project-IPFS-blue.svg?style=flat-square)](http://ipfs.io/) [![](https://img.shields.io/badge/freenode-%23ipfs-blue.svg?style=flat-square)](http://webchat.freenode.net/?channels=%23ipfs)
+[![](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](http://ipn.io)
+[![](https://img.shields.io/badge/project-multiformats-blue.svg?style=flat-square)](http://github.com/multiformats/multiformats)
+[![](https://img.shields.io/badge/freenode-%23ipfs-blue.svg?style=flat-square)](http://webchat.freenode.net/?channels=%23ipfs)
 
-> self-describing protocol/encoding streams (note: a file is a stream). It's designed to address the perennial problem:
+> self-describing codecs
+
+## Table of Contents
+
+- [Motivation](#motivation)
+- [How does it work? - Protocol Description](#how-does-it-work---protocol-description)
+- [Prefix examples](#prefix-examples)
+- [prefix - codec - desc](#prefix---codec---desc)
+- [The protocol path](#the-protocol-path)
+- [Implementations](#implementations)
+- [FAQ](#faq)
+- [Maintainers](#maintainers)
+- [Contribute](#contribute)
+- [License](#license)
+
+## Motivation
+
+Multicodecs are self-describing protocol/encoding streams. (Note that a file is a stream). It's designed to address the perennial problem:
 
 > I have a bitstring, what codec is the data coded with!?
 
-> Instead of arguing about which data serialization library is the best, let's just pick the simplest one now, and build _upgradability_ into the system. Choices are never _forever_. Eventually all systems are changed. So, embrace this fact of reality, and build change into your system now.
+Instead of arguing about which data serialization library is the best, let's just pick the simplest one now, and build _upgradability_ into the system. Choices are never _forever_. Eventually all systems are changed. So, embrace this fact of reality, and build change into your system now.
 
-> multicodec frees you from the tyranny of past mistakes. Someone wise said "every choice (in computing) is eventually incorrect". Instead of trying to figure it all out beforehand, or continue using something that we can all agree no longer fits, why not allow the system to _evolve_ and _grow_ with the use cases of today, not yesterday.
-
-## Motivation
+Multicodec frees you from the tyranny of past mistakes. Instead of trying to figure it all out beforehand, or continue using something that we can all agree no longer fits, why not allow the system to _evolve_ and _grow_ with the use cases of today, not yesterday.
 
 To decode an incoming stream of data, a program must either (a) know the format of the data a priori, or (b) learn the format from the data itself. (a) precludes running protocols that may provide one of many kinds of formats without prior agreement on which. multistream makes (b) neat using self-description.
 
@@ -118,7 +134,7 @@ These path names happen to be resolvable -- not just in a "multicodec muxer(e.g 
 - [clj-multicodec](https://github.com/greglook/clj-multicodec)
 
 
-# FAQ
+## FAQ
 
 > **Q. Why?**
 
@@ -137,3 +153,17 @@ Because they're the same thing. Which one of these is the encoder and which the 
 
     5555 ----[ THING ]---> 8888
     5555 <---[ THING ]---- 8888
+
+## Maintainers
+
+Captain: [@jbenet](https://github.com/jbenet).
+
+## Contribute
+
+Contributions welcome. Please check out [the issues](https://github.com/multiformats/multicodec/issues).
+
+Check out our [contributing document](https://github.com/multiformats/multiformats/blob/master/contributing.md) for more information on how we work, and about contributing in general. Please be aware that all interactions related to multiformats are subject to the IPFS [Code of Conduct](https://github.com/ipfs/community/blob/master/code-of-conduct.md).
+
+## License
+
+[MIT](LICENSE) © Protocol Labs, Inc
