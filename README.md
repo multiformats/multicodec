@@ -71,6 +71,8 @@ The more you know! Let's try it again, this time with protobuf:
 cat proto.c
 ```
 
+See also: [multicodec-packed](./multicodec-packed.md).
+
 ## Prefix examples
 
 
@@ -153,6 +155,10 @@ Because they're the same thing. Which one of these is the encoder and which the 
 
     5555 ----[ THING ]---> 8888
     5555 <---[ THING ]---- 8888
+
+> **Q. Full paths are too big for my use case, is there something smaller?**
+
+Yes, check out [multicodec-packed](./multicodec-packed.md). It uses a varint and a table to achieve the same thing.
 
 ## Maintainers
 
