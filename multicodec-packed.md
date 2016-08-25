@@ -83,15 +83,15 @@ That's not a question. But, have you checked the proper [multicodec FAQ](./READM
 
 Because [multicodec](./README.md) is too long for identifiers. We needed something shorter.
 
-> Why varints?
+> **Q. Why varints?**
 
 So that we have no limitation on protocols. Implementation note: you do not need to implement varints until the standard multicodec table has more than 127 functions.
 
-> What kind of varints?
+> **Q. What kind of varints?**
 
 An Most Significant Bit unsigned varint, as defined by the [multiformats/unsigned-varint](https://github.com/multiformats/unsigned-varint).
 
-> Don't we have to agree on a table of protocols?
+> **Q. Don't we have to agree on a table of protocols?**
 
 Yes, but we already have to agree on what protocols themselves are, so this is not so hard. The table even leaves some room for custom protocol paths, or you can use your own tables. The standard table is only for common things.
 
@@ -108,4 +108,4 @@ Check out our [contributing document](https://github.com/multiformats/multiforma
 
 ## License
 
-[MIT](LICENSE) © Protocol Labs, Inc
+[MIT](LICENSE)

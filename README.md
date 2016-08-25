@@ -172,4 +172,4 @@ Check out our [contributing document](https://github.com/multiformats/multiforma
 
 ## License
 
-[MIT](LICENSE) © Protocol Labs, Inc
+[MIT](LICENSE)
