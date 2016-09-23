@@ -4,7 +4,7 @@
 [![](https://img.shields.io/badge/project-multiformats-blue.svg?style=flat-square)](http://github.com/multiformats/multiformats)
 [![](https://img.shields.io/badge/freenode-%23ipfs-blue.svg?style=flat-square)](http://webchat.freenode.net/?channels=%23ipfs)
 
-> compact self-describing codecs
+> compact self-describing codecs. Save space by using predefined multicodec tables.
 
 ## Table of Contents
 
@@ -20,19 +20,21 @@
 
 ## Motivation
 
-[Multicodecs](./README.md) are self-describing protocol/encoding streams. Multicodec-packed is a different representation of multicodec, which uses an agreed-upon "protocol path table". It is designed for use in short strings, such as keys or identifiers (such as [CID](https://github.com/ipld/cid)).
+[Multicodecs](./README.md) are self-describing protocol/encoding streams. Multicodec-packed is a different representation of multicodec, which uses an agreed-upon "protocol table". It is designed for use in short strings, such as keys or identifiers (i.e [CID](https://github.com/ipld/cid)).
 
-## How does it work? - Protocol Description
+## Protocol Description - How does the protocol work?
 
-`multicodec-packed` is a _self-describing multiformat_, it wraps other formats with a tiny bit of self-description:
+`multicodec-packed` is a _self-describing multiformat_, it wraps other formats with a tiny bit of self-description. A multicodec-packed identifier is both a varint and the code identifying the following data, this means that the most significant bit of every multicodec-packed code is reserved to signal the continuation.
+
+This way, a chunk of data identified by multicodec will look like this:
 
 ```sh
-<mcp-code><encoded-data>
-# or
 <multicodec-packed-varint><encoded-data>
+# To reduce the cognitive load, we sometimes might write the same line as:
+<mcp><data>
 ```
 
-It can also be used as part of identifiers or keys to other data:
+Another useful scenario is when using the multicodec-packed as part of the keys to access data, example:
 
 ```
 # suppose we have a value and a key to retrieve it
@@ -52,25 +54,36 @@ Multicodec-packed uses "protocol tables" to agree upon the mapping from one mult
 
 This is the standard multicodec-packed protocol table.
 
-#### WARNING: WIP. this table is not ready for wide use.
+**WARNING: WIP. this table is not ready for wide use.**
 
-TODO: see if IANA has a ready-made table for us to use here. Even just a listing of the most popular formats would be good enough.
+TODO:
+-  [ ] See if IANA has a ready-made table for us to use here. Even just a listing of the most popular formats would be good enough.
 
 ```sh
 code  codec
+
+# Miscellaneous
 0x00  raw binary data
+
+# Multiformats
 0x40  multicodec
 0x41  multihash
 0x42  multiaddr
-# add the most popular serialization formats (asn.1, json, yml, xml, ...)
-# add cbor, ion (ipld)
-# add git, hg, and other VCSes
-# add bitcoin, ethereum, and other blockchains
+
+# Serialization formats (cbor, ion, protobuf, etc)
+# TODO
+
+# VCS'es formats (git, hg, SVN, etc)
+# TODO
+
+# Blockchain block types (bitcoin, ethereum, stellar, etc)
+# TODO
 ```
 
 ## Implementations
 
-- None yet.
+- [go](https://github.com/multiformats/go-multicodec-packed/)
+- [JavaScript](https://github.com/multiformats/js-multicodec-packed)
 - [Add yours today!](https://github.com/multiformats/multicodec/edit/master/multicodec-packed.md)
 
 ## FAQ
@@ -94,7 +107,6 @@ An Most Significant Bit unsigned varint, as defined by the [multiformats/unsigne
 > **Q. Don't we have to agree on a table of protocols?**
 
 Yes, but we already have to agree on what protocols themselves are, so this is not so hard. The table even leaves some room for custom protocol paths, or you can use your own tables. The standard table is only for common things.
-
 
 ## Maintainers
 
