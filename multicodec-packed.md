@@ -71,7 +71,9 @@ code  codec
 0x42  multiaddr
 
 # Serialization formats (cbor, ion, protobuf, etc)
-# TODO
+0x50  protobuf
+0x51  cbor
+0x60  rlp
 
 # VCS'es formats (git, hg, SVN, etc)
 # TODO
