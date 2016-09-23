@@ -76,7 +76,7 @@ See also: [multicodec-packed](./multicodec-packed.md).
 ## Prefix examples
 
 
-| prefix         | codec | desc        | type  | [multicodec](https://github.com/multiformats/multicodec/blob/master/multicodec-packed.md)|
+| prefix         | codec | desc        | type  | [packed encoding](https://github.com/multiformats/multicodec/blob/master/multicodec-packed.md)|
 |----------------|-------|-------------|-------|---------------------------------------|
 |0x052f62696e2f  | /bin/ |raw binary   |binary | 0x00 |
 |0x042f62322f    | /b2/  |ascii base2  |binary | | 
@@ -84,21 +84,21 @@ See also: [multicodec-packed](./multicodec-packed.md).
 |0x052f6233322f  | /b32/ |ascii base32 |       | | 
 |0x052f6235382f  | /b58/ |ascii base58 |       | |
 |0x052f6236342f  | /b64/ |ascii base64 |       | |
-|062f6a736f6e2f  |/json/ |             |json   | |
-|062f63626f722f  |/cbor/ |             |json   | |
-|062f62736f6e2f  |/bson/ |             |json   | |
-|072f626a736f6e2f|/bjson/|             |json   | |
-|082f75626a736f6e2f| /ubjson/|         |json   | |
-|0x2f6d756c7469636f6465632f | /multicodec/ | | multiformat | 0x40 |
-|0x2f6d756c7469686173682f   | /multihash/  | | multiformat | 0x41 |
-|0x2f6d756c7469616464722f   | /multiaddr/  | | multiformat | 0x42 |
-|0a2f70726f746f6275662f |/protobuf/ | Protocol Buffers |protobuf| |
-|072f6361706e702f       | /capnp/   | Cap-n-Proto      |protobuf| |
-|092f666c61746275662f   |/flatbuf/  | FlatBuffers      |protobuf| |
+|0x062f6a736f6e2f  |/json/ |             |json   | |
+|0x062f63626f722f  |/cbor/ |             |json   | |
+|0x062f62736f6e2f  |/bson/ |             |json   | |
+|0x072f626a736f6e2f|/bjson/|             |json   | |
+|0x082f75626a736f6e2f| /ubjson/|         |json   | |
+|0x182f6d756c7469636f6465632f | /multicodec/ | | multiformat | 0x40 |
+|0x162f6d756c7469686173682f   | /multihash/  | | multiformat | 0x41 |
+|0x162f6d756c7469616464722f   | /multiaddr/  | | multiformat | 0x42 |
+|0x0a2f70726f746f6275662f |/protobuf/ | Protocol Buffers |protobuf| |
+|0x072f6361706e702f       | /capnp/   | Cap-n-Proto      |protobuf| |
+|0x092f666c61746275662f   |/flatbuf/  | FlatBuffers      |protobuf| |
 |0x052f7461722f         |/tar/      |                 | archive | |
 |0x052f7a69702f         |/zip/      |                 | archive | |
 |0x052f706e672f         | /png/     |                 | archive | |
-
+|0x052f726c702f         | /rlp/     | recursive length prefix | ethereum |  0x60 |
 ## The protocol path
 
 `multicodec` allows us to specify different protocols in a universal namespace, that way being able to recognize, multiplex, and embed them easily. We use the notion of a `path` instead of an `id` because it is meant to be a Unix-friendly URI.
