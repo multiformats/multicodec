@@ -87,6 +87,9 @@ prefix - codec - desc
 0x052f6235382f - /b58/ - ascii base58
 0x052f6236342f - /b64/ - ascii base64
 
+// unicode text
+0xefbbbf - /utf8/ - UTF-8 encoded text
+
 // the JSONs
 062f6a736f6e2f      - /json/
 062f63626f722f      - /cbor/
