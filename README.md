@@ -77,7 +77,7 @@ See also: [multicodec-packed](./multicodec-packed.md).
 
 
 | prefix         | codec | desc        | type  | [multicodec](https://github.com/multiformats/multicodec/blob/master/multicodec-packed.md)|
-|----------------|-------|-------------|-------|------------------------------------------------------------------------------------------
+|----------------|-------|-------------|-------|---------------------------------------|
 |0x052f62696e2f  | /bin/ |raw binary   |binary | 0x00 |
 |0x042f62322f    | /b2/  |ascii base2  |binary | | 
 |0x052f6231362f  | /b16/ |ascii base16 |hex    | |
@@ -89,18 +89,14 @@ See also: [multicodec-packed](./multicodec-packed.md).
 |062f62736f6e2f  |/bson/ |             |json   | |
 |072f626a736f6e2f|/bjson/|             |json   | |
 |082f75626a736f6e2f| /ubjson/|         |json   | |
-
 |0x2f6d756c7469636f6465632f | /multicodec/ | | multiformat | 0x40 |
 |0x2f6d756c7469686173682f   | /multihash/  | | multiformat | 0x41 |
 |0x2f6d756c7469616464722f   | /multiaddr/  | | multiformat | 0x42 |
-
 |0a2f70726f746f6275662f |/protobuf/ | Protocol Buffers |protobuf| |
 |072f6361706e702f       | /capnp/   | Cap-n-Proto      |protobuf| |
 |092f666c61746275662f   |/flatbuf/  | FlatBuffers      |protobuf| |
-
 |0x052f7461722f         |/tar/      |                 | archive | |
 |0x052f7a69702f         |/zip/      |                 | archive | |
-
 |0x052f706e672f         | /png/     |                 | archive | |
 
 ## The protocol path
