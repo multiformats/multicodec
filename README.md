@@ -76,36 +76,32 @@ See also: [multicodec-packed](./multicodec-packed.md).
 ## Prefix examples
 
 
-```
-prefix - codec - desc
-----------------------------
-// the bases
-0x052f62696e2f - /bin/ - raw binary
-0x042f62322f   - /b2/  - ascii base2 (binary)
-0x052f6231362f - /b16/ - ascii base16 (hex)
-0x052f6233322f - /b32/ - ascii base32
-0x052f6235382f - /b58/ - ascii base58
-0x052f6236342f - /b64/ - ascii base64
+| prefix         | codec | desc        | type  | [multicodec](https://github.com/multiformats/multicodec/blob/master/multicodec-packed.md)|
+|----------------|-------|-------------|-------|------------------------------------------------------------------------------------------
+|0x052f62696e2f  | /bin/ |raw binary   |binary | 0x00 |
+|0x042f62322f    | /b2/  |ascii base2  |binary | | 
+|0x052f6231362f  | /b16/ |ascii base16 |hex    | |
+|0x052f6233322f  | /b32/ |ascii base32 |       | | 
+|0x052f6235382f  | /b58/ |ascii base58 |       | |
+|0x052f6236342f  | /b64/ |ascii base64 |       | |
+|062f6a736f6e2f  |/json/ |             |json   | |
+|062f63626f722f  |/cbor/ |             |json   | |
+|062f62736f6e2f  |/bson/ |             |json   | |
+|072f626a736f6e2f|/bjson/|             |json   | |
+|082f75626a736f6e2f| /ubjson/|         |json   | |
 
-// the JSONs
-062f6a736f6e2f      - /json/
-062f63626f722f      - /cbor/
-062f62736f6e2f      - /bson/
-072f626a736f6e2f    - /bjson/
-082f75626a736f6e2f  - /ubjson/
+|0x2f6d756c7469636f6465632f | /multicodec/ | | multiformat | 0x40 |
+|0x2f6d756c7469686173682f   | /multihash/  | | multiformat | 0x41 |
+|0x2f6d756c7469616464722f   | /multiaddr/  | | multiformat | 0x42 |
 
-// protobuf
-0a2f70726f746f6275662f - /protobuf/ - Protocol Buffers
-072f6361706e702f       - /capnp/    - Cap-n-Proto
-092f666c61746275662f   - /flatbuf/  - FlatBuffers
+|0a2f70726f746f6275662f |/protobuf/ | Protocol Buffers |protobuf| |
+|072f6361706e702f       | /capnp/   | Cap-n-Proto      |protobuf| |
+|092f666c61746275662f   |/flatbuf/  | FlatBuffers      |protobuf| |
 
-// archives
-0x052f7461722f /tar/
-0x052f7a69702f /zip/
+|0x052f7461722f         |/tar/      |                 | archive | |
+|0x052f7a69702f         |/zip/      |                 | archive | |
 
-// images
-0x052f706e672f - /png/
-```
+|0x052f706e672f         | /png/     |                 | archive | |
 
 ## The protocol path
 
