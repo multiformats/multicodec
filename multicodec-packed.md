@@ -50,38 +50,6 @@ It is worth noting that multicodec-packed works very well in conjunction with [m
 
 Multicodec-packed uses "protocol tables" to agree upon the mapping from one multicodec-packed code (a single varint). These tables map an `<mcp-code>` to a full [multicodec protocol path](./README.md#the-protocol-path). These tables can be application specific, though -- like [with](https://github.com/multiformats/multihash) [other](https://github.com/multiformats/multibase) [multiformats](https://github.com/multiformats/multiaddr) -- we will keep a globally agreed upon table with common protocols and formats.
 
-### Standard mcp protocol table
-
-This is the standard multicodec-packed protocol table.
-
-**WARNING: WIP. this table is not ready for wide use.**
-
-TODO:
--  [ ] See if IANA has a ready-made table for us to use here. Even just a listing of the most popular formats would be good enough.
-
-```sh
-code  codec
-
-# Miscellaneous
-0x00  raw binary data
-
-# Multiformats
-0x40  multicodec
-0x41  multihash
-0x42  multiaddr
-
-# Serialization formats (cbor, ion, protobuf, etc)
-0x50  protobuf
-0x51  cbor
-0x60  rlp
-
-# VCS'es formats (git, hg, SVN, etc)
-# TODO
-
-# Blockchain block types (bitcoin, ethereum, stellar, etc)
-# TODO
-```
-
 ## Implementations
 
 - [go](https://github.com/multiformats/go-multicodec-packed/)

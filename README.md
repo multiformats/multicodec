@@ -98,29 +98,53 @@ These path names happen to be resolvable -- not just in a "multicodec muxer(e.g 
 
 ## Multicodec table
 
-| prefix         | codec | desc         | type  | [packed encoding](https://github.com/multiformats/multicodec/blob/master/multicodec-packed.md)|
-|----------------|-------|--------------|--------|---------------------------------------|
-|0x052f62696e2f  | /bin/ | raw binary   | binary | 0x00 |
-|0x042f62322f    | /b2/  | ascii base2  | binary | | 
-|0x052f6231362f  | /b16/ | ascii base16 | hex    | |
-|0x052f6233322f  | /b32/ | ascii base32 |        | | 
-|0x052f6235382f  | /b58/ | ascii base58 |        | |
-|0x052f6236342f  | /b64/ | ascii base64 |        | |
-|0x062f6a736f6e2f  |/json/ |             |json   | |
-|0x062f63626f722f  |/cbor/ |             |json   | |
-|0x062f62736f6e2f  |/bson/ |             |json   | |
-|0x072f626a736f6e2f|/bjson/|             |json   | |
-|0x082f75626a736f6e2f| /ubjson/|         |json   | |
-|0x182f6d756c7469636f6465632f | /multicodec/ | | multiformat | 0x40 |
-|0x162f6d756c7469686173682f   | /multihash/  | | multiformat | 0x41 |
-|0x162f6d756c7469616464722f   | /multiaddr/  | | multiformat | 0x42 |
-|0x0a2f70726f746f6275662f |/protobuf/ | Protocol Buffers |protobuf| |
-|0x072f6361706e702f       | /capnp/   | Cap-n-Proto      |protobuf| |
-|0x092f666c61746275662f   |/flatbuf/  | FlatBuffers      |protobuf| |
-|0x052f7461722f         |/tar/      |                 | archive | |
-|0x052f7a69702f         |/zip/      |                 | archive | |
-|0x052f706e672f         | /png/     |                 | archive | |
-|0x052f726c702f         | /rlp/     | recursive length prefix | ethereum |  0x60 |
+| prefix                        | codec         | description             | [packed](https://github.com/multiformats/multicodec/blob/master/multicodec-packed.md)|
+|-------------------------------|---------------|-------------------------|-----------|
+| **Miscelaneous**                                                                    |
+| 0x052f62696e2f                | /bin/         | raw binary              | 0x00      |
+| **Bases encodings**                                                                 |
+| 0x042f62322f                  | /b2/          | ascii base2             |           |
+| 0x052f6231362f                | /b16/         | ascii base16            |           |
+| 0x052f6233322f                | /b32/         | ascii base32            |           |
+| 0x052f6235382f                | /b58/         | ascii base58            |           |
+| 0x052f6236342f                | /b64/         | ascii base64            |           |
+| **Serialization formats**                                                           |
+| 0x062f6a736f6e2f              | /json/        |                         |           |
+| 0x062f63626f722f              | /cbor/        |                         |           |
+| 0x062f62736f6e2f              | /bson/        |                         |           |
+| 0x072f626a736f6e2f            | /bjson/       |                         |           |
+| 0x082f75626a736f6e2f          | /ubjson/      |                         |           |
+| 0x0a2f70726f746f6275662f      | /protobuf/    | Protocol Buffers        |           |
+| 0x072f6361706e702f            | /capnp/       | Cap-n-Proto             |           |
+| 0x092f666c61746275662f        | /flatbuf/     | FlatBuffers             |           |
+| 0x052f726c702f                | /rlp/         | recursive length prefix | 0x60      |
+| **Multiformats**                                                                    |
+| 0x182f6d756c7469636f6465632f  | /multicodec/  |                         | 0x40      |
+| 0x162f6d756c7469686173682f    | /multihash/   |                         | 0x41      |
+| 0x162f6d756c7469616464722f    | /multiaddr/   |                         | 0x42      |
+| **Multihashes**                                                                     |
+|                               |               |                         |           |
+| **Multiaddrs**                                                                      |
+|                               |               |                         |           |
+| **Archiving formats**                                                               |
+| 0x052f7461722f                | /tar/         |                         |           |
+| 0x052f7a69702f                | /zip/         |                         |           |
+| **Image formats**                                                                   |
+| 0x052f706e672f                | /png/         |                         |           |
+|                               | /jpg/         |                         |           |
+| **Video formats**                                                                   |
+|                               | /mp4/         |                         |           |
+|                               | /mkv/         |                         |           |
+| **Blockchain formats**                                                              |
+| n/a                           | n/a           | n/a                     | n/a       |
+| **VCS formats**                                                                     |
+| n/a                           | n/a           | n/a                     | n/a       |
+| **IPLD formats**                                                                    |
+|                               | /dag-pb/      | MerkleDAG protobuf      |           |
+|                               | /dag-cbor/    | MerkleDAG cbor          |           |
+|                               | /eth-rlp/     | Ethereum Block RLP      |           |
+
+
 
 ## Implementations
 
@@ -133,7 +157,6 @@ These path names happen to be resolvable -- not just in a "multicodec muxer(e.g 
   - [go-multistream](https://github.com/multiformats/go-multistream) - Implements multistream, which uses multicodec for stream negotiation
   - [js-multistream](https://github.com/multiformats/js-multistream) - Implements multistream, which uses multicodec for stream negotiation
   - [clj-multicodec](https://github.com/greglook/clj-multicodec)
-
 
 ## FAQ
 
@@ -172,3 +195,4 @@ Check out our [contributing document](https://github.com/multiformats/multiforma
 ## License
 
 [MIT](LICENSE)
+
