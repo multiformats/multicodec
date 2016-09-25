@@ -4,16 +4,16 @@
 [![](https://img.shields.io/badge/project-multiformats-blue.svg?style=flat-square)](http://github.com/multiformats/multiformats)
 [![](https://img.shields.io/badge/freenode-%23ipfs-blue.svg?style=flat-square)](http://webchat.freenode.net/?channels=%23ipfs)
 
-> self-describing codecs
+> Make data and streams self-described by prefixing them with human readable or binary packed codecs. `multicodec` offers a base table, but can also be extended with extra tables by application basis.
 
 ## Table of Contents
 
 - [Motivation](#motivation)
-- [How does it work? - Protocol Description](#how-does-it-work---protocol-description)
-- [Prefix examples](#prefix-examples)
-- [prefix - codec - desc](#prefix---codec---desc)
-- [The protocol path](#the-protocol-path)
+  - [How does it work? - Protocol Description](#how-does-it-work---protocol-description)
+  - [The protocol path](#the-protocol-path)
+- [Multicodec table](#multicodec-table)
 - [Implementations](#implementations)
+  - [Implementation details]()
 - [FAQ](#faq)
 - [Maintainers](#maintainers)
 - [Contribute](#contribute)
@@ -38,67 +38,43 @@ Moreover, this self-description allows straightforward layering of protocols wit
 `multicodec` is a _self-describing multiformat_, it wraps other formats with a tiny bit of self-description:
 
 ```sh
-<multicodec-header><encoded-data>
-# or
-<varint-len><code>\n<encoded-data>
+<varint-len><multicodec><encoded-data>
 ```
 
 For example, let's encode a json doc:
 
-```node
-> // encode some json
-> var str = JSON.stringify({"hello":"world"})
-> var buf = multicodec.encode('json', str) // prepends multistream.header('/json')
-> buf
-<Buffer 06 2f 6a 73 6f 6e 2f 7b 22 68 65 6c 6c 6f 22 3a 22 77 6f 72 6c 64 22 7d>
-> buf.toString('hex')
-062f6a736f6e2f7b2268656c6c6f223a22776f726c64227d
-> // decode, and find out what is in buf
-> multicodec.decode(buf)
-{ "codec": "json", "data": '{"hello": "world"}' }
+```JavaScript
+// encode some json
+const buf = new Buffer(JSON.stringify({ hello: 'world' }))
+
+const prefixedBuf = multicodec.addPrefix('json', str) // prepends multicodec ('json')
+console.log(prefixedBuf)
+// <Buffer 06 2f 6a 73 6f 6e 2f 7b 22 68 65 6c 6c 6f 22 3a 22 77 6f 72 6c 64 22 7d>
+
+const.log(prefixedBuf.toString('hex'))
+// 062f6a736f6e2f7b2268656c6c6f223a22776f726c64227d
+
+// let's get the Multicodec, and get the data back
+
+const codec = multicodec.getMulticodec(prefixedBuf)
+console.log(codec)
+// json
+
+console.log(multicodec.rmPrefix(prefixedBuf).toString())
+// "{ \"hello\": \"world\" }
 ```
 
 So, `buf` is:
 
 ```
 hex:   062f6a736f6e2f7b2268656c6c6f223a22776f726c64227d
-ascii: json/\n{"hello":"world"}
+ascii: /json/"{\"hello\":\"world\"}
 ```
 
-The more you know! Let's try it again, this time with protobuf:
+Note that on the ascii version, the varint at the beginning is not being represented, you should account that.
 
-```
-cat proto.c
-```
+For a binary packed version of the multicodecs, see [multicodec-packed](./multicodec-packed.md).
 
-See also: [multicodec-packed](./multicodec-packed.md).
-
-## Prefix examples
-
-
-| prefix         | codec | desc        | type  | [packed encoding](https://github.com/multiformats/multicodec/blob/master/multicodec-packed.md)|
-|----------------|-------|-------------|-------|---------------------------------------|
-|0x052f62696e2f  | /bin/ |raw binary   |binary | 0x00 |
-|0x042f62322f    | /b2/  |ascii base2  |binary | | 
-|0x052f6231362f  | /b16/ |ascii base16 |hex    | |
-|0x052f6233322f  | /b32/ |ascii base32 |       | | 
-|0x052f6235382f  | /b58/ |ascii base58 |       | |
-|0x052f6236342f  | /b64/ |ascii base64 |       | |
-|0x062f6a736f6e2f  |/json/ |             |json   | |
-|0x062f63626f722f  |/cbor/ |             |json   | |
-|0x062f62736f6e2f  |/bson/ |             |json   | |
-|0x072f626a736f6e2f|/bjson/|             |json   | |
-|0x082f75626a736f6e2f| /ubjson/|         |json   | |
-|0x182f6d756c7469636f6465632f | /multicodec/ | | multiformat | 0x40 |
-|0x162f6d756c7469686173682f   | /multihash/  | | multiformat | 0x41 |
-|0x162f6d756c7469616464722f   | /multiaddr/  | | multiformat | 0x42 |
-|0x0a2f70726f746f6275662f |/protobuf/ | Protocol Buffers |protobuf| |
-|0x072f6361706e702f       | /capnp/   | Cap-n-Proto      |protobuf| |
-|0x092f666c61746275662f   |/flatbuf/  | FlatBuffers      |protobuf| |
-|0x052f7461722f         |/tar/      |                 | archive | |
-|0x052f7a69702f         |/zip/      |                 | archive | |
-|0x052f706e672f         | /png/     |                 | archive | |
-|0x052f726c702f         | /rlp/     | recursive length prefix | ethereum |  0x60 |
 ## The protocol path
 
 `multicodec` allows us to specify different protocols in a universal namespace, that way being able to recognize, multiplex, and embed them easily. We use the notion of a `path` instead of an `id` because it is meant to be a Unix-friendly URI.
@@ -115,17 +91,48 @@ An example of a _great_ path name is:
 
 ```
 /ipfs/Qmaa4Rw81a3a1VEx4LxB7HADUAXvZFhCoRdBzsMZyZmqHD/ipfs.protocol
-/http/w3id.org/ipfs/ipfs-1.1.0.json
+/http/w3id.org/ipfs/1.1.0
 ```
 
-These path names happen to be resolvable -- not just in a "multicodec muxer(e.g [multistream]())" but -- in the internet as a whole (provided the program (or OS) knows how to use the `/ipfs` and `/http` protocols).
+These path names happen to be resolvable -- not just in a "multicodec muxer(e.g [multistream](https://github.com/multiformats/multistream))" but -- in the internet as a whole (provided the program (or OS) knows how to use the `/ipfs` and `/http` protocols).
+
+## Multicodec table
+
+| prefix         | codec | desc         | type  | [packed encoding](https://github.com/multiformats/multicodec/blob/master/multicodec-packed.md)|
+|----------------|-------|--------------|--------|---------------------------------------|
+|0x052f62696e2f  | /bin/ | raw binary   | binary | 0x00 |
+|0x042f62322f    | /b2/  | ascii base2  | binary | | 
+|0x052f6231362f  | /b16/ | ascii base16 | hex    | |
+|0x052f6233322f  | /b32/ | ascii base32 |        | | 
+|0x052f6235382f  | /b58/ | ascii base58 |        | |
+|0x052f6236342f  | /b64/ | ascii base64 |        | |
+|0x062f6a736f6e2f  |/json/ |             |json   | |
+|0x062f63626f722f  |/cbor/ |             |json   | |
+|0x062f62736f6e2f  |/bson/ |             |json   | |
+|0x072f626a736f6e2f|/bjson/|             |json   | |
+|0x082f75626a736f6e2f| /ubjson/|         |json   | |
+|0x182f6d756c7469636f6465632f | /multicodec/ | | multiformat | 0x40 |
+|0x162f6d756c7469686173682f   | /multihash/  | | multiformat | 0x41 |
+|0x162f6d756c7469616464722f   | /multiaddr/  | | multiformat | 0x42 |
+|0x0a2f70726f746f6275662f |/protobuf/ | Protocol Buffers |protobuf| |
+|0x072f6361706e702f       | /capnp/   | Cap-n-Proto      |protobuf| |
+|0x092f666c61746275662f   |/flatbuf/  | FlatBuffers      |protobuf| |
+|0x052f7461722f         |/tar/      |                 | archive | |
+|0x052f7a69702f         |/zip/      |                 | archive | |
+|0x052f706e672f         | /png/     |                 | archive | |
+|0x052f726c702f         | /rlp/     | recursive length prefix | ethereum |  0x60 |
 
 ## Implementations
 
-- [go-multicodec](https://github.com/jbenet/go-multicodec)
-- [go-multistream](https://github.com/whyrusleeping/go-multistream) - Implements multistream, which uses multicodec for stream negotiation
-- [js-multistream](https://github.com/multiformats/js-multistream) - Implements multistream, which uses multicodec for stream negotiation
-- [clj-multicodec](https://github.com/greglook/clj-multicodec)
+- multicodec
+  - [go-multicodec](https://github.com/multiformats/go-multicodec)
+- multicodec-packed
+  - [go-multicodec-packed](https://github.com/multiformats/go-multicodec-packed)
+  - [js-multicodec-packed](https://github.com/multiformats/js-multicodec-packed)
+- multistream
+  - [go-multistream](https://github.com/multiformats/go-multistream) - Implements multistream, which uses multicodec for stream negotiation
+  - [js-multistream](https://github.com/multiformats/js-multistream) - Implements multistream, which uses multicodec for stream negotiation
+  - [clj-multicodec](https://github.com/greglook/clj-multicodec)
 
 
 ## FAQ
