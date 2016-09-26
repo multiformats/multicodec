@@ -4,16 +4,15 @@
 [![](https://img.shields.io/badge/project-multiformats-blue.svg?style=flat-square)](http://github.com/multiformats/multiformats)
 [![](https://img.shields.io/badge/freenode-%23ipfs-blue.svg?style=flat-square)](http://webchat.freenode.net/?channels=%23ipfs)
 
-> Make data and streams self-described by prefixing them with human readable or binary packed codecs. `multicodec` offers a base table, but can also be extended with extra tables by application basis.
+> compact self-describing codecs. Save space by using predefined multicodec tables.
 
 ## Table of Contents
 
 - [Motivation](#motivation)
-  - [How does it work? - Protocol Description](#how-does-it-work---protocol-description)
-  - [The protocol path](#the-protocol-path)
-- [Multicodec table](#multicodec-table)
+- [How does it work? - Protocol Description](#how-does-it-work---protocol-description)
+- [Multicodec tables](#multicodec-tables)
+  - [Standard multicodec table](#standard-mcp-protocol-table)
 - [Implementations](#implementations)
-  - [Implementation details]()
 - [FAQ](#faq)
 - [Maintainers](#maintainers)
 - [Contribute](#contribute)
@@ -21,193 +20,150 @@
 
 ## Motivation
 
-Multicodecs are self-describing protocol/encoding streams. (Note that a file is a stream). It's designed to address the perennial problem:
+[Multistreams](https://github.com/multiformats/multistream) are self-describing protocol/encoding streams. Multicodec uses an agreed-upon "protocol table". It is designed for use in short strings, such as keys or identifiers (i.e [CID](https://github.com/ipld/cid)).
 
-> I have a bitstring, what codec is the data coded with!?
+## Protocol Description - How does the protocol work?
 
-Instead of arguing about which data serialization library is the best, let's just pick the simplest one now, and build _upgradability_ into the system. Choices are never _forever_. Eventually all systems are changed. So, embrace this fact of reality, and build change into your system now.
+`multicodec` is a _self-describing multiformat_, it wraps other formats with a tiny bit of self-description. A multicodec identifier is both a varint and the code identifying the following data, this means that the most significant bit of every multicodec code is reserved to signal the continuation.
 
-Multicodec frees you from the tyranny of past mistakes. Instead of trying to figure it all out beforehand, or continue using something that we can all agree no longer fits, why not allow the system to _evolve_ and _grow_ with the use cases of today, not yesterday.
-
-To decode an incoming stream of data, a program must either (a) know the format of the data a priori, or (b) learn the format from the data itself. (a) precludes running protocols that may provide one of many kinds of formats without prior agreement on which. multistream makes (b) neat using self-description.
-
-Moreover, this self-description allows straightforward layering of protocols without having to implement support in the parent (or encapsulating) one.
-
-## How does it work? - Protocol Description
-
-`multicodec` is a _self-describing multiformat_, it wraps other formats with a tiny bit of self-description:
+This way, a chunk of data identified by multicodec will look like this:
 
 ```sh
-<varint-len><multicodec>\n<encoded-data>
+<multicodec-varint><encoded-data>
+# To reduce the cognitive load, we sometimes might write the same line as:
+<mcp><data>
 ```
 
-For example, let's encode a json doc:
-
-```JavaScript
-// encode some json
-const buf = new Buffer(JSON.stringify({ hello: 'world' }))
-
-const prefixedBuf = multicodec.addPrefix('json', str) // prepends multicodec ('json')
-console.log(prefixedBuf)
-// <Buffer 06 2f 6a 73 6f 6e 2f 7b 22 68 65 6c 6c 6f 22 3a 22 77 6f 72 6c 64 22 7d>
-
-const.log(prefixedBuf.toString('hex'))
-// 062f6a736f6e2f7b2268656c6c6f223a22776f726c64227d
-
-// let's get the Multicodec, and get the data back
-
-const codec = multicodec.getMulticodec(prefixedBuf)
-console.log(codec)
-// json
-
-console.log(multicodec.rmPrefix(prefixedBuf).toString())
-// "{ \"hello\": \"world\" }
-```
-
-So, `buf` is:
+Another useful scenario is when using the multicodec-packed as part of the keys to access data, example:
 
 ```
-hex:   062f6a736f6e2f7b2268656c6c6f223a22776f726c64227d
-ascii: /json/"{\"hello\":\"world\"}
+# suppose we have a value and a key to retrieve it
+"<key>" -> <value>
+
+# we can use multicodec-packed with the key to know what codec the value is in
+"<mcp><key>" -> <value>
 ```
 
-Note that on the ascii version, the varint at the beginning is not being represented, you should account that.
+It is worth noting that multicodec-packed works very well in conjunction with [multihash](https://github.com/multiformats/multihash) and [multiaddr](https://github.com/multiformats/multiaddr), as you can prefix those values with a multicodec-packed to tell what they are.
 
-For a binary packed version of the multicodecs, see [multicodec-packed](./multicodec-packed.md).
+## Multicodec-Packed Protocol Tables
 
-## The protocol path
-
-`multicodec` allows us to specify different protocols in a universal namespace, that way being able to recognize, multiplex, and embed them easily. We use the notion of a `path` instead of an `id` because it is meant to be a Unix-friendly URI.
-
-A good path name should be decipherable -- meaning that if some machine or developer -- who has no idea about your protocol -- encounters the path string, they should be able to look it up and resolve how to use it.
-
-An example of a good path name is:
-
-```
-/bittorrent.org/1.0
-```
-
-An example of a _great_ path name is:
-
-```
-/ipfs/Qmaa4Rw81a3a1VEx4LxB7HADUAXvZFhCoRdBzsMZyZmqHD/ipfs.protocol
-/http/w3id.org/ipfs/1.1.0
-```
-
-These path names happen to be resolvable -- not just in a "multicodec muxer(e.g [multistream](https://github.com/multiformats/multistream))" but -- in the internet as a whole (provided the program (or OS) knows how to use the `/ipfs` and `/http` protocols).
+Multicodecuses "protocol tables" to agree upon the mapping from one multicodec code (a single varint). These tables can be application specific, though -- like [with](https://github.com/multiformats/multihash) [other](https://github.com/multiformats/multibase) [multiformats](https://github.com/multiformats/multiaddr) -- we will keep a globally agreed upon table with common protocols and formats.
 
 ## Multicodec table
 
-| prefix                        | codec           | description             | [packed][p] | multibase only |
-|-------------------------------|-----------------|-------------------------|-------------|----------------|
-| **Miscelaneous**                                                                                         |
-| 0x052f62696e2f                | /bin/           | raw binary              | 0x00        | n/a            |
-| **Bases encodings**                                                                                      |
-|                               | /base1/         | unary                   |             | 1              |
-|                               | /base2/         | binary (0 and 1)        |             | 0              |
-|                               | /base8/         | octal                   |             | 7              |
-|                               | /base10/        | decimal                 |             | 9              |
-|                               | /base16/        | hexadecimal             |             | F, f           |
-|                               | /base32/        | rfc4648                 |             | U, u           |
-|                               | /base32hex/     | rfc4648                 |             | V, v           |
-|                               | /base58flickr/  | base58 flicker          |             | Z              |
-|                               | /base58btc/     | base58 bitcoin          |             | z              |
-|                               | /base64/        | rfc4648                 |             | y              |
-|                               | /base64url/     | rfc4648                 |             | Y              |
-| **Serialization formats**                                                                                |
-| 0x062f6a736f6e2f              | /json/          |                         |             | n/a            |
-| 0x062f63626f722f              | /cbor/          |                         |             | n/a            |
-| 0x062f62736f6e2f              | /bson/          |                         |             | n/a            |
-| 0x072f626a736f6e2f            | /bjson/         |                         |             | n/a            |
-| 0x082f75626a736f6e2f          | /ubjson/        |                         |             | n/a            |
-| 0x0a2f70726f746f6275662f      | /protobuf/      | Protocol Buffers        |             | n/a            |
-| 0x072f6361706e702f            | /capnp/         | Cap-n-Proto             |             | n/a            |
-| 0x092f666c61746275662f        | /flatbuf/       | FlatBuffers             |             | n/a            |
-| 0x052f726c702f                | /rlp/           | recursive length prefix | 0x60        | n/a            |
-| **Multiformats**                                                                                         |
-| 0x182f6d756c7469636f6465632f  | /multicodec/    |                         | 0x30        | n/a            |
-| 0x162f6d756c7469686173682f    | /multihash/     |                         | 0x31        | n/a            |
-| 0x162f6d756c7469616464722f    | /multiaddr/     |                         | 0x32        | n/a            |
-| **Multihashes**                                                                                          |
-|                               | /sha1/          |                         | 0x11        | n/a            |
-|                               | /sha2-256/      |                         | 0x12        | n/a            |
-|                               | /sha2-512/      |                         | 0x13        | n/a            |
-|                               | /sha3-256/      |                         | 0x16        | n/a            |
-|                               | /sha3-384/      |                         | 0x15        | n/a            |
-|                               | /sha3-512/      |                         | 0x14        | n/a            |
-|                               | /shake-128/     |                         | 0x18        | n/a            |
-|                               | /shake-256/     |                         | 0x19        | n/a            |
-|                               | /blake2b/       |                         | 0x40        | n/a            |
-|                               | /blake2s/       |                         | 0x41        | n/a            |
-| **Multiaddrs**                                                                                           |
-|                               | /ip4/           |                         | 0x04        | n/a            |
-|                               | /ip6/           |                         | 0x29        | n/a            |
-|                               | /tcp/           |                         | 0x06        | n/a            |
-|                               | /udp/           |                         | 0x11        | n/a            |
-|                               | /dccp/          |                         | 0x21        | n/a            |
-|                               | /sctp/          |                         | 0x84        | n/a            |
-|                               | /udt/           |                         | 0x012D      | n/a            |
-|                               | /utp/           |                         | 0x012E      | n/a            |
-|                               | /ipfs/          |                         | 0x2A        | n/a            |
-|                               | /http/          |                         | 0x01E0      | n/a            |
-|                               | /https/         |                         | 0x01BB      | n/a            |
-|                               | /ws/            |                         | 0x01DD      | n/a            |
-|                               | /onion/         |                         | 0x01BC      | n/a            |
-| **Archiving formats**                                                                                    |
-| 0x052f7461722f                | /tar/           |                         |             | n/a            |
-| 0x052f7a69702f                | /zip/           |                         |             | n/a            |
-| **Image formats**                                                                                        |
-| 0x052f706e672f                | /png/           |                         |             | n/a            |
-|                               | /jpg/           |                         |             | n/a            |
-| **Video formats**                                                                                        |
-|                               | /mp4/           |                         |             | n/a            |
-|                               | /mkv/           |                         |             | n/a            |
-| **Blockchain formats**                                                                                   |
-|                               |                 |                         |             | n/a            |
-| **VCS formats**                                                                                          |
-|                               |                 |                         |             | n/a            |
-| **IPLD formats**                                                                                         |
-|                               | /dag-pb/        | MerkleDAG protobuf      |             | n/a            |
-|                               | /dag-cbor/      | MerkleDAG cbor          |             | n/a            |
-|                               | /eth-rlp/       | Ethereum Block RLP      |             | n/a            |
-
-Note: Base encodings present a multibase encoding special char, so that the codec doesn't break the encoded version of the data it is describing.
+| codec           | description             | code        |
+|-----------------|-------------------------|-------------|
+|                                                         |
+| **Miscelaneous**                                        |
+| bin             | raw binary              | 0x00        |
+|                                                         |
+| **Bases encodings**                                     |
+| base1           | unary                   |             |
+| base2           | binary (0 and 1)        | 0x00        |
+| base8           | octal                   |             |
+| base10          | decimal                 |             |
+| base16          | hexadecimal             |             |
+| base32          | rfc4648                 |             |
+| base32hex       | rfc4648                 |             |
+| base58flickr    | base58 flicker          |             |
+| base58btc       | base58 bitcoin          |             |
+| base64          | rfc4648                 |             |
+| base64url       | rfc4648                 |             |
+|                                                         |
+| **Serialization formats**                               |
+| json            |                         |             |
+| cbor            |                         |             |
+| bson            |                         |             |
+| bjson           |                         |             |
+| ubjson          |                         |             |
+| protobuf        | Protocol Buffers        |             |
+| capnp           | Cap-n-Proto             |             |
+| flatbuf         | FlatBuffers             |             |
+| rlp             | recursive length prefix | 0x60        |
+|                                                         |
+| **Multiformats**                                        |
+| multicodec      |                         | 0x30        |
+| multihash       |                         | 0x31        |
+| multiaddr       |                         | 0x32        |
+| multibase       |                         | 0x33        |
+|                                                         |
+| **Multihashes**                                         |
+| sha1            |                         | 0x11        |
+| sha2-256        |                         | 0x12        |
+| sha2-512        |                         | 0x13        |
+| sha3-224        |                         | 0x17        |
+| sha3-256        |                         | 0x16        |
+| sha3-384        |                         | 0x15        |
+| sha3-512        |                         | 0x14        |
+| shake-128       |                         | 0x18        |
+| shake-256       |                         | 0x19        |
+| blake2b         |                         | 0x40        |
+| blake2s         |                         | 0x41        |
+|                                                         |
+| **Multiaddrs**                                          |
+| ip4             |                         | 0x04        |
+| ip6             |                         | 0x29        |
+| tcp             |                         | 0x06        |
+| udp             |                         | 0x11        |
+| dccp            |                         | 0x21        |
+| sctp            |                         | 0x84        |
+| udt             |                         | 0x012D      |
+| utp             |                         | 0x012E      |
+| ipfs            |                         | 0x2A        |
+| http            |                         | 0x01E0      |
+| https           |                         | 0x01BB      |
+| ws              |                         | 0x01DD      |
+| onion           |                         | 0x01BC      |
+|                                                         |
+| **Archiving formats**                                   |
+| tar             |                         |             |
+| zip             |                         |             |
+|                                                         |
+| **Image formats**                                       |
+| png             |                         |             |
+| jpg             |                         |             |
+|                                                         |
+| **Video formats**                                       |
+| mp4             |                         |             |
+| mkv             |                         |             |
+|                                                         |
+| **Blockchain formats**                                  |
+|                                                         |
+| **VCS formats**                                         |
+|                                                         |
+| **IPLD formats**                                        |
+| dag-pb          | MerkleDAG protobuf      |             |
+| dag-cbor        | MerkleDAG cbor          |             |
+| eth-rlp         | Ethereum Block RLP      |             |
 
 ## Implementations
 
-- multicodec
-  - [go-multicodec](https://github.com/multiformats/go-multicodec)
-- multicodec-packed
-  - [go-multicodec-packed](https://github.com/multiformats/go-multicodec-packed)
-  - [js-multicodec-packed](https://github.com/multiformats/js-multicodec-packed)
-- multistream
-  - [go-multistream](https://github.com/multiformats/go-multistream) - Implements multistream, which uses multicodec for stream negotiation
-  - [js-multistream](https://github.com/multiformats/js-multistream) - Implements multistream, which uses multicodec for stream negotiation
-  - [clj-multicodec](https://github.com/greglook/clj-multicodec)
+- [go](https://github.com/multiformats/go-multicodec/)
+- [JavaScript](https://github.com/multiformats/js-multicodec)
+- [Add yours today!](https://github.com/multiformats/multicodec/edit/master/multicodec.md)
 
 ## FAQ
 
+> **Q. I have questions on multicodec, not listed here.**
+
+That's not a question. But, have you checked the proper [multicodec FAQ](./README.md#faq)? Maybe your question is answered there. This FAQ is only specifically for multicodec-packed.
+
 > **Q. Why?**
 
-Today, people speak many languages, and use common ones to interface. But every "common language" has evolved over time, or even fundamentally switched. Why should we expect programs to be any different?
+Because [multistream](https://github.com/multiformats/multistream) is too long for identifiers. We needed something shorter.
 
-And the reality is they're not. Programs use a variety of encodings. Today we like JSON. Yesterday, XML was all the rage. XDR solved everything, but it's kinda retro. Protobuf is still too cool for school. capnp ("cap and proto") is
-for cerealization hipsters.
+> **Q. Why varints?**
 
-The one problem is figuring out what we're speaking. Humans are pretty smart, we pick up all sorts of languages over time. And we can always resort to pointing and grunting (the ascii of humanity).
+So that we have no limitation on protocols. Implementation note: you do not need to implement varints until the standard multicodec table has more than 127 functions.
 
-Programs have a harder time. You can't keep piping json into a protobuf decoder and hope they align. So we have to help them out a bit. That's what multicodec is for.
+> **Q. What kind of varints?**
 
-> **Q. Why "codec" and not "encoder" and "decoder"?**
+An Most Significant Bit unsigned varint, as defined by the [multiformats/unsigned-varint](https://github.com/multiformats/unsigned-varint).
 
-Because they're the same thing. Which one of these is the encoder and which the decoder?
+> **Q. Don't we have to agree on a table of protocols?**
 
-    5555 ----[ THING ]---> 8888
-    5555 <---[ THING ]---- 8888
-
-> **Q. Full paths are too big for my use case, is there something smaller?**
-
-Yes, check out [multicodec-packed](./multicodec-packed.md). It uses a varint and a table to achieve the same thing.
+Yes, but we already have to agree on what protocols themselves are, so this is not so hard. The table even leaves some room for custom protocol paths, or you can use your own tables. The standard table is only for common things.
 
 ## Maintainers
 
@@ -222,5 +178,3 @@ Check out our [contributing document](https://github.com/multiformats/multiforma
 ## License
 
 [MIT](LICENSE)
-
-[p](https://github.com/multiformats/multicodec/blob/master/multicodec-packed.md)
