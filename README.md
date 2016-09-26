@@ -52,90 +52,91 @@ Multicodecuses "protocol tables" to agree upon the mapping from one multicodec c
 
 ## Multicodec table
 
-| codec           | description             | code        |
-|-----------------|-------------------------|-------------|
-|                                                         |
-| **Miscelaneous**                                        |
-| bin             | raw binary              | 0x00        |
-|                                                         |
-| **Bases encodings**                                     |
-| base1           | unary                   |             |
-| base2           | binary (0 and 1)        | 0x00        |
-| base8           | octal                   |             |
-| base10          | decimal                 |             |
-| base16          | hexadecimal             |             |
-| base32          | rfc4648                 |             |
-| base32hex       | rfc4648                 |             |
-| base58flickr    | base58 flicker          |             |
-| base58btc       | base58 bitcoin          |             |
-| base64          | rfc4648                 |             |
-| base64url       | rfc4648                 |             |
-|                                                         |
-| **Serialization formats**                               |
-| json            |                         |             |
-| cbor            |                         |             |
-| bson            |                         |             |
-| bjson           |                         |             |
-| ubjson          |                         |             |
-| protobuf        | Protocol Buffers        |             |
-| capnp           | Cap-n-Proto             |             |
-| flatbuf         | FlatBuffers             |             |
-| rlp             | recursive length prefix | 0x60        |
-|                                                         |
-| **Multiformats**                                        |
-| multicodec      |                         | 0x30        |
-| multihash       |                         | 0x31        |
-| multiaddr       |                         | 0x32        |
-| multibase       |                         | 0x33        |
-|                                                         |
-| **Multihashes**                                         |
-| sha1            |                         | 0x11        |
-| sha2-256        |                         | 0x12        |
-| sha2-512        |                         | 0x13        |
-| sha3-224        |                         | 0x17        |
-| sha3-256        |                         | 0x16        |
-| sha3-384        |                         | 0x15        |
-| sha3-512        |                         | 0x14        |
-| shake-128       |                         | 0x18        |
-| shake-256       |                         | 0x19        |
-| blake2b         |                         | 0x40        |
-| blake2s         |                         | 0x41        |
-|                                                         |
-| **Multiaddrs**                                          |
-| ip4             |                         | 0x04        |
-| ip6             |                         | 0x29        |
-| tcp             |                         | 0x06        |
-| udp             |                         | 0x11        |
-| dccp            |                         | 0x21        |
-| sctp            |                         | 0x84        |
-| udt             |                         | 0x012D      |
-| utp             |                         | 0x012E      |
-| ipfs            |                         | 0x2A        |
-| http            |                         | 0x01E0      |
-| https           |                         | 0x01BB      |
-| ws              |                         | 0x01DD      |
-| onion           |                         | 0x01BC      |
-|                                                         |
-| **Archiving formats**                                   |
-| tar             |                         |             |
-| zip             |                         |             |
-|                                                         |
-| **Image formats**                                       |
-| png             |                         |             |
-| jpg             |                         |             |
-|                                                         |
-| **Video formats**                                       |
-| mp4             |                         |             |
-| mkv             |                         |             |
-|                                                         |
-| **Blockchain formats**                                  |
-|                                                         |
-| **VCS formats**                                         |
-|                                                         |
-| **IPLD formats**                                        |
-| dag-pb          | MerkleDAG protobuf      |             |
-| dag-cbor        | MerkleDAG cbor          |             |
-| eth-rlp         | Ethereum Block RLP      |             |
+```csv
+codec,              description,              code
+
+miscelaneous
+bin,                raw binary,               0x00
+
+bases encodings
+base1,              unary,                    0x01
+base2,              binary (0 and 1),         0x00
+base8,              octal,                    0x07
+base10,             decimal,                  0x09
+base16,             hexadecimal,              0x
+base32,             rfc4648,                  0x
+base32hex,          rfc4648,                  0x
+base58flickr,       base58 flicker,           0x
+base58btc,          base58 bitcoin,           0x
+base64,             rfc4648,                  0x
+base64url,          rfc4648,                  0x
+
+serialization formats
+json,               ,                         0x
+cbor,               ,                         0x
+bson,               ,                         0x
+bjson,              ,                         0x
+ubjson,             ,                         0x
+protobuf,           Protocol Buffers,         0x
+capnp,              Cap-n-Proto,              0x
+flatbuf,            FlatBuffers,              0x
+rlp,                recursive length prefix,  0x60
+
+multiformats
+multicodec,         ,                         0x30
+multihash,          ,                         0x31
+multiaddr,          ,                         0x32
+multibase,          ,                         0x33
+
+multihashes
+sha1,               ,                         0x11
+sha2-256,           ,                         0x12
+sha2-512,           ,                         0x13
+sha3-224,           ,                         0x17
+sha3-256,           ,                         0x16
+sha3-384,           ,                         0x15
+sha3-512,           ,                         0x14
+shake-128,          ,                         0x18
+shake-256,          ,                         0x19
+blake2b,            ,                         0x40
+blake2s,            ,                         0x41
+
+multiaddrs
+ip4,                ,                         0x04
+ip6,                ,                         0x29
+tcp,                ,                         0x06
+udp,                ,                         0x11
+dccp,               ,                         0x21
+sctp,               ,                         0x84
+udt,                ,                         0x012D
+utp,                ,                         0x012E
+ipfs,               ,                         0x2A
+http,               ,                         0x01E0
+https,              ,                         0x01BB
+ws,                 ,                         0x01DD
+onion,              ,                         0x01BC
+
+archiving formats
+tar,                ,                         0x
+zip,                ,                         0x
+
+image formats
+png,                ,                         0x
+jpg,                ,                         0x
+
+video formats
+mp4,                ,                         0x
+mkv,                ,                         0x
+
+blockchain formats
+
+VCS formats
+
+IPLD formats
+dag-pb,             MerkleDAG protobuf,       0x
+dag-cbor,           MerkleDAG cbor,           0x
+eth-rlp,            Ethereum Block RLP,       0x
+```
 
 ## Implementations
 
