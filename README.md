@@ -38,7 +38,7 @@ Moreover, this self-description allows straightforward layering of protocols wit
 `multicodec` is a _self-describing multiformat_, it wraps other formats with a tiny bit of self-description:
 
 ```sh
-<varint-len><multicodec><encoded-data>
+<varint-len><multicodec>\n<encoded-data>
 ```
 
 For example, let's encode a json doc:
@@ -98,53 +98,80 @@ These path names happen to be resolvable -- not just in a "multicodec muxer(e.g 
 
 ## Multicodec table
 
-| prefix                        | codec         | description             | [packed](https://github.com/multiformats/multicodec/blob/master/multicodec-packed.md)|
-|-------------------------------|---------------|-------------------------|-----------|
-| **Miscelaneous**                                                                    |
-| 0x052f62696e2f                | /bin/         | raw binary              | 0x00      |
-| **Bases encodings**                                                                 |
-| 0x042f62322f                  | /b2/          | ascii base2             |           |
-| 0x052f6231362f                | /b16/         | ascii base16            |           |
-| 0x052f6233322f                | /b32/         | ascii base32            |           |
-| 0x052f6235382f                | /b58/         | ascii base58            |           |
-| 0x052f6236342f                | /b64/         | ascii base64            |           |
-| **Serialization formats**                                                           |
-| 0x062f6a736f6e2f              | /json/        |                         |           |
-| 0x062f63626f722f              | /cbor/        |                         |           |
-| 0x062f62736f6e2f              | /bson/        |                         |           |
-| 0x072f626a736f6e2f            | /bjson/       |                         |           |
-| 0x082f75626a736f6e2f          | /ubjson/      |                         |           |
-| 0x0a2f70726f746f6275662f      | /protobuf/    | Protocol Buffers        |           |
-| 0x072f6361706e702f            | /capnp/       | Cap-n-Proto             |           |
-| 0x092f666c61746275662f        | /flatbuf/     | FlatBuffers             |           |
-| 0x052f726c702f                | /rlp/         | recursive length prefix | 0x60      |
-| **Multiformats**                                                                    |
-| 0x182f6d756c7469636f6465632f  | /multicodec/  |                         | 0x40      |
-| 0x162f6d756c7469686173682f    | /multihash/   |                         | 0x41      |
-| 0x162f6d756c7469616464722f    | /multiaddr/   |                         | 0x42      |
-| **Multihashes**                                                                     |
-|                               |               |                         |           |
-| **Multiaddrs**                                                                      |
-|                               |               |                         |           |
-| **Archiving formats**                                                               |
-| 0x052f7461722f                | /tar/         |                         |           |
-| 0x052f7a69702f                | /zip/         |                         |           |
-| **Image formats**                                                                   |
-| 0x052f706e672f                | /png/         |                         |           |
-|                               | /jpg/         |                         |           |
-| **Video formats**                                                                   |
-|                               | /mp4/         |                         |           |
-|                               | /mkv/         |                         |           |
-| **Blockchain formats**                                                              |
-| n/a                           | n/a           | n/a                     | n/a       |
-| **VCS formats**                                                                     |
-| n/a                           | n/a           | n/a                     | n/a       |
-| **IPLD formats**                                                                    |
-|                               | /dag-pb/      | MerkleDAG protobuf      |           |
-|                               | /dag-cbor/    | MerkleDAG cbor          |           |
-|                               | /eth-rlp/     | Ethereum Block RLP      |           |
+| prefix                        | codec           | description             | [packed][p] | multibase only |
+|-------------------------------|-----------------|-------------------------|-------------|----------------|
+| **Miscelaneous**                                                                                         |
+| 0x052f62696e2f                | /bin/           | raw binary              | 0x00        | n/a            |
+| **Bases encodings**                                                                                      |
+|                               | /base1/         | unary                   |             | 1              |
+|                               | /base2/         | binary (0 and 1)        |             | 0              |
+|                               | /base8/         | octal                   |             | 7              |
+|                               | /base10/        | decimal                 |             | 9              |
+|                               | /base16/        | hexadecimal             |             | F, f           |
+|                               | /base32/        | rfc4648                 |             | U, u           |
+|                               | /base32hex/     | rfc4648                 |             | V, v           |
+|                               | /base58flickr/  | base58 flicker          |             | Z              |
+|                               | /base58btc/     | base58 bitcoin          |             | z              |
+|                               | /base64/        | rfc4648                 |             | y              |
+|                               | /base64url/     | rfc4648                 |             | Y              |
+| **Serialization formats**                                                                                |
+| 0x062f6a736f6e2f              | /json/          |                         |             | n/a            |
+| 0x062f63626f722f              | /cbor/          |                         |             | n/a            |
+| 0x062f62736f6e2f              | /bson/          |                         |             | n/a            |
+| 0x072f626a736f6e2f            | /bjson/         |                         |             | n/a            |
+| 0x082f75626a736f6e2f          | /ubjson/        |                         |             | n/a            |
+| 0x0a2f70726f746f6275662f      | /protobuf/      | Protocol Buffers        |             | n/a            |
+| 0x072f6361706e702f            | /capnp/         | Cap-n-Proto             |             | n/a            |
+| 0x092f666c61746275662f        | /flatbuf/       | FlatBuffers             |             | n/a            |
+| 0x052f726c702f                | /rlp/           | recursive length prefix | 0x60        | n/a            |
+| **Multiformats**                                                                                         |
+| 0x182f6d756c7469636f6465632f  | /multicodec/    |                         | 0x30        | n/a            |
+| 0x162f6d756c7469686173682f    | /multihash/     |                         | 0x31        | n/a            |
+| 0x162f6d756c7469616464722f    | /multiaddr/     |                         | 0x32        | n/a            |
+| **Multihashes**                                                                                          |
+|                               | /sha1/          |                         | 0x11        | n/a            |
+|                               | /sha2-256/      |                         | 0x12        | n/a            |
+|                               | /sha2-512/      |                         | 0x13        | n/a            |
+|                               | /sha3-256/      |                         | 0x16        | n/a            |
+|                               | /sha3-384/      |                         | 0x15        | n/a            |
+|                               | /sha3-512/      |                         | 0x14        | n/a            |
+|                               | /shake-128/     |                         | 0x18        | n/a            |
+|                               | /shake-256/     |                         | 0x19        | n/a            |
+|                               | /blake2b/       |                         | 0x40        | n/a            |
+|                               | /blake2s/       |                         | 0x41        | n/a            |
+| **Multiaddrs**                                                                                           |
+|                               | /ip4/           |                         | 0x04        | n/a            |
+|                               | /ip6/           |                         | 0x29        | n/a            |
+|                               | /tcp/           |                         | 0x06        | n/a            |
+|                               | /udp/           |                         | 0x11        | n/a            |
+|                               | /dccp/          |                         | 0x21        | n/a            |
+|                               | /sctp/          |                         | 0x84        | n/a            |
+|                               | /udt/           |                         | 0x012D      | n/a            |
+|                               | /utp/           |                         | 0x012E      | n/a            |
+|                               | /ipfs/          |                         | 0x2A        | n/a            |
+|                               | /http/          |                         | 0x01E0      | n/a            |
+|                               | /https/         |                         | 0x01BB      | n/a            |
+|                               | /ws/            |                         | 0x01DD      | n/a            |
+|                               | /onion/         |                         | 0x01BC      | n/a            |
+| **Archiving formats**                                                                                    |
+| 0x052f7461722f                | /tar/           |                         |             | n/a            |
+| 0x052f7a69702f                | /zip/           |                         |             | n/a            |
+| **Image formats**                                                                                        |
+| 0x052f706e672f                | /png/           |                         |             | n/a            |
+|                               | /jpg/           |                         |             | n/a            |
+| **Video formats**                                                                                        |
+|                               | /mp4/           |                         |             | n/a            |
+|                               | /mkv/           |                         |             | n/a            |
+| **Blockchain formats**                                                                                   |
+|                               |                 |                         |             | n/a            |
+| **VCS formats**                                                                                          |
+|                               |                 |                         |             | n/a            |
+| **IPLD formats**                                                                                         |
+|                               | /dag-pb/        | MerkleDAG protobuf      |             | n/a            |
+|                               | /dag-cbor/      | MerkleDAG cbor          |             | n/a            |
+|                               | /eth-rlp/       | Ethereum Block RLP      |             | n/a            |
 
-
+Note: Base encodings present a multibase encoding special char, so that the codec doesn't break the encoded version of the data it is describing.
 
 ## Implementations
 
@@ -196,3 +223,4 @@ Check out our [contributing document](https://github.com/multiformats/multiforma
 
 [MIT](LICENSE)
 
+[p](https://github.com/multiformats/multicodec/blob/master/multicodec-packed.md)
