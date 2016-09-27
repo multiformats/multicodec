@@ -100,6 +100,7 @@ shake-128,          ,                         0x18
 shake-256,          ,                         0x19
 blake2b,            ,                         0x40
 blake2s,            ,                         0x41
+reserved for apps,  appl specific range,      0x4000-0x40f
 
 multiaddrs
 ip4,                ,                         0x04
@@ -133,9 +134,14 @@ blockchain formats
 VCS formats
 
 IPLD formats
-dag-pb,             MerkleDAG protobuf,       0x
-dag-cbor,           MerkleDAG cbor,           0x
-eth-rlp,            Ethereum Block RLP,       0x
+dag-pb,             MerkleDAG protobuf,       0x70
+dag-cbor,           MerkleDAG cbor,           0x71
+eth-block,          Ethereum Block (RLP),     0x90
+eth-tx,             Ethereum Tx (RLP),        0x91
+bitcoin-block,      Bitcoin Block,            0xb0
+bitcoin-tx,         Bitcoin Tx,               0xb1
+stellar-block,      Stellar Block,            0xd0
+stellar-tx,         Stellar Tx,               0xd1
 ```
 
 ## Implementations
