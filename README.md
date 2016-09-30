@@ -122,10 +122,10 @@ These path names happen to be resolvable -- not just in a "multicodec muxer(e.g 
 
 ## Implementations
 
-- [go-multicodec](https://github.com/jbenet/go-multicodec)
-- [go-multistream](https://github.com/whyrusleeping/go-multistream) - Implements multistream, which uses multicodec for stream negotiation
-- [js-multistream](https://github.com/multiformats/js-multistream) - Implements multistream, which uses multicodec for stream negotiation
-- [clj-multicodec](https://github.com/greglook/clj-multicodec)
+- [go-multicodec](https://github.com/multiformats/go-multicodec)
+- [go-multistream](https://github.com/multiformats/go-multistream) - Implements multistream, which uses multicodec for stream negotiation
+- [js-multistream](https://github.com/multiformats/js-multistream-select) - Implements multistream, which uses multicodec for stream negotiation
+- [clj-multicodec](https://github.com/multiformats/clj-multicodec)
 
 
 ## FAQ
