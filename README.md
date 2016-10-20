@@ -98,6 +98,11 @@ sha3-384,           ,                         0x15
 sha3-512,           ,                         0x14
 shake-128,          ,                         0x18
 shake-256,          ,                         0x19
+keccak-256,         ,                         0x1A
+keccak-448,         ,                         0x1B
+keccak-512,         ,                         0x1C
+keccak-768,         ,                         0x1D
+keccak-1024,        ,                         0x1E
 blake2b,            ,                         0x40
 blake2s,            ,                         0x41
 reserved for apps,  appl specific range,      0x4000-0x40f
