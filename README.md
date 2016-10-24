@@ -100,7 +100,7 @@ shake-128,          ,                         0x18
 shake-256,          ,                         0x19
 blake2b,            ,                         0x40
 blake2s,            ,                         0x41
-reserved for apps,  appl specific range,      0x4000-0x40f
+reserved for apps,  appl specific range,      0x4000-0x40f0
 
 multiaddrs
 ip4,                ,                         0x04
