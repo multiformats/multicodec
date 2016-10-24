@@ -105,7 +105,7 @@ keccak-768,         ,                         0x1D
 keccak-1024,        ,                         0x1E
 blake2b,            ,                         0x40
 blake2s,            ,                         0x41
-reserved for apps,  appl specific range,      0x4000-0x40f
+reserved for apps,  appl specific range,      0x4000-0x40f0
 
 multiaddrs
 ip4,                ,                         0x04
