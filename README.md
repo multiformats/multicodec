@@ -56,7 +56,7 @@ Multicodecuses "protocol tables" to agree upon the mapping from one multicodec c
 codec,              description,              code
 
 miscelaneous
-bin,                raw binary,               0x00
+bin,                raw binary,               0x55
 
 bases encodings
 base1,              unary,                    0x01
@@ -98,8 +98,10 @@ sha3-384,           ,                         0x15
 sha3-512,           ,                         0x14
 shake-128,          ,                         0x18
 shake-256,          ,                         0x19
+murmur3             ,                         0x22
 blake2b,            ,                         0x40
 blake2s,            ,                         0x41
+dbl-sha2-256        ,                         0x56
 reserved for apps,  appl specific range,      0x4000-0x40f0
 
 multiaddrs
@@ -140,6 +142,8 @@ eth-block,          Ethereum Block (RLP),     0x90
 eth-tx,             Ethereum Tx (RLP),        0x91
 bitcoin-block,      Bitcoin Block,            0xb0
 bitcoin-tx,         Bitcoin Tx,               0xb1
+zcash-block,        Zcash Block,              0xc0
+zcash-tx,           Zcash Tx,                 0xc1
 stellar-block,      Stellar Block,            0xd0
 stellar-tx,         Stellar Tx,               0xd1
 ```
