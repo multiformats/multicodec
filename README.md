@@ -102,7 +102,7 @@ keccak-224,         ,                         0x1A
 keccak-256,         ,                         0x1B
 keccak-384,         ,                         0x1C
 keccak-512,         ,                         0x1D
-Note: keccak has variable output length, instead the number specifies the core length
+Note: keccak has variable output length, instead the number specifies the core length,,
 blake2b,            ,                         0x40
 blake2s,            ,                         0x41
 reserved for apps,  appl specific range,      0x4000-0x40f0
@@ -149,12 +149,17 @@ stellar-block,      Stellar Block,            0xd0
 stellar-tx,         Stellar Tx,               0xd1
 ```
 
-
 ## Implementations
 
 - [go](https://github.com/multiformats/go-multicodec/)
 - [JavaScript](https://github.com/multiformats/js-multicodec)
 - [Add yours today!](https://github.com/multiformats/multicodec/edit/master/multicodec.md)
+
+## Multicodec Path, also known as [`multistream`](https://github.com/multiformats/multistream)
+
+Multicodec defines a table for the most common data serialization formats that can be expanded overtime or per application bases, however, in order for two programs to talk with each other, they need to know before hand which table or table extension is being used.
+
+In order to enable self descriptive data formats or streams that can be dynamically described, without the formal set of adding a binary packed code to a table, we have [`multistream`](https://github.com/multiformats/multistream), so that applications can adopt multiple data formats for their streams and with that create different protocols.
 
 ## FAQ
 
