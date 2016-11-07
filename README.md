@@ -46,9 +46,9 @@ Another useful scenario is when using the multicodec-packed as part of the keys 
 
 It is worth noting that multicodec-packed works very well in conjunction with [multihash](https://github.com/multiformats/multihash) and [multiaddr](https://github.com/multiformats/multiaddr), as you can prefix those values with a multicodec-packed to tell what they are.
 
-## Multicodec-Packed Protocol Tables
+## MulticodecProtocol Tables
 
-Multicodecuses "protocol tables" to agree upon the mapping from one multicodec code (a single varint). These tables can be application specific, though -- like [with](https://github.com/multiformats/multihash) [other](https://github.com/multiformats/multibase) [multiformats](https://github.com/multiformats/multiaddr) -- we will keep a globally agreed upon table with common protocols and formats.
+Multicodec uses "protocol tables" to agree upon the mapping from one multicodec code (a single varint). These tables can be application specific, though -- like [with](https://github.com/multiformats/multihash) [other](https://github.com/multiformats/multibase) [multiformats](https://github.com/multiformats/multiaddr) -- we will keep a globally agreed upon table with common protocols and formats.
 
 ## Multicodec table
 
@@ -102,6 +102,7 @@ keccak-224,         ,                         0x1A
 keccak-256,         ,                         0x1B
 keccak-384,         ,                         0x1C
 keccak-512,         ,                         0x1D
+Note: keccak has variable output length, instead the number specifies the core length
 blake2b,            ,                         0x40
 blake2s,            ,                         0x41
 reserved for apps,  appl specific range,      0x4000-0x40f0
@@ -147,6 +148,7 @@ bitcoin-tx,         Bitcoin Tx,               0xb1
 stellar-block,      Stellar Block,            0xd0
 stellar-tx,         Stellar Tx,               0xd1
 ```
+
 
 ## Implementations
 
