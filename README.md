@@ -56,7 +56,7 @@ Multicodec uses "protocol tables" to agree upon the mapping from one multicodec 
 codec,              description,              code
 
 miscelaneous
-bin,                raw binary,               0x00
+bin,                raw binary,               0x55
 
 bases encodings
 base1,              unary,                    0x01
