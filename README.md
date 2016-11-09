@@ -109,7 +109,7 @@ multiaddrs
 ip4,                ,                         0x04
 ip6,                ,                         0x29
 tcp,                ,                         0x06
-udp,                ,                         0x0011
+udp,                ,                         0x0111
 dccp,               ,                         0x21
 sctp,               ,                         0x84
 udt,                ,                         0x012D
