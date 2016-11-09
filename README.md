@@ -60,7 +60,7 @@ bin,                raw binary,               0x55
 
 bases encodings
 base1,              unary,                    0x01
-base2,              binary (0 and 1),         0x00
+base2,              binary (0 and 1),         0x55
 base8,              octal,                    0x07
 base10,             decimal,                  0x09
 base16,             hexadecimal,              0x
@@ -72,11 +72,9 @@ base64,             rfc4648,                  0x
 base64url,          rfc4648,                  0x
 
 serialization formats
-json,               ,                         0x
-cbor,               ,                         0x
-bson,               ,                         0x
-bjson,              ,                         0x
-ubjson,             ,                         0x
+cbor,               CBOR,                     0x
+bson,               Binary JSON,              0x
+ubjson,             Universal Binary JSON,    0x
 protobuf,           Protocol Buffers,         0x
 capnp,              Cap-n-Proto,              0x
 flatbuf,            FlatBuffers,              0x
@@ -133,10 +131,6 @@ jpg,                ,                         0x
 video formats
 mp4,                ,                         0x
 mkv,                ,                         0x
-
-blockchain formats
-
-VCS formats
 
 IPLD formats
 dag-pb,             MerkleDAG protobuf,       0x70
