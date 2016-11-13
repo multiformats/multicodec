@@ -52,96 +52,17 @@ Multicodec uses "protocol tables" to agree upon the mapping from one multicodec 
 
 ## Multicodec table
 
-```csv
-codec,              description,              code
+The full table can be found at [table.csv](/table.csv) inside this repo.
 
-miscelaneous
-bin,                raw binary,               0x55
+### Adding new multicodecs to the table
 
-bases encodings
-base1,              unary,                    0x01
-base2,              binary (0 and 1),         0x55
-base8,              octal,                    0x07
-base10,             decimal,                  0x09
-base16,             hexadecimal,              0x
-base32,             rfc4648,                  0x
-base32hex,          rfc4648,                  0x
-base58flickr,       base58 flicker,           0x
-base58btc,          base58 bitcoin,           0x
-base64,             rfc4648,                  0x
-base64url,          rfc4648,                  0x
+The process to add a new multicodec to the table is the following:
 
-serialization formats
-cbor,               CBOR,                     0x
-bson,               Binary JSON,              0x
-ubjson,             Universal Binary JSON,    0x
-protobuf,           Protocol Buffers,         0x
-capnp,              Cap-n-Proto,              0x
-flatbuf,            FlatBuffers,              0x
-rlp,                recursive length prefix,  0x60
+- 1. Fork this repo
+- 2. Update the table with the value you want to add
+- 3. Submit a Pull Request
 
-multiformats
-multicodec,         ,                         0x30
-multihash,          ,                         0x31
-multiaddr,          ,                         0x32
-multibase,          ,                         0x33
-
-multihashes
-sha1,               ,                         0x11
-sha2-256,           ,                         0x12
-sha2-512,           ,                         0x13
-sha3-224,           ,                         0x17
-sha3-256,           ,                         0x16
-sha3-384,           ,                         0x15
-sha3-512,           ,                         0x14
-shake-128,          ,                         0x18
-shake-256,          ,                         0x19
-keccak-224,         ,                         0x1A
-keccak-256,         ,                         0x1B
-keccak-384,         ,                         0x1C
-keccak-512,         ,                         0x1D
-Note: keccak has variable output length, instead the number specifies the core length,,
-blake2b,            ,                         0x40
-blake2s,            ,                         0x41
-reserved for apps,  appl specific range,      0x4000-0x40f0
-
-multiaddrs
-ip4,                ,                         0x04
-ip6,                ,                         0x29
-tcp,                ,                         0x06
-udp,                ,                         0x0111
-dccp,               ,                         0x21
-sctp,               ,                         0x84
-udt,                ,                         0x012D
-utp,                ,                         0x012E
-ipfs,               ,                         0x2A
-http,               ,                         0x01E0
-https,              ,                         0x01BB
-ws,                 ,                         0x01DD
-onion,              ,                         0x01BC
-
-archiving formats
-tar,                ,                         0x
-zip,                ,                         0x
-
-image formats
-png,                ,                         0x
-jpg,                ,                         0x
-
-video formats
-mp4,                ,                         0x
-mkv,                ,                         0x
-
-IPLD formats
-dag-pb,             MerkleDAG protobuf,       0x70
-dag-cbor,           MerkleDAG cbor,           0x71
-eth-block,          Ethereum Block (RLP),     0x90
-eth-tx,             Ethereum Tx (RLP),        0x91
-bitcoin-block,      Bitcoin Block,            0xb0
-bitcoin-tx,         Bitcoin Tx,               0xb1
-stellar-block,      Stellar Block,            0xd0
-stellar-tx,         Stellar Tx,               0xd1
-```
+This ["first come, first assign"](https://github.com/multiformats/multicodec/pull/16#issuecomment-260146609) policy is a way to assign codes as they are most needed, without increasing the size of the table (and therefore the size of the multicodecs) too rapidly.
 
 ## Implementations
 
