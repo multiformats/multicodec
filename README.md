@@ -4,15 +4,14 @@
 [![](https://img.shields.io/badge/project-multiformats-blue.svg?style=flat-square)](http://github.com/multiformats/multiformats)
 [![](https://img.shields.io/badge/freenode-%23ipfs-blue.svg?style=flat-square)](http://webchat.freenode.net/?channels=%23ipfs)
 
-> self-describing codecs
+> compact self-describing codecs. Save space by using predefined multicodec tables.
 
 ## Table of Contents
 
 - [Motivation](#motivation)
 - [How does it work? - Protocol Description](#how-does-it-work---protocol-description)
-- [Prefix examples](#prefix-examples)
-- [prefix - codec - desc](#prefix---codec---desc)
-- [The protocol path](#the-protocol-path)
+- [Multicodec tables](#multicodec-tables)
+  - [Standard multicodec table](#standard-mcp-protocol-table)
 - [Implementations](#implementations)
 - [FAQ](#faq)
 - [Maintainers](#maintainers)
@@ -21,136 +20,83 @@
 
 ## Motivation
 
-Multicodecs are self-describing protocol/encoding streams. (Note that a file is a stream). It's designed to address the perennial problem:
+[Multistreams](https://github.com/multiformats/multistream) are self-describing protocol/encoding streams. Multicodec uses an agreed-upon "protocol table". It is designed for use in short strings, such as keys or identifiers (i.e [CID](https://github.com/ipld/cid)).
 
-> I have a bitstring, what codec is the data coded with!?
+## Protocol Description - How does the protocol work?
 
-Instead of arguing about which data serialization library is the best, let's just pick the simplest one now, and build _upgradability_ into the system. Choices are never _forever_. Eventually all systems are changed. So, embrace this fact of reality, and build change into your system now.
+`multicodec` is a _self-describing multiformat_, it wraps other formats with a tiny bit of self-description. A multicodec identifier is both a varint and the code identifying the following data, this means that the most significant bit of every multicodec code is reserved to signal the continuation.
 
-Multicodec frees you from the tyranny of past mistakes. Instead of trying to figure it all out beforehand, or continue using something that we can all agree no longer fits, why not allow the system to _evolve_ and _grow_ with the use cases of today, not yesterday.
-
-To decode an incoming stream of data, a program must either (a) know the format of the data a priori, or (b) learn the format from the data itself. (a) precludes running protocols that may provide one of many kinds of formats without prior agreement on which. multistream makes (b) neat using self-description.
-
-Moreover, this self-description allows straightforward layering of protocols without having to implement support in the parent (or encapsulating) one.
-
-## How does it work? - Protocol Description
-
-`multicodec` is a _self-describing multiformat_, it wraps other formats with a tiny bit of self-description:
+This way, a chunk of data identified by multicodec will look like this:
 
 ```sh
-<multicodec-header><encoded-data>
-# or
-<varint-len><code>\n<encoded-data>
+<multicodec-varint><encoded-data>
+# To reduce the cognitive load, we sometimes might write the same line as:
+<mcp><data>
 ```
 
-For example, let's encode a json doc:
-
-```node
-> // encode some json
-> var str = JSON.stringify({"hello":"world"})
-> var buf = multicodec.encode('json', str) // prepends multistream.header('/json')
-> buf
-<Buffer 06 2f 6a 73 6f 6e 2f 7b 22 68 65 6c 6c 6f 22 3a 22 77 6f 72 6c 64 22 7d>
-> buf.toString('hex')
-062f6a736f6e2f7b2268656c6c6f223a22776f726c64227d
-> // decode, and find out what is in buf
-> multicodec.decode(buf)
-{ "codec": "json", "data": '{"hello": "world"}' }
-```
-
-So, `buf` is:
+Another useful scenario is when using the multicodec-packed as part of the keys to access data, example:
 
 ```
-hex:   062f6a736f6e2f7b2268656c6c6f223a22776f726c64227d
-ascii: json/\n{"hello":"world"}
+# suppose we have a value and a key to retrieve it
+"<key>" -> <value>
+
+# we can use multicodec-packed with the key to know what codec the value is in
+"<mcp><key>" -> <value>
 ```
 
-The more you know! Let's try it again, this time with protobuf:
+It is worth noting that multicodec-packed works very well in conjunction with [multihash](https://github.com/multiformats/multihash) and [multiaddr](https://github.com/multiformats/multiaddr), as you can prefix those values with a multicodec-packed to tell what they are.
 
-```
-cat proto.c
-```
+## MulticodecProtocol Tables
 
-See also: [multicodec-packed](./multicodec-packed.md).
+Multicodec uses "protocol tables" to agree upon the mapping from one multicodec code (a single varint). These tables can be application specific, though -- like [with](https://github.com/multiformats/multihash) [other](https://github.com/multiformats/multibase) [multiformats](https://github.com/multiformats/multiaddr) -- we will keep a globally agreed upon table with common protocols and formats.
 
-## Prefix examples
+## Multicodec table
 
+The full table can be found at [table.csv](/table.csv) inside this repo.
 
-| prefix         | codec | desc        | type  | [packed encoding](https://github.com/multiformats/multicodec/blob/master/multicodec-packed.md)|
-|----------------|-------|-------------|-------|---------------------------------------|
-|0x052f62696e2f  | /bin/ |raw binary   |binary | 0x00 |
-|0x042f62322f    | /b2/  |ascii base2  |binary | | 
-|0x052f6231362f  | /b16/ |ascii base16 |hex    | |
-|0x052f6233322f  | /b32/ |ascii base32 |       | | 
-|0x052f6235382f  | /b58/ |ascii base58 |       | |
-|0x052f6236342f  | /b64/ |ascii base64 |       | |
-|0x062f6a736f6e2f  |/json/ |             |json   | |
-|0x062f63626f722f  |/cbor/ |             |json   | |
-|0x062f62736f6e2f  |/bson/ |             |json   | |
-|0x072f626a736f6e2f|/bjson/|             |json   | |
-|0x082f75626a736f6e2f| /ubjson/|         |json   | |
-|0x182f6d756c7469636f6465632f | /multicodec/ | | multiformat | 0x40 |
-|0x162f6d756c7469686173682f   | /multihash/  | | multiformat | 0x41 |
-|0x162f6d756c7469616464722f   | /multiaddr/  | | multiformat | 0x42 |
-|0x0a2f70726f746f6275662f |/protobuf/ | Protocol Buffers |protobuf| |
-|0x072f6361706e702f       | /capnp/   | Cap-n-Proto      |protobuf| |
-|0x092f666c61746275662f   |/flatbuf/  | FlatBuffers      |protobuf| |
-|0x052f7461722f         |/tar/      |                 | archive | |
-|0x052f7a69702f         |/zip/      |                 | archive | |
-|0x052f706e672f         | /png/     |                 | archive | |
-|0x052f726c702f         | /rlp/     | recursive length prefix | ethereum |  0x60 |
-## The protocol path
+### Adding new multicodecs to the table
 
-`multicodec` allows us to specify different protocols in a universal namespace, that way being able to recognize, multiplex, and embed them easily. We use the notion of a `path` instead of an `id` because it is meant to be a Unix-friendly URI.
+The process to add a new multicodec to the table is the following:
 
-A good path name should be decipherable -- meaning that if some machine or developer -- who has no idea about your protocol -- encounters the path string, they should be able to look it up and resolve how to use it.
+- 1. Fork this repo
+- 2. Update the table with the value you want to add
+- 3. Submit a Pull Request
 
-An example of a good path name is:
-
-```
-/bittorrent.org/1.0
-```
-
-An example of a _great_ path name is:
-
-```
-/ipfs/Qmaa4Rw81a3a1VEx4LxB7HADUAXvZFhCoRdBzsMZyZmqHD/ipfs.protocol
-/http/w3id.org/ipfs/ipfs-1.1.0.json
-```
-
-These path names happen to be resolvable -- not just in a "multicodec muxer(e.g [multistream]())" but -- in the internet as a whole (provided the program (or OS) knows how to use the `/ipfs` and `/http` protocols).
+This ["first come, first assign"](https://github.com/multiformats/multicodec/pull/16#issuecomment-260146609) policy is a way to assign codes as they are most needed, without increasing the size of the table (and therefore the size of the multicodecs) too rapidly.
 
 ## Implementations
 
-- [go-multicodec](https://github.com/multiformats/go-multicodec)
-- [go-multistream](https://github.com/multiformats/go-multistream) - Implements multistream, which uses multicodec for stream negotiation
-- [js-multistream](https://github.com/multiformats/js-multistream-select) - Implements multistream, which uses multicodec for stream negotiation
-- [clj-multicodec](https://github.com/multiformats/clj-multicodec)
+- [go](https://github.com/multiformats/go-multicodec/)
+- [JavaScript](https://github.com/multiformats/js-multicodec)
+- [Add yours today!](https://github.com/multiformats/multicodec/edit/master/multicodec.md)
 
+## Multicodec Path, also known as [`multistream`](https://github.com/multiformats/multistream)
+
+Multicodec defines a table for the most common data serialization formats that can be expanded overtime or per application bases, however, in order for two programs to talk with each other, they need to know before hand which table or table extension is being used.
+
+In order to enable self descriptive data formats or streams that can be dynamically described, without the formal set of adding a binary packed code to a table, we have [`multistream`](https://github.com/multiformats/multistream), so that applications can adopt multiple data formats for their streams and with that create different protocols.
 
 ## FAQ
 
+> **Q. I have questions on multicodec, not listed here.**
+
+That's not a question. But, have you checked the proper [multicodec FAQ](./README.md#faq)? Maybe your question is answered there. This FAQ is only specifically for multicodec-packed.
+
 > **Q. Why?**
 
-Today, people speak many languages, and use common ones to interface. But every "common language" has evolved over time, or even fundamentally switched. Why should we expect programs to be any different?
+Because [multistream](https://github.com/multiformats/multistream) is too long for identifiers. We needed something shorter.
 
-And the reality is they're not. Programs use a variety of encodings. Today we like JSON. Yesterday, XML was all the rage. XDR solved everything, but it's kinda retro. Protobuf is still too cool for school. capnp ("cap and proto") is
-for cerealization hipsters.
+> **Q. Why varints?**
 
-The one problem is figuring out what we're speaking. Humans are pretty smart, we pick up all sorts of languages over time. And we can always resort to pointing and grunting (the ascii of humanity).
+So that we have no limitation on protocols. Implementation note: you do not need to implement varints until the standard multicodec table has more than 127 functions.
 
-Programs have a harder time. You can't keep piping json into a protobuf decoder and hope they align. So we have to help them out a bit. That's what multicodec is for.
+> **Q. What kind of varints?**
 
-> **Q. Why "codec" and not "encoder" and "decoder"?**
+An Most Significant Bit unsigned varint, as defined by the [multiformats/unsigned-varint](https://github.com/multiformats/unsigned-varint).
 
-Because they're the same thing. Which one of these is the encoder and which the decoder?
+> **Q. Don't we have to agree on a table of protocols?**
 
-    5555 ----[ THING ]---> 8888
-    5555 <---[ THING ]---- 8888
-
-> **Q. Full paths are too big for my use case, is there something smaller?**
-
-Yes, check out [multicodec-packed](./multicodec-packed.md). It uses a varint and a table to achieve the same thing.
+Yes, but we already have to agree on what protocols themselves are, so this is not so hard. The table even leaves some room for custom protocol paths, or you can use your own tables. The standard table is only for common things.
 
 ## Maintainers
 
