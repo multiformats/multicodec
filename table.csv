@@ -35,6 +35,7 @@ multihashes,,
 sha1,               ,                         0x11
 sha2-256,           ,                         0x12
 sha2-512,           ,                         0x13
+dbl-sha2-256,       ,                         0x56
 sha3-224,           ,                         0x17
 sha3-256,           ,                         0x16
 sha3-384,           ,                         0x15
@@ -45,6 +46,7 @@ keccak-224,         ,                         0x1A
 keccak-256,         ,                         0x1B
 keccak-384,         ,                         0x1C
 keccak-512,         ,                         0x1D
+murmur3,            ,                         0x22
 ,, Note: keccak has variable output length. The number specifies the core length
 blake2b,            ,                         0x40
 blake2s,            ,                         0x41
@@ -84,5 +86,7 @@ eth-block,          Ethereum Block (RLP),     0x90
 eth-tx,             Ethereum Tx (RLP),        0x91
 bitcoin-block,      Bitcoin Block,            0xb0
 bitcoin-tx,         Bitcoin Tx,               0xb1
+zcash-block,        Zcash Block,              0xc0
+zcash-tx,           Zcash Tx,                 0xc1
 stellar-block,      Stellar Block,            0xd0
 stellar-tx,         Stellar Tx,               0xd1
