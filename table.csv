@@ -46,8 +46,8 @@ keccak-256,         ,                         0x1B
 keccak-384,         ,                         0x1C
 keccak-512,         ,                         0x1D
 ,, Note: keccak has variable output length. The number specifies the core length
-blake2b-lenX,       ,                         0xb201-0xb240
-blake2s-lenX,       ,                         0xb241-0xb260
+blake2b-X,X is length in bits, can take values from 8 to 512 in 8 bit increments,0xb201-0xb240 (0xb201 - blake2b-8, 0xb240 - blake2b-512)
+blake2s-X,X is length in bits, can take values from 8 to 256 in 8 bit increments,0xb241-0xb260 (0xb241 - blake2s-8, 0xb260 - blake2b-256)
 reserved for apps,  appl specific range,      0x4000-0x40f0
 
 multiaddrs,,
