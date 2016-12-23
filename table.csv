@@ -171,11 +171,20 @@ mp4,                ,                         0x
 mkv,                ,                         0x
 
 IPLD formats,,
-dag-pb,             MerkleDAG protobuf,       0x70
-dag-cbor,           MerkleDAG cbor,           0x71
-eth-block,          Ethereum Block (RLP),     0x90
-eth-tx,             Ethereum Tx (RLP),        0x91
-bitcoin-block,      Bitcoin Block,            0xb0
-bitcoin-tx,         Bitcoin Tx,               0xb1
-stellar-block,      Stellar Block,            0xd0
-stellar-tx,         Stellar Tx,               0xd1
+dag-pb,               MerkleDAG protobuf,                               0x70
+dag-cbor,             MerkleDAG cbor,                                   0x71
+
+eth-block,            Ethereum Block (RLP),                             0x90
+eth-block-list,       Ethereum Block List (RLP),                        0x91
+eth-tx-trie,          Ethereum Transaction Trie (Eth-Trie),             0x92
+eth-tx,               Ethereum Transaction (RLP),                       0x93
+eth-tx-receipt-trie,  Ethereum Transaction Receipt Trie (Eth-Trie),     0x94
+eth-tx-receipt,       Ethereum Transaction Receipt (RLP),               0x95
+eth-state-trie,       Ethereum State Trie (Eth-Secure-Trie),            0x96
+eth-account-snapshot, Ethereum Account Snapshot (RLP),                  0x97
+eth-storage-trie,     Ethereum Contract Storage Trie (Eth-Secure-Trie), 0x98
+
+bitcoin-block,        Bitcoin Block,                                    0xb0
+bitcoin-tx,           Bitcoin Tx,                                       0xb1
+stellar-block,        Stellar Block,                                    0xd0
+stellar-tx,           Stellar Tx,                                       0xd1
