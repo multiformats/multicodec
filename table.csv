@@ -1,6 +1,6 @@
 codec,              description,              code
 
-miscelaneous,,
+miscellaneous,,
 bin,                raw binary,               0x55
 
 bases encodings,,
