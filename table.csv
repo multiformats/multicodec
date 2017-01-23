@@ -24,6 +24,8 @@ protobuf,           Protocol Buffers,         0x
 capnp,              Cap-n-Proto,              0x
 flatbuf,            FlatBuffers,              0x
 rlp,                recursive length prefix,  0x60
+msgpack,            MessagePack,              0x
+binc,               Binc,                     0x
 
 multiformats,,
 multicodec,         ,                         0x30
