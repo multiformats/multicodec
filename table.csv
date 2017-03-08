@@ -26,6 +26,7 @@ flatbuf,            FlatBuffers,              0x
 rlp,                recursive length prefix,  0x60
 msgpack,            MessagePack,              0x
 binc,               Binc,                     0x
+bencoding,          Bencoding,                0x
 
 multiformats,,
 multicodec,         ,                         0x30
@@ -194,3 +195,6 @@ zcash-block,          Zcash Block,                                      0xc0
 zcash-tx,             Zcash Tx,                                         0xc1
 stellar-block,        Stellar Block,                                    0xd0
 stellar-tx,           Stellar Tx,                                       0xd1
+
+bittorrent,           BitTorrent info metadata (bencoded),              0x7b
+
