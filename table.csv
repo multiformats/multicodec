@@ -17,10 +17,10 @@ base64,             rfc4648,                  0x
 base64url,          rfc4648,                  0x
 
 serialization formats,,
-cbor,               CBOR,                     0x
+cbor,               CBOR,                     0x51
 bson,               Binary JSON,              0x
 ubjson,             Universal Binary JSON,    0x
-protobuf,           Protocol Buffers,         0x
+protobuf,           Protocol Buffers,         0x50
 capnp,              Cap-n-Proto,              0x
 flatbuf,            FlatBuffers,              0x
 rlp,                recursive length prefix,  0x60
