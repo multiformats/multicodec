@@ -155,6 +155,7 @@ tcp,                ,                         0x06
 udp,                ,                         0x0111
 dccp,               ,                         0x21
 sctp,               ,                         0x84
+quic,               ,                         0x51
 udt,                ,                         0x012D
 utp,                ,                         0x012E
 ipfs,               ,                         0x2A
