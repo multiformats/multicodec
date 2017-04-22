@@ -200,3 +200,4 @@ stellar-tx,           Stellar Tx,                                       0xd1
 
 torrent-info,         Torrent file info field (bencoded),               0x7b
 torrent-file,         Torrent file (bencoded),                          0x7c
+ed25519,              Ed25519 public key,                               0xed
