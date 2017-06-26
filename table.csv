@@ -35,6 +35,7 @@ multiaddr,          ,                         0x32
 multibase,          ,                         0x33
 
 multihashes,,
+id,                 ,                         0x00
 sha1,               ,                         0x11
 sha2-256,           ,                         0x12
 sha2-512,           ,                         0x13
@@ -146,7 +147,6 @@ blake2s-232,,0xb25d
 blake2s-240,,0xb25e
 blake2s-248,,0xb25f
 blake2s-256,,0xb260
-id,                 ,                         0x50
 
 multiaddrs,,
 ip4,                ,                         0x04
