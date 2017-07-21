@@ -157,7 +157,7 @@ sctp,               ,                         0x84
 quic,               ,                         0x51
 udt,                ,                         0x012D
 utp,                ,                         0x012E
-ipfs,               ,                         0x2A
+ipfs,               ,                         0x01A5
 http,               ,                         0x01E0
 https,              ,                         0x01BB
 ws,                 ,                         0x01DD
