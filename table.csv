@@ -162,6 +162,7 @@ http,               ,                         0x01E0
 https,              ,                         0x01BB
 ws,                 ,                         0x01DD
 onion,              ,                         0x01BC
+p2p-circuit,        ,                         0x0122
 
 archiving formats,,
 tar,                ,                         0x
