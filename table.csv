@@ -154,12 +154,12 @@ tcp,                ,                         0x06
 udp,                ,                         0x0111
 dccp,               ,                         0x21
 sctp,               ,                         0x84
-quic,               ,                         0x51
 udt,                ,                         0x012D
 utp,                ,                         0x012E
 ipfs,               ,                         0x01A5
 http,               ,                         0x01E0
 https,              ,                         0x01BB
+quic,               ,                         0x01CC
 ws,                 ,                         0x01DD
 onion,              ,                         0x01BC
 p2p-circuit,        ,                         0x0122
