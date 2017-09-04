@@ -17,15 +17,16 @@ base64,             rfc4648,                  0x
 base64url,          rfc4648,                  0x
 
 serialization formats,,
-cbor,               CBOR,                     0x
+cbor,               CBOR,                     0x51
 bson,               Binary JSON,              0x
 ubjson,             Universal Binary JSON,    0x
-protobuf,           Protocol Buffers,         0x
+protobuf,           Protocol Buffers,         0x50
 capnp,              Cap-n-Proto,              0x
 flatbuf,            FlatBuffers,              0x
 rlp,                recursive length prefix,  0x60
 msgpack,            MessagePack,              0x
 binc,               Binc,                     0x
+bencode,            bencode,                  0x63
 
 multiformats,,
 multicodec,         ,                         0x30
@@ -46,12 +47,11 @@ sha3-384,           ,                         0x15
 sha3-512,           ,                         0x14
 shake-128,          ,                         0x18
 shake-256,          ,                         0x19
-keccak-224,         ,                         0x1A
+keccak-224,keccak has variable output length. The number specifies the core length,0x1A
 keccak-256,         ,                         0x1B
 keccak-384,         ,                         0x1C
 keccak-512,         ,                         0x1D
 murmur3,            ,                         0x22
-,, Note: keccak has variable output length. The number specifies the core length
 blake2b-8,Blake2b consists of 64 output lengths that give different hashes,0xb201
 blake2b-16,,0xb202
 blake2b-24,,0xb203
@@ -158,11 +158,13 @@ dccp,               ,                         0x21
 sctp,               ,                         0x84
 udt,                ,                         0x012D
 utp,                ,                         0x012E
-ipfs,               ,                         0x2A
+ipfs,               ,                         0x01A5
 http,               ,                         0x01E0
 https,              ,                         0x01BB
+quic,               ,                         0x01CC
 ws,                 ,                         0x01DD
 onion,              ,                         0x01BC
+p2p-circuit,        ,                         0x0122
 
 archiving formats,,
 tar,                ,                         0x
@@ -180,6 +182,8 @@ IPLD formats,,
 dag-pb,               MerkleDAG protobuf,                               0x70
 dag-cbor,             MerkleDAG cbor,                                   0x71
 
+git-raw,              Raw Git object,                                   0x78
+
 eth-block,            Ethereum Block (RLP),                             0x90
 eth-block-list,       Ethereum Block List (RLP),                        0x91
 eth-tx-trie,          Ethereum Transaction Trie (Eth-Trie),             0x92
@@ -192,7 +196,13 @@ eth-storage-trie,     Ethereum Contract Storage Trie (Eth-Secure-Trie), 0x98
 
 bitcoin-block,        Bitcoin Block,                                    0xb0
 bitcoin-tx,           Bitcoin Tx,                                       0xb1
+
 zcash-block,          Zcash Block,                                      0xc0
 zcash-tx,             Zcash Tx,                                         0xc1
+
 stellar-block,        Stellar Block,                                    0xd0
 stellar-tx,           Stellar Tx,                                       0xd1
+
+torrent-info,         Torrent file info field (bencoded),               0x7b
+torrent-file,         Torrent file (bencoded),                          0x7c
+ed25519-pub,          Ed25519 public key,                               0xed
