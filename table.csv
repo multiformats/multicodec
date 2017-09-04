@@ -35,8 +35,8 @@ multiaddr,          ,                         0x32
 multibase,          ,                         0x33
 
 multihashes,,
-md4,                ,                         0x04
-md5,                ,                         0x05
+md4,                ,                         0xd3
+md5,                ,                         0xd4
 sha1,               ,                         0x11
 sha2-256,           ,                         0x12
 sha2-512,           ,                         0x13
