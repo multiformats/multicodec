@@ -1,20 +1,25 @@
 codec,              description,              code
 
 miscellaneous,,
-bin,                raw binary,               0x55
+bin,                raw binary,               0x55 # DUPLICATE CONFLICT
 
 bases encodings,,
-base1,              unary,                    0x01
-base2,              binary (0 and 1),         0x
-base8,              octal,                    0x07
-base10,             decimal,                  0x09
-base16,             hexadecimal,              0x
-base32,             rfc4648,                  0x
-base32hex,          rfc4648,                  0x
-base58flickr,       base58 flicker,           0x
-base58btc,          base58 bitcoin,           0x
-base64,             rfc4648,                  0x
-base64url,          rfc4648,                  0x
+identity,           raw binary,               0x00 ("\0") # DUPLICATE
+base1,              unary,                    0x31 ("1") # CONFLICT
+base2,              binary (0 and 1),         0x30 ("0") # CONFLICT
+base8,              octal,                    0x37 ("7")
+base10,             decimal,                  0x39 ("9")
+base16,             hexadecimal,              0x46 or 0x66 ("F" or "f")
+base32,             rfc4648,                  0x42 or 0x62 ("B" or "b")
+base32pad,          rfc4648,                  0x43 or 0x63 ("C" or "c")
+base32hex,          rfc4648,                  0x56 or 0x76 ("V" or "v") # CONFLICT
+base32hexpad,       rfc4648,                  0x57 or 0x77 ("T" or "t")
+base58flickr,       base58 flicker,           0x5a ("Z")
+base58btc,          base58 bitcoin,           0x7a ("z")
+base64,             rfc4648,                  0x6d ("m")
+base64pad,          rfc4648,                  0x4d ("M")
+base64url,          rfc4648,                  0x75 ("u")
+base64urlpad,       rfc4648,                  0x55 ("U") # CONFLICT
 
 serialization formats,,
 cbor,               CBOR,                     0x51
@@ -29,8 +34,8 @@ binc,               Binc,                     0x
 bencode,            bencode,                  0x63
 
 multiformats,,
-multicodec,         ,                         0x30
-multihash,          ,                         0x31
+multicodec,         ,                         0x30 # CONFLICT
+multihash,          ,                         0x31 # CONFLICT
 multiaddr,          ,                         0x32
 multibase,          ,                         0x33
 
@@ -40,7 +45,7 @@ md5,                ,                         0xd5
 sha1,               ,                         0x11
 sha2-256,           ,                         0x12
 sha2-512,           ,                         0x13
-dbl-sha2-256,       ,                         0x56
+dbl-sha2-256,       ,                         0x56 # CONFLICT
 sha3-224,           ,                         0x17
 sha3-256,           ,                         0x16
 sha3-384,           ,                         0x15
