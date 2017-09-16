@@ -69,6 +69,7 @@ This ["first come, first assign"](https://github.com/multiformats/multicodec/pul
 
 - [go](https://github.com/multiformats/go-multicodec/)
 - [JavaScript](https://github.com/multiformats/js-multicodec)
+- [Python](https://github.com/multiformats/py-multicodec)
 - [Add yours today!](https://github.com/multiformats/multicodec/edit/master/table.csv)
 
 ## Multicodec Path, also known as [`multistream`](https://github.com/multiformats/multistream)
