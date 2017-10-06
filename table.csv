@@ -193,6 +193,7 @@ eth-tx-receipt,       Ethereum Transaction Receipt (RLP),               0x95
 eth-state-trie,       Ethereum State Trie (Eth-Secure-Trie),            0x96
 eth-account-snapshot, Ethereum Account Snapshot (RLP),                  0x97
 eth-storage-trie,     Ethereum Contract Storage Trie (Eth-Secure-Trie), 0x98
+eth-evm-code ,        Ethereum EVM Code (Raw binary),                   0x99
 
 bitcoin-block,        Bitcoin Block,                                    0xb0
 bitcoin-tx,           Bitcoin Tx,                                       0xb1
