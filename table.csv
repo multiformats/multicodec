@@ -1,7 +1,7 @@
 codec,              description,              code
 
 miscellaneous,,
-bin,                raw binary,               0x55
+raw,                raw binary,               0x55
 
 bases encodings,,
 base1,              unary,                    0x01
