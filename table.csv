@@ -20,10 +20,12 @@ serialization formats,,
 cbor,               CBOR,                     0x51
 bson,               Binary JSON,              0x
 ubjson,             Universal Binary JSON,    0x
+pb,                 Protocol Buffers,         0x50
 protobuf,           Protocol Buffers,         0x50
 capnp,              Cap-n-Proto,              0x
 flatbuf,            FlatBuffers,              0x
 rlp,                recursive length prefix,  0x60
+msgp,               MessagePack,              0x
 msgpack,            MessagePack,              0x
 binc,               Binc,                     0x
 bencode,            bencode,                  0x63
