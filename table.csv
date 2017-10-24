@@ -5,7 +5,7 @@ raw,                raw binary,               0x55
 
 bases encodings,,
 base1,              unary,                    0x01
-base2,              binary (0 and 1),         0x
+base2,              binary (0 and 1),         0x00
 base8,              octal,                    0x07
 base10,             decimal,                  0x09
 base16,             hexadecimal,              0x
