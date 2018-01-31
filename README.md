@@ -25,12 +25,12 @@
 
 ## Protocol Description - How does the protocol work?
 
-`multicodec` is a _self-describing multiformat_, it wraps other formats with a tiny bit of self-description. A multicodec identifier is both a varint and the code identifying the following data, this means that the most significant bit of every multicodec code is reserved to signal the continuation.
+`multicodec` is a _self-describing multiformat_, it wraps other formats with a tiny bit of self-description. A multicodec identifier may either be a varint (in a byte string) or a symbol (in a text string).
 
-This way, a chunk of data identified by multicodec will look like this:
+A chunk of data identified by multicodec will look like this:
 
 ```sh
-<multicodec-varint><encoded-data>
+<multicodec><encoded-data>
 # To reduce the cognitive load, we sometimes might write the same line as:
 <mcp><data>
 ```
@@ -49,11 +49,12 @@ It is worth noting that multicodec-packed works very well in conjunction with [m
 
 ## MulticodecProtocol Tables
 
-Multicodec uses "protocol tables" to agree upon the mapping from one multicodec code (a single varint). These tables can be application specific, though -- like [with](https://github.com/multiformats/multihash) [other](https://github.com/multiformats/multibase) [multiformats](https://github.com/multiformats/multiaddr) -- we will keep a globally agreed upon table with common protocols and formats.
+Multicodec uses "protocol tables" to agree upon the mapping from one multicodec code. These tables can be application specific, though -- like [with](https://github.com/multiformats/multihash) [other](https://github.com/multiformats/multibase) [multiformats](https://github.com/multiformats/multiaddr) -- we will keep a globally agreed upon table with common protocols and formats.
 
 ## Multicodec table
 
-The full table can be found at [table.csv](/table.csv) inside this repo.
+The full table can be found at [table.csv](/table.csv) inside this repo. Codes
+prefixed with `0x` are varint multicodecs and all others are symbolic.
 
 ### Adding new multicodecs to the table
 
@@ -100,6 +101,12 @@ An Most Significant Bit unsigned varint, as defined by the [multiformats/unsigne
 > **Q. Don't we have to agree on a table of protocols?**
 
 Yes, but we already have to agree on what protocols themselves are, so this is not so hard. The table even leaves some room for custom protocol paths, or you can use your own tables. The standard table is only for common things.
+
+> **Q. Why distinguish between bytes and text?**
+
+For completeness, we consider
+[multibase](https://github.com/multiformats/multibase) prefixes to be
+multicodecs. However multibase prefixes occur in *text*, and are therefore *symbols*. They may (or may not) have some underlying binary representation but that changes based on the text encoding used.
 
 ## Maintainers
 
