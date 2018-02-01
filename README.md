@@ -11,8 +11,7 @@
 
 - [Motivation](#motivation)
 - [How does it work? - Protocol Description](#how-does-it-work---protocol-description)
-- [Multicodec tables](#multicodec-tables)
-  - [Standard multicodec table](#standard-mcp-protocol-table)
+- [Multicodec table](#multicodec-table)
 - [Implementations](#implementations)
 - [FAQ](#faq)
 - [Maintainers](#maintainers)
@@ -32,20 +31,20 @@ A chunk of data identified by multicodec will look like this:
 ```sh
 <multicodec><encoded-data>
 # To reduce the cognitive load, we sometimes might write the same line as:
-<mcp><data>
+<mc><data>
 ```
 
-Another useful scenario is when using the multicodec-packed as part of the keys to access data, example:
+Another useful scenario is when using the multicodec as part of the keys to access data, example:
 
 ```
 # suppose we have a value and a key to retrieve it
 "<key>" -> <value>
 
-# we can use multicodec-packed with the key to know what codec the value is in
-"<mcp><key>" -> <value>
+# we can use multicodec with the key to know what codec the value is in
+"<mc><key>" -> <value>
 ```
 
-It is worth noting that multicodec-packed works very well in conjunction with [multihash](https://github.com/multiformats/multihash) and [multiaddr](https://github.com/multiformats/multiaddr), as you can prefix those values with a multicodec-packed to tell what they are.
+It is worth noting that multicodec works very well in conjunction with [multihash](https://github.com/multiformats/multihash) and [multiaddr](https://github.com/multiformats/multiaddr), as you can prefix those values with a multicodec to tell what they are.
 
 ## MulticodecProtocol Tables
 
@@ -84,7 +83,7 @@ In order to enable self descriptive data formats or streams that can be dynamica
 
 > **Q. I have questions on multicodec, not listed here.**
 
-That's not a question. But, have you checked the proper [multicodec FAQ](./README.md#faq)? Maybe your question is answered there. This FAQ is only specifically for multicodec-packed.
+That's not a question. But, have you checked the proper [multicodec FAQ](./README.md#faq)? Maybe your question is answered there. This FAQ is only specifically for multicodec.
 
 > **Q. Why?**
 
