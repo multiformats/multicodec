@@ -418,6 +418,7 @@ mkv,                ,                         0x
 IPLD formats,,
 dag-pb,               MerkleDAG protobuf,                               0x70
 dag-cbor,             MerkleDAG cbor,                                   0x71
+iprs,                 Latest version of mutable record identified,      0x78
 
 git-raw,              Raw Git object,                                   0x78
 
