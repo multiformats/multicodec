@@ -431,6 +431,9 @@ eth-state-trie,       Ethereum State Trie (Eth-Secure-Trie),            0x96
 eth-account-snapshot, Ethereum Account Snapshot (RLP),                  0x97
 eth-storage-trie,     Ethereum Contract Storage Trie (Eth-Secure-Trie), 0x98
 
+ont-block,            Ontology Block,                                   0xa0
+ont-tx,               Ontology Tx,                                      0xa1
+
 bitcoin-block,        Bitcoin Block,                                    0xb0
 bitcoin-tx,           Bitcoin Tx,                                       0xb1
 
