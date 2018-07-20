@@ -440,6 +440,9 @@ zcash-tx,             Zcash Tx,                                         0xc1
 stellar-block,        Stellar Block,                                    0xd0
 stellar-tx,           Stellar Tx,                                       0xd1
 
+decred-block,         Decred Block,                                     0xe0
+decred-tx,            Decred Tx,                                        0xe1
+
 torrent-info,         Torrent file info field (bencoded),               0x7b
 torrent-file,         Torrent file (bencoded),                          0x7c
 ed25519-pub,          Ed25519 public key,                               0xed
