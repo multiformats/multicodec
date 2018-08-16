@@ -418,7 +418,7 @@ mkv,                ,                         0x
 IPLD formats,,
 dag-pb,               MerkleDAG protobuf,                               0x70
 dag-cbor,             MerkleDAG cbor,                                   0x71
-dag-json,             MerkleDag json,                                   0x129
+dag-json,             MerkleDAG json,                                   0x129
 
 git-raw,              Raw Git object,                                   0x78
 
