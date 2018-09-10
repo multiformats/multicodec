@@ -385,6 +385,94 @@ skein1024-1008,,0xb3de
 skein1024-1016,,0xb3df
 skein1024-1024,,0xb3e0
 
+MIME Types,Each MIME type is a codec which codec name is prefixed with 'mime/',
+mime/application/*,Range 0x1000 - 0x17ff (11 bits) reserved for 'application/*',
+mime/application/x-abiword,,0x1000
+mime/application/octet-stream,,0x1001
+mime/application/vnd.amazon.ebook,,0x1002
+mime/application/x-bzip,,0x1003
+mime/application/x-bzip2,,0x1004
+mime/application/x-csh,,0x1005
+mime/application/msword,,0x1006
+mime/application/vnd.openxmlformats-officedocument.wordprocessingml.document,,0x1007
+mime/application/vnd.ms-fontobject,,0x1008
+mime/application/epub+zip,,0x1009
+mime/application/ecmascript,,0x100a
+mime/application/java-archive,,0x100b
+mime/application/javascript,,0x100c
+mime/application/json,,0x100d
+mime/application/vnd.apple.installer+xml,,0x100e
+mime/application/vnd.oasis.opendocument.presentation,,0x100f
+mime/application/vnd.oasis.opendocument.spreadsheet,,0x1010
+mime/application/vnd.oasis.opendocument.text,,0x1011
+mime/application/ogg,,0x1012
+mime/application/pdf,,0x1013
+mime/application/vnd.ms-powerpoint,,0x1014
+mime/application/vnd.openxmlformats-officedocument.presentationml.presentation,,0x1015
+mime/application/x-rar-compressed,,0x1016
+mime/application/rtf,,0x1017
+mime/application/x-sh,,0x1018
+mime/application/x-shockwave-flash,,0x1019
+mime/application/x-tar,,0x101a
+mime/application/typescript,,0x101b
+mime/application/vnd.visio,,0x101c
+mime/application/xhtml+xml,,0x101d
+mime/application/vnd.ms-excel,,0x101e
+mime/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,,0x101f
+mime/application/xml,,0x1020
+mime/application/vnd.mozilla.xul+xml,,0x1021
+mime/application/zip,,0x1022
+mime/application/x-7z-compressed,,0x1023
+mime/application/ld+json,,0x1024
+mime/application/rdf+xml,,0x1025
+mime/audio/*,Range 0x1800 - 0x18ff (8 bits) reserved for 'audio/*',
+mime/audio/aac,,0x1800
+mime/audio/midi,,0x1801
+mime/audio/x-midi,,0x1802
+mime/audio/ogg,,0x1803
+mime/audio/wav,,0x1804
+mime/audio/webm,,0x1805
+mime/audio/3gpp,,0x1806
+mime/audio/3gpp2,,0x1807
+mime/audio/mp4,,0x1808
+mime/font/*,Range 0x1900 - 0x190f (4 bits) reserved for 'font/*',
+mime/font/otf,,0x1900
+mime/font/ttf,,0x1901
+mime/font/woff,,0x1902
+mime/font/woff2,,0x1903
+
+mime/image/*,Range 0x1910 - 0x197f (7 bits) reserved for 'image/*',
+mime/image/bmp,,0x1910
+mime/image/gif,,0x1911
+mime/image/x-icon,,0x1912
+mime/image/jpeg,,0x1913
+mime/image/png,,0x1914
+mime/image/svg+xml,,0x1915
+mime/image/tiff,,0x1916
+mime/image/webp,,0x1917
+mime/message/*,Range 0x1980 - 0x19cf (5 bits) reserved for 'message/*',
+mime/message/sip,,0x1980
+mime/model/*,Range 0x19d0 - 0x1a3f (6 bits) reserved for 'model/*',
+,,
+mime/multipart/*,Range 0x1a40 - 0x1a8f (5 bits) reserved for 'multipart/*',
+mime/multipart/byteranges,,0x1a40
+mime/text/*,Range 0x1a90 - 0x1aff (7 bits) reserved for 'text/*',
+mime/text/css,,0x1a90
+mime/text/csv,,0x1a91
+mime/text/html,,0x1a92
+mime/text/calendar,,0x1a93
+mime/text/plain,,0x1a94
+mime/text/turtle,,0x1a95
+mime/text/xml,,0x1a96
+mime/video/*,Range 0x1b00 - 0x1b6f (7 bits) reserved for 'video/*',
+mime/video/x-msvideo,,0x1b00
+mime/video/mpeg,,0x1b01
+mime/video/ogg,,0x1b02
+mime/video/webm,,0x1b03
+mime/video/3gpp,,0x1b04
+mime/video/3gpp2,,0x1b05
+mime/video/JPEG,,0x1b06
+mime/video/mp4,,0x1b07
 
 multiaddrs,,
 ip4,                ,                         0x04
