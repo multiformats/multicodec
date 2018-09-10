@@ -389,6 +389,7 @@ skein1024-1024,,0xb3e0
 multiaddrs,,
 ip4,                ,                         0x04
 ip6,                ,                         0x29
+ip6zone,            ,                         0x2A
 tcp,                ,                         0x06
 udp,                ,                         0x0111
 dccp,               ,                         0x21
