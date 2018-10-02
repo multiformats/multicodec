@@ -471,7 +471,7 @@ mime/video/ogg,,0x1b02
 mime/video/webm,,0x1b03
 mime/video/3gpp,,0x1b04
 mime/video/3gpp2,,0x1b05
-mime/video/JPEG,,0x1b06
+mime/video/jpeg,,0x1b06
 mime/video/mp4,,0x1b07
 
 multiaddrs,,
