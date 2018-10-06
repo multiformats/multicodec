@@ -63,6 +63,7 @@ keccak-256,         ,                         0x1B
 keccak-384,         ,                         0x1C
 keccak-512,         ,                         0x1D
 murmur3,            ,                         0x22
+x11,                ,                         0x23
 blake2b-8,Blake2b consists of 64 output lengths that give different hashes,0xb201
 blake2b-16,,0xb202
 blake2b-24,,0xb203
