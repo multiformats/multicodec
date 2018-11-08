@@ -404,6 +404,9 @@ https,              ,                         0x01BB
 quic,               ,                         0x01CC
 ws,                 ,                         0x01DD
 onion,              ,                         0x01BC
+onion3,             ,                         0x01BD
+garlict,            ,                         0x01CA
+garlicu,            ,                         0x01CB
 p2p-circuit,        ,                         0x0122
 
 archiving formats,,
