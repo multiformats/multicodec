@@ -3,29 +3,6 @@ codec,              description,              code
 miscellaneous,,
 raw,                raw binary,               0x55
 
-bases encodings,,
-identity,           raw binary,               NUL
-base1,              unary,                    "1"
-base2,              binary (0 and 1),         "0"
-base8,              octal,                    "7"
-base10,             decimal,                  "9"
-base16,             hexadecimal,              "f"
-base16-upper,       hexadecimal,              "F"
-base32,             rfc4648,                  "b"
-base32-upper,       rfc4648,                  "B"
-base32pad,          rfc4648,                  "c"
-base32pad-upper,    rfc4648,                  "C"
-base32hex,          rfc4648,                  "v"
-base32hex-upper,    rfc4648,                  "V"
-base32hexpad,       rfc4648,                  "t"
-base32hexpad-upper, rfc4648,                  "T"
-base58flickr,       base58 flicker,           "Z"
-base58btc,          base58 bitcoin,           "z"
-base64,             rfc4648,                  "m"
-base64pad,          rfc4648,                  "M"
-base64url,          rfc4648,                  "u"
-base64urlpad,       rfc4648,                  "U"
-
 serialization formats,,
 cbor,               CBOR,                     0x51
 bson,               Binary JSON,              0x
