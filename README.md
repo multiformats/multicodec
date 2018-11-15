@@ -24,7 +24,7 @@
 
 ## Protocol Description - How does the protocol work?
 
-`multicodec` is a _self-describing multiformat_, it wraps other formats with a tiny bit of self-description. A multicodec identifier may either be a varint (in a byte string) or a symbol (in a text string).
+`multicodec` is a _self-describing multiformat_, it wraps other formats with a tiny bit of self-description. A multicodec identifier is a varint.
 
 A chunk of data identified by multicodec will look like this:
 
@@ -48,12 +48,11 @@ It is worth noting that multicodec works very well in conjunction with [multihas
 
 ## MulticodecProtocol Tables
 
-Multicodec uses "protocol tables" to agree upon the mapping from one multicodec code. These tables can be application specific, though -- like [with](https://github.com/multiformats/multihash) [other](https://github.com/multiformats/multibase) [multiformats](https://github.com/multiformats/multiaddr) -- we will keep a globally agreed upon table with common protocols and formats.
+Multicodec uses "protocol tables" to agree upon the mapping from one multicodec code. These tables can be application specific, though -- like [with](https://github.com/multiformats/multihash) other [multiformats](https://github.com/multiformats/multiaddr) -- we will keep a globally agreed upon table with common protocols and formats.
 
 ## Multicodec table
 
-The full table can be found at [table.csv](/table.csv) inside this repo. Codes
-prefixed with `0x` are varint multicodecs and all others are symbolic.
+The full table can be found at [table.csv](/table.csv) inside this repo.
 
 ### Adding new multicodecs to the table
 
@@ -99,11 +98,11 @@ An Most Significant Bit unsigned varint, as defined by the [multiformats/unsigne
 
 Yes, but we already have to agree on what protocols themselves are, so this is not so hard. The table even leaves some room for custom protocol paths, or you can use your own tables. The standard table is only for common things.
 
-> **Q. Why distinguish between bytes and text?**
+> **Q. Where did multibase go?**
 
-For completeness, we consider
-[multibase](https://github.com/multiformats/multibase) prefixes to be
-multicodecs. However multibase prefixes occur in *text*, and are therefore *symbols*. They may (or may not) have some underlying binary representation but that changes based on the text encoding used.
+For a period of time, the multibase prefixes lived in this table. However, multibase prefixes are *symbols* that may map to *multiple* underlying byte representations (that may overlap with byte sequences used for other multicodecs). Including them in a table for binary/byte identifiers lead to more confusion than it solved.
+
+You can still find the table in [multibase.csv](https://github.com/multiformats/multibase/blob/master/multibase.csv).
 
 ## Contribute
 
