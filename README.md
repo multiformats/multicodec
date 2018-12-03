@@ -81,10 +81,6 @@ In order to enable self descriptive data formats or streams that can be dynamica
 
 ## FAQ
 
-> **Q. I have questions on multicodec, not listed here.**
-
-That's not a question. But, have you checked the proper [multicodec FAQ](./README.md#faq)? Maybe your question is answered there. This FAQ is only specifically for multicodec.
-
 > **Q. Why?**
 
 Because [multistream](https://github.com/multiformats/multistream) is too long for identifiers. We needed something shorter.
