@@ -87,7 +87,7 @@ Because [multistream](https://github.com/multiformats/multistream) is too long f
 
 > **Q. Why varints?**
 
-So that we have no limitation on protocols. Implementation note: you do not need to implement varints until the standard multicodec table has more than 127 functions.
+So that we have no limitation on protocols.
 
 > **Q. What kind of varints?**
 
