@@ -398,16 +398,22 @@ dccp,               ,                         0x21
 sctp,               ,                         0x84
 udt,                ,                         0x012D
 utp,                ,                         0x012E
-ipfs,               ,                         0x01A5
+p2p,                ,                         0x01A5
 http,               ,                         0x01E0
 https,              ,                         0x01BB
 quic,               ,                         0x01CC
 ws,                 ,                         0x01DD
+wss,                ,                         0x01DE
 onion,              ,                         0x01BC
 p2p-circuit,        ,                         0x0122
+dns,                ,                         0x35
 dns4,               ,                         0x36
 dns6,               ,                         0x37
 dnsaddr,            ,                         0x38
+p2p-websocket-star, ,                         0x01DF
+p2p-webrtc-star,    ,                         0x0113
+p2p-webrtc-direct,  ,                         0x0114
+unix,               ,                         0x0190
 
 archiving formats,,
 tar,                ,                         0x
