@@ -398,7 +398,8 @@ dccp,               ,                         0x21
 sctp,               ,                         0x84
 udt,                ,                         0x012D
 utp,                ,                         0x012E
-p2p,                ,                         0x01A5
+p2p,                libp2p,                   0x01A5
+ipfs,               libp2p (deprecated),      0x01A5
 http,               ,                         0x01E0
 https,              ,                         0x01BB
 quic,               ,                         0x01CC
