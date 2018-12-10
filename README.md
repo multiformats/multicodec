@@ -103,10 +103,6 @@ For completeness, we consider
 [multibase](https://github.com/multiformats/multibase) prefixes to be
 multicodecs. However multibase prefixes occur in *text*, and are therefore *symbols*. They may (or may not) have some underlying binary representation but that changes based on the text encoding used.
 
-## Maintainers
-
-Captain: [@jbenet](https://github.com/jbenet).
-
 ## Contribute
 
 Contributions welcome. Please check out [the issues](https://github.com/multiformats/multicodec/issues).
