@@ -71,7 +71,9 @@ This ["first come, first assign"](https://github.com/multiformats/multicodec/pul
 - [JavaScript](https://github.com/multiformats/js-multicodec)
 - [Python](https://github.com/multiformats/py-multicodec)
 - [Haskell](https://github.com/multiformats/haskell-multicodec)
+- [Elixir](https://github.com/nocursor/ex-multicodec)
 - [Scala](https://github.com/fluency03/scala-multicodec)
+
 - [Add yours today!](https://github.com/multiformats/multicodec/edit/master/table.csv)
 
 ## Multicodec Path, also known as [`multistream`](https://github.com/multiformats/multistream)
@@ -82,17 +84,13 @@ In order to enable self descriptive data formats or streams that can be dynamica
 
 ## FAQ
 
-> **Q. I have questions on multicodec, not listed here.**
-
-That's not a question. But, have you checked the proper [multicodec FAQ](./README.md#faq)? Maybe your question is answered there. This FAQ is only specifically for multicodec.
-
 > **Q. Why?**
 
 Because [multistream](https://github.com/multiformats/multistream) is too long for identifiers. We needed something shorter.
 
 > **Q. Why varints?**
 
-So that we have no limitation on protocols. Implementation note: you do not need to implement varints until the standard multicodec table has more than 127 functions.
+So that we have no limitation on protocols.
 
 > **Q. What kind of varints?**
 
@@ -107,10 +105,6 @@ Yes, but we already have to agree on what protocols themselves are, so this is n
 For completeness, we consider
 [multibase](https://github.com/multiformats/multibase) prefixes to be
 multicodecs. However multibase prefixes occur in *text*, and are therefore *symbols*. They may (or may not) have some underlying binary representation but that changes based on the text encoding used.
-
-## Maintainers
-
-Captain: [@jbenet](https://github.com/jbenet).
 
 ## Contribute
 
