@@ -24,7 +24,7 @@
 
 ## Protocol Description - How does the protocol work?
 
-`multicodec` is a _self-describing multiformat_, it wraps other formats with a tiny bit of self-description. A multicodec identifier may either be a varint (in a byte string) or a symbol (in a text string).
+`multicodec` is a _self-describing multiformat_, it wraps other formats with a tiny bit of self-description. A multicodec identifier is a varint.
 
 A chunk of data identified by multicodec will look like this:
 
@@ -48,12 +48,11 @@ It is worth noting that multicodec works very well in conjunction with [multihas
 
 ## MulticodecProtocol Tables
 
-Multicodec uses "protocol tables" to agree upon the mapping from one multicodec code. These tables can be application specific, though -- like [with](https://github.com/multiformats/multihash) [other](https://github.com/multiformats/multibase) [multiformats](https://github.com/multiformats/multiaddr) -- we will keep a globally agreed upon table with common protocols and formats.
+Multicodec uses "protocol tables" to agree upon the mapping from one multicodec code. These tables can be application specific, though -- like [with](https://github.com/multiformats/multihash) other [multiformats](https://github.com/multiformats/multiaddr) -- we will keep a globally agreed upon table with common protocols and formats.
 
 ## Multicodec table
 
-The full table can be found at [table.csv](/table.csv) inside this repo. Codes
-prefixed with `0x` are varint multicodecs and all others are symbolic.
+The full table can be found at [table.csv](/table.csv) inside this repo.
 
 ### Adding new multicodecs to the table
 
@@ -71,6 +70,8 @@ This ["first come, first assign"](https://github.com/multiformats/multicodec/pul
 - [JavaScript](https://github.com/multiformats/js-multicodec)
 - [Python](https://github.com/multiformats/py-multicodec)
 - [Haskell](https://github.com/multiformats/haskell-multicodec)
+- [Elixir](https://github.com/nocursor/ex-multicodec)
+- [Scala](https://github.com/fluency03/scala-multicodec)
 - [Add yours today!](https://github.com/multiformats/multicodec/edit/master/table.csv)
 
 ## Multicodec Path, also known as [`multistream`](https://github.com/multiformats/multistream)
@@ -81,17 +82,13 @@ In order to enable self descriptive data formats or streams that can be dynamica
 
 ## FAQ
 
-> **Q. I have questions on multicodec, not listed here.**
-
-That's not a question. But, have you checked the proper [multicodec FAQ](./README.md#faq)? Maybe your question is answered there. This FAQ is only specifically for multicodec.
-
 > **Q. Why?**
 
 Because [multistream](https://github.com/multiformats/multistream) is too long for identifiers. We needed something shorter.
 
 > **Q. Why varints?**
 
-So that we have no limitation on protocols. Implementation note: you do not need to implement varints until the standard multicodec table has more than 127 functions.
+So that we have no limitation on protocols.
 
 > **Q. What kind of varints?**
 
@@ -101,15 +98,11 @@ An Most Significant Bit unsigned varint, as defined by the [multiformats/unsigne
 
 Yes, but we already have to agree on what protocols themselves are, so this is not so hard. The table even leaves some room for custom protocol paths, or you can use your own tables. The standard table is only for common things.
 
-> **Q. Why distinguish between bytes and text?**
+> **Q. Where did multibase go?**
 
-For completeness, we consider
-[multibase](https://github.com/multiformats/multibase) prefixes to be
-multicodecs. However multibase prefixes occur in *text*, and are therefore *symbols*. They may (or may not) have some underlying binary representation but that changes based on the text encoding used.
+For a period of time, the multibase prefixes lived in this table. However, multibase prefixes are *symbols* that may map to *multiple* underlying byte representations (that may overlap with byte sequences used for other multicodecs). Including them in a table for binary/byte identifiers lead to more confusion than it solved.
 
-## Maintainers
-
-Captain: [@jbenet](https://github.com/jbenet).
+You can still find the table in [multibase.csv](https://github.com/multiformats/multibase/blob/master/multibase.csv).
 
 ## Contribute
 
