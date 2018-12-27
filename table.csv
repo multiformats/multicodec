@@ -440,6 +440,10 @@ decred-tx,            Decred Tx,                                        0xe1
 dash-block,           Dash Block,                                       0xf0
 dash-tx,              Dash Tx,                                          0xf1
 
+leofcoin-block,       Leofcoin Block,                                   0x81
+leofcoin-tx,          Leofcoin Transaction,                             0x82
+leofcoin-pr,          Leofcoin Peer Reputation,                         0x83
+
 torrent-info,         Torrent file info field (bencoded),               0x7b
 torrent-file,         Torrent file (bencoded),                          0x7c
 ed25519-pub,          Ed25519 public key,                               0xed
