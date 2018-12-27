@@ -447,3 +447,7 @@ leofcoin-pr,          Leofcoin Peer Reputation,                         0x83
 torrent-info,         Torrent file info field (bencoded),               0x7b
 torrent-file,         Torrent file (bencoded),                          0x7c
 ed25519-pub,          Ed25519 public key,                               0xed
+
+CIDs,,
+ipfs-cid,             IPFS CID,                                         0xee
+swarm-cid,            Swarm CID,                                        0xef
