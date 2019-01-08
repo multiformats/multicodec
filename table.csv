@@ -5,14 +5,8 @@ raw,                raw binary,               0x55
 
 serialization formats,,
 cbor,               CBOR,                     0x51
-bson,               Binary JSON,              0x
-ubjson,             Universal Binary JSON,    0x
 protobuf,           Protocol Buffers,         0x50
-capnp,              Cap-n-Proto,              0x
-flatbuf,            FlatBuffers,              0x
 rlp,                recursive length prefix,  0x60
-msgpack,            MessagePack,              0x
-binc,               Binc,                     0x
 bencode,            bencode,                  0x63
 
 multiformats,,
@@ -395,18 +389,6 @@ p2p-websocket-star, ,                         0x01DF
 p2p-webrtc-star,    ,                         0x0113
 p2p-webrtc-direct,  ,                         0x0114
 unix,               ,                         0x0190
-
-archiving formats,,
-tar,                ,                         0x
-zip,                ,                         0x
-
-image formats,,
-png,                ,                         0x
-jpg,                ,                         0x
-
-video formats,,
-mp4,                ,                         0x
-mkv,                ,                         0x
 
 IPLD formats,,
 dag-pb,               MerkleDAG protobuf,                               0x70
