@@ -386,6 +386,7 @@ dns4,               ,                         0x36
 dns6,               ,                         0x37
 dnsaddr,            ,                         0x38
 p2p-websocket-star, ,                         0x01DF
+p2p-stardust,       ,                         0x0115
 p2p-webrtc-star,    ,                         0x0113
 p2p-webrtc-direct,  ,                         0x0114
 unix,               ,                         0x0190
