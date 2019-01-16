@@ -15,6 +15,12 @@ multihash,          ,                         0x31
 multiaddr,          ,                         0x32
 multibase,          ,                         0x33
 
+text,,
+utf8,               UTF-8 plaintext,          0x40
+utf16,              UTF-16 plaintext,         0x41
+utf32,              UTF-32 plaintext,         0x42
+rtf,                Rich Text Format,         0x43
+
 multihashes,,
 identity,           raw binary,               0x0
 md4,                ,                         0xd4
