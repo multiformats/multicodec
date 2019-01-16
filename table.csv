@@ -427,7 +427,7 @@ leofcoin-block,       Leofcoin Block,                                   0x81
 leofcoin-tx,          Leofcoin Transaction,                             0x82
 leofcoin-pr,          Leofcoin Peer Reputation,                         0x83
 
-holochain-address,    Holochain Address,                                0x1e
+holochain-keys,       Holochain address public keys + parity,           0x1e
 
 torrent-info,         Torrent file info field (bencoded),               0x7b
 torrent-file,         Torrent file (bencoded),                          0x7c
