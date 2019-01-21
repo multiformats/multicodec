@@ -434,6 +434,6 @@ torrent-file,         Torrent file (bencoded),                          0x7c
 ed25519-pub,          Ed25519 public key,                               0xed
 
 Content Namespaces,,
-ipld-ns,              IPLD path,                                        0xee
-ipfs-ns,              IPFS path,                                        0xef
-swarm-ns,             Swarm path,                                       0xf0
+ipld-ns,              IPLD path,                                        0xe2
+ipfs-ns,              IPFS path,                                        0xe3
+swarm-ns,             Swarm path,                                       0xe4
