@@ -398,6 +398,10 @@ dag-json,             MerkleDAG json,                                   0x0129
 
 git-raw,              Raw Git object,                                   0x78
 
+IPFS,,
+ipfs-kad-dht-record,  Key of an IPFS record in the DHT,                 0x0220
+
+Blockchain,,
 eth-block,            Ethereum Block (RLP),                             0x90
 eth-block-list,       Ethereum Block List (RLP),                        0x91
 eth-tx-trie,          Ethereum Transaction Trie (Eth-Trie),             0x92
