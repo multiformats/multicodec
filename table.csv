@@ -398,6 +398,15 @@ dag-json,             MerkleDAG json,                                   0x0129
 
 git-raw,              Raw Git object,                                   0x78
 
+torrent-info,         Torrent file info field (bencoded),               0x7b
+torrent-file,         Torrent file (bencoded),                          0x7c
+
+leofcoin-block,       Leofcoin Block,                                   0x81
+leofcoin-tx,          Leofcoin Transaction,                             0x82
+leofcoin-pr,          Leofcoin Peer Reputation,                         0x83
+
+holochain-keys,       Holochain address public keys + parity (base64),  0x86
+
 eth-block,            Ethereum Block (RLP),                             0x90
 eth-block-list,       Ethereum Block List (RLP),                        0x91
 eth-tx-trie,          Ethereum Transaction Trie (Eth-Trie),             0x92
@@ -420,18 +429,10 @@ stellar-tx,           Stellar Tx,                                       0xd1
 decred-block,         Decred Block,                                     0xe0
 decred-tx,            Decred Tx,                                        0xe1
 
+ed25519-pub,          Ed25519 public key,                               0xed
+
 dash-block,           Dash Block,                                       0xf0
 dash-tx,              Dash Tx,                                          0xf1
-
-leofcoin-block,       Leofcoin Block,                                   0x81
-leofcoin-tx,          Leofcoin Transaction,                             0x82
-leofcoin-pr,          Leofcoin Peer Reputation,                         0x83
-
-holochain-keys,       Holochain address public keys + parity,           0x86
-
-torrent-info,         Torrent file info field (bencoded),               0x7b
-torrent-file,         Torrent file (bencoded),                          0x7c
-ed25519-pub,          Ed25519 public key,                               0xed
 
 Content Namespaces,,
 ipld-ns,              IPLD path,                                        0xe2
