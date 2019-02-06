@@ -431,6 +431,12 @@ torrent-info,         Torrent file info field (bencoded),               0x7b
 torrent-file,         Torrent file (bencoded),                          0x7c
 ed25519-pub,          Ed25519 public key,                               0xed
 
+cluster-shard,        IPFS Cluster shard block,                         0xc100
+cluster-crdt-pb,      IPFS Cluster CRDT block (pbuf),                   0xc101
+cluster-crdt-cbor,    IPFS Cluster CRDT block (cbor),                   0xc102
+cluster-reserved1,    IPFS Cluster reserved,                            0xc103
+cluster-reserved2,    IPFS Cluster reserved,                            0xc104
+
 Content Namespaces,,
 ipld-ns,              IPLD path,                                        0xe2
 ipfs-ns,              IPFS path,                                        0xe3
