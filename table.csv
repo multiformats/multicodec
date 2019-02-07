@@ -427,12 +427,12 @@ leofcoin-block,       Leofcoin Block,                                   0x81
 leofcoin-tx,          Leofcoin Transaction,                             0x82
 leofcoin-pr,          Leofcoin Peer Reputation,                         0x83
 
-holochain-key-v0,     Holochain v0 public key + 8 R-S (63 x Base-32), 0x947124
-holochain-key-v1      Holochain v1 public key + 8 R-S (63 x Base-32), 0x957124
-holochain-adr-v0,     Holochain v0 address    + 8 R-S (63 x Base-32), 0x807124
-holochain-adr-v1,     Holochain v1 address    + 8 R-S (63 x Base-32), 0x817124
-holochain-sig-v0,     Holochain v0 signature  + 8 R-S (63 x Base-32), 0xa27124
-holochain-sig-v1,     Holochain v1 signature  + 8 R-S (63 x Base-32), 0xa37124
+holochain-key-v0,     Holochain v0 public key + 8 R-S (63 x Base-32),   0x947124
+holochain-key-v1      Holochain v1 public key + 8 R-S (63 x Base-32),   0x957124
+holochain-adr-v0,     Holochain v0 address    + 8 R-S (63 x Base-32),   0x807124
+holochain-adr-v1,     Holochain v1 address    + 8 R-S (63 x Base-32),   0x817124
+holochain-sig-v0,     Holochain v0 signature  + 8 R-S (63 x Base-32),   0xa27124
+holochain-sig-v1,     Holochain v1 signature  + 8 R-S (63 x Base-32),   0xa37124
 
 torrent-info,         Torrent file info field (bencoded),               0x7b
 torrent-file,         Torrent file (bencoded),                          0x7c
