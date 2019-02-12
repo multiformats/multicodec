@@ -28,31 +28,25 @@ def check(fname='table.csv'):
                 continue
 
             try:
-                # Skip empty rows
-                if not row:
-                    continue
-
                 # Check for invalid rows
-                if len(row) != 3:
-                    raise CheckError(f"expected 3 items, got {len(row)}")
+                if len(row) != 4:
+                    raise CheckError(f"expected 4 items, got {len(row)}")
 
-                # Skip section headers
-                if not row[1] and not row[2]:
-                    continue
+                [name, _, code, _] = row
+
+                # Check for a name
+                if not name:
+                    raise CheckError(f"empty protocol name for code '{code}'")
 
                 # Check code format
-                if not row[2].startswith("0x"):
-                    raise CheckError(f"code '{row[2]}' doesn't start with 0x")
-
-                name = row[0]
-                if not name:
-                    raise CheckError(f"empty protocol name")
+                if not code.startswith("0x"):
+                    raise CheckError(f"code for '{name}' doesn't start with 0x: '{code}'")
 
                 # Parse the code
                 try:
-                    code = int(row[2], 16)
+                    code = int(code, 16)
                 except Exception as e:
-                    raise CheckError(f"failed to parse number '{row[2]}': {e}")
+                    raise CheckError(f"failed to parse code '{code}' for '{name}': {e}")
 
                 # Finally, check for duplicates
 

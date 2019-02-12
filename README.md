@@ -52,7 +52,7 @@ Multicodec uses "protocol tables" to agree upon the mapping from one multicodec 
 
 ## Multicodec table
 
-The full table can be found at [table.csv](/table.csv) inside this repo.
+The full table can be found at [table.csv](/table.csv) inside this repo. There's also a sortable [viewer](https://ipfs.io/ipfs/QmXec1jjwzxWJoNbxQF5KffL8q6hFXm9QwUGaa3wKGk6dT/#title=Multicodecs&src=https://raw.githubusercontent.com/multiformats/multicodec/master/table.csv).
 
 ### Adding new multicodecs to the table
 
