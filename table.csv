@@ -2,6 +2,7 @@ codec,              description,              code
 
 miscellaneous,,
 raw,                raw binary,               0x55
+cms,                PKCS #7 (RFC 5652),       0x57
 
 serialization formats,,
 cbor,               CBOR,                     0x51
