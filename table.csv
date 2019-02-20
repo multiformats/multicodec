@@ -68,6 +68,8 @@ swarm-ns,                       namespace,      0xe4,           Swarm path
 ed25519-pub,                    key,            0xed,           Ed25519 public key
 dash-block,                     ipld,           0xf0,           Dash Block
 dash-tx,                        ipld,           0xf1,           Dash Tx
+swarm-manifest,                 swarm,          0xfa,           Swarm Manifest
+swarm-feed,                     swarm,          0xfb,           Swarm Feed
 udp,                            multiaddr,      0x0111,
 p2p-webrtc-star,                multiaddr,      0x0113,
 p2p-webrtc-direct,              multiaddr,      0x0114,
