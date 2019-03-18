@@ -21,6 +21,7 @@ murmur3-32,                     multihash,      0x23,
 ip6,                            multiaddr,      0x29,
 ip6zone,                        multiaddr,      0x2A,
 aes-256-cbc,                    multicipher,    0x2E,
+path,                           namespace,      0x2F,           Namespace for string paths. Corresponds to `/` in ASCII.
 multicodec,                     multiformat,    0x30,
 multihash,                      multiformat,    0x31,
 multiaddr,                      multiformat,    0x32,
