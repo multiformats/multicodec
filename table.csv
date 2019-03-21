@@ -15,6 +15,7 @@ keccak-224,                     multihash,      0x1A,           keccak has varia
 keccak-256,                     multihash,      0x1B,
 keccak-384,                     multihash,      0x1C,
 keccak-512,                     multihash,      0x1D,
+filecoin compact serialization, ipld,           0x1F,
 dccp,                           multiaddr,      0x21,
 murmur3-128,                    multihash,      0x22,
 murmur3-32,                     multihash,      0x23,
