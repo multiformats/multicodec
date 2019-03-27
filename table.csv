@@ -60,7 +60,6 @@ stellar-block,                  ipld,           0xd0,           Stellar Block
 stellar-tx,                     ipld,           0xd1,           Stellar Tx
 md4,                            multihash,      0xd4,
 md5,                            multihash,      0xd5,
-bmt,                            multihash,      0xd6,           Binary Merkle Tree Hash
 decred-block,                   ipld,           0xe0,           Decred Block
 decred-tx,                      ipld,           0xe1,           Decred Tx
 ipld-ns,                        namespace,      0xe2,           IPLD path
