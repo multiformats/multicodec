@@ -86,8 +86,8 @@ ipfs,                           multiaddr,      0x01A5,         libp2p (deprecat
 https,                          multiaddr,      0x01BB,
 onion,                          multiaddr,      0x01BC,
 onion3,                         multiaddr,      0x01BD,
-garlic64,                       multiaddr,      0x01BE,         I2P base64
-garlic32,                       multiaddr,      0x01BF,         I2P base32
+garlic64,                       multiaddr,      0x01BE,         I2P base64 (raw public key)
+garlic32,                       multiaddr,      0x01BF,         I2P base32 (hashed public key)
 quic,                           multiaddr,      0x01CC,
 ws,                             multiaddr,      0x01DD,
 wss,                            multiaddr,      0x01DE,
