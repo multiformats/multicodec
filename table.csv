@@ -37,6 +37,7 @@ rlp,                            serialization,  0x60,           recursive length
 bencode,                        serialization,  0x63,           bencode
 dag-pb,                         ipld,           0x70,           MerkleDAG protobuf
 dag-cbor,                       ipld,           0x71,           MerkleDAG cbor
+libp2p-key,                     ipld,           0x72,           Libp2p Public Key
 git-raw,                        ipld,           0x78,           Raw Git object
 torrent-info,                   ipld,           0x7b,           Torrent file info field (bencoded)
 torrent-file,                   ipld,           0x7c,           Torrent file (bencoded)
