@@ -5,54 +5,35 @@
 [![](https://img.shields.io/badge/freenode-%23ipfs-blue.svg?style=flat-square)](https://webchat.freenode.net/?channels=%23ipfs)
 [![](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-> Compact self-describing codecs. Save space by using predefined multicodec tables.
+> Canonical table of of codecs used by various multiformats
 
 ## Table of Contents
 
 - [Motivation](#motivation)
-- [How does it work? - Protocol Description](#how-does-it-work---protocol-description)
+- [Description](#description)
+- [Examples](#examples)
 - [Multicodec table](#multicodec-table)
+  - [Adding new multicodecs to the table](#adding-new-multicodecs-to-the-table)
 - [Implementations](#implementations)
 - [FAQ](#faq)
-- [Maintainers](#maintainers)
 - [Contribute](#contribute)
 - [License](#license)
 
 ## Motivation
 
-[Multistreams](https://github.com/multiformats/multistream) are self-describing protocol/encoding streams. Multicodec uses an agreed-upon "protocol table". It is designed for use in short strings, such as keys or identifiers (i.e [CID](https://github.com/ipld/cid)).
+Multicodec is an agreed-upon codec table. It is designed for use in binary representations, such as keys or identifiers (i.e [CID](https://github.com/ipld/cid)).
 
-## Protocol Description - How does the protocol work?
+## Description
 
-`multicodec` is a _self-describing multiformat_, it wraps other formats with a tiny bit of self-description. A multicodec identifier is a varint.
+The code of a multicodec is usually encoded as unsigned varint as defined by [multiformats/unsigned-varint](https://github.com/multiformats/unsigned-varint). It is then used as a prefix to identify the data that follows.
 
-A chunk of data identified by multicodec will look like this:
+## Examples
 
-```sh
-<multicodec><encoded-data>
-# To reduce the cognitive load, we sometimes might write the same line as:
-<mc><data>
-```
-
-Another useful scenario is when using the multicodec as part of the keys to access data, example:
-
-```
-# suppose we have a value and a key to retrieve it
-"<key>" -> <value>
-
-# we can use multicodec with the key to know what codec the value is in
-"<mc><key>" -> <value>
-```
-
-It is worth noting that multicodec works very well in conjunction with [multihash](https://github.com/multiformats/multihash) and [multiaddr](https://github.com/multiformats/multiaddr), as you can prefix those values with a multicodec to tell what they are.
-
-## MulticodecProtocol Tables
-
-Multicodec uses "protocol tables" to agree upon the mapping from one multicodec code. These tables can be application specific, though -- like [with](https://github.com/multiformats/multihash) other [multiformats](https://github.com/multiformats/multiaddr) -- we will keep a globally agreed upon table with common protocols and formats.
+Multicodec is used in various [Multiformats](https://github.com/multiformats/multiformats). In [Multihash](https://github.com/multiformats/multihash) it is used to identify the hashes, in the machine-readable [Multiaddr](https://github.com/multiformats/multiaddr) to identify components such as IP addresses, domain names, identities, etc.
 
 ## Multicodec table
 
-The full table can be found at [table.csv](/table.csv) inside this repo. There's also a sortable [viewer](https://ipfs.io/ipfs/QmXec1jjwzxWJoNbxQF5KffL8q6hFXm9QwUGaa3wKGk6dT/#title=Multicodecs&src=https://raw.githubusercontent.com/multiformats/multicodec/master/table.csv).
+Find the canonical table of multicodecs at [table.csv](/table.csv). There's also a sortable [viewer](https://ipfs.io/ipfs/QmXec1jjwzxWJoNbxQF5KffL8q6hFXm9QwUGaa3wKGk6dT/#title=Multicodecs&src=https://raw.githubusercontent.com/multiformats/multicodec/master/table.csv).
 
 ### Adding new multicodecs to the table
 
@@ -63,6 +44,8 @@ The process to add a new multicodec to the table is the following:
 - 3. Submit a Pull Request
 
 This ["first come, first assign"](https://github.com/multiformats/multicodec/pull/16#issuecomment-260146609) policy is a way to assign codes as they are most needed, without increasing the size of the table (and therefore the size of the multicodecs) too rapidly.
+
+The first 127 bits are encoded as a single-byte varint, hence they are reserved for the most widely used multicodecs. So if you are adding your own codec to the table, you most likely would want to ask for a codec bigger than `0x80`.
 
 ## Implementations
 
@@ -75,35 +58,29 @@ This ["first come, first assign"](https://github.com/multiformats/multicodec/pul
 - [Ruby](https://github.com/sleeplessbyte/ruby-multicodec)
 - [Add yours today!](https://github.com/multiformats/multicodec/edit/master/table.csv)
 
-## Multicodec Path, also known as [`multistream`](https://github.com/multiformats/multistream)
-
-Multicodec defines a table for the most common data serialization formats that can be expanded overtime or per application bases, however, in order for two programs to talk with each other, they need to know before hand which table or table extension is being used.
-
-In order to enable self descriptive data formats or streams that can be dynamically described, without the formal set of adding a binary packed code to a table, we have [`multistream`](https://github.com/multiformats/multistream), so that applications can adopt multiple data formats for their streams and with that create different protocols.
-
 ## FAQ
 
-> **Q. Why?**
-
-Because [multistream](https://github.com/multiformats/multistream) is too long for identifiers. We needed something shorter.
-
-> **Q. Why varints?**
+> Why varints?
 
 So that we have no limitation on protocols.
 
-> **Q. What kind of varints?**
+> What kind of varints?
 
 An Most Significant Bit unsigned varint, as defined by the [multiformats/unsigned-varint](https://github.com/multiformats/unsigned-varint).
 
-> **Q. Don't we have to agree on a table of protocols?**
+> Don't we have to agree on a table of protocols?
 
 Yes, but we already have to agree on what protocols themselves are, so this is not so hard. The table even leaves some room for custom protocol paths, or you can use your own tables. The standard table is only for common things.
 
-> **Q. Where did multibase go?**
+> Where did multibase go?
 
-For a period of time, the multibase prefixes lived in this table. However, multibase prefixes are *symbols* that may map to *multiple* underlying byte representations (that may overlap with byte sequences used for other multicodecs). Including them in a table for binary/byte identifiers lead to more confusion than it solved.
+For a period of time, the [multibase](https://github.com/multiformats/multibase) prefixes lived in this table. However, multibase prefixes are *symbols* that may map to *multiple* underlying byte representations (that may overlap with byte sequences used for other multicodecs). Including them in a table for binary/byte identifiers lead to more confusion than it solved.
 
 You can still find the table in [multibase.csv](https://github.com/multiformats/multibase/blob/master/multibase.csv).
+
+> Can I use multicodec for my own purpose?
+
+Sure, you can use multicodec whenever you have the need for self-identifiable data. Just prefix your own data with the corresponding varint encodec multicodec.
 
 ## Contribute
 
