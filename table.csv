@@ -1,5 +1,5 @@
 name,                           tag,            code,           description
-identity,                       multihash,      0x0,            raw binary
+identity,                       multihash,      0x00,           raw binary
 ip4,                            multiaddr,      0x04,
 tcp,                            multiaddr,      0x06,
 sha1,                           multihash,      0x11,
@@ -11,16 +11,16 @@ sha3-256,                       multihash,      0x16,
 sha3-224,                       multihash,      0x17,
 shake-128,                      multihash,      0x18,
 shake-256,                      multihash,      0x19,
-keccak-224,                     multihash,      0x1A,           keccak has variable output length. The number specifies the core length
-keccak-256,                     multihash,      0x1B,
-keccak-384,                     multihash,      0x1C,
-keccak-512,                     multihash,      0x1D,
+keccak-224,                     multihash,      0x1a,           keccak has variable output length. The number specifies the core length
+keccak-256,                     multihash,      0x1b,
+keccak-384,                     multihash,      0x1c,
+keccak-512,                     multihash,      0x1d,
 dccp,                           multiaddr,      0x21,
 murmur3-128,                    multihash,      0x22,
 murmur3-32,                     multihash,      0x23,
 ip6,                            multiaddr,      0x29,
-ip6zone,                        multiaddr,      0x2A,
-path,                           namespace,      0x2F,           Namespace for string paths. Corresponds to `/` in ASCII.
+ip6zone,                        multiaddr,      0x2a,
+path,                           namespace,      0x2f,           Namespace for string paths. Corresponds to `/` in ASCII.
 multicodec,                     multiformat,    0x30,
 multihash,                      multiformat,    0x31,
 multiaddr,                      multiformat,    0x32,
@@ -38,6 +38,7 @@ rlp,                            serialization,  0x60,           recursive length
 bencode,                        serialization,  0x63,           bencode
 dag-pb,                         ipld,           0x70,           MerkleDAG protobuf
 dag-cbor,                       ipld,           0x71,           MerkleDAG cbor
+libp2p-key,                     ipld,           0x72,           Libp2p Public Key
 git-raw,                        ipld,           0x78,           Raw Git object
 torrent-info,                   ipld,           0x7b,           Torrent file info field (bencoded)
 torrent-file,                   ipld,           0x7c,           Torrent file (bencoded)
@@ -79,20 +80,21 @@ p2p-webrtc-direct,              multiaddr,      0x0114,
 p2p-stardust,                   multiaddr,      0x0115,
 p2p-circuit,                    multiaddr,      0x0122,
 dag-json,                       ipld,           0x0129,         MerkleDAG json
-udt,                            multiaddr,      0x012D,
-utp,                            multiaddr,      0x012E,
+udt,                            multiaddr,      0x012d,
+utp,                            multiaddr,      0x012e,
 unix,                           multiaddr,      0x0190,
-p2p,                            multiaddr,      0x01A5,         libp2p
-ipfs,                           multiaddr,      0x01A5,         libp2p (deprecated)
-https,                          multiaddr,      0x01BB,
-onion,                          multiaddr,      0x01BC,
-onion3,                         multiaddr,      0x01BD,
-garlic64,                       multiaddr,      0x01BE,
-quic,                           multiaddr,      0x01CC,
-ws,                             multiaddr,      0x01DD,
-wss,                            multiaddr,      0x01DE,
-p2p-websocket-star,             multiaddr,      0x01DF,
-http,                           multiaddr,      0x01E0,
+p2p,                            multiaddr,      0x01a5,         libp2p
+ipfs,                           multiaddr,      0x01a5,         libp2p (deprecated)
+https,                          multiaddr,      0x01bb,
+onion,                          multiaddr,      0x01bc,
+onion3,                         multiaddr,      0x01bd,
+garlic64,                       multiaddr,      0x01be,         I2P base64 (raw public key)
+garlic32,                       multiaddr,      0x01bf,         I2P base32 (hashed public key or encoded public key/checksum+optional secret)
+quic,                           multiaddr,      0x01cc,
+ws,                             multiaddr,      0x01dd,
+wss,                            multiaddr,      0x01de,
+p2p-websocket-star,             multiaddr,      0x01df,
+http,                           multiaddr,      0x01e0,
 x11,                            multihash,      0x1100,
 blake2b-8,                      multihash,      0xb201,         Blake2b consists of 64 output lengths that give different hashes
 blake2b-16,                     multihash,      0xb202,

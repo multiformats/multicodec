@@ -2,6 +2,7 @@
 
 import csv
 import sys
+import re
 
 # We have some duplicates
 ALIAS_TABLE = [
@@ -39,8 +40,8 @@ def check(fname='table.csv'):
                     raise CheckError(f"empty protocol name for code '{code}'")
 
                 # Check code format
-                if not code.startswith("0x"):
-                    raise CheckError(f"code for '{name}' doesn't start with 0x: '{code}'")
+                if not re.match(r"^0x([0-9a-f][0-9a-f])+$", code):
+                    raise CheckError(f"code for '{name}' does not look like a byte sequence: '{code}'")
 
                 # Parse the code
                 try:
