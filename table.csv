@@ -68,6 +68,7 @@ decred-tx,                      ipld,           0xe1,           Decred Tx
 ipld-ns,                        namespace,      0xe2,           IPLD path
 ipfs-ns,                        namespace,      0xe3,           IPFS path
 swarm-ns,                       namespace,      0xe4,           Swarm path
+ECDSA,                          multihash,      0xec,           ECDSA signature
 ed25519-pub,                    key,            0xed,           Ed25519 public key
 dash-block,                     ipld,           0xf0,           Dash Block
 dash-tx,                        ipld,           0xf1,           Dash Tx
