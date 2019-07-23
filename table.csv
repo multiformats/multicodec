@@ -74,6 +74,7 @@ dash-block,                     ipld,           0xf0,           Dash Block
 dash-tx,                        ipld,           0xf1,           Dash Tx
 swarm-manifest,                 ipld,           0xfa,           Swarm Manifest
 swarm-feed,                     ipld,           0xfb,           Swarm Feed
+zeronet,                        multiaddr,      0x1000,         ZeroNet site address (old-style Bitcoin address)
 udp,                            multiaddr,      0x0111,
 p2p-webrtc-star,                multiaddr,      0x0113,
 p2p-webrtc-direct,              multiaddr,      0x0114,
