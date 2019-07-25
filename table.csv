@@ -96,6 +96,7 @@ wss,                            multiaddr,      0x01de,
 p2p-websocket-star,             multiaddr,      0x01df,
 http,                           multiaddr,      0x01e0,
 json,                           serialization,  0x0200,         JSON (UTF-8-encoded)
+messagepack,                    serialization,  0x0201,         MessagePack
 x11,                            multihash,      0x1100,
 blake2b-8,                      multihash,      0xb201,         Blake2b consists of 64 output lengths that give different hashes
 blake2b-16,                     multihash,      0xb202,
