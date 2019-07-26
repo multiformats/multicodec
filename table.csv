@@ -74,7 +74,6 @@ dash-block,                     ipld,           0xf0,           Dash Block
 dash-tx,                        ipld,           0xf1,           Dash Tx
 swarm-manifest,                 ipld,           0xfa,           Swarm Manifest
 swarm-feed,                     ipld,           0xfb,           Swarm Feed
-zeronet,                        multiaddr,      0x1000,         ZeroNet site address (old-style Bitcoin address)
 udp,                            multiaddr,      0x0111,
 p2p-webrtc-star,                multiaddr,      0x0113,
 p2p-webrtc-direct,              multiaddr,      0x0114,
@@ -96,6 +95,7 @@ ws,                             multiaddr,      0x01dd,
 wss,                            multiaddr,      0x01de,
 p2p-websocket-star,             multiaddr,      0x01df,
 http,                           multiaddr,      0x01e0,
+zeronet,                        namespace,      0x1000,         ZeroNet site address
 x11,                            multihash,      0x1100,
 blake2b-8,                      multihash,      0xb201,         Blake2b consists of 64 output lengths that give different hashes
 blake2b-16,                     multihash,      0xb202,
