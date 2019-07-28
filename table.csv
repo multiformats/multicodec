@@ -69,6 +69,7 @@ ipld-ns,                        namespace,      0xe2,           IPLD path
 ipfs-ns,                        namespace,      0xe3,           IPFS path
 swarm-ns,                       namespace,      0xe4,           Swarm path
 ipns-ns,                        namespace,      0xe5,           IPNS path
+zeronet,                        namespace,      0xe6,           ZeroNet site address
 ed25519-pub,                    key,            0xed,           Ed25519 public key
 dash-block,                     ipld,           0xf0,           Dash Block
 dash-tx,                        ipld,           0xf1,           Dash Tx
