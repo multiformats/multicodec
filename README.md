@@ -73,7 +73,8 @@ This ["first come, first assign"](https://github.com/multiformats/multicodec/pul
 - [Elixir](https://github.com/nocursor/ex-multicodec)
 - [Scala](https://github.com/fluency03/scala-multicodec)
 - [Ruby](https://github.com/sleeplessbyte/ruby-multicodec)
-- [Add yours today!](https://github.com/multiformats/multicodec/edit/master/table.csv)
+- [Java](https://github.com/AliabbasMerchant/java-multicodec)
+- [Add yours today!](https://github.com/multiformats/multicodec/edit/master/README.md)
 
 ## Multicodec Path, also known as [`multistream`](https://github.com/multiformats/multistream)
 
