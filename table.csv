@@ -91,6 +91,7 @@ onion,                          multiaddr,      0x01bc,
 onion3,                         multiaddr,      0x01bd,
 garlic64,                       multiaddr,      0x01be,         I2P base64 (raw public key)
 garlic32,                       multiaddr,      0x01bf,         I2P base32 (hashed public key or encoded public key/checksum+optional secret)
+tls,                            multiaddr,      0x01c0,
 quic,                           multiaddr,      0x01cc,
 ws,                             multiaddr,      0x01dd,
 wss,                            multiaddr,      0x01de,
