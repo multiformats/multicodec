@@ -1,5 +1,6 @@
 name,                           tag,            code,           description
 identity,                       multihash,      0x00,           raw binary
+ident20,                        multihash,      0x01,           truncated raw binary (20 bytes)
 ip4,                            multiaddr,      0x04,
 tcp,                            multiaddr,      0x06,
 sha1,                           multihash,      0x11,
@@ -39,6 +40,8 @@ dag-pb,                         ipld,           0x70,           MerkleDAG protob
 dag-cbor,                       ipld,           0x71,           MerkleDAG cbor
 libp2p-key,                     ipld,           0x72,           Libp2p Public Key
 git-raw,                        ipld,           0x78,           Raw Git object
+mut-160,                        multihash,      0x79,           hash for blockring (mutable)
+mut-224,                        multihash,      0x7a,
 torrent-info,                   ipld,           0x7b,           Torrent file info field (bencoded)
 torrent-file,                   ipld,           0x7c,           Torrent file (bencoded)
 leofcoin-block,                 ipld,           0x81,           Leofcoin Block
