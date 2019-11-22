@@ -79,6 +79,7 @@ udp,                            multiaddr,      0x0111,
 p2p-webrtc-star,                multiaddr,      0x0113,
 p2p-webrtc-direct,              multiaddr,      0x0114,
 p2p-stardust,                   multiaddr,      0x0115,
+webrtc-aside,                   multiaddr,      0x0116,
 p2p-circuit,                    multiaddr,      0x0122,
 dag-json,                       ipld,           0x0129,         MerkleDAG json
 udt,                            multiaddr,      0x012d,
