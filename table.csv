@@ -197,6 +197,7 @@ blake2s-232,                    multihash,      0xb25d,
 blake2s-240,                    multihash,      0xb25e,
 blake2s-248,                    multihash,      0xb25f,
 blake2s-256,                    multihash,      0xb260,
+blake3-256,                     multihash,      0xb261,         BLAKE3 has a default 32 byte output length. The maximum length is (2^64)-1 bytes.
 skein256-8,                     multihash,      0xb301,         Skein256 consists of 32 output lengths that give different hashes
 skein256-16,                    multihash,      0xb302,
 skein256-24,                    multihash,      0xb303,
