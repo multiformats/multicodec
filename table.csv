@@ -15,6 +15,7 @@ keccak-224,                     multihash,      0x1a,           keccak has varia
 keccak-256,                     multihash,      0x1b,
 keccak-384,                     multihash,      0x1c,
 keccak-512,                     multihash,      0x1d,
+blake3,                         multihash,      0x1e,           BLAKE3 has a default 32 byte output length. The maximum length is (2^64)-1 bytes.
 dccp,                           multiaddr,      0x21,
 murmur3-128,                    multihash,      0x22,
 murmur3-32,                     multihash,      0x23,
