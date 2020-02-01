@@ -58,6 +58,29 @@ The first 127 bits are encoded as a single-byte varint, hence they are reserved 
 - [Ruby](https://github.com/sleeplessbyte/ruby-multicodec)
 - [Add yours today!](https://github.com/multiformats/multicodec/edit/master/table.csv)
 
+### Code Ranges
+
+There are some reserved code ranges.
+
+#### MIME Types
+
+The range 0x200000 - 0x2fffff is reserved for MIME types. Specifically, we've
+reserved:
+
+```
+Range 0x200000 - 0x20ffff: reserved for 'application/*' (there currently are ~1,300 subtypes)
+Range 0x210000 - 0x21ffff: reserved for 'audio/*' (there currently are ~150 subtypes)
+Range 0x220000 - 0x22ffff: reserved for 'font/*' (there currently are ~8 subtypes)
+Range 0x230000 - 0x23ffff: reserved for 'image/*' (there currently are ~60 subtypes)
+Range 0x240000 - 0x24ffff: reserved for 'message/*' (there currently are ~18 subtypes)
+Range 0x250000 - 0x25ffff: reserved for 'model/*' (there currently are ~24 subtypes)
+Range 0x260000 - 0x26ffff: reserved for 'multipart/*' (there currently are ~13 subtypes)
+Range 0x270000 - 0x27ffff: reserved for 'text/*' (there currently are ~71 subtypes)
+Range 0x280000 - 0x28ffff: reserved for 'video/*' (there currently are ~78 subtypes)
+```
+
+Everything from 0x290000 to 0x2fffff is reserved for future media types.
+
 ## FAQ
 
 > Why varints?
