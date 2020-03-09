@@ -72,8 +72,8 @@ swarm-ns,                       namespace,      0xe4,           Swarm path
 ipns-ns,                        namespace,      0xe5,           IPNS path
 zeronet,                        namespace,      0xe6,           ZeroNet site address
 secp256k1-pub,                  key,            0xe7,           Secp256k1 public key
-ed25519-pub,                    key,            0xed,           Ed25519 public key
 x25519-pub,                     key,            0xec,           Curve25519 public key
+ed25519-pub,                    key,            0xed,           Ed25519 public key
 dash-block,                     ipld,           0xf0,           Dash Block
 dash-tx,                        ipld,           0xf1,           Dash Tx
 swarm-manifest,                 ipld,           0xfa,           Swarm Manifest
