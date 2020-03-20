@@ -39,8 +39,6 @@ bencode,                        serialization,  0x63,           bencode
 dag-pb,                         ipld,           0x70,           MerkleDAG protobuf
 dag-cbor,                       ipld,           0x71,           MerkleDAG cbor
 libp2p-key,                     ipld,           0x72,           Libp2p Public Key
-dag-jose,                       ipld,           0x73,           MerkleDAG JOSE
-dag-cose,                       ipld,           0x74,           MerkleDAG COSE
 git-raw,                        ipld,           0x78,           Raw Git object
 torrent-info,                   ipld,           0x7b,           Torrent file info field (bencoded)
 torrent-file,                   ipld,           0x7c,           Torrent file (bencoded)
@@ -48,6 +46,8 @@ leofcoin-block,                 ipld,           0x81,           Leofcoin Block
 leofcoin-tx,                    ipld,           0x82,           Leofcoin Transaction
 leofcoin-pr,                    ipld,           0x83,           Leofcoin Peer Reputation
 sctp,                           multiaddr,      0x84,
+dag-jose,                       ipld,           0x85,           MerkleDAG JOSE
+dag-cose,                       ipld,           0x86,           MerkleDAG COSE
 eth-block,                      ipld,           0x90,           Ethereum Block (RLP)
 eth-block-list,                 ipld,           0x91,           Ethereum Block List (RLP)
 eth-tx-trie,                    ipld,           0x92,           Ethereum Transaction Trie (Eth-Trie)
