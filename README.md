@@ -40,7 +40,7 @@ Find the canonical table of multicodecs at [table.csv](/table.csv). There's also
 Each multicodec is marked with a status:
 
 * draft - this codec has been reserved but may be reassigned if it doesn't gain wide adoption.
-* standard - this codec has been widely adopted and may not reassigned.
+* permanent - this codec has been widely adopted and may not reassigned.
 
 ### Adding new multicodecs to the table
 
