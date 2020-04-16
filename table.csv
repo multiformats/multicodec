@@ -432,6 +432,8 @@ skein1024-1016,                 multihash,      0xb3df,
 skein1024-1024,                 multihash,      0xb3e0,
 poseidon-bls12_381-a2-fc1,      multihash,      0xb401,         Poseidon using BLS12-381 and arity of 2 with Filecoin parameters
 poseidon-bls12_381-a2-fc1-sc,   multihash,      0xb402,         Poseidon using BLS12-381 and arity of 2 with Filecoin parameters - high-security variant
+fil-commitment-unsealed,        filecoin,       0xf101,         Filecoin piece or sector data commitment merkle node/root (CommP & CommD)
+fil-commitment-sealed,          filecoin,       0xf102,         Filecoin sector data commitment merkle node/root - sealed and replicated (CommR)
 holochain-adr-v0,               holochain,      0x807124,       Holochain v0 address    + 8 R-S (63 x Base-32)
 holochain-adr-v1,               holochain,      0x817124,       Holochain v1 address    + 8 R-S (63 x Base-32)
 holochain-key-v0,               holochain,      0x947124,       Holochain v0 public key + 8 R-S (63 x Base-32)
