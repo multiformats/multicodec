@@ -107,6 +107,7 @@ http,                           multiaddr,      0x01e0,
 json,                           serialization,  0x0200,         JSON (UTF-8-encoded)
 messagepack,                    serialization,  0x0201,         MessagePack
 libp2p-peer-record,             libp2p,         0x0301,         libp2p peer record type
+sha2-256-trunc254-padded,       multihash,      0x1012,         SHA2-256 with the two most significant bits from the last byte zeroed (as via a mask with 0b00111111) - used for proving trees as in Filecoin
 x11,                            multihash,      0x1100,
 sm3-256,                        multihash,      0x534d,
 blake2b-8,                      multihash,      0xb201,         Blake2b consists of 64 output lengths that give different hashes
