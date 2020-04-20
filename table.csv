@@ -76,6 +76,7 @@ zeronet,                        namespace,      0xe6,           ZeroNet site add
 secp256k1-pub,                  key,            0xe7,           Secp256k1 public key
 x25519-pub,                     key,            0xec,           Curve25519 public key
 ed25519-pub,                    key,            0xed,           Ed25519 public key
+ed25519-sig,                    signature,      0xef,           Ed25519 signature
 dash-block,                     ipld,           0xf0,           Dash Block
 dash-tx,                        ipld,           0xf1,           Dash Tx
 swarm-manifest,                 ipld,           0xfa,           Swarm Manifest
@@ -427,6 +428,10 @@ skein1024-1000,                 multihash,      0xb3dd,
 skein1024-1008,                 multihash,      0xb3de,
 skein1024-1016,                 multihash,      0xb3df,
 skein1024-1024,                 multihash,      0xb3e0,
+ed25519-pub-sha2,               key,            0xed13,
+ed25519-pub-sha3,               key,            0xed14,
+ed25519-sig-sha2,               signature,      0xef13,
+ed25519-sig-sha3,               signature,      0xef14,
 holochain-adr-v0,               holochain,      0x807124,       Holochain v0 address    + 8 R-S (63 x Base-32)
 holochain-adr-v1,               holochain,      0x817124,       Holochain v1 address    + 8 R-S (63 x Base-32)
 holochain-key-v0,               holochain,      0x947124,       Holochain v0 public key + 8 R-S (63 x Base-32)
