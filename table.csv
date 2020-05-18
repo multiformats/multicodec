@@ -32,7 +32,6 @@ dns6,                           multiaddr,      0x37,
 dnsaddr,                        multiaddr,      0x38,
 protobuf,                       serialization,  0x50,           Protocol Buffers
 cbor,                           serialization,  0x51,           CBOR
-ripemd-160,                     multihash,      0x52,
 raw,                            ipld,           0x55,           raw binary
 dbl-sha2-256,                   multihash,      0x56,
 rlp,                            serialization,  0x60,           recursive length prefix
@@ -110,8 +109,9 @@ messagepack,                    serialization,  0x0201,         MessagePack
 libp2p-peer-record,             libp2p,         0x0301,         libp2p peer record type
 sha2-256-trunc254-padded,       multihash,      0x1012,         SHA2-256 with the two most significant bits from the last byte zeroed (as via a mask with 0b00111111) - used for proving trees as in Filecoin
 ripemd-128,                     multihash,      0x1052,
-ripemd-256,                     multihash,      0x1053,
-ripemd-320,                     multihash,      0x1054,
+ripemd-160,                     multihash,      0x1053,
+ripemd-256,                     multihash,      0x1054,
+ripemd-320,                     multihash,      0x1055,
 x11,                            multihash,      0x1100,
 sm3-256,                        multihash,      0x534d,
 blake2b-8,                      multihash,      0xb201,         Blake2b consists of 64 output lengths that give different hashes
