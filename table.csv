@@ -59,6 +59,7 @@ eth-account-snapshot,           ipld,           0x97,           Ethereum Account
 eth-storage-trie,               ipld,           0x98,           Ethereum Contract Storage Trie (Eth-Secure-Trie)
 bitcoin-block,                  ipld,           0xb0,           Bitcoin Block
 bitcoin-tx,                     ipld,           0xb1,           Bitcoin Tx
+bitcoin-witness-commitment,     ipld,           0xb2,           Bitcoin Witness Commitment
 zcash-block,                    ipld,           0xc0,           Zcash Block
 zcash-tx,                       ipld,           0xc1,           Zcash Tx
 stellar-block,                  ipld,           0xd0,           Stellar Block
