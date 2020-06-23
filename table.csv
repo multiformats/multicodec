@@ -32,6 +32,7 @@ dns6,                           multiaddr,      0x37,
 dnsaddr,                        multiaddr,      0x38,
 protobuf,                       serialization,  0x50,           Protocol Buffers
 cbor,                           serialization,  0x51,           CBOR
+capnproto,                      serialization,  0x52,           Cap'n Proto (capnproto.org)
 raw,                            ipld,           0x55,           raw binary
 dbl-sha2-256,                   multihash,      0x56,
 rlp,                            serialization,  0x60,           recursive length prefix
