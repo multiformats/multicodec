@@ -43,6 +43,10 @@ def check(fname='table.csv'):
                 if not re.match(r"^0x([0-9a-f][0-9a-f])+$", code):
                     raise CheckError(f"code for '{name}' does not look like a byte sequence: '{code}'")
 
+                # Check name format
+                if not re.match(r"^[a-z][a-z0-9_-]+$", name):
+                    raise CheckError(f"name '{name}' violates naming restrictions")
+
                 # Parse the code
                 try:
                     code = int(code, 16)
