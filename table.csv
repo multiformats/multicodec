@@ -1,5 +1,6 @@
 name,                           tag,            code,           description
 identity,                       multihash,      0x00,           raw binary
+cidv1,                          ipld,           0x01,           CIDv1
 ip4,                            multiaddr,      0x04,
 tcp,                            multiaddr,      0x06,
 sha1,                           multihash,      0x11,
