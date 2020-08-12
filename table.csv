@@ -65,6 +65,7 @@ bitcoin-tx,                     ipld,           0xb1,           Bitcoin Tx
 bitcoin-witness-commitment,     ipld,           0xb2,           Bitcoin Witness Commitment
 zcash-block,                    ipld,           0xc0,           Zcash Block
 zcash-tx,                       ipld,           0xc1,           Zcash Tx
+docid,                          namespace,      0xce,           Ceramic Document Id
 stellar-block,                  ipld,           0xd0,           Stellar Block
 stellar-tx,                     ipld,           0xd1,           Stellar Tx
 md4,                            multihash,      0xd4,
