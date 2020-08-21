@@ -117,6 +117,11 @@ ripemd-160,                     multihash,      0x1053,
 ripemd-256,                     multihash,      0x1054,
 ripemd-320,                     multihash,      0x1055,
 x11,                            multihash,      0x1100,
+p256-pub,                       key,            0x1200,         P-256 public Key
+p384-pub,                       key,            0x1201,         P-384 public Key
+p521-pub,                       key,            0x1202,         P-521 public Key
+ed448-pub,                      key,            0x1203,         Ed448 public Key
+x448-pub,                       key,            0x1204,         X448 public Key
 sm3-256,                        multihash,      0x534d,
 blake2b-8,                      multihash,      0xb201,         Blake2b consists of 64 output lengths that give different hashes
 blake2b-16,                     multihash,      0xb202,
