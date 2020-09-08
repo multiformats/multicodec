@@ -37,6 +37,7 @@ protobuf,                       serialization,  0x50,           Protocol Buffers
 cbor,                           serialization,  0x51,           CBOR
 raw,                            ipld,           0x55,           raw binary
 dbl-sha2-256,                   multihash,      0x56,
+rsa-pub,                        key,            0x5d,           RSA public key (X.509 encoded)
 rlp,                            serialization,  0x60,           recursive length prefix
 bencode,                        serialization,  0x63,           bencode
 dag-pb,                         ipld,           0x70,           MerkleDAG protobuf
