@@ -82,7 +82,6 @@ bls12_381-g1-pub,               key,            0xea,           BLS12-381 public
 bls12_381-g2-pub,               key,            0xeb,           BLS12-381 public key in the G2 field
 x25519-pub,                     key,            0xec,           Curve25519 public key
 ed25519-pub,                    key,            0xed,           Ed25519 public key
-ed25519-priv,                   key,            0xee,           Ed25519 private key
 dash-block,                     ipld,           0xf0,           Dash Block
 dash-tx,                        ipld,           0xf1,           Dash Tx
 swarm-manifest,                 ipld,           0xfa,           Swarm Manifest
@@ -123,6 +122,7 @@ p384-pub,                       key,            0x1201,         P-384 public Key
 p521-pub,                       key,            0x1202,         P-521 public Key
 ed448-pub,                      key,            0x1203,         Ed448 public Key
 x448-pub,                       key,            0x1204,         X448 public Key
+ed25519-priv,                   key,            0x1300,         Ed25519 private key
 kangarootwelve,                 multihash,      0x1d01,         KangarooTwelve is an extendable-output hash function based on Keccak-p
 sm3-256,                        multihash,      0x534d,
 blake2b-8,                      multihash,      0xb201,         Blake2b consists of 64 output lengths that give different hashes
