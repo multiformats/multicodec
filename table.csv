@@ -122,6 +122,7 @@ p384-pub,                       key,            0x1201,         P-384 public Key
 p521-pub,                       key,            0x1202,         P-521 public Key
 ed448-pub,                      key,            0x1203,         Ed448 public Key
 x448-pub,                       key,            0x1204,         X448 public Key
+ed25519-priv,                   key,            0x1300,         Ed25519 private key
 kangarootwelve,                 multihash,      0x1d01,         KangarooTwelve is an extendable-output hash function based on Keccak-p
 sm3-256,                        multihash,      0x534d,
 blake2b-8,                      multihash,      0xb201,         Blake2b consists of 64 output lengths that give different hashes
