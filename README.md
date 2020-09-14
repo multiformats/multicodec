@@ -15,6 +15,7 @@
 - [Multicodec table](#multicodec-table)
   - [Adding new multicodecs to the table](#adding-new-multicodecs-to-the-table)
 - [Implementations](#implementations)
+- [Reserved Code Ranges](#reserved-code-ranges)
 - [FAQ](#faq)
 - [Contribute](#contribute)
 - [License](#license)
@@ -61,6 +62,16 @@ The `validate.py` script can be used to validate the table once it's edited.
 - [Scala](https://github.com/fluency03/scala-multicodec)
 - [Ruby](https://github.com/sleeplessbyte/ruby-multicodec)
 - [Add yours today!](https://github.com/multiformats/multicodec/edit/master/table.csv)
+
+## Reserved Code Ranges
+
+The following code ranges have special meaning and may only have meanings assigned to as specified in their description:
+
+### Private Use Area
+
+*Range*: `0x300000 – 0x3FFFFF`
+
+Codes in this range are reserved for internal use by applications and will never be assigned any meaning as part of the Multicodec specification.
 
 ## FAQ
 
