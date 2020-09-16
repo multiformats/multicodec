@@ -1,5 +1,8 @@
 name,                           tag,            code,           description
 identity,                       multihash,      0x00,           raw binary
+cidv1,                          ipld,           0x01,           CIDv1
+cidv2,                          ipld,           0x02,           CIDv2
+cidv3,                          ipld,           0x03,           CIDv3
 ip4,                            multiaddr,      0x04,
 tcp,                            multiaddr,      0x06,
 sha1,                           multihash,      0x11,
@@ -115,6 +118,13 @@ ripemd-160,                     multihash,      0x1053,
 ripemd-256,                     multihash,      0x1054,
 ripemd-320,                     multihash,      0x1055,
 x11,                            multihash,      0x1100,
+p256-pub,                       key,            0x1200,         P-256 public Key
+p384-pub,                       key,            0x1201,         P-384 public Key
+p521-pub,                       key,            0x1202,         P-521 public Key
+ed448-pub,                      key,            0x1203,         Ed448 public Key
+x448-pub,                       key,            0x1204,         X448 public Key
+ed25519-priv,                   key,            0x1300,         Ed25519 private key
+kangarootwelve,                 multihash,      0x1d01,         KangarooTwelve is an extendable-output hash function based on Keccak-p
 sm3-256,                        multihash,      0x534d,
 blake2b-8,                      multihash,      0xb201,         Blake2b consists of 64 output lengths that give different hashes
 blake2b-16,                     multihash,      0xb202,

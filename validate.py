@@ -72,6 +72,12 @@ def check(fname='table.csv'):
                     )
                 else:
                     codes[code] = name
+
+                # Reserved Code Range: Private Use Area – Do not permit any codes in this range
+                if code in range(0x300000, 0x400000):
+                    raise CheckError(
+                        f"found code in Private Use Area: {hex(code)} with name '{name}'"
+                    )
             except CheckError as e:
                 success = False
                 print(f"row {line}: {e}", file=sys.stderr)
