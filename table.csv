@@ -83,6 +83,7 @@ bls12_381-g1-pub,               key,            0xea,           BLS12-381 public
 bls12_381-g2-pub,               key,            0xeb,           BLS12-381 public key in the G2 field
 x25519-pub,                     key,            0xec,           Curve25519 public key
 ed25519-pub,                    key,            0xed,           Ed25519 public key
+bls12_381-g1g2-pub,             key,            0xee,           BLS12-381 concatenated public keys in both the G1 and G2 fields
 dash-block,                     ipld,           0xf0,           Dash Block
 dash-tx,                        ipld,           0xf1,           Dash Tx
 swarm-manifest,                 ipld,           0xfa,           Swarm Manifest
