@@ -458,3 +458,4 @@ holochain-key-v0,               holochain,      0x947124,       Holochain v0 pub
 holochain-key-v1,               holochain,      0x957124,       Holochain v1 public key + 8 R-S (63 x Base-32)
 holochain-sig-v0,               holochain,      0xa27124,       Holochain v0 signature  + 8 R-S (63 x Base-32)
 holochain-sig-v1,               holochain,      0xa37124,       Holochain v1 signature  + 8 R-S (63 x Base-32)
+skynet-skylink-v1,              skynet,         0xd101,         Skynet v1 skylink (Base64) 
