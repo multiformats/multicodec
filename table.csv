@@ -97,6 +97,7 @@ dag-json,                       ipld,           0x0129,         MerkleDAG json
 udt,                            multiaddr,      0x012d,
 utp,                            multiaddr,      0x012e,
 unix,                           multiaddr,      0x0190,
+thread,                         multiaddr,      0x0196,         Textile Thread
 p2p,                            multiaddr,      0x01a5,         libp2p
 ipfs,                           multiaddr,      0x01a5,         libp2p (deprecated)
 https,                          multiaddr,      0x01bb,
