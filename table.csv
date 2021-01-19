@@ -113,6 +113,14 @@ p2p-websocket-star,             multiaddr,      0x01df,
 http,                           multiaddr,      0x01e0,
 json,                           serialization,  0x0200,         JSON (UTF-8-encoded)
 messagepack,                    serialization,  0x0201,         MessagePack
+likecoin-iscn-kernel,           likecoin-iscn,  0x0264,         LikeCoin-ISCN kernel block
+likecoin-iscn-stakeholders,     likecoin-iscn,  0x0265,         LikeCoin-ISCN stakeholders block
+likecoin-iscn-stakeholder,      likecoin-iscn,  0x0266,         LikeCoin-ISCN stakeholder block
+likecoin-iscn-rights,           likecoin-iscn,  0x0267,         LikeCoin-ISCN rights block
+likecoin-iscn-right,            likecoin-iscn,  0x0268,         LikeCoin-ISCN right block
+likecoin-iscn-entity,           likecoin-iscn,  0x0269,         LikeCoin-ISCN entity block
+likecoin-iscn-time-period,      likecoin-iscn,  0x026a,         LikeCoin-ISCN time period block
+likecoin-iscn-article,          likecoin-iscn,  0x026b,         LikeCoin-ISCN article block
 libp2p-peer-record,             libp2p,         0x0301,         libp2p peer record type
 sha2-256-trunc254-padded,       multihash,      0x1012,         SHA2-256 with the two most significant bits from the last byte zeroed (as via a mask with 0b00111111) - used for proving trees as in Filecoin
 ripemd-128,                     multihash,      0x1052,
