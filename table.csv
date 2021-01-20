@@ -129,7 +129,7 @@ ed25519-priv,                   key,            0x1300,         Ed25519 private 
 encrypted-block,                ipld,           0x1400,         Encrypted Block Format
 aes-gcm,                        cipher,         0x1401,         AES-GCM
 aes-cbc,                        cipher,         0x1402,         AES-CBC
-aes-ctr                         cipher,         0x1403,         AES-CTR
+aes-ctr,                        cipher,         0x1403,         AES-CTR
 kangarootwelve,                 multihash,      0x1d01,         KangarooTwelve is an extendable-output hash function based on Keccak-p
 sm3-256,                        multihash,      0x534d,
 blake2b-8,                      multihash,      0xb201,         Blake2b consists of 64 output lengths that give different hashes
