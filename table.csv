@@ -126,7 +126,7 @@ p521-pub,                       key,            0x1202,         P-521 public Key
 ed448-pub,                      key,            0x1203,         Ed448 public Key
 x448-pub,                       key,            0x1204,         X448 public Key
 ed25519-priv,                   key,            0x1300,         Ed25519 private key
-encrypted-block                 ipld,           0x1400,         Encrypted Block Format
+encrypted-block,                ipld,           0x1400,         Encrypted Block Format
 aes-gcm,                        cipher,         0x1401,         AES-GCM
 aes-cbc,                        cipher,         0x1402,         AES-CBC
 aes-ctr                         cipher,         0x1403,         AES-CTR
