@@ -60,6 +60,13 @@ eth-tx-receipt,                 ipld,           0x95,           Ethereum Transac
 eth-state-trie,                 ipld,           0x96,           Ethereum State Trie (Eth-Secure-Trie)
 eth-account-snapshot,           ipld,           0x97,           Ethereum Account Snapshot (RLP)
 eth-storage-trie,               ipld,           0x98,           Ethereum Contract Storage Trie (Eth-Secure-Trie)
+tau-block                       ipld,           0xa0,           Taucoin Block
+tau-block-list                  ipld,           0xa1,           Taucoin Block List
+tau-tx-transfer                 ipld,           0xa2,           Taucoin Transfer Transaction
+tau-tx-new-name                 ipld,           0xa3,           Taucoin New Name Transaction
+tau-tx-message                  ipld,           0xa4,           Taucoin Message Transaction
+tau-tx-new-chain                ipld,           0xa5,           Taucoin New Chain Transaction
+tau-tx-list                     ipld,           0xa6,           Taucoin Transaction List
 bitcoin-block,                  ipld,           0xb0,           Bitcoin Block
 bitcoin-tx,                     ipld,           0xb1,           Bitcoin Tx
 bitcoin-witness-commitment,     ipld,           0xb2,           Bitcoin Witness Commitment
