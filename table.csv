@@ -111,6 +111,9 @@ ws,                             multiaddr,      0x01dd,
 wss,                            multiaddr,      0x01de,
 p2p-websocket-star,             multiaddr,      0x01df,
 http,                           multiaddr,      0x01e0,
+socks4,                         multiaddr,      0x01e1,         "SOCKS4 proxy, including the SOCKS4a domain name addressing variant (https://www.openssh.com/txt/socks4a.protocol)"
+socks5,                         multiaddr,      0x01e2,         SOCKS5 proxy (RFC1928)
+http-tunnel,                    multiaddr,      0x01e3,         HTTP tunneling proxy (RFC7231#4.3.6)
 json,                           serialization,  0x0200,         JSON (UTF-8-encoded)
 messagepack,                    serialization,  0x0201,         MessagePack
 libp2p-peer-record,             libp2p,         0x0301,         libp2p peer record type
