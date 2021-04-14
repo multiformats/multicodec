@@ -93,13 +93,13 @@ p2p-webrtc-star,                multiaddr,      0x0113,         draft,
 p2p-webrtc-direct,              multiaddr,      0x0114,         draft,
 p2p-stardust,                   multiaddr,      0x0115,         draft,
 p2p-circuit,                    multiaddr,      0x0122,         permanent,
-dag-json,                       ipld,           0x0129,         draft,     MerkleDAG json
+dag-json,                       ipld,           0x0129,         permanent,     MerkleDAG json
 udt,                            multiaddr,      0x012d,         draft,
 utp,                            multiaddr,      0x012e,         draft,
 unix,                           multiaddr,      0x0190,         permanent,
 thread,                         multiaddr,      0x0196,         draft,     Textile Thread
 p2p,                            multiaddr,      0x01a5,         permanent, libp2p
-ipfs,                           multiaddr,      0x01a5,         permanent, libp2p (deprecated)
+ipfs,                           multiaddr,      0x01a5,         draft,     libp2p (deprecated)
 https,                          multiaddr,      0x01bb,         draft,
 onion,                          multiaddr,      0x01bc,         draft,
 onion3,                         multiaddr,      0x01bd,         draft,
@@ -107,7 +107,7 @@ garlic64,                       multiaddr,      0x01be,         draft,     I2P b
 garlic32,                       multiaddr,      0x01bf,         draft,     I2P base32 (hashed public key or encoded public key/checksum+optional secret)
 tls,                            multiaddr,      0x01c0,         draft,
 quic,                           multiaddr,      0x01cc,         permanent,
-ws,                             multiaddr,      0x01dd,         draft,
+ws,                             multiaddr,      0x01dd,         permanent,
 wss,                            multiaddr,      0x01de,         permanent,
 p2p-websocket-star,             multiaddr,      0x01df,         permanent,
 http,                           multiaddr,      0x01e0,         draft,
