@@ -36,13 +36,26 @@ Multicodec is used in various [Multiformats](https://github.com/multiformats/mul
 
 Find the canonical table of multicodecs at [table.csv](/table.csv). There's also a sortable [viewer](https://ipfs.io/ipfs/QmXec1jjwzxWJoNbxQF5KffL8q6hFXm9QwUGaa3wKGk6dT/#title=Multicodecs&src=https://raw.githubusercontent.com/multiformats/multicodec/master/table.csv).
 
+### Status
+
+Each multicodec is marked with a status:
+
+* draft - this codec has been reserved but may be reassigned if it doesn't gain wide adoption.
+* permanent - this codec has been widely adopted and may not reassigned.
+
+NOTE: Just because a codec is marked draft, don't assume that it can be re-assigned. Check to see if it ever gained wide adoption and, if so, mark it as permanent.
+
 ### Adding new multicodecs to the table
 
 The process to add a new multicodec to the table is the following:
 
-- 1. Fork this repo
-- 2. Update the table with the value you want to add
-- 3. Submit a Pull Request
+1. Fork this repo
+2. Add your codecs to the table. Each newly proposed codec must have:
+  1. A unique codec.
+  2. A unique name.
+  3. A category.
+  4. A status of "draft".
+3. Submit a Pull Request
 
 This ["first come, first assign"](https://github.com/multiformats/multicodec/pull/16#issuecomment-260146609) policy is a way to assign codes as they are most needed, without increasing the size of the table (and therefore the size of the multicodecs) too rapidly.
 

@@ -30,10 +30,10 @@ def check(fname='table.csv'):
 
             try:
                 # Check for invalid rows
-                if len(row) != 4:
+                if len(row) != 5:
                     raise CheckError(f"expected 4 items, got {len(row)}")
 
-                [name, _, code, _] = row
+                [name, _, code, _, _] = row
 
                 # Check for a name
                 if not name:
