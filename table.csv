@@ -65,7 +65,7 @@ bitcoin-tx,                     ipld,           0xb1,           permanent, Bitco
 bitcoin-witness-commitment,     ipld,           0xb2,           permanent, Bitcoin Witness Commitment
 zcash-block,                    ipld,           0xc0,           permanent, Zcash Block
 zcash-tx,                       ipld,           0xc1,           permanent, Zcash Tx
-docid,                          namespace,      0xce,           draft,     Ceramic Document Id
+streamid,                       namespace,      0xce,           draft,     Ceramic Stream Id
 stellar-block,                  ipld,           0xd0,           draft,     Stellar Block
 stellar-tx,                     ipld,           0xd1,           draft,     Stellar Tx
 md4,                            multihash,      0xd4,           draft,
