@@ -20,15 +20,31 @@ def check(fname='table.csv'):
 
     success = True
     with open(fname) as table:
-        tablereader = csv.reader(table, skipinitialspace=True)
+        tablereader = csv.reader(table, strict=True, skipinitialspace=False)
         codes = {}
         names = {}
+        headerOffsets = []
         for line, row in enumerate(tablereader):
-            # Skip the header
-            if line == 0:
-                continue
-
             try:
+                # Check the padding of each column
+                offset = 0
+                for col, item in enumerate(row):
+                    le = len(item)
+                    if col == 0:  # first column 0 has no padding
+                        offset = le
+                        continue
+                    offset = offset + le
+                    thisOffset = offset - len(item.lstrip())
+                    if line == 0:  # header line sets the standard
+                        headerOffsets.append(thisOffset)
+                    elif col < len(headerOffsets) or le != 0:
+                        if thisOffset != headerOffsets[col - 1]:
+                            raise CheckError(f"bad spacing at column {col}")
+
+                # Skip the header
+                if line == 0:
+                    continue
+
                 # Check for invalid rows
                 if len(row) != 5:
                     raise CheckError(f"expected 4 items, got {len(row)}")
@@ -40,7 +56,7 @@ def check(fname='table.csv'):
                     raise CheckError(f"empty protocol name for code '{code}'")
 
                 # Check code format
-                if not re.match(r"^0x([0-9a-f][0-9a-f])+$", code):
+                if not re.match(r"^\s*0x([0-9a-f][0-9a-f])+$", code):
                     raise CheckError(f"code for '{name}' does not look like a byte sequence: '{code}'")
 
                 # Check name format
