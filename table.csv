@@ -79,6 +79,7 @@ swarm-ns,                       namespace,      0xe4,           draft,     Swarm
 ipns-ns,                        namespace,      0xe5,           draft,     IPNS path
 zeronet,                        namespace,      0xe6,           draft,     ZeroNet site address
 secp256k1-pub,                  key,            0xe7,           draft,     Secp256k1 public key
+secp256k1-priv,                 key,            0x1301,         draft,     Secp256k1 private key
 bls12_381-g1-pub,               key,            0xea,           draft,     BLS12-381 public key in the G1 field
 bls12_381-g2-pub,               key,            0xeb,           draft,     BLS12-381 public key in the G2 field
 x25519-pub,                     key,            0xec,           draft,     Curve25519 public key
