@@ -79,7 +79,6 @@ swarm-ns,                       namespace,      0xe4,           draft,     Swarm
 ipns-ns,                        namespace,      0xe5,           draft,     IPNS path
 zeronet,                        namespace,      0xe6,           draft,     ZeroNet site address
 secp256k1-pub,                  key,            0xe7,           draft,     Secp256k1 public key
-secp256k1-priv,                 key,            0x1301,         draft,     Secp256k1 private key
 bls12_381-g1-pub,               key,            0xea,           draft,     BLS12-381 public key in the G1 field
 bls12_381-g2-pub,               key,            0xeb,           draft,     BLS12-381 public key in the G2 field
 x25519-pub,                     key,            0xec,           draft,     Curve25519 public key
@@ -127,6 +126,7 @@ p521-pub,                       key,            0x1202,         draft,     P-521
 ed448-pub,                      key,            0x1203,         draft,     Ed448 public Key
 x448-pub,                       key,            0x1204,         draft,     X448 public Key
 ed25519-priv,                   key,            0x1300,         draft,     Ed25519 private key
+secp256k1-priv,                 key,            0x1301,         draft,     Secp256k1 private key
 kangarootwelve,                 multihash,      0x1d01,         draft,     KangarooTwelve is an extendable-output hash function based on Keccak-p
 sm3-256,                        multihash,      0x534d,         draft,
 blake2b-8,                      multihash,      0xb201,         draft,     Blake2b consists of 64 output lengths that give different hashes

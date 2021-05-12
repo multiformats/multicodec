@@ -24,6 +24,7 @@ def check(fname='table.csv'):
         codes = {}
         names = {}
         headerOffsets = []
+        lastCode = -1
         for line, row in enumerate(tablereader):
             try:
                 # Check the padding of each column
@@ -68,6 +69,12 @@ def check(fname='table.csv'):
                     code = int(code, 16)
                 except Exception as e:
                     raise CheckError(f"failed to parse code '{code}' for '{name}': {e}")
+
+                # Check codes are ascending
+                ooo = code < lastCode
+                lastCode = code
+                if ooo:
+                    raise CheckError(f"code {code} is out of order, previous code was {lastCode}")
 
                 # Finally, check for duplicates
 
