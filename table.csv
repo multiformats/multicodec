@@ -114,6 +114,7 @@ http,                           multiaddr,      0x01e0,         draft,
 json,                           serialization,  0x0200,         permanent, JSON (UTF-8-encoded)
 messagepack,                    serialization,  0x0201,         draft,     MessagePack
 libp2p-peer-record,             libp2p,         0x0301,         permanent, libp2p peer record type
+libp2p-relay-rsvp               libp2p,         0x0302,         permanent, libp2p relay reservation voucher
 sha2-256-trunc254-padded,       multihash,      0x1012,         permanent, SHA2-256 with the two most significant bits from the last byte zeroed (as via a mask with 0b00111111) - used for proving trees as in Filecoin
 ripemd-128,                     multihash,      0x1052,         draft,
 ripemd-160,                     multihash,      0x1053,         draft,
