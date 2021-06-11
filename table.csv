@@ -65,6 +65,7 @@ bitcoin-tx,                     ipld,           0xb1,           permanent, Bitco
 bitcoin-witness-commitment,     ipld,           0xb2,           permanent, Bitcoin Witness Commitment
 zcash-block,                    ipld,           0xc0,           permanent, Zcash Block
 zcash-tx,                       ipld,           0xc1,           permanent, Zcash Tx
+caip-50,                        multiformat,    0xca,           draft,     CAIP-50 multi-chain account id
 streamid,                       namespace,      0xce,           draft,     Ceramic Stream Id
 stellar-block,                  ipld,           0xd0,           draft,     Stellar Block
 stellar-tx,                     ipld,           0xd1,           draft,     Stellar Tx
@@ -88,7 +89,6 @@ dash-block,                     ipld,           0xf0,           draft,     Dash 
 dash-tx,                        ipld,           0xf1,           draft,     Dash Tx
 swarm-manifest,                 ipld,           0xfa,           draft,     Swarm Manifest
 swarm-feed,                     ipld,           0xfb,           draft,     Swarm Feed
-caip-50,                        namespace,      0xfc,           draft,     CAIP-50 multi-chain account id
 udp,                            multiaddr,      0x0111,         draft,
 p2p-webrtc-star,                multiaddr,      0x0113,         draft,
 p2p-webrtc-direct,              multiaddr,      0x0114,         draft,
