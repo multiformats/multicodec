@@ -107,6 +107,7 @@ onion3,                         multiaddr,      0x01bd,         draft,
 garlic64,                       multiaddr,      0x01be,         draft,     I2P base64 (raw public key)
 garlic32,                       multiaddr,      0x01bf,         draft,     I2P base32 (hashed public key or encoded public key/checksum+optional secret)
 tls,                            multiaddr,      0x01c0,         draft,
+noise,                          multiaddr,      0x01c6,         draft,
 quic,                           multiaddr,      0x01cc,         permanent,
 ws,                             multiaddr,      0x01dd,         permanent,
 wss,                            multiaddr,      0x01de,         permanent,
