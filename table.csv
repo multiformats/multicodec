@@ -51,15 +51,17 @@ leofcoin-pr,                    ipld,           0x83,           draft,     Leofc
 sctp,                           multiaddr,      0x84,           draft,
 dag-jose,                       ipld,           0x85,           draft,     MerkleDAG JOSE
 dag-cose,                       ipld,           0x86,           draft,     MerkleDAG COSE
-eth-block,                      ipld,           0x90,           permanent, Ethereum Block (RLP)
-eth-block-list,                 ipld,           0x91,           permanent, Ethereum Block List (RLP)
+eth-block,                      ipld,           0x90,           permanent, Ethereum Header (RLP)
+eth-block-list,                 ipld,           0x91,           permanent, Ethereum Header List (RLP)
 eth-tx-trie,                    ipld,           0x92,           permanent, Ethereum Transaction Trie (Eth-Trie)
-eth-tx,                         ipld,           0x93,           permanent, Ethereum Transaction (RLP)
+eth-tx,                         ipld,           0x93,           permanent, Ethereum Transaction (MarshalBinary)
 eth-tx-receipt-trie,            ipld,           0x94,           permanent, Ethereum Transaction Receipt Trie (Eth-Trie)
-eth-tx-receipt,                 ipld,           0x95,           permanent, Ethereum Transaction Receipt (RLP)
+eth-tx-receipt,                 ipld,           0x95,           permanent, Ethereum Transaction Receipt (MarshalBinary)
 eth-state-trie,                 ipld,           0x96,           permanent, Ethereum State Trie (Eth-Secure-Trie)
 eth-account-snapshot,           ipld,           0x97,           permanent, Ethereum Account Snapshot (RLP)
 eth-storage-trie,               ipld,           0x98,           permanent, Ethereum Contract Storage Trie (Eth-Secure-Trie)
+eth-receipt-log-trie,           ipld,           0x99,           draft,     Ethereum Transaction Receipt Log Trie (Eth-Trie)
+eth-reciept-log,                ipld,           0x9a,           draft,     Ethereum Transaction Receipt Log (RLP)
 bitcoin-block,                  ipld,           0xb0,           permanent, Bitcoin Block
 bitcoin-tx,                     ipld,           0xb1,           permanent, Bitcoin Tx
 bitcoin-witness-commitment,     ipld,           0xb2,           permanent, Bitcoin Witness Commitment
