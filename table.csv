@@ -62,6 +62,11 @@ eth-account-snapshot,           ipld,           0x97,           permanent, Ether
 eth-storage-trie,               ipld,           0x98,           permanent, Ethereum Contract Storage Trie (Eth-Secure-Trie)
 eth-receipt-log-trie,           ipld,           0x99,           draft,     Ethereum Transaction Receipt Log Trie (Eth-Trie)
 eth-reciept-log,                ipld,           0x9a,           draft,     Ethereum Transaction Receipt Log (RLP)
+aes-128,                        key,            0xa0,           draft,     128-bit AES symmetric key
+aes-192,                        key,            0xa1,           draft,     192-bit AES symmetric key
+aes-256,                        key,            0xa2,           draft,     256-bit AES symmetric key
+chacha-128,                     key,            0xa3,           draft,     128-bit ChaCha symmetric key
+chacha-256,                     key,            0xa4,           draft,     256-bit ChaCha symmetric key
 bitcoin-block,                  ipld,           0xb0,           permanent, Bitcoin Block
 bitcoin-tx,                     ipld,           0xb1,           permanent, Bitcoin Tx
 bitcoin-witness-commitment,     ipld,           0xb2,           permanent, Bitcoin Witness Commitment
