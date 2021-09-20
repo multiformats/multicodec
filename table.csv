@@ -469,6 +469,7 @@ poseidon-bls12_381-a2-fc1-sc,   multihash,      0xb402,         draft,     Posei
 zeroxcert-imprint-256,          zeroxcert,      0xce11,         draft,     0xcert Asset Imprint (root hash)
 fil-commitment-unsealed,        filecoin,       0xf101,         permanent, Filecoin piece or sector data commitment merkle node/root (CommP & CommD)
 fil-commitment-sealed,          filecoin,       0xf102,         permanent, Filecoin sector data commitment merkle node/root - sealed and replicated (CommR)
+plaintextv2,                    multiaddr,      0x706c61,       draft,
 holochain-adr-v0,               holochain,      0x807124,       draft,     Holochain v0 address    + 8 R-S (63 x Base-32)
 holochain-adr-v1,               holochain,      0x817124,       draft,     Holochain v1 address    + 8 R-S (63 x Base-32)
 holochain-key-v0,               holochain,      0x947124,       draft,     Holochain v0 public key + 8 R-S (63 x Base-32)
