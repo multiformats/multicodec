@@ -138,7 +138,7 @@ p384-pub,                       key,            0x1201,         draft,     P-384
 p521-pub,                       key,            0x1202,         draft,     P-521 public Key (compressed)
 ed448-pub,                      key,            0x1203,         draft,     Ed448 public Key
 x448-pub,                       key,            0x1204,         draft,     X448 public Key
-rsa-x509-pub,                   key,            0x1205,         draft,     RSA public key (X.509 encoded)
+rsa-x509-pub,                   key,            0x1205,         draft,     RSA public key in x509 PKIX ASN.1 DER form. See IETF RFC 5280 Section 4.1 SubjectPublicKeyInfo
 ed25519-priv,                   key,            0x1300,         draft,     Ed25519 private key
 secp256k1-priv,                 key,            0x1301,         draft,     Secp256k1 private key
 x25519-priv,                    key,            0x1302,         draft,     Curve25519 private key
