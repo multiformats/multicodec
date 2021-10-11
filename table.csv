@@ -19,6 +19,7 @@ keccak-256,                     multihash,      0x1b,           draft,
 keccak-384,                     multihash,      0x1c,           draft,
 keccak-512,                     multihash,      0x1d,           draft,
 blake3,                         multihash,      0x1e,           draft,     BLAKE3 has a default 32 byte output length. The maximum length is (2^64)-1 bytes.
+sha2-384,                       multihash,      0x20,           permanent, aka SHA-384; as specified by FIPS 180-4.
 dccp,                           multiaddr,      0x21,           draft,
 murmur3-128,                    multihash,      0x22,           draft,
 murmur3-32,                     multihash,      0x23,           draft,
@@ -51,15 +52,22 @@ leofcoin-pr,                    ipld,           0x83,           draft,     Leofc
 sctp,                           multiaddr,      0x84,           draft,
 dag-jose,                       ipld,           0x85,           draft,     MerkleDAG JOSE
 dag-cose,                       ipld,           0x86,           draft,     MerkleDAG COSE
-eth-block,                      ipld,           0x90,           permanent, Ethereum Block (RLP)
-eth-block-list,                 ipld,           0x91,           permanent, Ethereum Block List (RLP)
+eth-block,                      ipld,           0x90,           permanent, Ethereum Header (RLP)
+eth-block-list,                 ipld,           0x91,           permanent, Ethereum Header List (RLP)
 eth-tx-trie,                    ipld,           0x92,           permanent, Ethereum Transaction Trie (Eth-Trie)
-eth-tx,                         ipld,           0x93,           permanent, Ethereum Transaction (RLP)
+eth-tx,                         ipld,           0x93,           permanent, Ethereum Transaction (MarshalBinary)
 eth-tx-receipt-trie,            ipld,           0x94,           permanent, Ethereum Transaction Receipt Trie (Eth-Trie)
-eth-tx-receipt,                 ipld,           0x95,           permanent, Ethereum Transaction Receipt (RLP)
+eth-tx-receipt,                 ipld,           0x95,           permanent, Ethereum Transaction Receipt (MarshalBinary)
 eth-state-trie,                 ipld,           0x96,           permanent, Ethereum State Trie (Eth-Secure-Trie)
 eth-account-snapshot,           ipld,           0x97,           permanent, Ethereum Account Snapshot (RLP)
 eth-storage-trie,               ipld,           0x98,           permanent, Ethereum Contract Storage Trie (Eth-Secure-Trie)
+eth-receipt-log-trie,           ipld,           0x99,           draft,     Ethereum Transaction Receipt Log Trie (Eth-Trie)
+eth-reciept-log,                ipld,           0x9a,           draft,     Ethereum Transaction Receipt Log (RLP)
+aes-128,                        key,            0xa0,           draft,     128-bit AES symmetric key
+aes-192,                        key,            0xa1,           draft,     192-bit AES symmetric key
+aes-256,                        key,            0xa2,           draft,     256-bit AES symmetric key
+chacha-128,                     key,            0xa3,           draft,     128-bit ChaCha symmetric key
+chacha-256,                     key,            0xa4,           draft,     256-bit ChaCha symmetric key
 bitcoin-block,                  ipld,           0xb0,           permanent, Bitcoin Block
 bitcoin-tx,                     ipld,           0xb1,           permanent, Bitcoin Tx
 bitcoin-witness-commitment,     ipld,           0xb2,           permanent, Bitcoin Witness Commitment
@@ -113,12 +121,17 @@ ws,                             multiaddr,      0x01dd,         permanent,
 wss,                            multiaddr,      0x01de,         permanent,
 p2p-websocket-star,             multiaddr,      0x01df,         permanent,
 http,                           multiaddr,      0x01e0,         draft,
+swhid-1-snp,                    ipld,           0x01f0,         draft,     SoftWare Heritage persistent IDentifier version 1 snapshot
 json,                           serialization,  0x0200,         permanent, JSON (UTF-8-encoded)
 messagepack,                    serialization,  0x0201,         draft,     MessagePack
 libp2p-peer-record,             libp2p,         0x0301,         permanent, libp2p peer record type
 libp2p-relay-rsvp,              libp2p,         0x0302,         permanent, libp2p relay reservation voucher
 car-index-sorted,               serialization,  0x0400,         draft,     CARv2 IndexSorted index format
+car-multihash-index-sorted,     serialization,  0x0401,         draft,     CARv2 MultihashIndexSorted index format
 sha2-256-trunc254-padded,       multihash,      0x1012,         permanent, SHA2-256 with the two most significant bits from the last byte zeroed (as via a mask with 0b00111111) - used for proving trees as in Filecoin
+sha2-224,                       multihash,      0x1013,         permanent, aka SHA-224; as specified by FIPS 180-4.
+sha2-512-224,                   multihash,      0x1014,         permanent, aka SHA-512/224; as specified by FIPS 180-4.
+sha2-512-256,                   multihash,      0x1015,         permanent, aka SHA-512/256; as specified by FIPS 180-4.
 ripemd-128,                     multihash,      0x1052,         draft,
 ripemd-160,                     multihash,      0x1053,         draft,
 ripemd-256,                     multihash,      0x1054,         draft,
@@ -129,6 +142,7 @@ p384-pub,                       key,            0x1201,         draft,     P-384
 p521-pub,                       key,            0x1202,         draft,     P-521 public Key (compressed)
 ed448-pub,                      key,            0x1203,         draft,     Ed448 public Key
 x448-pub,                       key,            0x1204,         draft,     X448 public Key
+rsa-pub,                        key,            0x1205,         draft,     RSA public key. DER-encoded ASN.1 type RSAPublicKey according to IETF RFC 8017 (PKCS #1)
 ed25519-priv,                   key,            0x1300,         draft,     Ed25519 private key
 secp256k1-priv,                 key,            0x1301,         draft,     Secp256k1 private key
 x25519-priv,                    key,            0x1302,         draft,     Curve25519 private key
@@ -459,6 +473,7 @@ poseidon-bls12_381-a2-fc1-sc,   multihash,      0xb402,         draft,     Posei
 zeroxcert-imprint-256,          zeroxcert,      0xce11,         draft,     0xcert Asset Imprint (root hash)
 fil-commitment-unsealed,        filecoin,       0xf101,         permanent, Filecoin piece or sector data commitment merkle node/root (CommP & CommD)
 fil-commitment-sealed,          filecoin,       0xf102,         permanent, Filecoin sector data commitment merkle node/root - sealed and replicated (CommR)
+plaintextv2,                    multiaddr,      0x706c61,       draft,
 holochain-adr-v0,               holochain,      0x807124,       draft,     Holochain v0 address    + 8 R-S (63 x Base-32)
 holochain-adr-v1,               holochain,      0x817124,       draft,     Holochain v1 address    + 8 R-S (63 x Base-32)
 holochain-key-v0,               holochain,      0x947124,       draft,     Holochain v0 public key + 8 R-S (63 x Base-32)
@@ -466,3 +481,4 @@ holochain-key-v1,               holochain,      0x957124,       draft,     Holoc
 holochain-sig-v0,               holochain,      0xa27124,       draft,     Holochain v0 signature  + 8 R-S (63 x Base-32)
 holochain-sig-v1,               holochain,      0xa37124,       draft,     Holochain v1 signature  + 8 R-S (63 x Base-32)
 skynet-ns,                      namespace,      0xb19910,       draft,     Skynet Namespace
+arweave-ns,                     namespace,      0xb29910,       draft,     Arweave Namespace
