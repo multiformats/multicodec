@@ -483,3 +483,5 @@ holochain-sig-v0,               holochain,      0xa27124,       draft,     Holoc
 holochain-sig-v1,               holochain,      0xa37124,       draft,     Holochain v1 signature  + 8 R-S (63 x Base-32)
 skynet-ns,                      namespace,      0xb19910,       draft,     Skynet Namespace
 arweave-ns,                     namespace,      0xb29910,       draft,     Arweave Namespace
+adl-hamtv3,                     ipld-adl,       0xabc00001,     draft,     Signal IPLD a node should be interpreted as a HAMTv3
+adl-unixfs,                     ipld-adl,       0xabc00002,     draft,     Signal IPLD a node should be interpreted as UnixfS
