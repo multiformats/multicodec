@@ -35,7 +35,7 @@ dns4,                           multiaddr,      0x36,           permanent,
 dns6,                           multiaddr,      0x37,           permanent,
 dnsaddr,                        multiaddr,      0x38,           permanent,
 protobuf,                       serialization,  0x50,           draft,     Protocol Buffers
-cbor,                           serialization,  0x51,           permanent, CBOR
+cbor,                           ipld,           0x51,           permanent, CBOR
 raw,                            ipld,           0x55,           permanent, raw binary
 dbl-sha2-256,                   multihash,      0x56,           draft,
 rlp,                            serialization,  0x60,           draft,     recursive length prefix
@@ -122,7 +122,7 @@ wss,                            multiaddr,      0x01de,         permanent,
 p2p-websocket-star,             multiaddr,      0x01df,         permanent,
 http,                           multiaddr,      0x01e0,         draft,
 swhid-1-snp,                    ipld,           0x01f0,         draft,     SoftWare Heritage persistent IDentifier version 1 snapshot
-json,                           serialization,  0x0200,         permanent, JSON (UTF-8-encoded)
+json,                           ipld,           0x0200,         permanent, JSON (UTF-8-encoded)
 messagepack,                    serialization,  0x0201,         draft,     MessagePack
 libp2p-peer-record,             libp2p,         0x0301,         permanent, libp2p peer record type
 libp2p-relay-rsvp,              libp2p,         0x0302,         permanent, libp2p relay reservation voucher
