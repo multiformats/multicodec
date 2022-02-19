@@ -124,6 +124,7 @@ http,                           multiaddr,      0x01e0,         draft,
 swhid-1-snp,                    ipld,           0x01f0,         draft,     SoftWare Heritage persistent IDentifier version 1 snapshot
 json,                           ipld,           0x0200,         permanent, JSON (UTF-8-encoded)
 messagepack,                    serialization,  0x0201,         draft,     MessagePack
+car,                            serialization,  0x0202,         draft,     Content Addressable aRchive (CAR)
 libp2p-peer-record,             libp2p,         0x0301,         permanent, libp2p peer record type
 libp2p-relay-rsvp,              libp2p,         0x0302,         permanent, libp2p relay reservation voucher
 car-index-sorted,               serialization,  0x0400,         draft,     CARv2 IndexSorted index format
