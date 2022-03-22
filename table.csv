@@ -117,6 +117,7 @@ garlic32,                       multiaddr,      0x01bf,         draft,     I2P b
 tls,                            multiaddr,      0x01c0,         draft,
 noise,                          multiaddr,      0x01c6,         draft,
 quic,                           multiaddr,      0x01cc,         permanent,
+webtransport,                   multiaddr,      0x01d1,         draft,
 ws,                             multiaddr,      0x01dd,         permanent,
 wss,                            multiaddr,      0x01de,         permanent,
 p2p-websocket-star,             multiaddr,      0x01df,         permanent,
