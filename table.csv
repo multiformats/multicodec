@@ -488,3 +488,4 @@ holochain-sig-v1,               holochain,      0xa37124,       draft,     Holoc
 skynet-ns,                      namespace,      0xb19910,       draft,     Skynet Namespace
 arweave-ns,                     namespace,      0xb29910,       draft,     Arweave Namespace
 subspace-ns,                    namespace,      0xb39910,       draft,     Subspace Network Namespace
+kumandra-ns,                    namespace,      0xb49910,       draft,     Kumandra Network Namespace
