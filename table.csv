@@ -34,6 +34,7 @@ dns,                            multiaddr,      0x35,           permanent,
 dns4,                           multiaddr,      0x36,           permanent,
 dns6,                           multiaddr,      0x37,           permanent,
 dnsaddr,                        multiaddr,      0x38,           permanent,
+dnslink,                        namespace,      0x39,           permanent,
 protobuf,                       serialization,  0x50,           draft,     Protocol Buffers
 cbor,                           ipld,           0x51,           permanent, CBOR
 raw,                            ipld,           0x55,           permanent, raw binary
