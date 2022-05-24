@@ -34,7 +34,6 @@ dns,                            multiaddr,      0x35,           permanent,
 dns4,                           multiaddr,      0x36,           permanent,
 dns6,                           multiaddr,      0x37,           permanent,
 dnsaddr,                        multiaddr,      0x38,           permanent,
-dnslink,                        namespace,      0x39,           permanent,
 protobuf,                       serialization,  0x50,           draft,     Protocol Buffers
 cbor,                           ipld,           0x51,           permanent, CBOR
 raw,                            ipld,           0x55,           permanent, raw binary
@@ -88,6 +87,7 @@ swarm-ns,                       namespace,      0xe4,           draft,     Swarm
 ipns-ns,                        namespace,      0xe5,           draft,     IPNS path
 zeronet,                        namespace,      0xe6,           draft,     ZeroNet site address
 secp256k1-pub,                  key,            0xe7,           draft,     Secp256k1 public key (compressed)
+dnslink,                        namespace,      0xe8,           permanent, DNSLink path
 bls12_381-g1-pub,               key,            0xea,           draft,     BLS12-381 public key in the G1 field
 bls12_381-g2-pub,               key,            0xeb,           draft,     BLS12-381 public key in the G2 field
 x25519-pub,                     key,            0xec,           draft,     Curve25519 public key
