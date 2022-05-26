@@ -79,7 +79,6 @@ stellar-block,                  ipld,           0xd0,           draft,     Stell
 stellar-tx,                     ipld,           0xd1,           draft,     Stellar Tx
 md4,                            multihash,      0xd4,           draft,
 md5,                            multihash,      0xd5,           draft,
-bmt,                            multihash,      0xd6,           draft,     Binary Merkle Tree Hash
 decred-block,                   ipld,           0xe0,           draft,     Decred Block
 decred-tx,                      ipld,           0xe1,           draft,     Decred Tx
 ipld-ns,                        namespace,      0xe2,           draft,     IPLD path
