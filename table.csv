@@ -21,7 +21,7 @@ keccak-512,                     multihash,      0x1d,           draft,
 blake3,                         multihash,      0x1e,           draft,     BLAKE3 has a default 32 byte output length. The maximum length is (2^64)-1 bytes.
 sha2-384,                       multihash,      0x20,           permanent, aka SHA-384; as specified by FIPS 180-4.
 dccp,                           multiaddr,      0x21,           draft,
-murmur3-x64-64,                 multihash,      0x22,           permanent, The first 64-bits of a murmur3-x64-128 - used for UnixFS directory sharding.
+murmur3-x64-64,                 multihash,      0x22,           permanent, The first 64-bits of a murmur3-x64-128 - used for UnixFS directory sharding. Or JSON interoperability ( " )
 murmur3-32,                     multihash,      0x23,           draft,
 ip6,                            multiaddr,      0x29,           permanent,
 ip6zone,                        multiaddr,      0x2a,           draft,
@@ -38,13 +38,14 @@ protobuf,                       serialization,  0x50,           draft,     Proto
 cbor,                           ipld,           0x51,           permanent, CBOR
 raw,                            ipld,           0x55,           permanent, raw binary
 dbl-sha2-256,                   multihash,      0x56,           draft,
+json-compat,                    serialization,  0x5b,           draft,     JSON interoperability ( [ )
 rlp,                            serialization,  0x60,           draft,     recursive length prefix
 bencode,                        serialization,  0x63,           draft,     bencode
 dag-pb,                         ipld,           0x70,           permanent, MerkleDAG protobuf
 dag-cbor,                       ipld,           0x71,           permanent, MerkleDAG cbor
 libp2p-key,                     ipld,           0x72,           permanent, Libp2p Public Key
 git-raw,                        ipld,           0x78,           permanent, Raw Git object
-torrent-info,                   ipld,           0x7b,           draft,     Torrent file info field (bencoded)
+torrent-info,                   ipld,           0x7b,           draft,     Torrent file info field (bencoded). Or JSON interoperability ( { )
 torrent-file,                   ipld,           0x7c,           draft,     Torrent file (bencoded)
 leofcoin-block,                 ipld,           0x81,           draft,     Leofcoin Block
 leofcoin-tx,                    ipld,           0x82,           draft,     Leofcoin Transaction
