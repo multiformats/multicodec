@@ -122,6 +122,7 @@ ws,                             multiaddr,      0x01dd,         permanent,
 wss,                            multiaddr,      0x01de,         permanent,
 p2p-websocket-star,             multiaddr,      0x01df,         permanent,
 http,                           multiaddr,      0x01e0,         draft,
+certhash,                       multiaddr,      0x01e2,         draft,     TLS certificate's fingerprint as a multihash
 swhid-1-snp,                    ipld,           0x01f0,         draft,     SoftWare Heritage persistent IDentifier version 1 snapshot
 json,                           ipld,           0x0200,         permanent, JSON (UTF-8-encoded)
 messagepack,                    serialization,  0x0201,         draft,     MessagePack
