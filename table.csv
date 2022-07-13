@@ -101,6 +101,7 @@ udp,                            multiaddr,      0x0111,         draft,
 p2p-webrtc-star,                multiaddr,      0x0113,         draft,
 p2p-webrtc-direct,              multiaddr,      0x0114,         draft,
 p2p-stardust,                   multiaddr,      0x0115,         draft,
+webrtc,                         multiaddr,      0x0118,         draft,     WebRTC
 p2p-circuit,                    multiaddr,      0x0122,         permanent,
 dag-json,                       ipld,           0x0129,         permanent, MerkleDAG json
 udt,                            multiaddr,      0x012d,         draft,
@@ -122,7 +123,6 @@ ws,                             multiaddr,      0x01dd,         permanent,
 wss,                            multiaddr,      0x01de,         permanent,
 p2p-websocket-star,             multiaddr,      0x01df,         permanent,
 http,                           multiaddr,      0x01e0,         draft,
-webrtc,                         multiaddr,      0x01e1,         draft,     WebRTC
 swhid-1-snp,                    ipld,           0x01f0,         draft,     SoftWare Heritage persistent IDentifier version 1 snapshot
 json,                           ipld,           0x0200,         permanent, JSON (UTF-8-encoded)
 messagepack,                    serialization,  0x0201,         draft,     MessagePack
