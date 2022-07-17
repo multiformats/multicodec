@@ -119,6 +119,7 @@ tls,                            multiaddr,      0x01c0,         draft,
 noise,                          multiaddr,      0x01c6,         draft,
 quic,                           multiaddr,      0x01cc,         permanent,
 webtransport,                   multiaddr,      0x01d1,         draft,
+certhash,                       multiaddr,      0x01d2,         draft,     TLS certificate's fingerprint as a multihash
 ws,                             multiaddr,      0x01dd,         permanent,
 wss,                            multiaddr,      0x01de,         permanent,
 p2p-websocket-star,             multiaddr,      0x01df,         permanent,
