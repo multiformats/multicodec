@@ -5,7 +5,7 @@ cidv2,                          cid,            0x02,           draft,     CIDv2
 cidv3,                          cid,            0x03,           draft,     CIDv3
 ip4,                            multiaddr,      0x04,           permanent,
 tcp,                            multiaddr,      0x06,           permanent,
-ipfs,                           multiaddr,      0x08,           draft,     IPFS (previously code 0x01a5 to descibe peers, but name replaced by 'p2p')
+ipfs,                           multiaddr,      0x08,           draft,     IPFS (previously code 0x01a5 to descibe peers but name replaced by 'p2p')
 ipns,                           multiaddr,      0x09,           draft,     IPNS
 sha1,                           multihash,      0x11,           permanent,
 sha2-256,                       multihash,      0x12,           permanent,
