@@ -5,6 +5,8 @@ cidv2,                          cid,            0x02,           draft,     CIDv2
 cidv3,                          cid,            0x03,           draft,     CIDv3
 ip4,                            multiaddr,      0x04,           permanent,
 tcp,                            multiaddr,      0x06,           permanent,
+ipfs                            multiaddr,      0x08,           draft,     IPFS (previously code 0x01a5 to descibe peers, but name replaced by 'p2p')
+ipns                            multiaddr,      0x09,           draft,     IPNS
 sha1,                           multihash,      0x11,           permanent,
 sha2-256,                       multihash,      0x12,           permanent,
 sha2-512,                       multihash,      0x13,           permanent,
@@ -109,7 +111,6 @@ utp,                            multiaddr,      0x012e,         draft,
 unix,                           multiaddr,      0x0190,         permanent,
 thread,                         multiaddr,      0x0196,         draft,     Textile Thread
 p2p,                            multiaddr,      0x01a5,         permanent, libp2p
-ipfs,                           multiaddr,      0x01a5,         draft,     libp2p (deprecated)
 https,                          multiaddr,      0x01bb,         draft,
 onion,                          multiaddr,      0x01bc,         draft,
 onion3,                         multiaddr,      0x01bd,         draft,
