@@ -81,10 +81,10 @@ md4,                            multihash,      0xd4,           draft,
 md5,                            multihash,      0xd5,           draft,
 decred-block,                   ipld,           0xe0,           draft,     Decred Block
 decred-tx,                      ipld,           0xe1,           draft,     Decred Tx
-ipld-ns,                        namespace,      0xe2,           draft,     IPLD path
-ipfs-ns,                        namespace,      0xe3,           draft,     IPFS path
-swarm-ns,                       namespace,      0xe4,           draft,     Swarm path
-ipns-ns,                        namespace,      0xe5,           draft,     IPNS path
+ipld,                           namespace,      0xe2,           draft,     IPLD path
+ipfs,                           namespace,      0xe3,           draft,     IPFS path
+swarm,                          namespace,      0xe4,           draft,     Swarm path
+ipns,                           namespace,      0xe5,           draft,     IPNS path
 zeronet,                        namespace,      0xe6,           draft,     ZeroNet site address
 secp256k1-pub,                  key,            0xe7,           draft,     Secp256k1 public key (compressed)
 dnslink,                        namespace,      0xe8,           permanent, DNSLink path
@@ -109,7 +109,6 @@ utp,                            multiaddr,      0x012e,         draft,
 unix,                           multiaddr,      0x0190,         permanent,
 thread,                         multiaddr,      0x0196,         draft,     Textile Thread
 p2p,                            multiaddr,      0x01a5,         permanent, libp2p
-ipfs,                           multiaddr,      0x01a5,         draft,     libp2p (deprecated)
 https,                          multiaddr,      0x01bb,         draft,
 onion,                          multiaddr,      0x01bc,         draft,
 onion3,                         multiaddr,      0x01bd,         draft,

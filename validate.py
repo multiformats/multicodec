@@ -4,19 +4,9 @@ import csv
 import sys
 import re
 
-# We have some duplicates
-ALIAS_TABLE = [
-    {"ipfs", "p2p"},
-]
-
 def check(fname='table.csv'):
     class CheckError(Exception):
         pass
-
-    aliases = {}
-    for nameset in ALIAS_TABLE:
-        for name in nameset:
-            aliases[name] = nameset
 
     success = True
     with open(fname) as table:
@@ -84,11 +74,6 @@ def check(fname='table.csv'):
                     names[name] = code
 
                 if code in codes:
-                    dup = codes[code]
-                    if name in aliases:
-                        if dup in aliases[name]:
-                            # Skip aliased names
-                            continue
                     raise CheckError(
                         f"found duplicate for code {hex(code)} "
                         f"for '{codes[code]}' and '{name}'"
