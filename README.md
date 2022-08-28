@@ -74,6 +74,7 @@ The `validate.py` script can be used to validate the table once it's edited.
 - [Elixir](https://github.com/nocursor/ex-multicodec)
 - [Scala](https://github.com/fluency03/scala-multicodec)
 - [Ruby](https://github.com/sleeplessbyte/ruby-multicodec)
+- [Java](https://github.com/richardbergquist/java-multicodec)
 - [Add yours today!](https://github.com/multiformats/multicodec/edit/master/table.csv)
 
 ## Reserved Code Ranges
