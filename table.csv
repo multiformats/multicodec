@@ -96,7 +96,7 @@ bls12_381-g1g2-pub,             key,            0xee,           draft,     BLS12
 dash-block,                     ipld,           0xf0,           draft,     Dash Block
 dash-tx,                        ipld,           0xf1,           draft,     Dash Tx
 swarm-manifest,                 ipld,           0xfa,           draft,     Swarm Manifest
-swarm-feed,                     ipld,           0xfb,           draft,     Swarm 
+swarm-feed,                     ipld,           0xfb,           draft,     Swarm Feed
 beeson,                         ipld,           0xfc,           draft,     Swarm BeeSon
 udp,                            multiaddr,      0x0111,         draft,
 p2p-webrtc-star,                multiaddr,      0x0113,         draft,
