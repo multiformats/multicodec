@@ -115,7 +115,7 @@ onion,                          multiaddr,      0x01bc,         draft,
 onion3,                         multiaddr,      0x01bd,         draft,
 garlic64,                       multiaddr,      0x01be,         draft,     I2P base64 (raw public key)
 garlic32,                       multiaddr,      0x01bf,         draft,     I2P base32 (hashed public key or encoded public key/checksum+optional secret)
-tls,                            multiaddr,      0x01c0,         draft,
+tls,                            multiaddr,      0x01c0,         permanent, Transport Layer Security
 noise,                          multiaddr,      0x01c6,         draft,
 quic,                           multiaddr,      0x01cc,         permanent,
 webtransport,                   multiaddr,      0x01d1,         draft,
