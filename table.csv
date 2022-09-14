@@ -486,9 +486,9 @@ zeroxcert-imprint-256,          zeroxcert,      0xce11,         draft,     0xcer
 fil-commitment-unsealed,        filecoin,       0xf101,         permanent, Filecoin piece or sector data commitment merkle node/root (CommP & CommD)
 fil-commitment-sealed,          filecoin,       0xf102,         permanent, Filecoin sector data commitment merkle node/root - sealed and replicated (CommR)
 varsig,                         varsig,         0xd000,         draft,     Namespace for all not yet standard signature algorithms
-EdDSA,                          varsig,         0xd001,         draft,     Edwards-Curve Digital Signature Algorithm
-RS256,                          varsig,         0xd002,         draft,     RS256 Signature Algorithm
-ES256,                          varsig,         0xd003,         draft,     ES256 Signature Algorithm
+eddsa,                          varsig,         0xd001,         draft,     Edwards-Curve Digital Signature Algorithm
+rs256,                          varsig,         0xd002,         draft,     RS256 Signature Algorithm
+es256,                          varsig,         0xd003,         draft,     ES256 Signature Algorithm
 plaintextv2,                    multiaddr,      0x706c61,       draft,
 holochain-adr-v0,               holochain,      0x807124,       draft,     Holochain v0 address    + 8 R-S (63 x Base-32)
 holochain-adr-v1,               holochain,      0x817124,       draft,     Holochain v1 address    + 8 R-S (63 x Base-32)
