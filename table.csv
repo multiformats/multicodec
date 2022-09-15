@@ -488,10 +488,6 @@ es256k,                         varsig,         0xd0e7,         draft,     ES256
 bls-12381-g1-sig,               varsig,         0xd0ea,         draft,     G1 signature for BLS-12381-G2
 bls-12381-g2-sig,               varsig,         0xd0eb,         draft,     G2 signature for BLS-12381-G1
 eddsa,                          varsig,         0xd0ed,         draft,     Edwards-Curve Digital Signature Algorithm
-es256,                          varsig,         0xd01200,       draft,     ES256 Signature Algorithm
-es284,                          varsig,         0xd01201,       draft,     ES384 Signature Algorithm
-es512,                          varsig,         0xd01202,       draft,     ES512 Signature Algorithm
-rs256,                          varsig,         0xd01205,       draft,     RS256 Signature Algorithm
 eip-191,                        varsig,         0xd191,         draft,     EIP-191 Ethereum Signed Data Standard
 fil-commitment-unsealed,        filecoin,       0xf101,         permanent, Filecoin piece or sector data commitment merkle node/root (CommP & CommD)
 fil-commitment-sealed,          filecoin,       0xf102,         permanent, Filecoin sector data commitment merkle node/root - sealed and replicated (CommR)
@@ -506,3 +502,7 @@ skynet-ns,                      namespace,      0xb19910,       draft,     Skyne
 arweave-ns,                     namespace,      0xb29910,       draft,     Arweave Namespace
 subspace-ns,                    namespace,      0xb39910,       draft,     Subspace Network Namespace
 kumandra-ns,                    namespace,      0xb49910,       draft,     Kumandra Network Namespace
+es256,                          varsig,         0xd01200,       draft,     ES256 Signature Algorithm
+es284,                          varsig,         0xd01201,       draft,     ES384 Signature Algorithm
+es512,                          varsig,         0xd01202,       draft,     ES512 Signature Algorithm
+rs256,                          varsig,         0xd01205,       draft,     RS256 Signature Algorithm
