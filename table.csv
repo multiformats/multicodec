@@ -154,6 +154,7 @@ sm2-pub,                        key,            0x1206,         draft,     SM2 p
 ed25519-priv,                   key,            0x1300,         draft,     Ed25519 private key
 secp256k1-priv,                 key,            0x1301,         draft,     Secp256k1 private key
 x25519-priv,                    key,            0x1302,         draft,     Curve25519 private key
+rsa-priv,                       key,            0x1305,         draft,     RSA private key
 kangarootwelve,                 multihash,      0x1d01,         draft,     KangarooTwelve is an extendable-output hash function based on Keccak-p
 silverpine,                     multiaddr,      0x3f42,         draft,     Experimental QUIC over yggdrasil and ironwood routing protocol
 sm3-256,                        multihash,      0x534d,         draft,
