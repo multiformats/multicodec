@@ -132,7 +132,7 @@ messagepack,                    serialization,  0x0201,         draft,     Messa
 car,                            serialization,  0x0202,         draft,     Content Addressable aRchive (CAR)
 libp2p-peer-record,             libp2p,         0x0301,         permanent, libp2p peer record type
 libp2p-relay-rsvp,              libp2p,         0x0302,         permanent, libp2p relay reservation voucher
-memorytransport,                libp2p,         0x0309,         permanent, in memory transport for self-dialing and testing; arbitrar
+memorytransport,                libp2p,         0x0309,         permanent, in memory transport for self-dialing and testing; arbitrary
 car-index-sorted,               serialization,  0x0400,         draft,     CARv2 IndexSorted index format
 car-multihash-index-sorted,     serialization,  0x0401,         draft,     CARv2 MultihashIndexSorted index format
 transport-bitswap,              transport,      0x0900,         draft,     Bitswap datatransfer
