@@ -25,6 +25,7 @@ murmur3-x64-64,                 multihash,      0x22,           permanent, The f
 murmur3-32,                     multihash,      0x23,           draft,
 ip6,                            multiaddr,      0x29,           permanent,
 ip6zone,                        multiaddr,      0x2a,           draft,
+ipcidr,                         multiaddr,      0x2b,           draft,     CIDR mask for IP addresses
 path,                           namespace,      0x2f,           permanent, Namespace for string paths. Corresponds to `/` in ASCII.
 multicodec,                     multiformat,    0x30,           draft,
 multihash,                      multiformat,    0x31,           draft,
@@ -116,6 +117,7 @@ onion3,                         multiaddr,      0x01bd,         draft,
 garlic64,                       multiaddr,      0x01be,         draft,     I2P base64 (raw public key)
 garlic32,                       multiaddr,      0x01bf,         draft,     I2P base32 (hashed public key or encoded public key/checksum+optional secret)
 tls,                            multiaddr,      0x01c0,         draft,
+sni,                            multiaddr,      0x01c1,         draft,     Server Name Indication RFC 6066 § 3
 noise,                          multiaddr,      0x01c6,         draft,
 quic,                           multiaddr,      0x01cc,         permanent,
 webtransport,                   multiaddr,      0x01d1,         draft,
@@ -130,6 +132,7 @@ messagepack,                    serialization,  0x0201,         draft,     Messa
 car,                            serialization,  0x0202,         draft,     Content Addressable aRchive (CAR)
 libp2p-peer-record,             libp2p,         0x0301,         permanent, libp2p peer record type
 libp2p-relay-rsvp,              libp2p,         0x0302,         permanent, libp2p relay reservation voucher
+memorytransport,                libp2p,         0x0309,         permanent, in memory transport for self-dialing and testing; arbitrar
 car-index-sorted,               serialization,  0x0400,         draft,     CARv2 IndexSorted index format
 car-multihash-index-sorted,     serialization,  0x0401,         draft,     CARv2 MultihashIndexSorted index format
 transport-bitswap,              transport,      0x0900,         draft,     Bitswap datatransfer
