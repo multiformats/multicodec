@@ -487,6 +487,12 @@ ssz,                            serialization,  0xb501,         draft,     Simpl
 ssz-sha2-256-bmt,               multihash,      0xb502,         draft,     SSZ Merkle tree root using SHA2-256 as the hashing function and SSZ serialization for the block binary
 iscc,                           softhash,       0xcc01,         draft,     ISCC (International Standard Content Code) - similarity preserving hash
 zeroxcert-imprint-256,          zeroxcert,      0xce11,         draft,     0xcert Asset Imprint (root hash)
+varsig,                         varsig,         0xd000,         draft,     Namespace for all not yet standard signature algorithms
+es256k,                         varsig,         0xd0e7,         draft,     ES256K Siganture Algorithm (secp256k1)
+bls-12381-g1-sig,               varsig,         0xd0ea,         draft,     G1 signature for BLS-12381-G2
+bls-12381-g2-sig,               varsig,         0xd0eb,         draft,     G2 signature for BLS-12381-G1
+eddsa,                          varsig,         0xd0ed,         draft,     Edwards-Curve Digital Signature Algorithm
+eip-191,                        varsig,         0xd191,         draft,     EIP-191 Ethereum Signed Data Standard
 fil-commitment-unsealed,        filecoin,       0xf101,         permanent, Filecoin piece or sector data commitment merkle node/root (CommP & CommD)
 fil-commitment-sealed,          filecoin,       0xf102,         permanent, Filecoin sector data commitment merkle node/root - sealed and replicated (CommR)
 plaintextv2,                    multiaddr,      0x706c61,       draft,
@@ -500,3 +506,7 @@ skynet-ns,                      namespace,      0xb19910,       draft,     Skyne
 arweave-ns,                     namespace,      0xb29910,       draft,     Arweave Namespace
 subspace-ns,                    namespace,      0xb39910,       draft,     Subspace Network Namespace
 kumandra-ns,                    namespace,      0xb49910,       draft,     Kumandra Network Namespace
+es256,                          varsig,         0xd01200,       draft,     ES256 Signature Algorithm
+es284,                          varsig,         0xd01201,       draft,     ES384 Signature Algorithm
+es512,                          varsig,         0xd01202,       draft,     ES512 Signature Algorithm
+rs256,                          varsig,         0xd01205,       draft,     RS256 Signature Algorithm
