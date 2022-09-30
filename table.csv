@@ -98,7 +98,7 @@ dash-tx,                        ipld,           0xf1,           draft,     Dash 
 swarm-manifest,                 ipld,           0xfa,           draft,     Swarm Manifest
 swarm-feed,                     ipld,           0xfb,           draft,     Swarm Feed
 beeson,                         ipld,           0xfc,           draft,     Swarm BeeSon
-srv,                            multiaddr,      0xade,          draft,     DNS SRV Record (See RFC 2782, format: /srv/<servicename>/<tcp/udp/protocol>/<domain>, example: /srv/coolservice/tcp/domain.example.com)
+srv,                            multiaddr,      0xade,          draft,     "DNS SRV Record (See RFC 2782, format: /srv/<servicename>/<tcp/udp/protocol>/<domain>, example: /srv/coolservice/tcp/domain.example.com)"
 udp,                            multiaddr,      0x0111,         draft,
 p2p-webrtc-star,                multiaddr,      0x0113,         draft,
 p2p-webrtc-direct,              multiaddr,      0x0114,         draft,
