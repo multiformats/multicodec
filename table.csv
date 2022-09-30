@@ -483,9 +483,10 @@ skein1024-1016,                 multihash,      0xb3df,         draft,
 skein1024-1024,                 multihash,      0xb3e0,         draft,
 poseidon-bls12_381-a2-fc1,      multihash,      0xb401,         permanent, Poseidon using BLS12-381 and arity of 2 with Filecoin parameters
 poseidon-bls12_381-a2-fc1-sc,   multihash,      0xb402,         draft,     Poseidon using BLS12-381 and arity of 2 with Filecoin parameters - high-security variant
-urdca-2015-hash,                canonhash,      0xb403,         draft,     The result of canonicalizing an input according to URDCA-2015 and then expressing its hash value as a multihash value.
+urdca-2015-canon,               ipld,           0xb403,         draft,     The result of canonicalizing an input according to URDCA-2015 and then expressing its hash value as a multihash value.
 ssz,                            serialization,  0xb501,         draft,     SimpleSerialize (SSZ) serialization
 ssz-sha2-256-bmt,               multihash,      0xb502,         draft,     SSZ Merkle tree root using SHA2-256 as the hashing function and SSZ serialization for the block binary
+json-jcs,                       ipld,           0xb601,         draft,     The result of canonicalizing an input according to JCS - JSON Canonicalisation Scheme (RFC 8785)
 iscc,                           softhash,       0xcc01,         draft,     ISCC (International Standard Content Code) - similarity preserving hash
 zeroxcert-imprint-256,          zeroxcert,      0xce11,         draft,     0xcert Asset Imprint (root hash)
 varsig,                         varsig,         0xd000,         draft,     Namespace for all not yet standard signature algorithms
