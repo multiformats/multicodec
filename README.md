@@ -69,12 +69,13 @@ The `validate.py` script can be used to validate the table once it's edited.
 
 - [go](https://github.com/multiformats/go-multicodec/)
 - [JavaScript](https://github.com/multiformats/js-multicodec)
-- [Python](https://github.com/multiformats/py-multicodec)
+- Python
+  - [py-multicodec](https://github.com/multiformats/py-multicodec)
+  - `multicodec` sub-module of Python module [multiformats](https://github.com/hashberg-io/multiformats)
 - [Haskell](https://github.com/multiformats/haskell-multicodec)
 - [Elixir](https://github.com/nocursor/ex-multicodec)
 - [Scala](https://github.com/fluency03/scala-multicodec)
 - [Ruby](https://github.com/sleeplessbyte/ruby-multicodec)
-- `multicodec` sub-module of Python module [multiformats](//github.com/hashberg-io/multiformats)
 - [Add yours today!](https://github.com/multiformats/multicodec/edit/master/table.csv)
 
 ## Reserved Code Ranges
