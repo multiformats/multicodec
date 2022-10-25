@@ -23,6 +23,7 @@ sha2-384,                       multihash,      0x20,           permanent, aka S
 dccp,                           multiaddr,      0x21,           draft,
 murmur3-x64-64,                 multihash,      0x22,           permanent, The first 64-bits of a murmur3-x64-128 - used for UnixFS directory sharding.
 murmur3-32,                     multihash,      0x23,           draft,
+murmur3-128,                    multihash,      0x24,           draft,
 ip6,                            multiaddr,      0x29,           permanent,
 ip6zone,                        multiaddr,      0x2a,           draft,
 ipcidr,                         multiaddr,      0x2b,           draft,     CIDR mask for IP addresses
