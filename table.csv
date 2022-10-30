@@ -161,6 +161,7 @@ rsa-priv,                       key,            0x1305,         draft,     RSA p
 kangarootwelve,                 multihash,      0x1d01,         draft,     KangarooTwelve is an extendable-output hash function based on Keccak-p
 silverpine,                     multiaddr,      0x3f42,         draft,     Experimental QUIC over yggdrasil and ironwood routing protocol
 sm3-256,                        multihash,      0x534d,         draft,
+solana-tx,                      ipld,           0x5b00,         draft,     Solana Tx
 blake2b-8,                      multihash,      0xb201,         draft,     Blake2b consists of 64 output lengths that give different hashes
 blake2b-16,                     multihash,      0xb202,         draft,
 blake2b-24,                     multihash,      0xb203,         draft,
