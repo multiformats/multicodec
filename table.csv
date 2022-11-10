@@ -119,7 +119,7 @@ garlic32,                       multiaddr,      0x01bf,         draft,     I2P b
 tls,                            multiaddr,      0x01c0,         draft,
 sni,                            multiaddr,      0x01c1,         draft,     Server Name Indication RFC 6066 § 3
 noise,                          multiaddr,      0x01c6,         draft,
-quic-draft29,                   multiaddr,      0x01cc,         permanent,
+quic,                           multiaddr,      0x01cc,         permanent,
 quic-v1,                        multiaddr,      0x01cd,         permanent,
 webtransport,                   multiaddr,      0x01d1,         draft,
 certhash,                       multiaddr,      0x01d2,         draft,     TLS certificate's fingerprint as a multihash
