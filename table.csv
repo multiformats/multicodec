@@ -108,6 +108,8 @@ p2p-circuit,                    multiaddr,      0x0122,         permanent,
 dag-json,                       ipld,           0x0129,         permanent, MerkleDAG json
 udt,                            multiaddr,      0x012d,         draft,
 utp,                            multiaddr,      0x012e,         draft,
+crc32,                          hash,           0x0132,         draft,     CRC-32 non-cryptographic hash algorithm (IEEE 802.3)
+crc64-ecma,                     hash,           0x0164,         draft,     CRC-64 non-cryptographic hash algorithm (ECMA-182 - Annex B)
 unix,                           multiaddr,      0x0190,         permanent,
 thread,                         multiaddr,      0x0196,         draft,     Textile Thread
 p2p,                            multiaddr,      0x01a5,         permanent, libp2p
