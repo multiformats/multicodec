@@ -482,10 +482,10 @@ skein1024-1000,                 multihash,      0xb3dd,         draft,
 skein1024-1008,                 multihash,      0xb3de,         draft,
 skein1024-1016,                 multihash,      0xb3df,         draft,
 skein1024-1024,                 multihash,      0xb3e0,         draft,
-xxh-32,                         multihash,      0xb3e1,         draft,
-xxh-64,                         multihash,      0xb3e2,         draft,
-xxh3-64,                        multihash,      0xb3e3,         draft,
-xxh3-128,                       multihash,      0xb3e4,         draft,
+xxh-32,                         hash,           0xb3e1,         draft,
+xxh-64,                         hash,           0xb3e2,         draft,
+xxh3-64,                        hash,           0xb3e3,         draft,
+xxh3-128,                       hash,           0xb3e4,         draft,
 poseidon-bls12_381-a2-fc1,      multihash,      0xb401,         permanent, Poseidon using BLS12-381 and arity of 2 with Filecoin parameters
 poseidon-bls12_381-a2-fc1-sc,   multihash,      0xb402,         draft,     Poseidon using BLS12-381 and arity of 2 with Filecoin parameters - high-security variant
 urdca-2015-canon,               ipld,           0xb403,         draft,     The result of canonicalizing an input according to URDCA-2015 and then expressing its hash value as a multihash value.
