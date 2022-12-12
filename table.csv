@@ -5,7 +5,6 @@ cidv2,                          cid,            0x02,           draft,     CIDv2
 cidv3,                          cid,            0x03,           draft,     CIDv3
 ip4,                            multiaddr,      0x04,           permanent,
 tcp,                            multiaddr,      0x06,           permanent,
-multidid,                       multiformat,    0x0d,           draft,     Compact encoding for Decentralized Identifers
 sha1,                           multihash,      0x11,           permanent,
 sha2-256,                       multihash,      0x12,           permanent,
 sha2-512,                       multihash,      0x13,           permanent,
@@ -497,6 +496,7 @@ bls-12381-g1-sig,               varsig,         0xd0ea,         draft,     G1 si
 bls-12381-g2-sig,               varsig,         0xd0eb,         draft,     G2 signature for BLS-12381-G1
 eddsa,                          varsig,         0xd0ed,         draft,     Edwards-Curve Digital Signature Algorithm
 eip-191,                        varsig,         0xd191,         draft,     EIP-191 Ethereum Signed Data Standard
+multidid,                       multiformat,    0x0d1d,         draft,     Compact encoding for Decentralized Identifers
 fil-commitment-unsealed,        filecoin,       0xf101,         permanent, Filecoin piece or sector data commitment merkle node/root (CommP & CommD)
 fil-commitment-sealed,          filecoin,       0xf102,         permanent, Filecoin sector data commitment merkle node/root - sealed and replicated (CommR)
 plaintextv2,                    multiaddr,      0x706c61,       draft,
