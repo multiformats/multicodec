@@ -498,7 +498,7 @@ bls-12381-g1-sig,               varsig,         0xd0ea,         draft,     G1 si
 bls-12381-g2-sig,               varsig,         0xd0eb,         draft,     G2 signature for BLS-12381-G1
 eddsa,                          varsig,         0xd0ed,         draft,     Edwards-Curve Digital Signature Algorithm
 eip-191,                        varsig,         0xd191,         draft,     EIP-191 Ethereum Signed Data Standard
-jwk_jcs-pub,                    key,            0xeb51,         draft,     JSON object containing only the required members of a JWK (RFC 7518 and RFC 7517) representing the public key, and serialisation based on JCS (RFC 8785)
+jwk_jcs-pub,                    key,            0xeb51,         draft,     JSON object containing only the required members of a JWK (RFC 7518 and RFC 7517) representing the public key. Serialisation based on JCS (RFC 8785)
 fil-commitment-unsealed,        filecoin,       0xf101,         permanent, Filecoin piece or sector data commitment merkle node/root (CommP & CommD)
 fil-commitment-sealed,          filecoin,       0xf102,         permanent, Filecoin sector data commitment merkle node/root - sealed and replicated (CommR)
 plaintextv2,                    multiaddr,      0x706c61,       draft,
