@@ -140,6 +140,7 @@ car-index-sorted,               serialization,  0x0400,         draft,     CARv2
 car-multihash-index-sorted,     serialization,  0x0401,         draft,     CARv2 MultihashIndexSorted index format
 transport-bitswap,              transport,      0x0900,         draft,     Bitswap datatransfer
 transport-graphsync-filecoinv1, transport,      0x0910,         draft,     Filecoin graphsync datatransfer
+multidid,                       multiformat,    0x0d1d,         draft,     Compact encoding for Decentralized Identifers
 sha2-256-trunc254-padded,       multihash,      0x1012,         permanent, SHA2-256 with the two most significant bits from the last byte zeroed (as via a mask with 0b00111111) - used for proving trees as in Filecoin
 sha2-224,                       multihash,      0x1013,         permanent, aka SHA-224; as specified by FIPS 180-4.
 sha2-512-224,                   multihash,      0x1014,         permanent, aka SHA-512/224; as specified by FIPS 180-4.
