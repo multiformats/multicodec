@@ -112,6 +112,7 @@ crc32,                          hash,           0x0132,         draft,     CRC-3
 crc64-ecma,                     hash,           0x0164,         draft,     CRC-64 non-cryptographic hash algorithm (ECMA-182 - Annex B)
 unix,                           multiaddr,      0x0190,         permanent,
 thread,                         multiaddr,      0x0196,         draft,     Textile Thread
+dcthread,                       multiaddr,      0x0197,         draft,     Dc multicodec  that extend textile thread
 p2p,                            multiaddr,      0x01a5,         permanent, libp2p
 https,                          multiaddr,      0x01bb,         draft,
 onion,                          multiaddr,      0x01bc,         draft,
@@ -520,4 +521,3 @@ es256,                          varsig,         0xd01200,       draft,     ES256
 es284,                          varsig,         0xd01201,       draft,     ES384 Signature Algorithm
 es512,                          varsig,         0xd01202,       draft,     ES512 Signature Algorithm
 rs256,                          varsig,         0xd01205,       draft,     RS256 Signature Algorithm
-dcthread,                       multiaddr,      0x0197,         draft,     Dc multicodec  that extend textile thread
