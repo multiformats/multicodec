@@ -520,3 +520,4 @@ es256,                          varsig,         0xd01200,       draft,     ES256
 es284,                          varsig,         0xd01201,       draft,     ES384 Signature Algorithm
 es512,                          varsig,         0xd01202,       draft,     ES512 Signature Algorithm
 rs256,                          varsig,         0xd01205,       draft,     RS256 Signature Algorithm
+dcthread,                       multiaddr,      0x0197,         draft,     Dc multicodec  that extend textile thread
