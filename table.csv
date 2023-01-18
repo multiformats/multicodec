@@ -21,8 +21,8 @@ keccak-512,                     multihash,      0x1d,           draft,
 blake3,                         multihash,      0x1e,           draft,     BLAKE3 has a default 32 byte output length. The maximum length is (2^64)-1 bytes.
 sha2-384,                       multihash,      0x20,           permanent, aka SHA-384; as specified by FIPS 180-4.
 dccp,                           multiaddr,      0x21,           draft,
-murmur3-x64-64,                 multihash,      0x22,           permanent, The first 64-bits of a murmur3-x64-128 - used for UnixFS directory sharding.
-murmur3-32,                     multihash,      0x23,           draft,
+murmur3-x64-64,                 hash,           0x22,           permanent, The first 64-bits of a murmur3-x64-128 - used for UnixFS directory sharding.
+murmur3-32,                     hash,           0x23,           draft,
 ip6,                            multiaddr,      0x29,           permanent,
 ip6zone,                        multiaddr,      0x2a,           draft,
 ipcidr,                         multiaddr,      0x2b,           draft,     CIDR mask for IP addresses
@@ -145,7 +145,7 @@ sha2-256-trunc254-padded,       multihash,      0x1012,         permanent, SHA2-
 sha2-224,                       multihash,      0x1013,         permanent, aka SHA-224; as specified by FIPS 180-4.
 sha2-512-224,                   multihash,      0x1014,         permanent, aka SHA-512/224; as specified by FIPS 180-4.
 sha2-512-256,                   multihash,      0x1015,         permanent, aka SHA-512/256; as specified by FIPS 180-4.
-murmur3-x64-128,                multihash,      0x1022,         draft,
+murmur3-x64-128,                hash,           0x1022,         draft,
 ripemd-128,                     multihash,      0x1052,         draft,
 ripemd-160,                     multihash,      0x1053,         draft,
 ripemd-256,                     multihash,      0x1054,         draft,
