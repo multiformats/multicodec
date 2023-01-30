@@ -1,8 +1,8 @@
 [
 { "name": "identity",                       "tag": "multihash",     "code": "0x00",     "intcode": 0,        "varint": "0x00",       "status": "permanent", "description": "raw binary" },
-{ "name": "cidv1",                          "tag": "cid",           "code": "0x01",     "intcode": 1,        "varint": "0x01",       "status": "permanent", "description": "CIDv1" },
-{ "name": "cidv2",                          "tag": "cid",           "code": "0x02",     "intcode": 2,        "varint": "0x02",       "status": "draft",     "description": "CIDv2" },
-{ "name": "cidv3",                          "tag": "cid",           "code": "0x03",     "intcode": 3,        "varint": "0x03",       "status": "draft",     "description": "CIDv3" },
+{ "name": "cidv1",                          "tag": "cid",           "code": "0x01",     "intcode": 1,        "varint": "0x01",       "status": "permanent", "description": "CIDv1", "ref": [ "https://github.com/multiformats/cid" ] },
+{ "name": "cidv2",                          "tag": "cid",           "code": "0x02",     "intcode": 2,        "varint": "0x02",       "status": "draft",     "description": "CIDv2", "ref": [ "https://github.com/multiformats/cid" ] },
+{ "name": "cidv3",                          "tag": "cid",           "code": "0x03",     "intcode": 3,        "varint": "0x03",       "status": "draft",     "description": "CIDv3", "ref": [ "https://github.com/multiformats/cid" ] },
 { "name": "ip4",                            "tag": "multiaddr",     "code": "0x04",     "intcode": 4,        "varint": "0x04",       "status": "permanent" },
 { "name": "tcp",                            "tag": "multiaddr",     "code": "0x06",     "intcode": 6,        "varint": "0x06",       "status": "permanent" },
 { "name": "sha1",                           "tag": "multihash",     "code": "0x11",     "intcode": 17,       "varint": "0x11",       "status": "permanent" },
