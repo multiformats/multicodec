@@ -69,6 +69,7 @@ aes-192,                        key,            0xa1,           draft,     192-b
 aes-256,                        key,            0xa2,           draft,     256-bit AES symmetric key
 chacha-128,                     key,            0xa3,           draft,     128-bit ChaCha symmetric key
 chacha-256,                     key,            0xa4,           draft,     256-bit ChaCha symmetric key
+aes-gcm-256,                    encryption,     0xa5,           draft,     AES Galois/Counter Mode with 256-bit key and 12-byte IV
 bitcoin-block,                  ipld,           0xb0,           permanent, Bitcoin Block
 bitcoin-tx,                     ipld,           0xb1,           permanent, Bitcoin Tx
 bitcoin-witness-commitment,     ipld,           0xb2,           permanent, Bitcoin Witness Commitment
