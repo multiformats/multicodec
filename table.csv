@@ -94,6 +94,7 @@ bls12_381-g2-pub,               key,            0xeb,           draft,     BLS12
 x25519-pub,                     key,            0xec,           draft,     Curve25519 public key
 ed25519-pub,                    key,            0xed,           draft,     Ed25519 public key
 bls12_381-g1g2-pub,             key,            0xee,           draft,     BLS12-381 concatenated public keys in both the G1 and G2 fields
+sr25519-pub,                    key,            0xef,           draft,     Sr25519 public key
 dash-block,                     ipld,           0xf0,           draft,     Dash Block
 dash-tx,                        ipld,           0xf1,           draft,     Dash Tx
 swarm-manifest,                 ipld,           0xfa,           draft,     Swarm Manifest
@@ -162,7 +163,11 @@ sm2-pub,                        key,            0x1206,         draft,     SM2 p
 ed25519-priv,                   key,            0x1300,         draft,     Ed25519 private key
 secp256k1-priv,                 key,            0x1301,         draft,     Secp256k1 private key
 x25519-priv,                    key,            0x1302,         draft,     Curve25519 private key
+sr25519-priv,                   key,            0x1303,         draft,     Sr25519 private key
 rsa-priv,                       key,            0x1305,         draft,     RSA private key
+p256-priv,                      key,            0x1306,         draft,     P-256 private key
+p384-priv,                      key,            0x1307,         draft,     P-384 private key
+p521-priv,                      key,            0x1308,         draft,     P-521 private key
 kangarootwelve,                 multihash,      0x1d01,         draft,     KangarooTwelve is an extendable-output hash function based on Keccak-p
 aes-gcm-256,                    encryption,     0x2000,         draft,     AES Galois/Counter Mode with 256-bit key and 12-byte IV
 silverpine,                     multiaddr,      0x3f42,         draft,     Experimental QUIC over yggdrasil and ironwood routing protocol
