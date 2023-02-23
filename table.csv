@@ -169,6 +169,7 @@ p256-priv,                      key,            0x1306,         draft,     P-256
 p384-priv,                      key,            0x1307,         draft,     P-384 private key
 p521-priv,                      key,            0x1308,         draft,     P-521 private key
 kangarootwelve,                 multihash,      0x1d01,         draft,     KangarooTwelve is an extendable-output hash function based on Keccak-p
+aes-gcm-256,                    encryption,     0x2000,         draft,     AES Galois/Counter Mode with 256-bit key and 12-byte IV
 silverpine,                     multiaddr,      0x3f42,         draft,     Experimental QUIC over yggdrasil and ironwood routing protocol
 sm3-256,                        multihash,      0x534d,         draft,
 blake2b-8,                      multihash,      0xb201,         draft,     Blake2b consists of 64 output lengths that give different hashes
