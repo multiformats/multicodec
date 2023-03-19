@@ -107,6 +107,7 @@ p2p-stardust,                   multiaddr,      0x0115,         draft,
 webrtc-direct,                  multiaddr,      0x0118,         draft,     ICE-lite webrtc transport with SDP munging during connection establishment and without use of a STUN server
 webrtc,                         multiaddr,      0x0119,         draft,     webrtc transport where connection establishment is according to w3c spec
 p2p-circuit,                    multiaddr,      0x0122,         permanent,
+p2p-circuit-inner,              multiaddr,      0x0123,         draft,
 dag-json,                       ipld,           0x0129,         permanent, MerkleDAG json
 udt,                            multiaddr,      0x012d,         draft,
 utp,                            multiaddr,      0x012e,         draft,
