@@ -101,9 +101,9 @@ swarm-manifest,                 ipld,           0xfa,           draft,     Swarm
 swarm-feed,                     ipld,           0xfb,           draft,     Swarm Feed
 beeson,                         ipld,           0xfc,           draft,     Swarm BeeSon
 udp,                            multiaddr,      0x0111,         draft,
-p2p-webrtc-star,                multiaddr,      0x0113,         draft,
-p2p-webrtc-direct,              multiaddr,      0x0114,         draft,
-p2p-stardust,                   multiaddr,      0x0115,         draft,
+p2p-webrtc-star,                multiaddr,      0x0113,         draft,     Deprecated - Use webrtc or webrtc-direct instead
+p2p-webrtc-direct,              multiaddr,      0x0114,         draft,     Deprecated - Use webrtc or webrtc-direct instead
+p2p-stardust,                   multiaddr,      0x0115,         draft,     Deprecated
 webrtc-direct,                  multiaddr,      0x0118,         draft,     ICE-lite webrtc transport with SDP munging during connection establishment and without use of a STUN server
 webrtc,                         multiaddr,      0x0119,         draft,     webrtc transport where connection establishment is according to w3c spec
 p2p-circuit,                    multiaddr,      0x0122,         permanent,
