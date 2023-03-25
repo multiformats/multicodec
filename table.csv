@@ -132,6 +132,10 @@ wss,                            multiaddr,      0x01de,         permanent,
 p2p-websocket-star,             multiaddr,      0x01df,         permanent,
 http,                           multiaddr,      0x01e0,         draft,
 swhid-1-snp,                    ipld,           0x01f0,         draft,     SoftWare Heritage persistent IDentifier version 1 snapshot
+swhid-1-rel,                    ipld,           0x01f1,         draft,     SoftWare Heritage persistent IDentifier version 1 release
+swhid-1-rev,                    ipld,           0x01f2,         draft,     SoftWare Heritage persistent IDentifier version 1 revision
+swhid-1-dir,                    ipld,           0x01f3,         draft,     SoftWare Heritage persistent IDentifier version 1 directory
+swhid-1-cnt,                    ipld,           0x01f4,         draft,     SoftWare Heritage persistent IDentifier version 1 content
 json,                           ipld,           0x0200,         permanent, JSON (UTF-8-encoded)
 messagepack,                    serialization,  0x0201,         draft,     MessagePack
 car,                            serialization,  0x0202,         draft,     Content Addressable aRchive (CAR)
