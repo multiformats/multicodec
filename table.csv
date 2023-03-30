@@ -1,8 +1,8 @@
-name,                           tag,            code,           status,    description
-identity,                       multihash,      0x00,           permanent, raw binary
-cidv1,                          cid,            0x01,           permanent, CIDv1
-cidv2,                          cid,            0x02,           draft,     CIDv2
-cidv3,                          cid,            0x03,           draft,     CIDv3
+name,                           tag,            code,           status,     description
+identity,                       multihash,      0x00,           permanent,  raw binary
+cidv1,                          cid,            0x01,           permanent,  CIDv1
+cidv2,                          cid,            0x02,           draft,      CIDv2
+cidv3,                          cid,            0x03,           draft,      CIDv3
 ip4,                            multiaddr,      0x04,           permanent,
 tcp,                            multiaddr,      0x06,           permanent,
 sha1,                           multihash,      0x11,           permanent,
@@ -14,19 +14,19 @@ sha3-256,                       multihash,      0x16,           permanent,
 sha3-224,                       multihash,      0x17,           permanent,
 shake-128,                      multihash,      0x18,           draft,
 shake-256,                      multihash,      0x19,           draft,
-keccak-224,                     multihash,      0x1a,           draft,     keccak has variable output length. The number specifies the core length
+keccak-224,                     multihash,      0x1a,           draft,      keccak has variable output length. The number specifies the core length
 keccak-256,                     multihash,      0x1b,           draft,
 keccak-384,                     multihash,      0x1c,           draft,
 keccak-512,                     multihash,      0x1d,           draft,
-blake3,                         multihash,      0x1e,           draft,     BLAKE3 has a default 32 byte output length. The maximum length is (2^64)-1 bytes.
-sha2-384,                       multihash,      0x20,           permanent, aka SHA-384; as specified by FIPS 180-4.
+blake3,                         multihash,      0x1e,           draft,      BLAKE3 has a default 32 byte output length. The maximum length is (2^64)-1 bytes.
+sha2-384,                       multihash,      0x20,           permanent,  aka SHA-384; as specified by FIPS 180-4.
 dccp,                           multiaddr,      0x21,           draft,
-murmur3-x64-64,                 hash,           0x22,           permanent, The first 64-bits of a murmur3-x64-128 - used for UnixFS directory sharding.
+murmur3-x64-64,                 hash,           0x22,           permanent,  The first 64-bits of a murmur3-x64-128 - used for UnixFS directory sharding.
 murmur3-32,                     hash,           0x23,           draft,
 ip6,                            multiaddr,      0x29,           permanent,
 ip6zone,                        multiaddr,      0x2a,           draft,
-ipcidr,                         multiaddr,      0x2b,           draft,     CIDR mask for IP addresses
-path,                           namespace,      0x2f,           permanent, Namespace for string paths. Corresponds to `/` in ASCII.
+ipcidr,                         multiaddr,      0x2b,           draft,      CIDR mask for IP addresses
+path,                           namespace,      0x2f,           permanent,  Namespace for string paths. Corresponds to `/` in ASCII.
 multicodec,                     multiformat,    0x30,           draft,
 multihash,                      multiformat,    0x31,           draft,
 multiaddr,                      multiformat,    0x32,           draft,
@@ -35,145 +35,145 @@ dns,                            multiaddr,      0x35,           permanent,
 dns4,                           multiaddr,      0x36,           permanent,
 dns6,                           multiaddr,      0x37,           permanent,
 dnsaddr,                        multiaddr,      0x38,           permanent,
-protobuf,                       serialization,  0x50,           draft,     Protocol Buffers
-cbor,                           ipld,           0x51,           permanent, CBOR
-raw,                            ipld,           0x55,           permanent, raw binary
+protobuf,                       serialization,  0x50,           draft,      Protocol Buffers
+cbor,                           ipld,           0x51,           permanent,  CBOR
+raw,                            ipld,           0x55,           permanent,  raw binary
 dbl-sha2-256,                   multihash,      0x56,           draft,
-rlp,                            serialization,  0x60,           draft,     recursive length prefix
-bencode,                        serialization,  0x63,           draft,     bencode
-dag-pb,                         ipld,           0x70,           permanent, MerkleDAG protobuf
-dag-cbor,                       ipld,           0x71,           permanent, MerkleDAG cbor
-libp2p-key,                     ipld,           0x72,           permanent, Libp2p Public Key
-git-raw,                        ipld,           0x78,           permanent, Raw Git object
-torrent-info,                   ipld,           0x7b,           draft,     Torrent file info field (bencoded)
-torrent-file,                   ipld,           0x7c,           draft,     Torrent file (bencoded)
-leofcoin-block,                 ipld,           0x81,           draft,     Leofcoin Block
-leofcoin-tx,                    ipld,           0x82,           draft,     Leofcoin Transaction
-leofcoin-pr,                    ipld,           0x83,           draft,     Leofcoin Peer Reputation
+rlp,                            serialization,  0x60,           draft,      recursive length prefix
+bencode,                        serialization,  0x63,           draft,      bencode
+dag-pb,                         ipld,           0x70,           permanent,  MerkleDAG protobuf
+dag-cbor,                       ipld,           0x71,           permanent,  MerkleDAG cbor
+libp2p-key,                     ipld,           0x72,           permanent,  Libp2p Public Key
+git-raw,                        ipld,           0x78,           permanent,  Raw Git object
+torrent-info,                   ipld,           0x7b,           draft,      Torrent file info field (bencoded)
+torrent-file,                   ipld,           0x7c,           draft,      Torrent file (bencoded)
+leofcoin-block,                 ipld,           0x81,           draft,      Leofcoin Block
+leofcoin-tx,                    ipld,           0x82,           draft,      Leofcoin Transaction
+leofcoin-pr,                    ipld,           0x83,           draft,      Leofcoin Peer Reputation
 sctp,                           multiaddr,      0x84,           draft,
-dag-jose,                       ipld,           0x85,           draft,     MerkleDAG JOSE
-dag-cose,                       ipld,           0x86,           draft,     MerkleDAG COSE
-eth-block,                      ipld,           0x90,           permanent, Ethereum Header (RLP)
-eth-block-list,                 ipld,           0x91,           permanent, Ethereum Header List (RLP)
-eth-tx-trie,                    ipld,           0x92,           permanent, Ethereum Transaction Trie (Eth-Trie)
-eth-tx,                         ipld,           0x93,           permanent, Ethereum Transaction (MarshalBinary)
-eth-tx-receipt-trie,            ipld,           0x94,           permanent, Ethereum Transaction Receipt Trie (Eth-Trie)
-eth-tx-receipt,                 ipld,           0x95,           permanent, Ethereum Transaction Receipt (MarshalBinary)
-eth-state-trie,                 ipld,           0x96,           permanent, Ethereum State Trie (Eth-Secure-Trie)
-eth-account-snapshot,           ipld,           0x97,           permanent, Ethereum Account Snapshot (RLP)
-eth-storage-trie,               ipld,           0x98,           permanent, Ethereum Contract Storage Trie (Eth-Secure-Trie)
-eth-receipt-log-trie,           ipld,           0x99,           draft,     Ethereum Transaction Receipt Log Trie (Eth-Trie)
-eth-reciept-log,                ipld,           0x9a,           draft,     Ethereum Transaction Receipt Log (RLP)
-aes-128,                        key,            0xa0,           draft,     128-bit AES symmetric key
-aes-192,                        key,            0xa1,           draft,     192-bit AES symmetric key
-aes-256,                        key,            0xa2,           draft,     256-bit AES symmetric key
-chacha-128,                     key,            0xa3,           draft,     128-bit ChaCha symmetric key
-chacha-256,                     key,            0xa4,           draft,     256-bit ChaCha symmetric key
-bitcoin-block,                  ipld,           0xb0,           permanent, Bitcoin Block
-bitcoin-tx,                     ipld,           0xb1,           permanent, Bitcoin Tx
-bitcoin-witness-commitment,     ipld,           0xb2,           permanent, Bitcoin Witness Commitment
-zcash-block,                    ipld,           0xc0,           permanent, Zcash Block
-zcash-tx,                       ipld,           0xc1,           permanent, Zcash Tx
-caip-50,                        multiformat,    0xca,           draft,     CAIP-50 multi-chain account id
-streamid,                       namespace,      0xce,           draft,     Ceramic Stream Id
-stellar-block,                  ipld,           0xd0,           draft,     Stellar Block
-stellar-tx,                     ipld,           0xd1,           draft,     Stellar Tx
+dag-jose,                       ipld,           0x85,           draft,      MerkleDAG JOSE
+dag-cose,                       ipld,           0x86,           draft,      MerkleDAG COSE
+eth-block,                      ipld,           0x90,           permanent,  Ethereum Header (RLP)
+eth-block-list,                 ipld,           0x91,           permanent,  Ethereum Header List (RLP)
+eth-tx-trie,                    ipld,           0x92,           permanent,  Ethereum Transaction Trie (Eth-Trie)
+eth-tx,                         ipld,           0x93,           permanent,  Ethereum Transaction (MarshalBinary)
+eth-tx-receipt-trie,            ipld,           0x94,           permanent,  Ethereum Transaction Receipt Trie (Eth-Trie)
+eth-tx-receipt,                 ipld,           0x95,           permanent,  Ethereum Transaction Receipt (MarshalBinary)
+eth-state-trie,                 ipld,           0x96,           permanent,  Ethereum State Trie (Eth-Secure-Trie)
+eth-account-snapshot,           ipld,           0x97,           permanent,  Ethereum Account Snapshot (RLP)
+eth-storage-trie,               ipld,           0x98,           permanent,  Ethereum Contract Storage Trie (Eth-Secure-Trie)
+eth-receipt-log-trie,           ipld,           0x99,           draft,      Ethereum Transaction Receipt Log Trie (Eth-Trie)
+eth-reciept-log,                ipld,           0x9a,           draft,      Ethereum Transaction Receipt Log (RLP)
+aes-128,                        key,            0xa0,           draft,      128-bit AES symmetric key
+aes-192,                        key,            0xa1,           draft,      192-bit AES symmetric key
+aes-256,                        key,            0xa2,           draft,      256-bit AES symmetric key
+chacha-128,                     key,            0xa3,           draft,      128-bit ChaCha symmetric key
+chacha-256,                     key,            0xa4,           draft,      256-bit ChaCha symmetric key
+bitcoin-block,                  ipld,           0xb0,           permanent,  Bitcoin Block
+bitcoin-tx,                     ipld,           0xb1,           permanent,  Bitcoin Tx
+bitcoin-witness-commitment,     ipld,           0xb2,           permanent,  Bitcoin Witness Commitment
+zcash-block,                    ipld,           0xc0,           permanent,  Zcash Block
+zcash-tx,                       ipld,           0xc1,           permanent,  Zcash Tx
+caip-50,                        multiformat,    0xca,           draft,      CAIP-50 multi-chain account id
+streamid,                       namespace,      0xce,           draft,      Ceramic Stream Id
+stellar-block,                  ipld,           0xd0,           draft,      Stellar Block
+stellar-tx,                     ipld,           0xd1,           draft,      Stellar Tx
 md4,                            multihash,      0xd4,           draft,
 md5,                            multihash,      0xd5,           draft,
-decred-block,                   ipld,           0xe0,           draft,     Decred Block
-decred-tx,                      ipld,           0xe1,           draft,     Decred Tx
-ipld,                           namespace,      0xe2,           draft,     IPLD path
-ipfs,                           namespace,      0xe3,           draft,     IPFS path
-swarm,                          namespace,      0xe4,           draft,     Swarm path
-ipns,                           namespace,      0xe5,           draft,     IPNS path
-zeronet,                        namespace,      0xe6,           draft,     ZeroNet site address
-secp256k1-pub,                  key,            0xe7,           draft,     Secp256k1 public key (compressed)
-dnslink,                        namespace,      0xe8,           permanent, DNSLink path
-bls12_381-g1-pub,               key,            0xea,           draft,     BLS12-381 public key in the G1 field
-bls12_381-g2-pub,               key,            0xeb,           draft,     BLS12-381 public key in the G2 field
-x25519-pub,                     key,            0xec,           draft,     Curve25519 public key
-ed25519-pub,                    key,            0xed,           draft,     Ed25519 public key
-bls12_381-g1g2-pub,             key,            0xee,           draft,     BLS12-381 concatenated public keys in both the G1 and G2 fields
-sr25519-pub,                    key,            0xef,           draft,     Sr25519 public key
-dash-block,                     ipld,           0xf0,           draft,     Dash Block
-dash-tx,                        ipld,           0xf1,           draft,     Dash Tx
-swarm-manifest,                 ipld,           0xfa,           draft,     Swarm Manifest
-swarm-feed,                     ipld,           0xfb,           draft,     Swarm Feed
-beeson,                         ipld,           0xfc,           draft,     Swarm BeeSon
+decred-block,                   ipld,           0xe0,           draft,      Decred Block
+decred-tx,                      ipld,           0xe1,           draft,      Decred Tx
+ipld,                           namespace,      0xe2,           draft,      IPLD path
+ipfs,                           namespace,      0xe3,           draft,      IPFS path
+swarm,                          namespace,      0xe4,           draft,      Swarm path
+ipns,                           namespace,      0xe5,           draft,      IPNS path
+zeronet,                        namespace,      0xe6,           draft,      ZeroNet site address
+secp256k1-pub,                  key,            0xe7,           draft,      Secp256k1 public key (compressed)
+dnslink,                        namespace,      0xe8,           permanent,  DNSLink path
+bls12_381-g1-pub,               key,            0xea,           draft,      BLS12-381 public key in the G1 field
+bls12_381-g2-pub,               key,            0xeb,           draft,      BLS12-381 public key in the G2 field
+x25519-pub,                     key,            0xec,           draft,      Curve25519 public key
+ed25519-pub,                    key,            0xed,           draft,      Ed25519 public key
+bls12_381-g1g2-pub,             key,            0xee,           draft,      BLS12-381 concatenated public keys in both the G1 and G2 fields
+sr25519-pub,                    key,            0xef,           draft,      Sr25519 public key
+dash-block,                     ipld,           0xf0,           draft,      Dash Block
+dash-tx,                        ipld,           0xf1,           draft,      Dash Tx
+swarm-manifest,                 ipld,           0xfa,           draft,      Swarm Manifest
+swarm-feed,                     ipld,           0xfb,           draft,      Swarm Feed
+beeson,                         ipld,           0xfc,           draft,      Swarm BeeSon
 udp,                            multiaddr,      0x0111,         draft,
-p2p-webrtc-star,                multiaddr,      0x0113,         draft,
-p2p-webrtc-direct,              multiaddr,      0x0114,         draft,
-p2p-stardust,                   multiaddr,      0x0115,         draft,
-webrtc-direct,                  multiaddr,      0x0118,         draft,     ICE-lite webrtc transport with SDP munging during connection establishment and without use of a STUN server
-webrtc,                         multiaddr,      0x0119,         draft,     webrtc transport where connection establishment is according to w3c spec
+p2p-webrtc-star,                multiaddr,      0x0113,         deprecated, Use webrtc or webrtc-direct instead
+p2p-webrtc-direct,              multiaddr,      0x0114,         deprecated, Use webrtc or webrtc-direct instead
+p2p-stardust,                   multiaddr,      0x0115,         deprecated,
+webrtc-direct,                  multiaddr,      0x0118,         draft,      ICE-lite webrtc transport with SDP munging during connection establishment and without use of a STUN server
+webrtc,                         multiaddr,      0x0119,         draft,      webrtc transport where connection establishment is according to w3c spec
 p2p-circuit,                    multiaddr,      0x0122,         permanent,
-dag-json,                       ipld,           0x0129,         permanent, MerkleDAG json
+dag-json,                       ipld,           0x0129,         permanent,  MerkleDAG json
 udt,                            multiaddr,      0x012d,         draft,
 utp,                            multiaddr,      0x012e,         draft,
-crc32,                          hash,           0x0132,         draft,     CRC-32 non-cryptographic hash algorithm (IEEE 802.3)
-crc64-ecma,                     hash,           0x0164,         draft,     CRC-64 non-cryptographic hash algorithm (ECMA-182 - Annex B)
+crc32,                          hash,           0x0132,         draft,      CRC-32 non-cryptographic hash algorithm (IEEE 802.3)
+crc64-ecma,                     hash,           0x0164,         draft,      CRC-64 non-cryptographic hash algorithm (ECMA-182 - Annex B)
 unix,                           multiaddr,      0x0190,         permanent,
-thread,                         multiaddr,      0x0196,         draft,     Textile Thread
-p2p,                            multiaddr,      0x01a5,         permanent, libp2p
+thread,                         multiaddr,      0x0196,         draft,      Textile Thread
+p2p,                            multiaddr,      0x01a5,         permanent,  libp2p
 https,                          multiaddr,      0x01bb,         draft,
 onion,                          multiaddr,      0x01bc,         draft,
 onion3,                         multiaddr,      0x01bd,         draft,
-garlic64,                       multiaddr,      0x01be,         draft,     I2P base64 (raw public key)
-garlic32,                       multiaddr,      0x01bf,         draft,     I2P base32 (hashed public key or encoded public key/checksum+optional secret)
+garlic64,                       multiaddr,      0x01be,         draft,      I2P base64 (raw public key)
+garlic32,                       multiaddr,      0x01bf,         draft,      I2P base32 (hashed public key or encoded public key/checksum+optional secret)
 tls,                            multiaddr,      0x01c0,         draft,
-sni,                            multiaddr,      0x01c1,         draft,     Server Name Indication RFC 6066 § 3
+sni,                            multiaddr,      0x01c1,         draft,      Server Name Indication RFC 6066 § 3
 noise,                          multiaddr,      0x01c6,         draft,
 quic,                           multiaddr,      0x01cc,         permanent,
 quic-v1,                        multiaddr,      0x01cd,         permanent,
 webtransport,                   multiaddr,      0x01d1,         draft,
-certhash,                       multiaddr,      0x01d2,         draft,     TLS certificate's fingerprint as a multihash
+certhash,                       multiaddr,      0x01d2,         draft,      TLS certificate's fingerprint as a multihash
 ws,                             multiaddr,      0x01dd,         permanent,
 wss,                            multiaddr,      0x01de,         permanent,
 p2p-websocket-star,             multiaddr,      0x01df,         permanent,
 http,                           multiaddr,      0x01e0,         draft,
-swhid-1-snp,                    ipld,           0x01f0,         draft,     SoftWare Heritage persistent IDentifier version 1 snapshot
-json,                           ipld,           0x0200,         permanent, JSON (UTF-8-encoded)
-messagepack,                    serialization,  0x0201,         draft,     MessagePack
-car,                            serialization,  0x0202,         draft,     Content Addressable aRchive (CAR)
-ipns-record,                    serialization,  0x0300,         permanent, Signed IPNS Record
-libp2p-peer-record,             libp2p,         0x0301,         permanent, libp2p peer record type
-libp2p-relay-rsvp,              libp2p,         0x0302,         permanent, libp2p relay reservation voucher
-memorytransport,                libp2p,         0x0309,         permanent, in memory transport for self-dialing and testing; arbitrary
-car-index-sorted,               serialization,  0x0400,         draft,     CARv2 IndexSorted index format
-car-multihash-index-sorted,     serialization,  0x0401,         draft,     CARv2 MultihashIndexSorted index format
-transport-bitswap,              transport,      0x0900,         draft,     Bitswap datatransfer
-transport-graphsync-filecoinv1, transport,      0x0910,         draft,     Filecoin graphsync datatransfer
-multidid,                       multiformat,    0x0d1d,         draft,     Compact encoding for Decentralized Identifers
-sha2-256-trunc254-padded,       multihash,      0x1012,         permanent, SHA2-256 with the two most significant bits from the last byte zeroed (as via a mask with 0b00111111) - used for proving trees as in Filecoin
-sha2-224,                       multihash,      0x1013,         permanent, aka SHA-224; as specified by FIPS 180-4.
-sha2-512-224,                   multihash,      0x1014,         permanent, aka SHA-512/224; as specified by FIPS 180-4.
-sha2-512-256,                   multihash,      0x1015,         permanent, aka SHA-512/256; as specified by FIPS 180-4.
+swhid-1-snp,                    ipld,           0x01f0,         draft,      SoftWare Heritage persistent IDentifier version 1 snapshot
+json,                           ipld,           0x0200,         permanent,  JSON (UTF-8-encoded)
+messagepack,                    serialization,  0x0201,         draft,      MessagePack
+car,                            serialization,  0x0202,         draft,      Content Addressable aRchive (CAR)
+ipns-record,                    serialization,  0x0300,         permanent,  Signed IPNS Record
+libp2p-peer-record,             libp2p,         0x0301,         permanent,  libp2p peer record type
+libp2p-relay-rsvp,              libp2p,         0x0302,         permanent,  libp2p relay reservation voucher
+memorytransport,                libp2p,         0x0309,         permanent,  in memory transport for self-dialing and testing; arbitrary
+car-index-sorted,               serialization,  0x0400,         draft,      CARv2 IndexSorted index format
+car-multihash-index-sorted,     serialization,  0x0401,         draft,      CARv2 MultihashIndexSorted index format
+transport-bitswap,              transport,      0x0900,         draft,      Bitswap datatransfer
+transport-graphsync-filecoinv1, transport,      0x0910,         draft,      Filecoin graphsync datatransfer
+multidid,                       multiformat,    0x0d1d,         draft,      Compact encoding for Decentralized Identifers
+sha2-256-trunc254-padded,       multihash,      0x1012,         permanent,  SHA2-256 with the two most significant bits from the last byte zeroed (as via a mask with 0b00111111) - used for proving trees as in Filecoin
+sha2-224,                       multihash,      0x1013,         permanent,  aka SHA-224; as specified by FIPS 180-4.
+sha2-512-224,                   multihash,      0x1014,         permanent,  aka SHA-512/224; as specified by FIPS 180-4.
+sha2-512-256,                   multihash,      0x1015,         permanent,  aka SHA-512/256; as specified by FIPS 180-4.
 murmur3-x64-128,                hash,           0x1022,         draft,
 ripemd-128,                     multihash,      0x1052,         draft,
 ripemd-160,                     multihash,      0x1053,         draft,
 ripemd-256,                     multihash,      0x1054,         draft,
 ripemd-320,                     multihash,      0x1055,         draft,
 x11,                            multihash,      0x1100,         draft,
-p256-pub,                       key,            0x1200,         draft,     P-256 public Key (compressed)
-p384-pub,                       key,            0x1201,         draft,     P-384 public Key (compressed)
-p521-pub,                       key,            0x1202,         draft,     P-521 public Key (compressed)
-ed448-pub,                      key,            0x1203,         draft,     Ed448 public Key
-x448-pub,                       key,            0x1204,         draft,     X448 public Key
-rsa-pub,                        key,            0x1205,         draft,     RSA public key. DER-encoded ASN.1 type RSAPublicKey according to IETF RFC 8017 (PKCS #1)
-sm2-pub,                        key,            0x1206,         draft,     SM2 public key (compressed)
-ed25519-priv,                   key,            0x1300,         draft,     Ed25519 private key
-secp256k1-priv,                 key,            0x1301,         draft,     Secp256k1 private key
-x25519-priv,                    key,            0x1302,         draft,     Curve25519 private key
-sr25519-priv,                   key,            0x1303,         draft,     Sr25519 private key
-rsa-priv,                       key,            0x1305,         draft,     RSA private key
-p256-priv,                      key,            0x1306,         draft,     P-256 private key
-p384-priv,                      key,            0x1307,         draft,     P-384 private key
-p521-priv,                      key,            0x1308,         draft,     P-521 private key
-kangarootwelve,                 multihash,      0x1d01,         draft,     KangarooTwelve is an extendable-output hash function based on Keccak-p
-aes-gcm-256,                    encryption,     0x2000,         draft,     AES Galois/Counter Mode with 256-bit key and 12-byte IV
-silverpine,                     multiaddr,      0x3f42,         draft,     Experimental QUIC over yggdrasil and ironwood routing protocol
+p256-pub,                       key,            0x1200,         draft,      P-256 public Key (compressed)
+p384-pub,                       key,            0x1201,         draft,      P-384 public Key (compressed)
+p521-pub,                       key,            0x1202,         draft,      P-521 public Key (compressed)
+ed448-pub,                      key,            0x1203,         draft,      Ed448 public Key
+x448-pub,                       key,            0x1204,         draft,      X448 public Key
+rsa-pub,                        key,            0x1205,         draft,      RSA public key. DER-encoded ASN.1 type RSAPublicKey according to IETF RFC 8017 (PKCS #1)
+sm2-pub,                        key,            0x1206,         draft,      SM2 public key (compressed)
+ed25519-priv,                   key,            0x1300,         draft,      Ed25519 private key
+secp256k1-priv,                 key,            0x1301,         draft,      Secp256k1 private key
+x25519-priv,                    key,            0x1302,         draft,      Curve25519 private key
+sr25519-priv,                   key,            0x1303,         draft,      Sr25519 private key
+rsa-priv,                       key,            0x1305,         draft,      RSA private key
+p256-priv,                      key,            0x1306,         draft,      P-256 private key
+p384-priv,                      key,            0x1307,         draft,      P-384 private key
+p521-priv,                      key,            0x1308,         draft,      P-521 private key
+kangarootwelve,                 multihash,      0x1d01,         draft,      KangarooTwelve is an extendable-output hash function based on Keccak-p
+aes-gcm-256,                    encryption,     0x2000,         draft,      AES Galois/Counter Mode with 256-bit key and 12-byte IV
+silverpine,                     multiaddr,      0x3f42,         draft,      Experimental QUIC over yggdrasil and ironwood routing protocol
 sm3-256,                        multihash,      0x534d,         draft,
-blake2b-8,                      multihash,      0xb201,         draft,     Blake2b consists of 64 output lengths that give different hashes
+blake2b-8,                      multihash,      0xb201,         draft,      Blake2b consists of 64 output lengths that give different hashes
 blake2b-16,                     multihash,      0xb202,         draft,
 blake2b-24,                     multihash,      0xb203,         draft,
 blake2b-32,                     multihash,      0xb204,         draft,
@@ -237,7 +237,7 @@ blake2b-488,                    multihash,      0xb23d,         draft,
 blake2b-496,                    multihash,      0xb23e,         draft,
 blake2b-504,                    multihash,      0xb23f,         draft,
 blake2b-512,                    multihash,      0xb240,         draft,
-blake2s-8,                      multihash,      0xb241,         draft,     Blake2s consists of 32 output lengths that give different hashes
+blake2s-8,                      multihash,      0xb241,         draft,      Blake2s consists of 32 output lengths that give different hashes
 blake2s-16,                     multihash,      0xb242,         draft,
 blake2s-24,                     multihash,      0xb243,         draft,
 blake2s-32,                     multihash,      0xb244,         draft,
@@ -269,7 +269,7 @@ blake2s-232,                    multihash,      0xb25d,         draft,
 blake2s-240,                    multihash,      0xb25e,         draft,
 blake2s-248,                    multihash,      0xb25f,         draft,
 blake2s-256,                    multihash,      0xb260,         draft,
-skein256-8,                     multihash,      0xb301,         draft,     Skein256 consists of 32 output lengths that give different hashes
+skein256-8,                     multihash,      0xb301,         draft,      Skein256 consists of 32 output lengths that give different hashes
 skein256-16,                    multihash,      0xb302,         draft,
 skein256-24,                    multihash,      0xb303,         draft,
 skein256-32,                    multihash,      0xb304,         draft,
@@ -301,7 +301,7 @@ skein256-232,                   multihash,      0xb31d,         draft,
 skein256-240,                   multihash,      0xb31e,         draft,
 skein256-248,                   multihash,      0xb31f,         draft,
 skein256-256,                   multihash,      0xb320,         draft,
-skein512-8,                     multihash,      0xb321,         draft,     Skein512 consists of 64 output lengths that give different hashes
+skein512-8,                     multihash,      0xb321,         draft,      Skein512 consists of 64 output lengths that give different hashes
 skein512-16,                    multihash,      0xb322,         draft,
 skein512-24,                    multihash,      0xb323,         draft,
 skein512-32,                    multihash,      0xb324,         draft,
@@ -365,7 +365,7 @@ skein512-488,                   multihash,      0xb35d,         draft,
 skein512-496,                   multihash,      0xb35e,         draft,
 skein512-504,                   multihash,      0xb35f,         draft,
 skein512-512,                   multihash,      0xb360,         draft,
-skein1024-8,                    multihash,      0xb361,         draft,     Skein1024 consists of 128 output lengths that give different hashes
+skein1024-8,                    multihash,      0xb361,         draft,      Skein1024 consists of 128 output lengths that give different hashes
 skein1024-16,                   multihash,      0xb362,         draft,
 skein1024-24,                   multihash,      0xb363,         draft,
 skein1024-32,                   multihash,      0xb364,         draft,
@@ -493,39 +493,39 @@ skein1024-1000,                 multihash,      0xb3dd,         draft,
 skein1024-1008,                 multihash,      0xb3de,         draft,
 skein1024-1016,                 multihash,      0xb3df,         draft,
 skein1024-1024,                 multihash,      0xb3e0,         draft,
-xxh-32,                         hash,           0xb3e1,         draft,     Extremely fast non-cryptographic hash algorithm
-xxh-64,                         hash,           0xb3e2,         draft,     Extremely fast non-cryptographic hash algorithm
-xxh3-64,                        hash,           0xb3e3,         draft,     Extremely fast non-cryptographic hash algorithm
-xxh3-128,                       hash,           0xb3e4,         draft,     Extremely fast non-cryptographic hash algorithm
-poseidon-bls12_381-a2-fc1,      multihash,      0xb401,         permanent, Poseidon using BLS12-381 and arity of 2 with Filecoin parameters
-poseidon-bls12_381-a2-fc1-sc,   multihash,      0xb402,         draft,     Poseidon using BLS12-381 and arity of 2 with Filecoin parameters - high-security variant
-urdca-2015-canon,               ipld,           0xb403,         draft,     The result of canonicalizing an input according to URDCA-2015 and then expressing its hash value as a multihash value.
-ssz,                            serialization,  0xb501,         draft,     SimpleSerialize (SSZ) serialization
-ssz-sha2-256-bmt,               multihash,      0xb502,         draft,     SSZ Merkle tree root using SHA2-256 as the hashing function and SSZ serialization for the block binary
-json-jcs,                       ipld,           0xb601,         draft,     The result of canonicalizing an input according to JCS - JSON Canonicalisation Scheme (RFC 8785)
-iscc,                           softhash,       0xcc01,         draft,     ISCC (International Standard Content Code) - similarity preserving hash
-zeroxcert-imprint-256,          zeroxcert,      0xce11,         draft,     0xcert Asset Imprint (root hash)
-varsig,                         varsig,         0xd000,         draft,     Namespace for all not yet standard signature algorithms
-es256k,                         varsig,         0xd0e7,         draft,     ES256K Siganture Algorithm (secp256k1)
-bls-12381-g1-sig,               varsig,         0xd0ea,         draft,     G1 signature for BLS-12381-G2
-bls-12381-g2-sig,               varsig,         0xd0eb,         draft,     G2 signature for BLS-12381-G1
-eddsa,                          varsig,         0xd0ed,         draft,     Edwards-Curve Digital Signature Algorithm
-eip-191,                        varsig,         0xd191,         draft,     EIP-191 Ethereum Signed Data Standard
-jwk_jcs-pub,                    key,            0xeb51,         draft,     JSON object containing only the required members of a JWK (RFC 7518 and RFC 7517) representing the public key. Serialisation based on JCS (RFC 8785)
-fil-commitment-unsealed,        filecoin,       0xf101,         permanent, Filecoin piece or sector data commitment merkle node/root (CommP & CommD)
-fil-commitment-sealed,          filecoin,       0xf102,         permanent, Filecoin sector data commitment merkle node/root - sealed and replicated (CommR)
+xxh-32,                         hash,           0xb3e1,         draft,      Extremely fast non-cryptographic hash algorithm
+xxh-64,                         hash,           0xb3e2,         draft,      Extremely fast non-cryptographic hash algorithm
+xxh3-64,                        hash,           0xb3e3,         draft,      Extremely fast non-cryptographic hash algorithm
+xxh3-128,                       hash,           0xb3e4,         draft,      Extremely fast non-cryptographic hash algorithm
+poseidon-bls12_381-a2-fc1,      multihash,      0xb401,         permanent,  Poseidon using BLS12-381 and arity of 2 with Filecoin parameters
+poseidon-bls12_381-a2-fc1-sc,   multihash,      0xb402,         draft,      Poseidon using BLS12-381 and arity of 2 with Filecoin parameters - high-security variant
+urdca-2015-canon,               ipld,           0xb403,         draft,      The result of canonicalizing an input according to URDCA-2015 and then expressing its hash value as a multihash value.
+ssz,                            serialization,  0xb501,         draft,      SimpleSerialize (SSZ) serialization
+ssz-sha2-256-bmt,               multihash,      0xb502,         draft,      SSZ Merkle tree root using SHA2-256 as the hashing function and SSZ serialization for the block binary
+json-jcs,                       ipld,           0xb601,         draft,      The result of canonicalizing an input according to JCS - JSON Canonicalisation Scheme (RFC 8785)
+iscc,                           softhash,       0xcc01,         draft,      ISCC (International Standard Content Code) - similarity preserving hash
+zeroxcert-imprint-256,          zeroxcert,      0xce11,         draft,      0xcert Asset Imprint (root hash)
+varsig,                         varsig,         0xd000,         draft,      Namespace for all not yet standard signature algorithms
+es256k,                         varsig,         0xd0e7,         draft,      ES256K Siganture Algorithm (secp256k1)
+bls-12381-g1-sig,               varsig,         0xd0ea,         draft,      G1 signature for BLS-12381-G2
+bls-12381-g2-sig,               varsig,         0xd0eb,         draft,      G2 signature for BLS-12381-G1
+eddsa,                          varsig,         0xd0ed,         draft,      Edwards-Curve Digital Signature Algorithm
+eip-191,                        varsig,         0xd191,         draft,      EIP-191 Ethereum Signed Data Standard
+jwk_jcs-pub,                    key,            0xeb51,         draft,      JSON object containing only the required members of a JWK (RFC 7518 and RFC 7517) representing the public key. Serialisation based on JCS (RFC 8785)
+fil-commitment-unsealed,        filecoin,       0xf101,         permanent,  Filecoin piece or sector data commitment merkle node/root (CommP & CommD)
+fil-commitment-sealed,          filecoin,       0xf102,         permanent,  Filecoin sector data commitment merkle node/root - sealed and replicated (CommR)
 plaintextv2,                    multiaddr,      0x706c61,       draft,
-holochain-adr-v0,               holochain,      0x807124,       draft,     Holochain v0 address    + 8 R-S (63 x Base-32)
-holochain-adr-v1,               holochain,      0x817124,       draft,     Holochain v1 address    + 8 R-S (63 x Base-32)
-holochain-key-v0,               holochain,      0x947124,       draft,     Holochain v0 public key + 8 R-S (63 x Base-32)
-holochain-key-v1,               holochain,      0x957124,       draft,     Holochain v1 public key + 8 R-S (63 x Base-32)
-holochain-sig-v0,               holochain,      0xa27124,       draft,     Holochain v0 signature  + 8 R-S (63 x Base-32)
-holochain-sig-v1,               holochain,      0xa37124,       draft,     Holochain v1 signature  + 8 R-S (63 x Base-32)
-skynet-ns,                      namespace,      0xb19910,       draft,     Skynet Namespace
-arweave-ns,                     namespace,      0xb29910,       draft,     Arweave Namespace
-subspace-ns,                    namespace,      0xb39910,       draft,     Subspace Network Namespace
-kumandra-ns,                    namespace,      0xb49910,       draft,     Kumandra Network Namespace
-es256,                          varsig,         0xd01200,       draft,     ES256 Signature Algorithm
-es284,                          varsig,         0xd01201,       draft,     ES384 Signature Algorithm
-es512,                          varsig,         0xd01202,       draft,     ES512 Signature Algorithm
-rs256,                          varsig,         0xd01205,       draft,     RS256 Signature Algorithm
+holochain-adr-v0,               holochain,      0x807124,       draft,      Holochain v0 address    + 8 R-S (63 x Base-32)
+holochain-adr-v1,               holochain,      0x817124,       draft,      Holochain v1 address    + 8 R-S (63 x Base-32)
+holochain-key-v0,               holochain,      0x947124,       draft,      Holochain v0 public key + 8 R-S (63 x Base-32)
+holochain-key-v1,               holochain,      0x957124,       draft,      Holochain v1 public key + 8 R-S (63 x Base-32)
+holochain-sig-v0,               holochain,      0xa27124,       draft,      Holochain v0 signature  + 8 R-S (63 x Base-32)
+holochain-sig-v1,               holochain,      0xa37124,       draft,      Holochain v1 signature  + 8 R-S (63 x Base-32)
+skynet-ns,                      namespace,      0xb19910,       draft,      Skynet Namespace
+arweave-ns,                     namespace,      0xb29910,       draft,      Arweave Namespace
+subspace-ns,                    namespace,      0xb39910,       draft,      Subspace Network Namespace
+kumandra-ns,                    namespace,      0xb49910,       draft,      Kumandra Network Namespace
+es256,                          varsig,         0xd01200,       draft,      ES256 Signature Algorithm
+es284,                          varsig,         0xd01201,       draft,      ES384 Signature Algorithm
+es512,                          varsig,         0xd01202,       draft,      ES512 Signature Algorithm
+rs256,                          varsig,         0xd01205,       draft,      RS256 Signature Algorithm
