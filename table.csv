@@ -506,7 +506,7 @@ ssz-sha2-256-bmt,               multihash,      0xb502,         draft,      SSZ 
 json-jcs,                       ipld,           0xb601,         draft,      The result of canonicalizing an input according to JCS - JSON Canonicalisation Scheme (RFC 8785)
 iscc,                           softhash,       0xcc01,         draft,      ISCC (International Standard Content Code) - similarity preserving hash
 zeroxcert-imprint-256,          zeroxcert,      0xce11,         draft,      0xcert Asset Imprint (root hash)
-varsig,                         varsig,         0xd000,         draft,      Namespace for all not yet standard signature algorithms
+nonstandard-sig,                varsig,         0xd000,         draft,      Namespace for all not yet standard signature algorithms
 es256k,                         varsig,         0xd0e7,         draft,      ES256K Siganture Algorithm (secp256k1)
 bls-12381-g1-sig,               varsig,         0xd0ea,         draft,      G1 signature for BLS-12381-G2
 bls-12381-g2-sig,               varsig,         0xd0eb,         draft,      G2 signature for BLS-12381-G1
