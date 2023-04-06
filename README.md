@@ -42,6 +42,7 @@ Each multicodec is marked with a status:
 
 * draft - this codec has been reserved but may be reassigned if it doesn't gain wide adoption.
 * permanent - this codec has been widely adopted and may not reassigned.
+* deprecated - this codec has been deprecated.
 
 NOTE: Just because a codec is marked draft, don't assume that it can be re-assigned. Check to see if it ever gained wide adoption and, if so, mark it as permanent.
 
