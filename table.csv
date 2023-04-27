@@ -123,6 +123,7 @@ garlic32,                       multiaddr,      0x01bf,         draft,      I2P 
 tls,                            multiaddr,      0x01c0,         draft,
 sni,                            multiaddr,      0x01c1,         draft,      Server Name Indication RFC 6066 § 3
 noise,                          multiaddr,      0x01c6,         draft,
+shs,                            multiaddr,      0x01c8,         draft,      Secure Scuttlebut - Secret Handshake Stream
 quic,                           multiaddr,      0x01cc,         permanent,
 quic-v1,                        multiaddr,      0x01cd,         permanent,
 webtransport,                   multiaddr,      0x01d1,         draft,
