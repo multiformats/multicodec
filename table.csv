@@ -504,7 +504,7 @@ xxh3-64,                        hash,           0xb3e3,         draft,      Extr
 xxh3-128,                       hash,           0xb3e4,         draft,      Extremely fast non-cryptographic hash algorithm
 poseidon-bls12_381-a2-fc1,      multihash,      0xb401,         permanent,  Poseidon using BLS12-381 and arity of 2 with Filecoin parameters
 poseidon-bls12_381-a2-fc1-sc,   multihash,      0xb402,         draft,      Poseidon using BLS12-381 and arity of 2 with Filecoin parameters - high-security variant
-urdca-2015-canon,               ipld,           0xb403,         draft,      The result of canonicalizing an input according to URDCA-2015 and then expressing its hash value as a multihash value.
+rdfc-1-0,                       ipld,           0xb403,         draft,      The result of canonicalizing an input according to RDFC-1.0 and then expressing its hash value as a multihash value.
 ssz,                            serialization,  0xb501,         draft,      SimpleSerialize (SSZ) serialization
 ssz-sha2-256-bmt,               multihash,      0xb502,         draft,      SSZ Merkle tree root using SHA2-256 as the hashing function and SSZ serialization for the block binary
 json-jcs,                       ipld,           0xb601,         draft,      The result of canonicalizing an input according to JCS - JSON Canonicalisation Scheme (RFC 8785)
