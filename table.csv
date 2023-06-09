@@ -531,3 +531,4 @@ es256,                          varsig,         0xd01200,       draft,      ES25
 es284,                          varsig,         0xd01201,       draft,      ES384 Signature Algorithm
 es512,                          varsig,         0xd01202,       draft,      ES512 Signature Algorithm
 rs256,                          varsig,         0xd01205,       draft,      RS256 Signature Algorithm
+scion,                          multiaddr,      0xd02000,       draft,      SCION Internet architecture
