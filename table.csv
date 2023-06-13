@@ -175,6 +175,7 @@ kangarootwelve,                 multihash,      0x1d01,         draft,      Kang
 aes-gcm-256,                    encryption,     0x2000,         draft,      AES Galois/Counter Mode with 256-bit key and 12-byte IV
 silverpine,                     multiaddr,      0x3f42,         draft,      Experimental QUIC over yggdrasil and ironwood routing protocol
 sm3-256,                        multihash,      0x534d,         draft,
+sha256a,                        multihash,      0x7012,         draft,      The sum of multiple sha2-256 hashes
 blake2b-8,                      multihash,      0xb201,         draft,      Blake2b consists of 64 output lengths that give different hashes
 blake2b-16,                     multihash,      0xb202,         draft,
 blake2b-24,                     multihash,      0xb203,         draft,
