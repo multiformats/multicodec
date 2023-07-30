@@ -54,7 +54,7 @@ leofcoin-pr,                    ipld,           0x83,           draft,      Leof
 sctp,                           multiaddr,      0x84,           draft,
 dag-jose,                       ipld,           0x85,           draft,      MerkleDAG JOSE
 dag-cose,                       ipld,           0x86,           draft,      MerkleDAG COSE
-lbry,                           multiaddr,      0x8c,           draft,      LBRY Address
+lbry,                           namespace,      0x8c,           draft,      LBRY Address
 eth-block,                      ipld,           0x90,           permanent,  Ethereum Header (RLP)
 eth-block-list,                 ipld,           0x91,           permanent,  Ethereum Header List (RLP)
 eth-tx-trie,                    ipld,           0x92,           permanent,  Ethereum Transaction Trie (Eth-Trie)
