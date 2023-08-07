@@ -144,6 +144,7 @@ libp2p-relay-rsvp,              libp2p,         0x0302,         permanent,  libp
 memorytransport,                libp2p,         0x0309,         permanent,  in memory transport for self-dialing and testing; arbitrary
 car-index-sorted,               serialization,  0x0400,         draft,      CARv2 IndexSorted index format
 car-multihash-index-sorted,     serialization,  0x0401,         draft,      CARv2 MultihashIndexSorted index format
+car-metadata,                   serialization,  0x04ff,         draft,      CAR metadata transport cbor data
 transport-bitswap,              transport,      0x0900,         draft,      Bitswap datatransfer
 transport-graphsync-filecoinv1, transport,      0x0910,         draft,      Filecoin graphsync datatransfer
 transport-ipfs-gateway-http,    transport,      0x0920,         draft,      HTTP IPFS Gateway trustless datatransfer
