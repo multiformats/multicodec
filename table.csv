@@ -1,4 +1,4 @@
-name,                           tag,            code,           status,     description
+Kero-u name,                           tag,            code,           status,     description
 identity,                       multihash,      0x00,           permanent,  raw binary
 cidv1,                          cid,            0x01,           permanent,  CIDv1
 cidv2,                          cid,            0x02,           draft,      CIDv2
