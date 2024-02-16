@@ -510,8 +510,7 @@ poseidon-bls12_381-a2-fc1-sc,   multihash,      0xb402,         draft,      Pose
 rdfc-1,                         ipld,           0xb403,         draft,      The result of canonicalizing an input according to RDFC-1.0 and then expressing its hash value as a multihash value.
 ssz,                            serialization,  0xb501,         draft,      SimpleSerialize (SSZ) serialization
 ssz-sha2-256-bmt,               multihash,      0xb502,         draft,      SSZ Merkle tree root using SHA2-256 as the hashing function and SSZ serialization for the block binary
-s3-sha2-256-5,                  multihash,      0xb515,         draft,      Amazon S3's parallel SHA2-256 with fixed 5MB blocks
-s3-sha2-256-8,                  multihash,      0xb518,         draft,      Amazon S3's parallel SHA2-256 with fixed 8MB blocks
+s3-sha2-256-boto,               multihash,      0xb511,         draft,      Boto3-compatible implementation Amazon S3's parallel SHA2-256 checksums 
 json-jcs,                       ipld,           0xb601,         draft,      The result of canonicalizing an input according to JCS - JSON Canonicalisation Scheme (RFC 8785)
 iscc,                           softhash,       0xcc01,         draft,      ISCC (International Standard Content Code) - similarity preserving hash
 zeroxcert-imprint-256,          zeroxcert,      0xce11,         draft,      0xcert Asset Imprint (root hash)
