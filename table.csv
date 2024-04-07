@@ -5,6 +5,9 @@ cidv2,                          cid,            0x02,           draft,      CIDv
 cidv3,                          cid,            0x03,           draft,      CIDv3
 ip4,                            multiaddr,      0x04,           permanent,
 tcp,                            multiaddr,      0x06,           permanent,
+vlad,                           cid,            0x07,           draft,      Verifiable Long-lived ADdress
+provenance-log,                 ipld,           0x08,           draft,      Verifiable and permissioned append only log
+provenance-log-entry,           ipld,           0x09,           draft,      Verifiable and permissioned append only log
 sha1,                           multihash,      0x11,           permanent,
 sha2-256,                       multihash,      0x12,           permanent,
 sha2-512,                       multihash,      0x13,           permanent,
@@ -36,6 +39,9 @@ dns,                            multiaddr,      0x35,           permanent,
 dns4,                           multiaddr,      0x36,           permanent,
 dns6,                           multiaddr,      0x37,           permanent,
 dnsaddr,                        multiaddr,      0x38,           permanent,
+multisig,                       multiformat,    0x39,           draft,      Digital signature multiformat
+multikey,                       multiformat,    0x3a,           draft,      Encryption key multiformat 
+nonce,                          key,            0x3b,           draft,      Nonce random value
 protobuf,                       serialization,  0x50,           draft,      Protocol Buffers
 cbor,                           ipld,           0x51,           permanent,  CBOR
 raw,                            ipld,           0x55,           permanent,  raw binary
@@ -71,6 +77,7 @@ aes-192,                        key,            0xa1,           draft,      192-
 aes-256,                        key,            0xa2,           draft,      256-bit AES symmetric key
 chacha-128,                     key,            0xa3,           draft,      128-bit ChaCha symmetric key
 chacha-256,                     key,            0xa4,           draft,      256-bit ChaCha symmetric key
+chacha20-poly1305,              multikey,       0xa5,           draft,      ChaCha20_Poly1305 encryption scheme
 bitcoin-block,                  ipld,           0xb0,           permanent,  Bitcoin Block
 bitcoin-tx,                     ipld,           0xb1,           permanent,  Bitcoin Tx
 bitcoin-witness-commitment,     ipld,           0xb2,           permanent,  Bitcoin Witness Commitment
@@ -176,6 +183,25 @@ p521-priv,                      key,            0x1308,         draft,      P-52
 bls12_381-g1-priv,              key,            0x1309,         draft,      BLS12-381 G1 private key
 bls12_381-g2-priv,              key,            0x130a,         draft,      BLS12-381 G2 private key
 bls12_381-g1g2-priv,            key,            0x130b,         draft,      BLS12-381 G1 and G2 private key
+bls12_381-g1-pub-share,         key,            0x130c,         draft,      BLS12-381 G1 public key share
+bls12_381-g2-pub-share,         key,            0x130d,         draft,      BLS12-381 G2 public key share
+bls12_381-g1-priv-share,        key,            0x130e,         draft,      BLS12-381 G1 private key share
+bls12_381-g2-priv-share,        key,            0x130f,         draft,      BLS12-381 G2 private key share
+lamport-sha3-512-pub,           key,            0x1a14,         draft,      Lamport public key based on SHA3-512
+lamport-sha3-384-pub,           key,            0x1a15,         draft,      Lamport public key based on SHA3-384
+lamport-sha3-256-pub,           key,            0x1a16,         draft,      Lamport public key based on SHA3-256
+lamport-sha3-512-priv,          key,            0x1a24,         draft,      Lamport private key based on SHA3-512
+lamport-sha3-384-priv,          key,            0x1a25,         draft,      Lamport private key based on SHA3-384
+lamport-sha3-256-priv,          key,            0x1a26,         draft,      Lamport private key based on SHA3-256
+lamport-sha3-512-priv-share,    key,            0x1a34,         draft,      Lamport private key share based on SHA3-512 and split with Shamir gf256
+lamport-sha3-384-priv-share,    key,            0x1a35,         draft,      Lamport private key share based on SHA3-384 and split with Shamir gf256
+lamport-sha3-256-priv-share,    key,            0x1a36,         draft,      Lamport private key share based on SHA3-256 and split with Shamir gf256
+lamport-sha3-512-sig,           multisig,       0x1a44,         draft,      Lamport signature based on SHA3-512
+lamport-sha3-384-sig,           multisig,       0x1a45,         draft,      Lamport signature based on SHA3-384
+lamport-sha3-256-sig,           multisig,       0x1a46,         draft,      Lamport signature based on SHA3-256
+lamport-sha3-512-sig-share,     multisig,       0x1a54,         draft,      Lamport signature share based on SHA3-512 and split with Shamir gf256
+lamport-sha3-384-sig-share,     multisig,       0x1a55,         draft,      Lamport signature share based on SHA3-384 and split with Shamir gf256
+lamport-sha3-256-sig-share,     multisig,       0x1a56,         draft,      Lamport signature share based on SHA3-256 and split with Shamir gf256
 kangarootwelve,                 multihash,      0x1d01,         draft,      KangarooTwelve is an extendable-output hash function based on Keccak-p
 aes-gcm-256,                    encryption,     0x2000,         draft,      AES Galois/Counter Mode with 256-bit key and 12-byte IV
 silverpine,                     multiaddr,      0x3f42,         draft,      Experimental QUIC over yggdrasil and ironwood routing protocol
@@ -515,10 +541,13 @@ json-jcs,                       ipld,           0xb601,         draft,      The 
 iscc,                           softhash,       0xcc01,         draft,      ISCC (International Standard Content Code) - similarity preserving hash
 zeroxcert-imprint-256,          zeroxcert,      0xce11,         draft,      0xcert Asset Imprint (root hash)
 nonstandard-sig,                varsig,         0xd000,         deprecated, Namespace for all not yet standard signature algorithms
-es256k,                         varsig,         0xd0e7,         draft,      ES256K Siganture Algorithm (secp256k1)
-bls-12381-g1-sig,               varsig,         0xd0ea,         draft,      G1 signature for BLS-12381-G2
-bls-12381-g2-sig,               varsig,         0xd0eb,         draft,      G2 signature for BLS-12381-G1
-eddsa,                          varsig,         0xd0ed,         draft,      Edwards-Curve Digital Signature Algorithm
+bcrypt-pbkdf,                   multihash,      0xd00d,         draft,      Bcrypt-PBKDF key derivation function
+es256k,                         multisig,       0xd0e7,         draft,      ES256K Siganture Algorithm (secp256k1)
+bls12_381-g1-sig,               multisig,       0xd0ea,         draft,      G1 signature for BLS-12381-G2
+bls12_381-g2-sig,               multisig,       0xd0eb,         draft,      G2 signature for BLS-12381-G1
+eddsa,                          multisig,       0xd0ed,         draft,      Edwards-Curve Digital Signature Algorithm
+bls12_381-g1-sig-share,         multisig,       0xd0fa,         draft,      G1 signature share for BLS-12381-G2
+bls12_381-g2-sig-share,         multisig,       0xd0fb,         draft,      G1 signature share for BLS-12381-G2
 eip-191,                        varsig,         0xd191,         draft,      EIP-191 Ethereum Signed Data Standard
 jwk_jcs-pub,                    key,            0xeb51,         draft,      JSON object containing only the required members of a JWK (RFC 7518 and RFC 7517) representing the public key. Serialisation based on JCS (RFC 8785)
 fil-commitment-unsealed,        filecoin,       0xf101,         permanent,  Filecoin piece or sector data commitment merkle node/root (CommP & CommD)
@@ -534,8 +563,8 @@ skynet-ns,                      namespace,      0xb19910,       draft,      Skyn
 arweave-ns,                     namespace,      0xb29910,       draft,      Arweave Namespace
 subspace-ns,                    namespace,      0xb39910,       draft,      Subspace Network Namespace
 kumandra-ns,                    namespace,      0xb49910,       draft,      Kumandra Network Namespace
-es256,                          varsig,         0xd01200,       draft,      ES256 Signature Algorithm
-es284,                          varsig,         0xd01201,       draft,      ES384 Signature Algorithm
-es512,                          varsig,         0xd01202,       draft,      ES512 Signature Algorithm
-rs256,                          varsig,         0xd01205,       draft,      RS256 Signature Algorithm
+es256,                          multisig,       0xd01200,       draft,      ES256 Signature Algorithm
+es284,                          multisig,       0xd01201,       draft,      ES384 Signature Algorithm
+es512,                          multisig,       0xd01202,       draft,      ES512 Signature Algorithm
+rs256,                          multisig,       0xd01205,       draft,      RS256 Signature Algorithm
 scion,                          multiaddr,      0xd02000,       draft,      SCION Internet architecture
