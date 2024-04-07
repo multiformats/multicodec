@@ -77,6 +77,7 @@ The `validate.py` script can be used to validate the table once it's edited.
 - [Elixir](https://github.com/nocursor/ex-multicodec)
 - [Scala](https://github.com/fluency03/scala-multicodec)
 - [Ruby](https://github.com/sleeplessbyte/ruby-multicodec)
+- [Rust](//github.com/cryptidtech/rust-multicodec)
 - [Java](https://github.com/richardbergquist/java-multicodec)
 - Kotlin
   - `multicodec` part of Kotlin project [multiformat](https://github.com/erwin-kok/multiformat)
