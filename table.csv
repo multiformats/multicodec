@@ -48,6 +48,7 @@ libp2p-key,                     ipld,           0x72,           permanent,  Libp
 git-raw,                        ipld,           0x78,           permanent,  Raw Git object
 torrent-info,                   ipld,           0x7b,           draft,      Torrent file info field (bencoded)
 torrent-file,                   ipld,           0x7c,           draft,      Torrent file (bencoded)
+iroh-hashseq,                   ipld,           0x80,           draft,      Iroh hash sequence
 leofcoin-block,                 ipld,           0x81,           draft,      Leofcoin Block
 leofcoin-tx,                    ipld,           0x82,           draft,      Leofcoin Transaction
 leofcoin-pr,                    ipld,           0x83,           draft,      Leofcoin Peer Reputation
