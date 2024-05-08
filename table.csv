@@ -566,16 +566,16 @@ es256,                          varsig,         0xd01200,       draft,      ES25
 es284,                          varsig,         0xd01201,       draft,      ES384 Signature Algorithm
 es512,                          varsig,         0xd01202,       draft,      ES512 Signature Algorithm
 rs256,                          varsig,         0xd01205,       draft,      RS256 Signature Algorithm
-es256k-msig,                    multisig,       0xd01300,       draft,      ES256K Siganture Algorithm (secp256k1) as Multisig
+es256k-msig,                    multisig,       0xd01300,       draft,      ES256K (secp256k1) Signature as Multisig
 bls12_381-g1-msig,              multisig,       0xd01301,       draft,      G1 signature for BLS-12381-G2 as Multisig
 bls12_381-g2-msig,              multisig,       0xd01302,       draft,      G2 signature for BLS-12381-G1 as Multisig
-eddsa-msig,                     multisig,       0xd01303,       draft,      Edwards-Curve Digital Signature Algorithm as Multisig
+eddsa-msig,                     multisig,       0xd01303,       draft,      Edwards-Curve Digital Signature as Multisig
 bls12_381-g1-share-msig,        multisig,       0xd01304,       draft,      G1 threshold signature share for BLS-12381-G2 as Multisig
 bls12_381-g2-share-msig,        multisig,       0xd01305,       draft,      G2 threshold signature share for BLS-12381-G1 as Multisig
 lamport-msig,                   multisig,       0xd01306,       draft,      Lamport signature as Multisig
 lamport-share-msig,             multisig,       0xd01307,       draft,      Lamport threshold signature share as Multisig
-es256-msig,                     multisig,       0xd01308,       draft,      ES256 Signature Algorithm as Multisig
-es384-msig,                     multisig,       0xd01309,       draft,      ES384 Signature Algorithm as Multisig
-es512-msig,                     multisig,       0xd0130a,       draft,      ES512 Signature Algorithm as Multisig
-rs256-msig,                     multisig,       0xd0130b,       draft,      RS256 Signature Algorithm as Multisig
+es256-msig,                     multisig,       0xd01308,       draft,      ECDSA P-256 Signature as Multisig
+es384-msig,                     multisig,       0xd01309,       draft,      ECDSA P-384 Signature as Multisig
+es521-msig,                     multisig,       0xd0130a,       draft,      ECDSA P-521 Signature as Multisig
+rs256-msig,                     multisig,       0xd0130b,       draft,      RS256 Signature as Multisig
 scion,                          multiaddr,      0xd02000,       draft,      SCION Internet architecture
