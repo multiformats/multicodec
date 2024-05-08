@@ -5,9 +5,9 @@ cidv2,                          cid,            0x02,           draft,      CIDv
 cidv3,                          cid,            0x03,           draft,      CIDv3
 ip4,                            multiaddr,      0x04,           permanent,
 tcp,                            multiaddr,      0x06,           permanent,
-vlad,                           cid,            0x07,           draft,      Verifiable Long-lived ADdress
-provenance-log,                 ipld,           0x08,           draft,      Verifiable and permissioned append only log
-provenance-log-entry,           ipld,           0x09,           draft,      Verifiable and permissioned append only log
+vlad,                           vlad,           0x07,           draft,      Verifiable Long-lived ADdress
+provenance-log,                 serialization,  0x08,           draft,      Verifiable and permissioned append only log
+provenance-log-entry,           serialization,  0x09,           draft,      Verifiable and permissioned append only log
 sha1,                           multihash,      0x11,           permanent,
 sha2-256,                       multihash,      0x12,           permanent,
 sha2-512,                       multihash,      0x13,           permanent,
@@ -543,12 +543,10 @@ iscc,                           softhash,       0xcc01,         draft,      ISCC
 zeroxcert-imprint-256,          zeroxcert,      0xce11,         draft,      0xcert Asset Imprint (root hash)
 nonstandard-sig,                varsig,         0xd000,         deprecated, Namespace for all not yet standard signature algorithms
 bcrypt-pbkdf,                   multihash,      0xd00d,         draft,      Bcrypt-PBKDF key derivation function
-es256k,                         multisig,       0xd0e7,         draft,      ES256K Siganture Algorithm (secp256k1)
-bls12_381-g1-sig,               multisig,       0xd0ea,         draft,      G1 signature for BLS-12381-G2
-bls12_381-g2-sig,               multisig,       0xd0eb,         draft,      G2 signature for BLS-12381-G1
-eddsa,                          multisig,       0xd0ed,         draft,      Edwards-Curve Digital Signature Algorithm
-bls12_381-g1-sig-share,         multisig,       0xd0fa,         draft,      G1 signature share for BLS-12381-G2
-bls12_381-g2-sig-share,         multisig,       0xd0fb,         draft,      G1 signature share for BLS-12381-G2
+es256k,                         varsig,         0xd0e7,         draft,      ES256K Siganture Algorithm (secp256k1)
+bls12_381-g1-sig,               varsig,         0xd0ea,         draft,      G1 signature for BLS-12381-G2
+bls12_381-g2-sig,               varsig,         0xd0eb,         draft,      G2 signature for BLS-12381-G1
+eddsa,                          varsig,         0xd0ed,         draft,      Edwards-Curve Digital Signature Algorithm
 eip-191,                        varsig,         0xd191,         draft,      EIP-191 Ethereum Signed Data Standard
 jwk_jcs-pub,                    key,            0xeb51,         draft,      JSON object containing only the required members of a JWK (RFC 7518 and RFC 7517) representing the public key. Serialisation based on JCS (RFC 8785)
 fil-commitment-unsealed,        filecoin,       0xf101,         permanent,  Filecoin piece or sector data commitment merkle node/root (CommP & CommD)
@@ -564,8 +562,20 @@ skynet-ns,                      namespace,      0xb19910,       draft,      Skyn
 arweave-ns,                     namespace,      0xb29910,       draft,      Arweave Namespace
 subspace-ns,                    namespace,      0xb39910,       draft,      Subspace Network Namespace
 kumandra-ns,                    namespace,      0xb49910,       draft,      Kumandra Network Namespace
-es256,                          multisig,       0xd01200,       draft,      ES256 Signature Algorithm
-es284,                          multisig,       0xd01201,       draft,      ES384 Signature Algorithm
-es512,                          multisig,       0xd01202,       draft,      ES512 Signature Algorithm
-rs256,                          multisig,       0xd01205,       draft,      RS256 Signature Algorithm
+es256,                          varsig,         0xd01200,       draft,      ES256 Signature Algorithm
+es284,                          varsig,         0xd01201,       draft,      ES384 Signature Algorithm
+es512,                          varsig,         0xd01202,       draft,      ES512 Signature Algorithm
+rs256,                          varsig,         0xd01205,       draft,      RS256 Signature Algorithm
+es256k-msig,                    multisig,       0xd01300,       draft,      ES256K Siganture Algorithm (secp256k1) as Multisig
+bls12_381-g1-msig,              multisig,       0xd01301,       draft,      G1 signature for BLS-12381-G2 as Multisig
+bls12_381-g2-msig,              multisig,       0xd01302,       draft,      G2 signature for BLS-12381-G1 as Multisig
+eddsa-msig,                     multisig,       0xd01303,       draft,      Edwards-Curve Digital Signature Algorithm as Multisig
+bls12_381-g1-share-msig,        multisig,       0xd01304,       draft,      G1 threshold signature share for BLS-12381-G2 as Multisig
+bls12_381-g2-share-msig,        multisig,       0xd01305,       draft,      G2 threshold signature share for BLS-12381-G1 as Multisig
+lamport-msig,                   multisig,       0xd01306,       draft,      Lamport signature as Multisig
+lamport-share-msig,             multisig,       0xd01307,       draft,      Lamport threshold signature share as Multisig
+es256-msig,                     multisig,       0xd01308,       draft,      ES256 Signature Algorithm as Multisig
+es284-msig,                     multisig,       0xd01309,       draft,      ES384 Signature Algorithm as Multisig
+es512-msig,                     multisig,       0xd0130a,       draft,      ES512 Signature Algorithm as Multisig
+rs256-msig,                     multisig,       0xd0130b,       draft,      RS256 Signature Algorithm as Multisig
 scion,                          multiaddr,      0xd02000,       draft,      SCION Internet architecture
