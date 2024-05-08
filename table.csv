@@ -575,7 +575,7 @@ bls12_381-g2-share-msig,        multisig,       0xd01305,       draft,      G2 t
 lamport-msig,                   multisig,       0xd01306,       draft,      Lamport signature as Multisig
 lamport-share-msig,             multisig,       0xd01307,       draft,      Lamport threshold signature share as Multisig
 es256-msig,                     multisig,       0xd01308,       draft,      ES256 Signature Algorithm as Multisig
-es284-msig,                     multisig,       0xd01309,       draft,      ES384 Signature Algorithm as Multisig
+es384-msig,                     multisig,       0xd01309,       draft,      ES384 Signature Algorithm as Multisig
 es512-msig,                     multisig,       0xd0130a,       draft,      ES512 Signature Algorithm as Multisig
 rs256-msig,                     multisig,       0xd0130b,       draft,      RS256 Signature Algorithm as Multisig
 scion,                          multiaddr,      0xd02000,       draft,      SCION Internet architecture
