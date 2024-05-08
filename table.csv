@@ -41,7 +41,7 @@ dns6,                           multiaddr,      0x37,           permanent,
 dnsaddr,                        multiaddr,      0x38,           permanent,
 multisig,                       multiformat,    0x39,           draft,      Digital signature multiformat
 multikey,                       multiformat,    0x3a,           draft,      Encryption key multiformat 
-nonce,                          key,            0x3b,           draft,      Nonce random value
+nonce,                          nonce,          0x3b,           draft,      Nonce random value
 protobuf,                       serialization,  0x50,           draft,      Protocol Buffers
 cbor,                           ipld,           0x51,           permanent,  CBOR
 raw,                            ipld,           0x55,           permanent,  raw binary
