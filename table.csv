@@ -174,9 +174,6 @@ rsa-priv,                       key,            0x1305,         draft,      RSA 
 p256-priv,                      key,            0x1306,         draft,      P-256 private key
 p384-priv,                      key,            0x1307,         draft,      P-384 private key
 p521-priv,                      key,            0x1308,         draft,      P-521 private key
-bls12_381-g1-priv,              key,            0x1309,         draft,      BLS12-381 G1 private key
-bls12_381-g2-priv,              key,            0x130a,         draft,      BLS12-381 G2 private key
-bls12_381-g1g2-priv,            key,            0x130b,         draft,      BLS12-381 G1 and G2 private key
 kangarootwelve,                 multihash,      0x1d01,         draft,      KangarooTwelve is an extendable-output hash function based on Keccak-p
 aes-gcm-256,                    encryption,     0x2000,         draft,      AES Galois/Counter Mode with 256-bit key and 12-byte IV
 silverpine,                     multiaddr,      0x3f42,         draft,      Experimental QUIC over yggdrasil and ironwood routing protocol
