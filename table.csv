@@ -169,8 +169,9 @@ x448-pub,                       key,            0x1204,         draft,      X448
 rsa-pub,                        key,            0x1205,         draft,      RSA public key. DER-encoded ASN.1 type RSAPublicKey according to IETF RFC 8017 (PKCS #1)
 sm2-pub,                        key,            0x1206,         draft,      SM2 public key (compressed)
 vlad,                           vlad,           0x1207,         draft,      Verifiable Long-lived ADdress
-provenance-log,                 serialization,  0x1208,         draft,      Verifiable and permissioned append only log
-provenance-log-entry,           serialization,  0x1209,         draft,      Verifiable and permissioned append only log
+provenance-log,                 serialization,  0x1208,         draft,      Verifiable and permissioned append-only log
+provenance-log-entry,           serialization,  0x1209,         draft,      Verifiable and permissioned append-only log entry
+provenance-log-script,          serialization,  0x120a,         draft,      Verifiable and permissioned append-only log script
 multisig,                       multiformat,    0x1239,         draft,      Digital signature multiformat
 multikey,                       multiformat,    0x123a,         draft,      Encryption key multiformat 
 nonce,                          nonce,          0x123b,         draft,      Nonce random value
