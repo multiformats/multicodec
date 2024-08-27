@@ -5,9 +5,6 @@ cidv2,                          cid,            0x02,           draft,      CIDv
 cidv3,                          cid,            0x03,           draft,      CIDv3
 ip4,                            multiaddr,      0x04,           permanent,
 tcp,                            multiaddr,      0x06,           permanent,
-vlad,                           vlad,           0x07,           draft,      Verifiable Long-lived ADdress
-provenance-log,                 serialization,  0x08,           draft,      Verifiable and permissioned append only log
-provenance-log-entry,           serialization,  0x09,           draft,      Verifiable and permissioned append only log
 sha1,                           multihash,      0x11,           permanent,
 sha2-256,                       multihash,      0x12,           permanent,
 sha2-512,                       multihash,      0x13,           permanent,
@@ -39,9 +36,6 @@ dns,                            multiaddr,      0x35,           permanent,
 dns4,                           multiaddr,      0x36,           permanent,
 dns6,                           multiaddr,      0x37,           permanent,
 dnsaddr,                        multiaddr,      0x38,           permanent,
-multisig,                       multiformat,    0x39,           draft,      Digital signature multiformat
-multikey,                       multiformat,    0x3a,           draft,      Encryption key multiformat 
-nonce,                          nonce,          0x3b,           draft,      Nonce random value
 protobuf,                       serialization,  0x50,           draft,      Protocol Buffers
 cbor,                           ipld,           0x51,           permanent,  CBOR
 raw,                            ipld,           0x55,           permanent,  raw binary
@@ -174,6 +168,12 @@ ed448-pub,                      key,            0x1203,         draft,      Ed44
 x448-pub,                       key,            0x1204,         draft,      X448 public Key
 rsa-pub,                        key,            0x1205,         draft,      RSA public key. DER-encoded ASN.1 type RSAPublicKey according to IETF RFC 8017 (PKCS #1)
 sm2-pub,                        key,            0x1206,         draft,      SM2 public key (compressed)
+vlad,                           vlad,           0x1207,         draft,      Verifiable Long-lived ADdress
+provenance-log,                 serialization,  0x1208,         draft,      Verifiable and permissioned append only log
+provenance-log-entry,           serialization,  0x1209,         draft,      Verifiable and permissioned append only log
+multisig,                       multiformat,    0x1239,         draft,      Digital signature multiformat
+multikey,                       multiformat,    0x123a,         draft,      Encryption key multiformat 
+nonce,                          nonce,          0x123b,         draft,      Nonce random value
 ed25519-priv,                   key,            0x1300,         draft,      Ed25519 private key
 secp256k1-priv,                 key,            0x1301,         draft,      Secp256k1 private key
 x25519-priv,                    key,            0x1302,         draft,      Curve25519 private key
