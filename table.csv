@@ -72,7 +72,6 @@ aes-192,                        key,            0xa1,           draft,      192-
 aes-256,                        key,            0xa2,           draft,      256-bit AES symmetric key
 chacha-128,                     key,            0xa3,           draft,      128-bit ChaCha symmetric key
 chacha-256,                     key,            0xa4,           draft,      256-bit ChaCha symmetric key
-chacha20-poly1305,              multikey,       0xa5,           draft,      ChaCha20_Poly1305 encryption scheme
 bitcoin-block,                  ipld,           0xb0,           permanent,  Bitcoin Block
 bitcoin-tx,                     ipld,           0xb1,           permanent,  Bitcoin Tx
 bitcoin-witness-commitment,     ipld,           0xb2,           permanent,  Bitcoin Witness Commitment
@@ -210,6 +209,7 @@ aes-gcm-256,                    encryption,     0x2000,         draft,      AES 
 silverpine,                     multiaddr,      0x3f42,         draft,      Experimental QUIC over yggdrasil and ironwood routing protocol
 sm3-256,                        multihash,      0x534d,         draft,
 sha256a,                        hash,           0x7012,         draft,      The sum of multiple sha2-256 hashes; as specified by Ceramic CIP-124.
+chacha20-poly1305,              multikey,       0xa000,         draft,      ChaCha20_Poly1305 encryption scheme
 blake2b-8,                      multihash,      0xb201,         draft,      Blake2b consists of 64 output lengths that give different hashes
 blake2b-16,                     multihash,      0xb202,         draft,
 blake2b-24,                     multihash,      0xb203,         draft,
