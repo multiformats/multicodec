@@ -167,6 +167,13 @@ ed448-pub,                      key,            0x1203,         draft,      Ed44
 x448-pub,                       key,            0x1204,         draft,      X448 public Key
 rsa-pub,                        key,            0x1205,         draft,      RSA public key. DER-encoded ASN.1 type RSAPublicKey according to IETF RFC 8017 (PKCS #1)
 sm2-pub,                        key,            0x1206,         draft,      SM2 public key (compressed)
+vlad,                           vlad,           0x1207,         draft,      Verifiable Long-lived ADdress
+provenance-log,                 serialization,  0x1208,         draft,      Verifiable and permissioned append-only log
+provenance-log-entry,           serialization,  0x1209,         draft,      Verifiable and permissioned append-only log entry
+provenance-log-script,          serialization,  0x120a,         draft,      Verifiable and permissioned append-only log script
+multisig,                       multiformat,    0x1239,         draft,      Digital signature multiformat
+multikey,                       multiformat,    0x123a,         draft,      Encryption key multiformat
+nonce,                          nonce,          0x123b,         draft,      Nonce random value
 ed25519-priv,                   key,            0x1300,         draft,      Ed25519 private key
 secp256k1-priv,                 key,            0x1301,         draft,      Secp256k1 private key
 x25519-priv,                    key,            0x1302,         draft,      Curve25519 private key
@@ -178,11 +185,31 @@ p521-priv,                      key,            0x1308,         draft,      P-52
 bls12_381-g1-priv,              key,            0x1309,         draft,      BLS12-381 G1 private key
 bls12_381-g2-priv,              key,            0x130a,         draft,      BLS12-381 G2 private key
 bls12_381-g1g2-priv,            key,            0x130b,         draft,      BLS12-381 G1 and G2 private key
+bls12_381-g1-pub-share,         key,            0x130c,         draft,      BLS12-381 G1 public key share
+bls12_381-g2-pub-share,         key,            0x130d,         draft,      BLS12-381 G2 public key share
+bls12_381-g1-priv-share,        key,            0x130e,         draft,      BLS12-381 G1 private key share
+bls12_381-g2-priv-share,        key,            0x130f,         draft,      BLS12-381 G2 private key share
+lamport-sha3-512-pub,           key,            0x1a14,         draft,      Lamport public key based on SHA3-512
+lamport-sha3-384-pub,           key,            0x1a15,         draft,      Lamport public key based on SHA3-384
+lamport-sha3-256-pub,           key,            0x1a16,         draft,      Lamport public key based on SHA3-256
+lamport-sha3-512-priv,          key,            0x1a24,         draft,      Lamport private key based on SHA3-512
+lamport-sha3-384-priv,          key,            0x1a25,         draft,      Lamport private key based on SHA3-384
+lamport-sha3-256-priv,          key,            0x1a26,         draft,      Lamport private key based on SHA3-256
+lamport-sha3-512-priv-share,    key,            0x1a34,         draft,      Lamport private key share based on SHA3-512 and split with Shamir gf256
+lamport-sha3-384-priv-share,    key,            0x1a35,         draft,      Lamport private key share based on SHA3-384 and split with Shamir gf256
+lamport-sha3-256-priv-share,    key,            0x1a36,         draft,      Lamport private key share based on SHA3-256 and split with Shamir gf256
+lamport-sha3-512-sig,           multisig,       0x1a44,         draft,      Lamport signature based on SHA3-512
+lamport-sha3-384-sig,           multisig,       0x1a45,         draft,      Lamport signature based on SHA3-384
+lamport-sha3-256-sig,           multisig,       0x1a46,         draft,      Lamport signature based on SHA3-256
+lamport-sha3-512-sig-share,     multisig,       0x1a54,         draft,      Lamport signature share based on SHA3-512 and split with Shamir gf256
+lamport-sha3-384-sig-share,     multisig,       0x1a55,         draft,      Lamport signature share based on SHA3-384 and split with Shamir gf256
+lamport-sha3-256-sig-share,     multisig,       0x1a56,         draft,      Lamport signature share based on SHA3-256 and split with Shamir gf256
 kangarootwelve,                 multihash,      0x1d01,         draft,      KangarooTwelve is an extendable-output hash function based on Keccak-p
 aes-gcm-256,                    encryption,     0x2000,         draft,      AES Galois/Counter Mode with 256-bit key and 12-byte IV
 silverpine,                     multiaddr,      0x3f42,         draft,      Experimental QUIC over yggdrasil and ironwood routing protocol
 sm3-256,                        multihash,      0x534d,         draft,
 sha256a,                        hash,           0x7012,         draft,      The sum of multiple sha2-256 hashes; as specified by Ceramic CIP-124.
+chacha20-poly1305,              multikey,       0xa000,         draft,      ChaCha20_Poly1305 encryption scheme
 blake2b-8,                      multihash,      0xb201,         draft,      Blake2b consists of 64 output lengths that give different hashes
 blake2b-16,                     multihash,      0xb202,         draft,
 blake2b-24,                     multihash,      0xb203,         draft,
@@ -517,6 +544,7 @@ json-jcs,                       ipld,           0xb601,         draft,      The 
 iscc,                           softhash,       0xcc01,         draft,      ISCC (International Standard Content Code) - similarity preserving hash
 zeroxcert-imprint-256,          zeroxcert,      0xce11,         draft,      0xcert Asset Imprint (root hash)
 nonstandard-sig,                varsig,         0xd000,         deprecated, Namespace for all not yet standard signature algorithms
+bcrypt-pbkdf,                   multihash,      0xd00d,         draft,      Bcrypt-PBKDF key derivation function
 es256k,                         varsig,         0xd0e7,         draft,      ES256K Siganture Algorithm (secp256k1)
 bls-12381-g1-sig,               varsig,         0xd0ea,         draft,      G1 signature for BLS-12381-G2
 bls-12381-g2-sig,               varsig,         0xd0eb,         draft,      G2 signature for BLS-12381-G1
@@ -540,4 +568,16 @@ es256,                          varsig,         0xd01200,       draft,      ES25
 es284,                          varsig,         0xd01201,       draft,      ES384 Signature Algorithm
 es512,                          varsig,         0xd01202,       draft,      ES512 Signature Algorithm
 rs256,                          varsig,         0xd01205,       draft,      RS256 Signature Algorithm
+es256k-msig,                    multisig,       0xd01300,       draft,      ES256K (secp256k1) Signature as Multisig
+bls12_381-g1-msig,              multisig,       0xd01301,       draft,      G1 signature for BLS-12381-G2 as Multisig
+bls12_381-g2-msig,              multisig,       0xd01302,       draft,      G2 signature for BLS-12381-G1 as Multisig
+eddsa-msig,                     multisig,       0xd01303,       draft,      Edwards-Curve Digital Signature as Multisig
+bls12_381-g1-share-msig,        multisig,       0xd01304,       draft,      G1 threshold signature share for BLS-12381-G2 as Multisig
+bls12_381-g2-share-msig,        multisig,       0xd01305,       draft,      G2 threshold signature share for BLS-12381-G1 as Multisig
+lamport-msig,                   multisig,       0xd01306,       draft,      Lamport signature as Multisig
+lamport-share-msig,             multisig,       0xd01307,       draft,      Lamport threshold signature share as Multisig
+es256-msig,                     multisig,       0xd01308,       draft,      ECDSA P-256 Signature as Multisig
+es384-msig,                     multisig,       0xd01309,       draft,      ECDSA P-384 Signature as Multisig
+es521-msig,                     multisig,       0xd0130a,       draft,      ECDSA P-521 Signature as Multisig
+rs256-msig,                     multisig,       0xd0130b,       draft,      RS256 Signature as Multisig
 scion,                          multiaddr,      0xd02000,       draft,      SCION Internet architecture
