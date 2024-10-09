@@ -171,6 +171,9 @@ vlad,                           vlad,           0x1207,         draft,      Veri
 provenance-log,                 serialization,  0x1208,         draft,      Verifiable and permissioned append-only log
 provenance-log-entry,           serialization,  0x1209,         draft,      Verifiable and permissioned append-only log entry
 provenance-log-script,          serialization,  0x120a,         draft,      Verifiable and permissioned append-only log script
+mlkem-512-pub,                  key,            0x120b,         draft,      ML-KEM 512 public key; as specified by FIPS 203
+mlkem-768-pub,                  key,            0x120c,         draft,      ML-KEM 768 public key; as specified by FIPS 203
+mlkem-1024-pub,                 key,            0x120d,         draft,      ML-KEM 1024 public key; as specified by FIPS 203
 multisig,                       multiformat,    0x1239,         draft,      Digital signature multiformat
 multikey,                       multiformat,    0x123a,         draft,      Encryption key multiformat
 nonce,                          nonce,          0x123b,         draft,      Nonce random value
