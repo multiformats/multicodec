@@ -549,8 +549,8 @@ zeroxcert-imprint-256,          zeroxcert,      0xce11,         draft,      0xce
 nonstandard-sig,                varsig,         0xd000,         deprecated, Namespace for all not yet standard signature algorithms
 bcrypt-pbkdf,                   multihash,      0xd00d,         draft,      Bcrypt-PBKDF key derivation function
 es256k,                         varsig,         0xd0e7,         draft,      ES256K Siganture Algorithm (secp256k1)
-bls-12381-g1-sig,               varsig,         0xd0ea,         draft,      G1 signature for BLS-12381-G2
-bls-12381-g2-sig,               varsig,         0xd0eb,         draft,      G2 signature for BLS-12381-G1
+bls12_381-g1-sig,               varsig,         0xd0ea,         draft,      G1 signature for BLS-12381-G2
+bls12_381-g2-sig,               varsig,         0xd0eb,         draft,      G2 signature for BLS-12381-G1
 eddsa,                          varsig,         0xd0ed,         draft,      Edwards-Curve Digital Signature Algorithm
 eip-191,                        varsig,         0xd191,         draft,      EIP-191 Ethereum Signed Data Standard
 jwk_jcs-pub,                    key,            0xeb51,         draft,      JSON object containing only the required members of a JWK (RFC 7518 and RFC 7517) representing the public key. Serialisation based on JCS (RFC 8785)
