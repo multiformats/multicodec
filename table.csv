@@ -557,6 +557,8 @@ eip-191,                        varsig,         0xd191,         draft,      EIP-
 jwk_jcs-pub,                    key,            0xeb51,         draft,      JSON object containing only the required members of a JWK (RFC 7518 and RFC 7517) representing the public key. Serialisation based on JCS (RFC 8785)
 fil-commitment-unsealed,        filecoin,       0xf101,         permanent,  Filecoin piece or sector data commitment merkle node/root (CommP & CommD)
 fil-commitment-sealed,          filecoin,       0xf102,         permanent,  Filecoin sector data commitment merkle node/root - sealed and replicated (CommR)
+dms3,                           multiaddr,      0x100000,       draft,      Decentralized Multi-State-Space Search
+dms3-key,                       ipld,           0x100001,       draft,      DMS3 Public Key
 shelter-contract-manifest,      shelter,        0x511e00,       draft,      Shelter protocol contract manifest
 shelter-contract-text,          shelter,        0x511e01,       draft,      Shelter protocol contract text
 shelter-contract-data,          shelter,        0x511e02,       draft,      Shelter protocol contract data (contract chain)
@@ -590,5 +592,3 @@ es384-msig,                     multisig,       0xd01309,       draft,      ECDS
 es521-msig,                     multisig,       0xd0130a,       draft,      ECDSA P-521 Signature as Multisig
 rs256-msig,                     multisig,       0xd0130b,       draft,      RS256 Signature as Multisig
 scion,                          multiaddr,      0xd02000,       draft,      SCION Internet architecture
-dms3,                           multiaddr,      0x100000,       draft,      Decentralized Multi-State-Space Search
-dms3-key,                       ipld,           0x100001,       draft,      DMS3 Public Key
