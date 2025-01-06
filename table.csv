@@ -585,3 +585,5 @@ es384-msig,                     multisig,       0xd01309,       draft,      ECDS
 es521-msig,                     multisig,       0xd0130a,       draft,      ECDSA P-521 Signature as Multisig
 rs256-msig,                     multisig,       0xd0130b,       draft,      RS256 Signature as Multisig
 scion,                          multiaddr,      0xd02000,       draft,      SCION Internet architecture
+dms3,                           multiaddr,      0x100000,       draft,      Decentralized Multi-State-Space Search
+dms3-key,                       ipld,           0x100001,       draft,      DMS3 Public Key
