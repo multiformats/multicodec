@@ -118,7 +118,7 @@ You can still find the table in [multibase.csv](https://github.com/multiformats/
 
 > Can I use multicodec for my own purpose?
 
-Sure, you can use multicodec whenever you have the need for self-identifiable data. Just prefix your own data with the corresponding varint encodec multicodec.
+Sure, you can use multicodec whenever you have the need for self-identifiable data. Just prefix your own data with the corresponding varint encoded multicodec.
 
 ## Contribute
 
