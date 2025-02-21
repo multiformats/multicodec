@@ -77,8 +77,8 @@ bitcoin-tx,                     ipld,           0xb1,           permanent,  Bitc
 bitcoin-witness-commitment,     ipld,           0xb2,           permanent,  Bitcoin Witness Commitment
 zcash-block,                    ipld,           0xc0,           permanent,  Zcash Block
 zcash-tx,                       ipld,           0xc1,           permanent,  Zcash Tx
-caip-50,                        multiformat,    0xca,           draft,      CAIP-50 multi-chain account id
-streamid,                       namespace,      0xce,           draft,      Ceramic Stream Id
+caip-50,                        multiformat,    0xca,           draft,      CAIP-50 multi-chain account ID
+streamid,                       namespace,      0xce,           draft,      Ceramic Stream ID
 stellar-block,                  ipld,           0xd0,           draft,      Stellar Block
 stellar-tx,                     ipld,           0xd1,           draft,      Stellar Tx
 md4,                            multihash,      0xd4,           draft,
