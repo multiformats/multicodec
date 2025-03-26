@@ -84,6 +84,8 @@ The `validate.py` script can be used to validate the table once it's edited.
   - `multicodec` part of Kotlin project [multiformat](https://github.com/erwin-kok/multiformat)
 - Zig
   - `multicodec` part of Zig project [multiformats-zig](https://github.com/zen-eth/multiformats-zig)
+- Swift
+  - `multicodec` part of [MultiformatsKit](https://github.com/ATProtoKit/MultiformatsKit)
 - [Add yours today!](https://github.com/multiformats/multicodec/edit/master/table.csv)
 
 ## Reserved Code Ranges
