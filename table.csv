@@ -161,7 +161,7 @@ ripemd-160,                     multihash,      0x1053,         draft,
 ripemd-256,                     multihash,      0x1054,         draft,
 ripemd-320,                     multihash,      0x1055,         draft,
 ed2k,                           multihash,      0x107a,         draft,      eDonkey2000 hash.
-bt-v2-pieces-root,              multihash,      0x107b,         draft,      BitTorrent v2 pieces root hash.
+btv2-pieces-root,               multihash,      0x107b,         draft,      BitTorrent v2 pieces root hash.
 bt-pieces-16k,                  multihash,      0x1080,         draft,      BitTorrent pieces with 16KiB piece length.
 bt-pieces-32k,                  multihash,      0x1081,         draft,      BitTorrent pieces with 32KiB piece length.
 bt-pieces-64k,                  multihash,      0x1082,         draft,      BitTorrent pieces with 64KiB piece length.
@@ -190,20 +190,20 @@ bt-pieces-16m-padding,          hash,           0x109a,         draft,      BitT
 bt-pieces-32m-padding,          hash,           0x109b,         draft,      BitTorrent pieces with 32MiB piece length and padding.
 bt-pieces-64m-padding,          hash,           0x109c,         draft,      BitTorrent pieces with 64MiB piece length and padding.
 bt-pieces-128m-padding,         hash,           0x109d,         draft,      BitTorrent pieces with 128MiB piece length and padding.
-bt-v2-pieces-16k,               multihash,      0x10a0,         draft,      BitTorrent v2 pieces with 16KiB piece length.
-bt-v2-pieces-32k,               multihash,      0x10a1,         draft,      BitTorrent v2 pieces with 32KiB piece length.
-bt-v2-pieces-64k,               multihash,      0x10a2,         draft,      BitTorrent v2 pieces with 64KiB piece length.
-bt-v2-pieces-128k,              multihash,      0x10a3,         draft,      BitTorrent v2 pieces with 128KiB piece length.
-bt-v2-pieces-256k,              multihash,      0x10a4,         draft,      BitTorrent v2 pieces with 256KiB piece length.
-bt-v2-pieces-512k,              multihash,      0x10a5,         draft,      BitTorrent v2 pieces with 512KiB piece length.
-bt-v2-pieces-1m,                multihash,      0x10a6,         draft,      BitTorrent v2 pieces with 1MiB piece length.
-bt-v2-pieces-2m,                multihash,      0x10a7,         draft,      BitTorrent v2 pieces with 2MiB piece length.
-bt-v2-pieces-4m,                multihash,      0x10a8,         draft,      BitTorrent v2 pieces with 4MiB piece length.
-bt-v2-pieces-8m,                multihash,      0x10a9,         draft,      BitTorrent v2 pieces with 8MiB piece length.
-bt-v2-pieces-16m,               multihash,      0x10aa,         draft,      BitTorrent v2 pieces with 16MiB piece length.
-bt-v2-pieces-32m,               multihash,      0x10ab,         draft,      BitTorrent v2 pieces with 32MiB piece length.
-bt-v2-pieces-64m,               multihash,      0x10ac,         draft,      BitTorrent v2 pieces with 64MiB piece length.
-bt-v2-pieces-128m,              multihash,      0x10ad,         draft,      BitTorrent v2 pieces with 128MiB piece length.
+btv2-pieces-16k,                multihash,      0x10a0,         draft,      BitTorrent v2 pieces with 16KiB piece length.
+btv2-pieces-32k,                multihash,      0x10a1,         draft,      BitTorrent v2 pieces with 32KiB piece length.
+btv2-pieces-64k,                multihash,      0x10a2,         draft,      BitTorrent v2 pieces with 64KiB piece length.
+btv2-pieces-128k,               multihash,      0x10a3,         draft,      BitTorrent v2 pieces with 128KiB piece length.
+btv2-pieces-256k,               multihash,      0x10a4,         draft,      BitTorrent v2 pieces with 256KiB piece length.
+btv2-pieces-512k,               multihash,      0x10a5,         draft,      BitTorrent v2 pieces with 512KiB piece length.
+btv2-pieces-1m,                 multihash,      0x10a6,         draft,      BitTorrent v2 pieces with 1MiB piece length.
+btv2-pieces-2m,                 multihash,      0x10a7,         draft,      BitTorrent v2 pieces with 2MiB piece length.
+btv2-pieces-4m,                 multihash,      0x10a8,         draft,      BitTorrent v2 pieces with 4MiB piece length.
+btv2-pieces-8m,                 multihash,      0x10a9,         draft,      BitTorrent v2 pieces with 8MiB piece length.
+btv2-pieces-16m,                multihash,      0x10aa,         draft,      BitTorrent v2 pieces with 16MiB piece length.
+btv2-pieces-32m,                multihash,      0x10ab,         draft,      BitTorrent v2 pieces with 32MiB piece length.
+btv2-pieces-64m,                multihash,      0x10ac,         draft,      BitTorrent v2 pieces with 64MiB piece length.
+btv2-pieces-128m,               multihash,      0x10ad,         draft,      BitTorrent v2 pieces with 128MiB piece length.
 x11,                            multihash,      0x1100,         draft,
 p256-pub,                       key,            0x1200,         draft,      P-256 public Key (compressed)
 p384-pub,                       key,            0x1201,         draft,      P-384 public Key (compressed)
