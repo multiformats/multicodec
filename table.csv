@@ -77,8 +77,8 @@ bitcoin-tx,                     ipld,           0xb1,           permanent,  Bitc
 bitcoin-witness-commitment,     ipld,           0xb2,           permanent,  Bitcoin Witness Commitment
 zcash-block,                    ipld,           0xc0,           permanent,  Zcash Block
 zcash-tx,                       ipld,           0xc1,           permanent,  Zcash Tx
-caip-50,                        multiformat,    0xca,           draft,      CAIP-50 multi-chain account id
-streamid,                       namespace,      0xce,           draft,      Ceramic Stream Id
+caip-50,                        multiformat,    0xca,           draft,      CAIP-50 multi-chain account ID
+streamid,                       namespace,      0xce,           draft,      Ceramic Stream ID
 stellar-block,                  ipld,           0xd0,           draft,      Stellar Block
 stellar-tx,                     ipld,           0xd1,           draft,      Stellar Tx
 md4,                            multihash,      0xd4,           draft,
@@ -549,7 +549,7 @@ iscc,                           softhash,       0xcc01,         draft,      ISCC
 zeroxcert-imprint-256,          zeroxcert,      0xce11,         draft,      0xcert Asset Imprint (root hash)
 nonstandard-sig,                varsig,         0xd000,         deprecated, Namespace for all not yet standard signature algorithms
 bcrypt-pbkdf,                   multihash,      0xd00d,         draft,      Bcrypt-PBKDF key derivation function
-es256k,                         varsig,         0xd0e7,         draft,      ES256K Siganture Algorithm (secp256k1)
+es256k,                         varsig,         0xd0e7,         draft,      ES256K Signature Algorithm (secp256k1)
 bls12_381-g1-sig,               varsig,         0xd0ea,         draft,      G1 signature for BLS12-381
 bls12_381-g2-sig,               varsig,         0xd0eb,         draft,      G2 signature for BLS12-381
 eddsa,                          varsig,         0xd0ed,         draft,      Edwards-Curve Digital Signature Algorithm
