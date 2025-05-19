@@ -146,7 +146,7 @@ transport-bitswap,              transport,      0x0900,         draft,      Bits
 transport-graphsync-filecoinv1, transport,      0x0910,         draft,      Filecoin graphsync datatransfer
 transport-ipfs-gateway-http,    transport,      0x0920,         draft,      HTTP IPFS Gateway trustless datatransfer
 multidid,                       multiformat,    0x0d1d,         draft,      Compact encoding for Decentralized Identifers
-fr32-sha2-256-trunc254-padded-binary-tree, multihash, 0x1011, draft, A balanced binary tree hash used in Filecoin Piece Commitments
+fr32-sha256-trunc254-padbintree,multihash,      0x1011,         draft,      A balanced binary tree hash used in Filecoin Piece Commitments
 sha2-256-trunc254-padded,       multihash,      0x1012,         permanent,  SHA2-256 with the two most significant bits from the last byte zeroed (as via a mask with 0b00111111) - used for proving trees as in Filecoin
 sha2-224,                       multihash,      0x1013,         permanent,  aka SHA-224; as specified by FIPS 180-4.
 sha2-512-224,                   multihash,      0x1014,         permanent,  aka SHA-512/224; as specified by FIPS 180-4.
