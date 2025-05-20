@@ -575,7 +575,7 @@ arweave-ns,                     namespace,      0xb29910,       draft,      Arwe
 subspace-ns,                    namespace,      0xb39910,       draft,      Subspace Network Namespace
 kumandra-ns,                    namespace,      0xb49910,       draft,      Kumandra Network Namespace
 es256,                          varsig,         0xd01200,       draft,      ES256 Signature Algorithm
-es284,                          varsig,         0xd01201,       draft,      ES384 Signature Algorithm
+es384,                          varsig,         0xd01201,       draft,      ES384 Signature Algorithm
 es512,                          varsig,         0xd01202,       draft,      ES512 Signature Algorithm
 rs256,                          varsig,         0xd01205,       draft,      RS256 Signature Algorithm
 es256k-msig,                    multisig,       0xd01300,       draft,      ES256K (secp256k1) Signature as Multisig
