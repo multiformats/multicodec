@@ -48,12 +48,14 @@ libp2p-key,                     ipld,           0x72,           permanent,  Libp
 git-raw,                        ipld,           0x78,           permanent,  Raw Git object
 torrent-info,                   ipld,           0x7b,           draft,      Torrent file info field (bencoded)
 torrent-file,                   ipld,           0x7c,           draft,      Torrent file (bencoded)
+blake3-hashseq,                 ipld,           0x80,           draft,      BLAKE3 hash sequence - per Iroh collections spec
 leofcoin-block,                 ipld,           0x81,           draft,      Leofcoin Block
 leofcoin-tx,                    ipld,           0x82,           draft,      Leofcoin Transaction
 leofcoin-pr,                    ipld,           0x83,           draft,      Leofcoin Peer Reputation
 sctp,                           multiaddr,      0x84,           draft,
 dag-jose,                       ipld,           0x85,           draft,      MerkleDAG JOSE
 dag-cose,                       ipld,           0x86,           draft,      MerkleDAG COSE
+lbry,                           namespace,      0x8c,           draft,      LBRY Address
 eth-block,                      ipld,           0x90,           permanent,  Ethereum Header (RLP)
 eth-block-list,                 ipld,           0x91,           permanent,  Ethereum Header List (RLP)
 eth-tx-trie,                    ipld,           0x92,           permanent,  Ethereum Transaction Trie (Eth-Trie)
@@ -75,8 +77,8 @@ bitcoin-tx,                     ipld,           0xb1,           permanent,  Bitc
 bitcoin-witness-commitment,     ipld,           0xb2,           permanent,  Bitcoin Witness Commitment
 zcash-block,                    ipld,           0xc0,           permanent,  Zcash Block
 zcash-tx,                       ipld,           0xc1,           permanent,  Zcash Tx
-caip-50,                        multiformat,    0xca,           draft,      CAIP-50 multi-chain account id
-streamid,                       namespace,      0xce,           draft,      Ceramic Stream Id
+caip-50,                        multiformat,    0xca,           draft,      CAIP-50 multi-chain account ID
+streamid,                       namespace,      0xce,           draft,      Ceramic Stream ID
 stellar-block,                  ipld,           0xd0,           draft,      Stellar Block
 stellar-tx,                     ipld,           0xd1,           draft,      Stellar Tx
 md4,                            multihash,      0xd4,           draft,
@@ -124,6 +126,7 @@ garlic32,                       multiaddr,      0x01bf,         draft,      I2P 
 tls,                            multiaddr,      0x01c0,         draft,
 sni,                            multiaddr,      0x01c1,         draft,      Server Name Indication RFC 6066 § 3
 noise,                          multiaddr,      0x01c6,         draft,
+shs,                            multiaddr,      0x01c8,         draft,      Secure Scuttlebutt - Secret Handshake Stream
 quic,                           multiaddr,      0x01cc,         permanent,
 quic-v1,                        multiaddr,      0x01cd,         permanent,
 webtransport,                   multiaddr,      0x01d1,         draft,
@@ -132,6 +135,7 @@ ws,                             multiaddr,      0x01dd,         permanent,
 wss,                            multiaddr,      0x01de,         permanent,
 p2p-websocket-star,             multiaddr,      0x01df,         permanent,
 http,                           multiaddr,      0x01e0,         draft,
+http-path,                      multiaddr,      0x01e1,         draft,      Percent-encoded path to an HTTP resource
 swhid-1-snp,                    ipld,           0x01f0,         draft,      SoftWare Heritage persistent IDentifier version 1 snapshot
 json,                           ipld,           0x0200,         permanent,  JSON (UTF-8-encoded)
 messagepack,                    serialization,  0x0201,         draft,      MessagePack
@@ -164,6 +168,16 @@ ed448-pub,                      key,            0x1203,         draft,      Ed44
 x448-pub,                       key,            0x1204,         draft,      X448 public Key
 rsa-pub,                        key,            0x1205,         draft,      RSA public key. DER-encoded ASN.1 type RSAPublicKey according to IETF RFC 8017 (PKCS #1)
 sm2-pub,                        key,            0x1206,         draft,      SM2 public key (compressed)
+vlad,                           vlad,           0x1207,         draft,      Verifiable Long-lived ADdress
+provenance-log,                 serialization,  0x1208,         draft,      Verifiable and permissioned append-only log
+provenance-log-entry,           serialization,  0x1209,         draft,      Verifiable and permissioned append-only log entry
+provenance-log-script,          serialization,  0x120a,         draft,      Verifiable and permissioned append-only log script
+mlkem-512-pub,                  key,            0x120b,         draft,      ML-KEM 512 public key; as specified by FIPS 203
+mlkem-768-pub,                  key,            0x120c,         draft,      ML-KEM 768 public key; as specified by FIPS 203
+mlkem-1024-pub,                 key,            0x120d,         draft,      ML-KEM 1024 public key; as specified by FIPS 203
+multisig,                       multiformat,    0x1239,         draft,      Digital signature multiformat
+multikey,                       multiformat,    0x123a,         draft,      Encryption key multiformat
+nonce,                          nonce,          0x123b,         draft,      Nonce random value
 ed25519-priv,                   key,            0x1300,         draft,      Ed25519 private key
 secp256k1-priv,                 key,            0x1301,         draft,      Secp256k1 private key
 x25519-priv,                    key,            0x1302,         draft,      Curve25519 private key
@@ -172,11 +186,35 @@ rsa-priv,                       key,            0x1305,         draft,      RSA 
 p256-priv,                      key,            0x1306,         draft,      P-256 private key
 p384-priv,                      key,            0x1307,         draft,      P-384 private key
 p521-priv,                      key,            0x1308,         draft,      P-521 private key
+bls12_381-g1-priv,              key,            0x1309,         draft,      BLS12-381 G1 private key
+bls12_381-g2-priv,              key,            0x130a,         draft,      BLS12-381 G2 private key
+bls12_381-g1g2-priv,            key,            0x130b,         draft,      BLS12-381 G1 and G2 private key
+bls12_381-g1-pub-share,         key,            0x130c,         draft,      BLS12-381 G1 public key share
+bls12_381-g2-pub-share,         key,            0x130d,         draft,      BLS12-381 G2 public key share
+bls12_381-g1-priv-share,        key,            0x130e,         draft,      BLS12-381 G1 private key share
+bls12_381-g2-priv-share,        key,            0x130f,         draft,      BLS12-381 G2 private key share
+sm2-priv,                       key,            0x1310,         draft,      SM2 private key
+lamport-sha3-512-pub,           key,            0x1a14,         draft,      Lamport public key based on SHA3-512
+lamport-sha3-384-pub,           key,            0x1a15,         draft,      Lamport public key based on SHA3-384
+lamport-sha3-256-pub,           key,            0x1a16,         draft,      Lamport public key based on SHA3-256
+lamport-sha3-512-priv,          key,            0x1a24,         draft,      Lamport private key based on SHA3-512
+lamport-sha3-384-priv,          key,            0x1a25,         draft,      Lamport private key based on SHA3-384
+lamport-sha3-256-priv,          key,            0x1a26,         draft,      Lamport private key based on SHA3-256
+lamport-sha3-512-priv-share,    key,            0x1a34,         draft,      Lamport private key share based on SHA3-512 and split with Shamir gf256
+lamport-sha3-384-priv-share,    key,            0x1a35,         draft,      Lamport private key share based on SHA3-384 and split with Shamir gf256
+lamport-sha3-256-priv-share,    key,            0x1a36,         draft,      Lamport private key share based on SHA3-256 and split with Shamir gf256
+lamport-sha3-512-sig,           multisig,       0x1a44,         draft,      Lamport signature based on SHA3-512
+lamport-sha3-384-sig,           multisig,       0x1a45,         draft,      Lamport signature based on SHA3-384
+lamport-sha3-256-sig,           multisig,       0x1a46,         draft,      Lamport signature based on SHA3-256
+lamport-sha3-512-sig-share,     multisig,       0x1a54,         draft,      Lamport signature share based on SHA3-512 and split with Shamir gf256
+lamport-sha3-384-sig-share,     multisig,       0x1a55,         draft,      Lamport signature share based on SHA3-384 and split with Shamir gf256
+lamport-sha3-256-sig-share,     multisig,       0x1a56,         draft,      Lamport signature share based on SHA3-256 and split with Shamir gf256
 kangarootwelve,                 multihash,      0x1d01,         draft,      KangarooTwelve is an extendable-output hash function based on Keccak-p
 aes-gcm-256,                    encryption,     0x2000,         draft,      AES Galois/Counter Mode with 256-bit key and 12-byte IV
 silverpine,                     multiaddr,      0x3f42,         draft,      Experimental QUIC over yggdrasil and ironwood routing protocol
 sm3-256,                        multihash,      0x534d,         draft,
 sha256a,                        hash,           0x7012,         draft,      The sum of multiple sha2-256 hashes; as specified by Ceramic CIP-124.
+chacha20-poly1305,              multikey,       0xa000,         draft,      ChaCha20_Poly1305 encryption scheme
 blake2b-8,                      multihash,      0xb201,         draft,      Blake2b consists of 64 output lengths that give different hashes
 blake2b-16,                     multihash,      0xb202,         draft,
 blake2b-24,                     multihash,      0xb203,         draft,
@@ -503,21 +541,28 @@ xxh3-64,                        hash,           0xb3e3,         draft,      Extr
 xxh3-128,                       hash,           0xb3e4,         draft,      Extremely fast non-cryptographic hash algorithm
 poseidon-bls12_381-a2-fc1,      multihash,      0xb401,         permanent,  Poseidon using BLS12-381 and arity of 2 with Filecoin parameters
 poseidon-bls12_381-a2-fc1-sc,   multihash,      0xb402,         draft,      Poseidon using BLS12-381 and arity of 2 with Filecoin parameters - high-security variant
-urdca-2015-canon,               ipld,           0xb403,         draft,      The result of canonicalizing an input according to URDCA-2015 and then expressing its hash value as a multihash value.
+rdfc-1,                         ipld,           0xb403,         draft,      The result of canonicalizing an input according to RDFC-1.0 and then expressing its hash value as a multihash value.
 ssz,                            serialization,  0xb501,         draft,      SimpleSerialize (SSZ) serialization
 ssz-sha2-256-bmt,               multihash,      0xb502,         draft,      SSZ Merkle tree root using SHA2-256 as the hashing function and SSZ serialization for the block binary
+sha2-256-chunked,               multihash,      0xb510,         draft,      Hash of concatenated SHA2-256 digests of 8*2^n MiB source chunks; n = ceil(log2(source_size/(10^4 * 8MiB)))
 json-jcs,                       ipld,           0xb601,         draft,      The result of canonicalizing an input according to JCS - JSON Canonicalisation Scheme (RFC 8785)
 iscc,                           softhash,       0xcc01,         draft,      ISCC (International Standard Content Code) - similarity preserving hash
 zeroxcert-imprint-256,          zeroxcert,      0xce11,         draft,      0xcert Asset Imprint (root hash)
 nonstandard-sig,                varsig,         0xd000,         deprecated, Namespace for all not yet standard signature algorithms
-es256k,                         varsig,         0xd0e7,         draft,      ES256K Siganture Algorithm (secp256k1)
-bls-12381-g1-sig,               varsig,         0xd0ea,         draft,      G1 signature for BLS-12381-G2
-bls-12381-g2-sig,               varsig,         0xd0eb,         draft,      G2 signature for BLS-12381-G1
+bcrypt-pbkdf,                   multihash,      0xd00d,         draft,      Bcrypt-PBKDF key derivation function
+es256k,                         varsig,         0xd0e7,         draft,      ES256K Signature Algorithm (secp256k1)
+bls12_381-g1-sig,               varsig,         0xd0ea,         draft,      G1 signature for BLS12-381
+bls12_381-g2-sig,               varsig,         0xd0eb,         draft,      G2 signature for BLS12-381
 eddsa,                          varsig,         0xd0ed,         draft,      Edwards-Curve Digital Signature Algorithm
 eip-191,                        varsig,         0xd191,         draft,      EIP-191 Ethereum Signed Data Standard
 jwk_jcs-pub,                    key,            0xeb51,         draft,      JSON object containing only the required members of a JWK (RFC 7518 and RFC 7517) representing the public key. Serialisation based on JCS (RFC 8785)
 fil-commitment-unsealed,        filecoin,       0xf101,         permanent,  Filecoin piece or sector data commitment merkle node/root (CommP & CommD)
 fil-commitment-sealed,          filecoin,       0xf102,         permanent,  Filecoin sector data commitment merkle node/root - sealed and replicated (CommR)
+shelter-contract-manifest,      shelter,        0x511e00,       draft,      Shelter protocol contract manifest
+shelter-contract-text,          shelter,        0x511e01,       draft,      Shelter protocol contract text
+shelter-contract-data,          shelter,        0x511e02,       draft,      Shelter protocol contract data (contract chain)
+shelter-file-manifest,          shelter,        0x511e03,       draft,      Shelter protocol file manifest
+shelter-file-chunk,             shelter,        0x511e04,       draft,      Shelter protocol file chunk
 plaintextv2,                    multiaddr,      0x706c61,       draft,
 holochain-adr-v0,               holochain,      0x807124,       draft,      Holochain v0 address    + 8 R-S (63 x Base-32)
 holochain-adr-v1,               holochain,      0x817124,       draft,      Holochain v1 address    + 8 R-S (63 x Base-32)
@@ -533,4 +578,16 @@ es256,                          varsig,         0xd01200,       draft,      ES25
 es284,                          varsig,         0xd01201,       draft,      ES384 Signature Algorithm
 es512,                          varsig,         0xd01202,       draft,      ES512 Signature Algorithm
 rs256,                          varsig,         0xd01205,       draft,      RS256 Signature Algorithm
+es256k-msig,                    multisig,       0xd01300,       draft,      ES256K (secp256k1) Signature as Multisig
+bls12_381-g1-msig,              multisig,       0xd01301,       draft,      G1 signature for BLS-12381-G2 as Multisig
+bls12_381-g2-msig,              multisig,       0xd01302,       draft,      G2 signature for BLS-12381-G1 as Multisig
+eddsa-msig,                     multisig,       0xd01303,       draft,      Edwards-Curve Digital Signature as Multisig
+bls12_381-g1-share-msig,        multisig,       0xd01304,       draft,      G1 threshold signature share for BLS-12381-G2 as Multisig
+bls12_381-g2-share-msig,        multisig,       0xd01305,       draft,      G2 threshold signature share for BLS-12381-G1 as Multisig
+lamport-msig,                   multisig,       0xd01306,       draft,      Lamport signature as Multisig
+lamport-share-msig,             multisig,       0xd01307,       draft,      Lamport threshold signature share as Multisig
+es256-msig,                     multisig,       0xd01308,       draft,      ECDSA P-256 Signature as Multisig
+es384-msig,                     multisig,       0xd01309,       draft,      ECDSA P-384 Signature as Multisig
+es521-msig,                     multisig,       0xd0130a,       draft,      ECDSA P-521 Signature as Multisig
+rs256-msig,                     multisig,       0xd0130b,       draft,      RS256 Signature as Multisig
 scion,                          multiaddr,      0xd02000,       draft,      SCION Internet architecture
