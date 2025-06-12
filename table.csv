@@ -116,6 +116,10 @@ utp,                            multiaddr,      0x012e,         draft,
 crc32,                          hash,           0x0132,         draft,      CRC-32 non-cryptographic hash algorithm (IEEE 802.3)
 crc64-ecma,                     hash,           0x0164,         draft,      CRC-64 non-cryptographic hash algorithm (ECMA-182 - Annex B)
 unix,                           multiaddr,      0x0190,         permanent,
+unix-abstract,                  multiaddr,      0x0191,         draft,
+stream,                         multiaddr,      0x0192,         draft,
+seqpacket,                      multiaddr,      0x0193,         draft,
+dgram,                          multiaddr,      0x0194,         draft,
 thread,                         multiaddr,      0x0196,         draft,      Textile Thread
 p2p,                            multiaddr,      0x01a5,         permanent,  libp2p
 https,                          multiaddr,      0x01bb,         draft,
