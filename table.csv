@@ -140,7 +140,7 @@ swhid-1-snp,                    ipld,           0x01f0,         draft,      Soft
 json,                           ipld,           0x0200,         permanent,  JSON (UTF-8-encoded)
 messagepack,                    serialization,  0x0201,         draft,      MessagePack
 car,                            serialization,  0x0202,         draft,      Content Addressable aRchive (CAR)
-x509-certificate,               serialization,  0x0203,         draft,      DER-encoded X.509 (PKIX) certificate per RFC 5280; single certificate only (no chain); raw DER bytes (not PEM)
+x509-certificate,               serialization,  0x0210,         draft,      DER-encoded X.509 (PKIX) certificate per RFC 5280; single certificate only (no chain); raw DER bytes (not PEM)
 ipns-record,                    serialization,  0x0300,         permanent,  Signed IPNS Record
 libp2p-peer-record,             libp2p,         0x0301,         permanent,  libp2p peer record type
 libp2p-relay-rsvp,              libp2p,         0x0302,         permanent,  libp2p relay reservation voucher
