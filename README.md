@@ -34,7 +34,7 @@ Multicodec is used in various [Multiformats](https://github.com/multiformats/mul
 
 ## Multicodec table
 
-Find the canonical table of multicodecs at [table.csv](/table.csv). There's also a sortable [viewer](https://ipfs.io/ipfs/QmXec1jjwzxWJoNbxQF5KffL8q6hFXm9QwUGaa3wKGk6dT/#title=Multicodecs&src=https://raw.githubusercontent.com/multiformats/multicodec/master/table.csv).
+Find the canonical table of multicodecs at [table.csv](/table.csv).
 
 ### Status
 
