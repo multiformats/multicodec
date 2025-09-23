@@ -197,6 +197,12 @@ bls12_381-g2-pub-share,         key,            0x130d,         draft,      BLS1
 bls12_381-g1-priv-share,        key,            0x130e,         draft,      BLS12-381 G1 private key share
 bls12_381-g2-priv-share,        key,            0x130f,         draft,      BLS12-381 G2 private key share
 sm2-priv,                       key,            0x1310,         draft,      SM2 private key
+ed448-priv,                     key,            0x1311,         draft,      Ed448 private key
+x448-priv,                      key,            0x1312,         draft,      X448 private key
+mlkem-512-priv,                 key,            0x1313,         draft,      ML-KEM 512 private key; as specified by FIPS 203
+mlkem-768-priv,                 key,            0x1314,         draft,      ML-KEM 768 public key; as specified by FIPS 203
+mlkem-1024-priv,                key,            0x1315,         draft,      ML-KEM 1024 public key; as specified by FIPS 203
+jwk_jcs-priv,                   key,            0x1316,         draft,      JSON object containing only the required members of a JWK (RFC 7518 and RFC 7517) representing the private key. Serialisation based on JCS (RFC 8785)
 lamport-sha3-512-pub,           key,            0x1a14,         draft,      Lamport public key based on SHA3-512
 lamport-sha3-384-pub,           key,            0x1a15,         draft,      Lamport public key based on SHA3-384
 lamport-sha3-256-pub,           key,            0x1a16,         draft,      Lamport public key based on SHA3-256
