@@ -583,6 +583,7 @@ holochain-sig-v0,               holochain,      0xa27124,       draft,      Holo
 holochain-sig-v1,               holochain,      0xa37124,       draft,      Holochain v1 signature  + 8 R-S (63 x Base-32)
 skynet-ns,                      namespace,      0xb19910,       draft,      Skynet Namespace
 arweave-ns,                     namespace,      0xb29910,       draft,      Arweave Namespace
+walrus-ns                       namespace,      0xb59910        draft,      Walrus Namespace
 subspace-ns,                    namespace,      0xb39910,       draft,      Subspace Network Namespace
 kumandra-ns,                    namespace,      0xb49910,       draft,      Kumandra Network Namespace
 es256,                          varsig,         0xd01200,       draft,      ES256 Signature Algorithm
