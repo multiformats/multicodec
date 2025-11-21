@@ -178,6 +178,9 @@ provenance-log-script,          serialization,  0x120a,         draft,      Veri
 mlkem-512-pub,                  key,            0x120b,         draft,      ML-KEM 512 public key; as specified by FIPS 203
 mlkem-768-pub,                  key,            0x120c,         draft,      ML-KEM 768 public key; as specified by FIPS 203
 mlkem-1024-pub,                 key,            0x120d,         draft,      ML-KEM 1024 public key; as specified by FIPS 203
+mldsa-44-pub,                   key,            0x1210,         draft,      ML-DSA 44 public key; as specified by FIPS 204
+mldsa-65-pub,                   key,            0x1211,         draft,      ML-DSA 65 public key; as specified by FIPS 204
+mldsa-87-pub,                   key,            0x1212,         draft,      ML-DSA 87 public key; as specified by FIPS 204
 multisig,                       multiformat,    0x1239,         draft,      Digital signature multiformat
 multikey,                       multiformat,    0x123a,         draft,      Encryption key multiformat
 nonce,                          nonce,          0x123b,         draft,      Nonce random value
