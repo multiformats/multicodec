@@ -572,6 +572,8 @@ jwk_jcs-pub,                    key,            0xeb51,         draft,      JSON
 ed2k,                           multihash,      0xed20,         draft,      eDonkey2000 hash.
 fil-commitment-unsealed,        filecoin,       0xf101,         permanent,  Filecoin piece or sector data commitment merkle node/root (CommP & CommD)
 fil-commitment-sealed,          filecoin,       0xf102,         permanent,  Filecoin sector data commitment merkle node/root - sealed and replicated (CommR)
+dms3,                           multiaddr,      0x100000,       draft,      Decentralized Multi-State-Space Search
+dms3-key,                       ipld,           0x100001,       draft,      DMS3 Public Key
 shelter-contract-manifest,      shelter,        0x511e00,       draft,      Shelter protocol contract manifest
 shelter-contract-text,          shelter,        0x511e01,       draft,      Shelter protocol contract text
 shelter-contract-data,          shelter,        0x511e02,       draft,      Shelter protocol contract data (contract chain)
