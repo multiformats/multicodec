@@ -181,6 +181,18 @@ mlkem-1024-pub,                 key,            0x120d,         draft,      ML-K
 mldsa-44-pub,                   key,            0x1210,         draft,      ML-DSA 44 public key; as specified by FIPS 204
 mldsa-65-pub,                   key,            0x1211,         draft,      ML-DSA 65 public key; as specified by FIPS 204
 mldsa-87-pub,                   key,            0x1212,         draft,      ML-DSA 87 public key; as specified by FIPS 204
+slhdsa-sha2-128s-pub,           key,            0x1220,         draft,      SLH-DSA-SHA2-128s public key; as specified by FIPS 205
+slhdsa-shake-128s-pub,          key,            0x1221,         draft,      SLH-DSA-SHAKE-128s public key; as specified by FIPS 205
+slhdsa-sha2-128f-pub,           key,            0x1222,         draft,      SLH-DSA-SHA2-128f public key; as specified by FIPS 205
+slhdsa-shake-128f-pub,          key,            0x1223,         draft,      SLH-DSA-SHAKE-128f public key; as specified by FIPS 205
+slhdsa-sha2-192s-pub,           key,            0x1224,         draft,      SLH-DSA-SHA2-192s public key; as specified by FIPS 205
+slhdsa-shake-192s-pub,          key,            0x1225,         draft,      SLH-DSA-SHAKE-192s public key; as specified by FIPS 205
+slhdsa-sha2-192f-pub,           key,            0x1226,         draft,      SLH-DSA-SHA2-192f public key; as specified by FIPS 205
+slhdsa-shake-192f-pub,          key,            0x1227,         draft,      SLH-DSA-SHAKE-192f public key; as specified by FIPS 205
+slhdsa-sha2-256s-pub,           key,            0x1228,         draft,      SLH-DSA-SHA2-256s public key; as specified by FIPS 205
+slhdsa-shake-256s-pub,          key,            0x1229,         draft,      SLH-DSA-SHAKE-256s public key; as specified by FIPS 205
+slhdsa-sha2-256f-pub,           key,            0x122a,         draft,      SLH-DSA-SHA2-256f public key; as specified by FIPS 205
+slhdsa-shake-256f-pub,          key,            0x122b,         draft,      SLH-DSA-SHAKE-256f public key; as specified by FIPS 205
 multisig,                       multiformat,    0x1239,         draft,      Digital signature multiformat
 multikey,                       multiformat,    0x123a,         draft,      Encryption key multiformat
 nonce,                          nonce,          0x123b,         draft,      Nonce random value
@@ -605,15 +617,3 @@ es384-msig,                     multisig,       0xd01309,       draft,      ECDS
 es521-msig,                     multisig,       0xd0130a,       draft,      ECDSA P-521 Signature as Multisig
 rs256-msig,                     multisig,       0xd0130b,       draft,      RS256 Signature as Multisig
 scion,                          multiaddr,      0xd02000,       draft,      SCION Internet architecture
-slhdsa-sha2-128s,               key,            0x1220,         draft,      SLH-DSA-SHA2-128s public key; as specified by FIPS 205
-slhdsa-shake-128s,              key,            0x1221,         draft,      SLH-DSA-SHAKE-128s public key; as specified by FIPS 205
-slhdsa-sha2-128f,               key,            0x1222,         draft,      SLH-DSA-SHA2-128f public key; as specified by FIPS 205
-slhdsa-shake-128f,              key,            0x1223,         draft,      SLH-DSA-SHAKE-128f public key; as specified by FIPS 205
-slhdsa-sha2-192s,               key,            0x1224,         draft,      SLH-DSA-SHA2-192s public key; as specified by FIPS 205
-slhdsa-shake-192s,              key,            0x1225,         draft,      SLH-DSA-SHAKE-192s public key; as specified by FIPS 205
-slhdsa-sha2-192f,               key,            0x1226,         draft,      SLH-DSA-SHA2-192f public key; as specified by FIPS 205
-slhdsa-shake-192f,              key,            0x1227,         draft,      SLH-DSA-SHAKE-192f public key; as specified by FIPS 205
-slhdsa-sha2-256s,               key,            0x1228,         draft,      SLH-DSA-SHA2-256s public key; as specified by FIPS 205
-slhdsa-shake-256s,              key,            0x1229,         draft,      SLH-DSA-SHAKE-256s public key; as specified by FIPS 205
-slhdsa-sha2-256f,               key,            0x122a,         draft,      SLH-DSA-SHA2-256f public key; as specified by FIPS 205
-slhdsa-shake-256f,              key,            0x122b,         draft,      SLH-DSA-SHAKE-256f public key; as specified by FIPS 205
