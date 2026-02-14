@@ -601,6 +601,14 @@ skynet-ns,                      namespace,      0xb19910,       draft,      Skyn
 arweave-ns,                     namespace,      0xb29910,       draft,      Arweave Namespace
 subspace-ns,                    namespace,      0xb39910,       draft,      Subspace Network Namespace
 kumandra-ns,                    namespace,      0xb49910,       draft,      Kumandra Network Namespace
+massa,                          namespace,      0xb59910,       draft,      Massa blockchain ecosystem
+massa-mainnet,                  namespace,      0xb59911,       draft,      Massa mainnet network
+massa-buildnet,                 namespace,      0xb59912,       draft,      Massa buildnet network
+massa-deweb,                    namespace,      0xb59913,       draft,      Massa DeWeb decentralized web
+massa-gossip,                   namespace,      0xb59914,       draft,      Massa Gossip decentralized messaging
+massa-mns,                      namespace,      0xb59915,       draft,      Massa Name Service target
+massa-sc,                       namespace,      0xb59916,       draft,      Massa smart-contract address target
+massa-gossip-id,                namespace,      0xb59917,       draft,      Massa Gossip ID target
 es256,                          varsig,         0xd01200,       draft,      ES256 Signature Algorithm
 es384,                          varsig,         0xd01201,       draft,      ES384 Signature Algorithm
 es512,                          varsig,         0xd01202,       draft,      ES512 Signature Algorithm
