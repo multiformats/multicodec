@@ -233,7 +233,8 @@ lamport-sha3-256-sig,           multisig,       0x1a46,         draft,      Lamp
 lamport-sha3-512-sig-share,     multisig,       0x1a54,         draft,      Lamport signature share based on SHA3-512 and split with Shamir gf256
 lamport-sha3-384-sig-share,     multisig,       0x1a55,         draft,      Lamport signature share based on SHA3-384 and split with Shamir gf256
 lamport-sha3-256-sig-share,     multisig,       0x1a56,         draft,      Lamport signature share based on SHA3-256 and split with Shamir gf256
-kangarootwelve,                 multihash,      0x1d01,         draft,      KangarooTwelve is an extendable-output hash function based on Keccak-p
+kt-128,                         multihash,      0x1d01,         draft,      KangarooTwelve KT128 extendable-output hash function (XOF) as defined in RFC 9861
+kt-256,                         multihash,      0x1d02,         draft,      KangarooTwelve KT256 extendable-output hash function (XOF) as defined in RFC 9861
 aes-gcm-256,                    encryption,     0x2000,         draft,      AES Galois/Counter Mode with 256-bit key and 12-byte IV
 silverpine,                     multiaddr,      0x3f42,         draft,      Experimental QUIC over yggdrasil and ironwood routing protocol
 sm3-256,                        multihash,      0x534d,         draft,
