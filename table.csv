@@ -218,6 +218,9 @@ mlkem-512-priv,                 key,            0x1313,         draft,      ML-K
 mlkem-768-priv,                 key,            0x1314,         draft,      ML-KEM 768 public key; as specified by FIPS 203
 mlkem-1024-priv,                key,            0x1315,         draft,      ML-KEM 1024 public key; as specified by FIPS 203
 jwk_jcs-priv,                   key,            0x1316,         draft,      JSON object containing only the required members of a JWK (RFC 7518 and RFC 7517) representing the private key. Serialisation based on JCS (RFC 8785)
+mldsa-44-priv,                  key,            0x1317,         draft,      ML-DSA 44 private key; as specified by FIPS 204
+mldsa-65-priv,                  key,            0x1318,         draft,      ML-DSA 65 private key; as specified by FIPS 204
+mldsa-87-priv,                  key,            0x1319,         draft,      ML-DSA 87 private key; as specified by FIPS 204
 lamport-sha3-512-pub,           key,            0x1a14,         draft,      Lamport public key based on SHA3-512
 lamport-sha3-384-pub,           key,            0x1a15,         draft,      Lamport public key based on SHA3-384
 lamport-sha3-256-pub,           key,            0x1a16,         draft,      Lamport public key based on SHA3-256
