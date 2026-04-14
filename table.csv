@@ -221,6 +221,9 @@ jwk_jcs-priv,                   key,            0x1316,         draft,      JSON
 mldsa-44-priv,                  key,            0x1317,         draft,      ML-DSA 44 private key; expanded key format (2560 bytes) as specified by FIPS 204
 mldsa-65-priv,                  key,            0x1318,         draft,      ML-DSA 65 private key; expanded key format (4032 bytes) as specified by FIPS 204
 mldsa-87-priv,                  key,            0x1319,         draft,      ML-DSA 87 private key; expanded key format (4896 bytes) as specified by FIPS 204
+mldsa-44-priv-seed,             key,            0x131a,         draft,      ML-DSA 44 private key seed; (32 bytes) as specified by FIPS 204
+mldsa-65-priv-seed,             key,            0x131b,         draft,      ML-DSA 65 private key seed; (32 bytes) as specified by FIPS 204
+mldsa-87-priv-seed,             key,            0x131c,         draft,      ML-DSA 87 private key seed; (32 bytes) as specified by FIPS 204
 lamport-sha3-512-pub,           key,            0x1a14,         draft,      Lamport public key based on SHA3-512
 lamport-sha3-384-pub,           key,            0x1a15,         draft,      Lamport public key based on SHA3-384
 lamport-sha3-256-pub,           key,            0x1a16,         draft,      Lamport public key based on SHA3-256
