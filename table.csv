@@ -38,6 +38,8 @@ dns6,                           multiaddr,      0x37,           permanent,
 dnsaddr,                        multiaddr,      0x38,           permanent,
 pkix-pub,                       key,            0x40,           draft,      DER-encoded ASN.1 type SubjectPublicKeyInfo (SPKI) according to IETF RFC 5280 section 4.1.2.7; public key algorithm identified by the embedded AlgorithmIdentifier OID
 pkcs8-priv,                     key,            0x41,           draft,      DER-encoded ASN.1 type OneAsymmetricKey (PKCS #8) according to IETF RFC 5958 section 2; private key algorithm identified by the embedded AlgorithmIdentifier OID
+cose-key,                       key,            0x42,           draft,      CBOR-encoded COSE_Key (CBOR map) according to IETF RFC 9052 section 7; media type application/cose-key; kty/alg/crv parameters identify the key algorithm; may carry public/private/symmetric key material depending on which parameters are present
+cose-key-set,                   key,            0x43,           draft,      CBOR-encoded COSE_KeySet (CBOR array of COSE_Key) according to IETF RFC 9052 section 7; media type application/cose-key-set; each element processed independently
 protobuf,                       serialization,  0x50,           draft,      Protocol Buffers
 cbor,                           ipld,           0x51,           permanent,  CBOR
 raw,                            ipld,           0x55,           permanent,  raw binary
