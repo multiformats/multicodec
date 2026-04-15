@@ -224,6 +224,18 @@ mldsa-87-priv,                  key,            0x1319,         draft,      ML-D
 mldsa-44-priv-seed,             key,            0x131a,         draft,      ML-DSA 44 private key seed; (32 bytes) as specified by FIPS 204
 mldsa-65-priv-seed,             key,            0x131b,         draft,      ML-DSA 65 private key seed; (32 bytes) as specified by FIPS 204
 mldsa-87-priv-seed,             key,            0x131c,         draft,      ML-DSA 87 private key seed; (32 bytes) as specified by FIPS 204
+slhdsa-sha2-128s-priv,          key,            0x131d,         draft,      SLH-DSA-SHA2-128s private key; as specified by FIPS 205
+slhdsa-shake-128s-priv,         key,            0x131e,         draft,      SLH-DSA-SHAKE-128s private key; as specified by FIPS 205
+slhdsa-sha2-128f-priv,          key,            0x131f,         draft,      SLH-DSA-SHA2-128f private key; as specified by FIPS 205
+slhdsa-shake-128f-priv,         key,            0x1320,         draft,      SLH-DSA-SHAKE-128f private key; as specified by FIPS 205
+slhdsa-sha2-192s-priv,          key,            0x1321,         draft,      SLH-DSA-SHA2-192s private key; as specified by FIPS 205
+slhdsa-shake-192s-priv,         key,            0x1322,         draft,      SLH-DSA-SHAKE-192s private key; as specified by FIPS 205
+slhdsa-sha2-192f-priv,          key,            0x1323,         draft,      SLH-DSA-SHA2-192f private key; as specified by FIPS 205
+slhdsa-shake-192f-priv,         key,            0x1324,         draft,      SLH-DSA-SHAKE-192f private key; as specified by FIPS 205
+slhdsa-sha2-256s-priv,          key,            0x1325,         draft,      SLH-DSA-SHA2-256s private key; as specified by FIPS 205
+slhdsa-shake-256s-priv,         key,            0x1326,         draft,      SLH-DSA-SHAKE-256s private key; as specified by FIPS 205
+slhdsa-sha2-256f-priv,          key,            0x1327,         draft,      SLH-DSA-SHA2-256f private key; as specified by FIPS 205
+slhdsa-shake-256f-priv,         key,            0x1328,         draft,      SLH-DSA-SHAKE-256f private key; as specified by FIPS 205
 bip340-pub,                     key,            0x1340,         draft,      BIP340 public key
 bip340-priv,                    key,            0x1341,         draft,      BIP340 private key
 lamport-sha3-512-pub,           key,            0x1a14,         draft,      Lamport public key based on SHA3-512
