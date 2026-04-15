@@ -218,6 +218,18 @@ mlkem-512-priv,                 key,            0x1313,         draft,      ML-K
 mlkem-768-priv,                 key,            0x1314,         draft,      ML-KEM 768 public key; as specified by FIPS 203
 mlkem-1024-priv,                key,            0x1315,         draft,      ML-KEM 1024 public key; as specified by FIPS 203
 jwk_jcs-priv,                   key,            0x1316,         draft,      JSON object containing only the required members of a JWK (RFC 7518 and RFC 7517) representing the private key. Serialisation based on JCS (RFC 8785)
+slhdsa-sha2-128s-priv,          key,            0x131d,         draft,      SLH-DSA-SHA2-128s private key; as specified by FIPS 205
+slhdsa-shake-128s-priv,         key,            0x131e,         draft,      SLH-DSA-SHAKE-128s private key; as specified by FIPS 205
+slhdsa-sha2-128f-priv,          key,            0x131f,         draft,      SLH-DSA-SHA2-128f private key; as specified by FIPS 205
+slhdsa-shake-128f-priv,         key,            0x1320,         draft,      SLH-DSA-SHAKE-128f private key; as specified by FIPS 205
+slhdsa-sha2-192s-priv,          key,            0x1321,         draft,      SLH-DSA-SHA2-192s private key; as specified by FIPS 205
+slhdsa-shake-192s-priv,         key,            0x1322,         draft,      SLH-DSA-SHAKE-192s private key; as specified by FIPS 205
+slhdsa-sha2-192f-priv,          key,            0x1323,         draft,      SLH-DSA-SHA2-192f private key; as specified by FIPS 205
+slhdsa-shake-192f-priv,         key,            0x1324,         draft,      SLH-DSA-SHAKE-192f private key; as specified by FIPS 205
+slhdsa-sha2-256s-priv,          key,            0x1325,         draft,      SLH-DSA-SHA2-256s private key; as specified by FIPS 205
+slhdsa-shake-256s-priv,         key,            0x1326,         draft,      SLH-DSA-SHAKE-256s private key; as specified by FIPS 205
+slhdsa-sha2-256f-priv,          key,            0x1327,         draft,      SLH-DSA-SHA2-256f private key; as specified by FIPS 205
+slhdsa-shake-256f-priv,         key,            0x1328,         draft,      SLH-DSA-SHAKE-256f private key; as specified by FIPS 205
 lamport-sha3-512-pub,           key,            0x1a14,         draft,      Lamport public key based on SHA3-512
 lamport-sha3-384-pub,           key,            0x1a15,         draft,      Lamport public key based on SHA3-384
 lamport-sha3-256-pub,           key,            0x1a16,         draft,      Lamport public key based on SHA3-256
