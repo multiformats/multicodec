@@ -100,6 +100,8 @@ bls12_381-g1g2-pub,             key,            0xee,           draft,      BLS1
 sr25519-pub,                    key,            0xef,           draft,      Sr25519 public key
 dash-block,                     ipld,           0xf0,           draft,      Dash Block
 dash-tx,                        ipld,           0xf1,           draft,      Dash Tx
+uri,                            namespace,      0xf2,           draft,      URI: <uri: utf8-string>
+data-url,                       data,           0xf3,           draft,      data URL: <len(mime): uint8><mime: ascii-string><data: uint8[]>
 swarm-manifest,                 ipld,           0xfa,           draft,      Swarm Manifest
 swarm-feed,                     ipld,           0xfb,           draft,      Swarm Feed
 beeson,                         ipld,           0xfc,           draft,      Swarm BeeSon
