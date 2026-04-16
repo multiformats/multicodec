@@ -224,6 +224,8 @@ mldsa-87-priv,                  key,            0x1319,         draft,      ML-D
 mldsa-44-priv-seed,             key,            0x131a,         draft,      ML-DSA 44 private key seed; (32 bytes) as specified by FIPS 204
 mldsa-65-priv-seed,             key,            0x131b,         draft,      ML-DSA 65 private key seed; (32 bytes) as specified by FIPS 204
 mldsa-87-priv-seed,             key,            0x131c,         draft,      ML-DSA 87 private key seed; (32 bytes) as specified by FIPS 204
+bip340-pub,                     key,            0x1340,         draft,      BIP340 public key
+bip340-priv,                    key,            0x1341,         draft,      BIP340 private key
 lamport-sha3-512-pub,           key,            0x1a14,         draft,      Lamport public key based on SHA3-512
 lamport-sha3-384-pub,           key,            0x1a15,         draft,      Lamport public key based on SHA3-384
 lamport-sha3-256-pub,           key,            0x1a16,         draft,      Lamport public key based on SHA3-256
@@ -619,6 +621,7 @@ es256,                          varsig,         0xd01200,       draft,      ES25
 es384,                          varsig,         0xd01201,       draft,      ES384 Signature Algorithm
 es512,                          varsig,         0xd01202,       draft,      ES512 Signature Algorithm
 rs256,                          varsig,         0xd01205,       draft,      RS256 Signature Algorithm
+bip340,                         varsig,         0xd01206,       draft,      BIP340 Signature Algorithm
 es256k-msig,                    multisig,       0xd01300,       draft,      ES256K (secp256k1) Signature as Multisig
 bls12_381-g1-msig,              multisig,       0xd01301,       draft,      G1 signature for BLS-12381-G2 as Multisig
 bls12_381-g2-msig,              multisig,       0xd01302,       draft,      G2 signature for BLS-12381-G1 as Multisig
