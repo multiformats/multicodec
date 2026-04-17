@@ -611,7 +611,7 @@ massa-gossip,                   namespace,      0xb59914,       draft,      Mass
 massa-mns,                      namespace,      0xb59915,       draft,      Massa Name Service target
 massa-sc,                       namespace,      0xb59916,       draft,      Massa smart-contract address target
 massa-gossip-id,                namespace,      0xb59917,       draft,      Massa Gossip ID target
-adnl,                           namespace,      0xb69910,       draft,      TON ADNL network address (32-byte Ed25519-derived peer identifier)
+adnl,                           namespace,      0xb69910,       draft,      TON ADNL address: 32-byte SHA-256(0x4813b4c6_LE || Ed25519-pubkey)
 es256,                          varsig,         0xd01200,       draft,      ES256 Signature Algorithm
 es384,                          varsig,         0xd01201,       draft,      ES384 Signature Algorithm
 es512,                          varsig,         0xd01202,       draft,      ES512 Signature Algorithm
