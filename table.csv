@@ -256,6 +256,7 @@ lamport-sha3-256-sig-share,     multisig,       0x1a56,         draft,      Lamp
 kt-128,                         multihash,      0x1d01,         draft,      KangarooTwelve KT128 extendable-output hash function (XOF) as defined in RFC 9861
 kt-256,                         multihash,      0x1d02,         draft,      KangarooTwelve KT256 extendable-output hash function (XOF) as defined in RFC 9861
 aes-gcm-256,                    encryption,     0x2000,         draft,      AES Galois/Counter Mode with 256-bit key and 12-byte IV
+ech,                            multiaddr,      0x2679,         draft,      ECHConfigList as defined in RFC 9849 (0x2679 == 9849). See the multiaddr repo for more details.
 silverpine,                     multiaddr,      0x3f42,         draft,      Experimental QUIC over yggdrasil and ironwood routing protocol
 sm3-256,                        multihash,      0x534d,         draft,
 sha256a,                        hash,           0x7012,         draft,      The sum of multiple sha2-256 hashes; as specified by Ceramic CIP-124.
