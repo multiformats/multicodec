@@ -159,6 +159,7 @@ sha2-224,                       multihash,      0x1013,         permanent,  aka 
 sha2-512-224,                   multihash,      0x1014,         permanent,  aka SHA-512/224; as specified by FIPS 180-4.
 sha2-512-256,                   multihash,      0x1015,         permanent,  aka SHA-512/256; as specified by FIPS 180-4.
 murmur3-x64-128,                hash,           0x1022,         draft,
+grid-cbor,                      ipld,           0x1027,         draft,      Grid message envelope: RFC-8949 deterministic CBOR; 'grid'-tagged; codec preserves arbitrary tags/keys while allowing traversal of tag-42 CID links; spec: https://github.com/promisegrid/promisegrid/blob/main/docs/grid-cbor-multicodec-spec.md
 ripemd-128,                     multihash,      0x1052,         draft,
 ripemd-160,                     multihash,      0x1053,         draft,
 ripemd-256,                     multihash,      0x1054,         draft,
