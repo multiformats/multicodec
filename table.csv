@@ -117,6 +117,10 @@ crc32,                          hash,           0x0132,         draft,      CRC-
 crc64-ecma,                     hash,           0x0164,         draft,      CRC-64 non-cryptographic hash algorithm (ECMA-182 - Annex B)
 crc64-nvme,                     hash,           0x0165,         draft,      CRC-64 checksum based on the NVME polynomial as specified in the NVM Express® NVM Command Set Specification
 unix,                           multiaddr,      0x0190,         permanent,
+unix-abstract,                  multiaddr,      0x0191,         draft,
+stream,                         multiaddr,      0x0192,         draft,
+seqpacket,                      multiaddr,      0x0193,         draft,
+dgram,                          multiaddr,      0x0194,         draft,
 thread,                         multiaddr,      0x0196,         draft,      Textile Thread
 p2p,                            multiaddr,      0x01a5,         permanent,  libp2p
 https,                          multiaddr,      0x01bb,         draft,
