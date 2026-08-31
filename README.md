@@ -70,6 +70,8 @@ Selecting the appropriate tag helps maintain organization in the table and provi
 
 ### Adding new multicodecs to the table
 
+#### Guidelines for submitters
+
 The process to add a new multicodec to the table is the following:
 
 1. Fork this repo
@@ -87,6 +89,28 @@ The first 127 values are encoded as a single-byte varint, hence they are reserve
 Codec names should be easily convertible to constants in common programming languages using basic transformation rules (e.g. upper-case, conversion of `-` to `_`, etc.). Therefore they should contain alphanumeric characters, with the first character being alphabetic. The primary delimiter for multi-part names should be `-`, with `_` reserved for cases where a secondary delimiter is required. For example: `bls12_381-g1-pub` contains 3 parts: `bls12_381`, `g1` and `pub`, where `bls12_381` is "BLS12 381" which is not commonly written as "BLS12381" and therefore requires a secondary separator.
 
 The `validate.py` script can be used to validate the table once it's edited.
+
+Before submitting a new code please:
+- [ ] Consider if an existing code works for you
+- [ ] Submit a link to the specification the code refers to so that others may reference and use it
+- [ ] Give some context on the intended use
+
+To keep the initial review process lightweight and encourage experimentation, newly added codes are probationary.
+
+Six months after submission, the submitter should comment on the merged PR with an update on usage.
+If there is no comment or the code is no longer in use, a PR to remove it will be opened. If no objections are raised within 3 months, the code will be removed.
+
+#### Guidelines for reviewers:
+
+For reviewers of new codes please consider:
+- [ ] Does the code fit within the relevant tagged category?
+- [ ] Is this code needed or could it be served by an existing code?
+- [ ] Is the byte size of the requested code suitable or should it be higher?
+- [ ] Is the number of codes requested suitable?
+- [ ] Is approval of the code unlikely to cause the need for many more codes in a way that is avoidable or would warrant a new category?
+- [ ] Is the name of the code unlikely to be confusing or problematic for users?
+
+While reviewers are frequently experienced in the projects of the managed categories and can give guidance around the usage of codes and potential alternatives that better fit the guidelines they are not meant to gate a user's ability to leverage multicodec tooling. If a user has a code that fits the guidelines it should be approved even if the reviewer thinks an alternative approach should be acceptable but the submitter disagrees.
 
 ## Implementations
 
