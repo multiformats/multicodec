@@ -62,6 +62,10 @@ Each multicodec entry in the table.csv has a "tag" column that helps categorize 
 
 * **serialization**: Similar to "ipld" but does not materialize links. For example, JSON and CBOR have the "serialization" tag, while DAG-JSON and DAG-CBOR have the "ipld" tag because they handle links.
 
+* **archive**: Archive formats that package one or more files and metadata, such as TAR and ZIP.
+
+* **compression**: Compressed byte-stream or file formats, such as GZIP, DEFLATE, Zstandard, bzip2, and XZ.
+
 * **varsig**: Signature formats as described in [varsig](https://github.com/ChainAgnostic/varsig). Varsig is a multiformat for describing signatures over IPLD data and raw bytes in a way that preserves information about the payload and canonicalization information.
 
 * **namespace**: Namespace identifiers for various protocols and systems.

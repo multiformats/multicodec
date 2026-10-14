@@ -141,6 +141,14 @@ swhid-1-snp,                    ipld,           0x01f0,         draft,      Soft
 json,                           ipld,           0x0200,         permanent,  JSON (UTF-8-encoded)
 messagepack,                    serialization,  0x0201,         draft,      MessagePack
 car,                            serialization,  0x0202,         draft,      Content Addressable aRchive (CAR)
+tar,                            archive,        0x0203,         draft,      Tape Archive format
+zip,                            archive,        0x0204,         draft,      ZIP archive format
+gzip,                           compression,    0x0205,         draft,      GZIP file format (RFC 1952)
+zlib,                           compression,    0x0206,         draft,      ZLIB compressed data format (RFC 1950)
+deflate,                        compression,    0x0207,         draft,      DEFLATE compressed data format (RFC 1951)
+zstd,                           compression,    0x0208,         draft,      Zstandard compressed data format (RFC 8878)
+bzip2,                          compression,    0x0209,         draft,      bzip2 compressed data format
+xz,                             compression,    0x020a,         draft,      XZ compressed data format
 x509-certificate,               serialization,  0x0210,         draft,      DER-encoded X.509 (PKIX) certificate per RFC 5280; single certificate only (no chain); raw DER bytes (not PEM)
 ipns-record,                    serialization,  0x0300,         permanent,  Signed IPNS Record
 libp2p-peer-record,             libp2p,         0x0301,         permanent,  libp2p peer record type
