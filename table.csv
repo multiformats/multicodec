@@ -36,6 +36,8 @@ dns,                            multiaddr,      0x35,           permanent,
 dns4,                           multiaddr,      0x36,           permanent,
 dns6,                           multiaddr,      0x37,           permanent,
 dnsaddr,                        multiaddr,      0x38,           permanent,
+jwk,                            key,            0x44,           draft,      JSON-encoded JSON Web Key (JWK) per IETF RFC 7517 section 4; media type application/jwk+json; kty/alg/crv parameters identify the key algorithm; may carry public or private key material depending on which parameters are present
+jwk-set,                        key,            0x45,           draft,      JSON-encoded JWK Set per IETF RFC 7517 section 5; media type application/jwk-set+json; JSON object containing keys array of JWKs; each element processed independently
 protobuf,                       serialization,  0x50,           draft,      Protocol Buffers
 cbor,                           ipld,           0x51,           permanent,  CBOR
 raw,                            ipld,           0x55,           permanent,  raw binary
