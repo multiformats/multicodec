@@ -40,6 +40,9 @@ protobuf,                       serialization,  0x50,           draft,      Prot
 cbor,                           ipld,           0x51,           permanent,  CBOR
 raw,                            ipld,           0x55,           permanent,  raw binary
 dbl-sha2-256,                   multihash,      0x56,           draft,
+utf8,                           ipld,           0x57,           draft,      utf8 string
+varint,                         ipld,           0x58,           draft,      variable length integer
+boolean,                        ipld,           0x59,           draft,      boolean value encoded in single uint8 (0 false, 1 true)
 rlp,                            serialization,  0x60,           draft,      recursive length prefix
 bencode,                        serialization,  0x63,           draft,      bencode
 dag-pb,                         ipld,           0x70,           permanent,  MerkleDAG protobuf
