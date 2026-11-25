@@ -48,7 +48,7 @@ rlp,                            serialization,  0x60,           draft,      recu
 bencode,                        serialization,  0x63,           draft,      bencode
 dag-pb,                         ipld,           0x70,           permanent,  MerkleDAG protobuf
 dag-cbor,                       ipld,           0x71,           permanent,  MerkleDAG cbor
-libp2p-key,                     ipld,           0x72,           permanent,  Libp2p Public Key
+libp2p-key,                     ipld,           0x72,           permanent,  Libp2p public key
 git-raw,                        ipld,           0x78,           permanent,  Raw Git object
 torrent-info,                   ipld,           0x7b,           draft,      Torrent file info field (bencoded)
 torrent-file,                   ipld,           0x7c,           draft,      Torrent file (bencoded)
@@ -131,6 +131,7 @@ garlic32,                       multiaddr,      0x01bf,         draft,      I2P 
 tls,                            multiaddr,      0x01c0,         draft,
 sni,                            multiaddr,      0x01c1,         draft,      Server Name Indication RFC 6066 § 3
 noise,                          multiaddr,      0x01c6,         draft,
+wg,                             multiaddr,      0x01c7,         draft,      WireGuard tunnel endpoint - 32-byte Curve25519 public key
 shs,                            multiaddr,      0x01c8,         draft,      Secure Scuttlebutt - Secret Handshake Stream
 quic,                           multiaddr,      0x01cc,         permanent,
 quic-v1,                        multiaddr,      0x01cd,         permanent,
@@ -145,6 +146,7 @@ swhid-1-snp,                    ipld,           0x01f0,         draft,      Soft
 json,                           ipld,           0x0200,         permanent,  JSON (UTF-8-encoded)
 messagepack,                    serialization,  0x0201,         draft,      MessagePack
 car,                            serialization,  0x0202,         draft,      Content Addressable aRchive (CAR)
+dagr,                           serialization,  0x0203,         draft,      Dagr: schema-based binary serialization for data graphs
 x509-certificate,               serialization,  0x0210,         draft,      DER-encoded X.509 (PKIX) certificate per RFC 5280; single certificate only (no chain); raw DER bytes (not PEM)
 ipns-record,                    serialization,  0x0300,         permanent,  Signed IPNS Record
 libp2p-peer-record,             libp2p,         0x0301,         permanent,  libp2p peer record type
@@ -163,16 +165,17 @@ sha2-224,                       multihash,      0x1013,         permanent,  aka 
 sha2-512-224,                   multihash,      0x1014,         permanent,  aka SHA-512/224; as specified by FIPS 180-4.
 sha2-512-256,                   multihash,      0x1015,         permanent,  aka SHA-512/256; as specified by FIPS 180-4.
 murmur3-x64-128,                hash,           0x1022,         draft,
+grid-cbor,                      ipld,           0x1027,         draft,      Grid message envelope: RFC-8949 deterministic CBOR; 'grid'-tagged; codec preserves arbitrary tags/keys while allowing traversal of tag-42 CID links; spec: https://github.com/promisegrid/promisegrid/blob/main/docs/grid-cbor-multicodec-spec.md
 ripemd-128,                     multihash,      0x1052,         draft,
 ripemd-160,                     multihash,      0x1053,         draft,
 ripemd-256,                     multihash,      0x1054,         draft,
 ripemd-320,                     multihash,      0x1055,         draft,
 x11,                            multihash,      0x1100,         draft,
-p256-pub,                       key,            0x1200,         draft,      P-256 public Key (compressed)
-p384-pub,                       key,            0x1201,         draft,      P-384 public Key (compressed)
-p521-pub,                       key,            0x1202,         draft,      P-521 public Key (compressed)
-ed448-pub,                      key,            0x1203,         draft,      Ed448 public Key
-x448-pub,                       key,            0x1204,         draft,      X448 public Key
+p256-pub,                       key,            0x1200,         draft,      P-256 public key (compressed)
+p384-pub,                       key,            0x1201,         draft,      P-384 public key (compressed)
+p521-pub,                       key,            0x1202,         draft,      P-521 public key (compressed)
+ed448-pub,                      key,            0x1203,         draft,      Ed448 public key
+x448-pub,                       key,            0x1204,         draft,      X448 public key
 rsa-pub,                        key,            0x1205,         draft,      RSA public key. DER-encoded ASN.1 type RSAPublicKey according to IETF RFC 8017 (PKCS #1)
 sm2-pub,                        key,            0x1206,         draft,      SM2 public key (compressed)
 vlad,                           vlad,           0x1207,         draft,      Verifiable Long-lived ADdress
@@ -219,9 +222,29 @@ sm2-priv,                       key,            0x1310,         draft,      SM2 
 ed448-priv,                     key,            0x1311,         draft,      Ed448 private key
 x448-priv,                      key,            0x1312,         draft,      X448 private key
 mlkem-512-priv,                 key,            0x1313,         draft,      ML-KEM 512 private key; as specified by FIPS 203
-mlkem-768-priv,                 key,            0x1314,         draft,      ML-KEM 768 public key; as specified by FIPS 203
-mlkem-1024-priv,                key,            0x1315,         draft,      ML-KEM 1024 public key; as specified by FIPS 203
+mlkem-768-priv,                 key,            0x1314,         draft,      ML-KEM 768 private key; as specified by FIPS 203
+mlkem-1024-priv,                key,            0x1315,         draft,      ML-KEM 1024 private key; as specified by FIPS 203
 jwk_jcs-priv,                   key,            0x1316,         draft,      JSON object containing only the required members of a JWK (RFC 7518 and RFC 7517) representing the private key. Serialisation based on JCS (RFC 8785)
+mldsa-44-priv,                  key,            0x1317,         draft,      ML-DSA 44 private key; expanded key format (2560 bytes) as specified by FIPS 204
+mldsa-65-priv,                  key,            0x1318,         draft,      ML-DSA 65 private key; expanded key format (4032 bytes) as specified by FIPS 204
+mldsa-87-priv,                  key,            0x1319,         draft,      ML-DSA 87 private key; expanded key format (4896 bytes) as specified by FIPS 204
+mldsa-44-priv-seed,             key,            0x131a,         draft,      ML-DSA 44 private key seed; (32 bytes) as specified by FIPS 204
+mldsa-65-priv-seed,             key,            0x131b,         draft,      ML-DSA 65 private key seed; (32 bytes) as specified by FIPS 204
+mldsa-87-priv-seed,             key,            0x131c,         draft,      ML-DSA 87 private key seed; (32 bytes) as specified by FIPS 204
+slhdsa-sha2-128s-priv,          key,            0x131d,         draft,      SLH-DSA-SHA2-128s private key; as specified by FIPS 205
+slhdsa-shake-128s-priv,         key,            0x131e,         draft,      SLH-DSA-SHAKE-128s private key; as specified by FIPS 205
+slhdsa-sha2-128f-priv,          key,            0x131f,         draft,      SLH-DSA-SHA2-128f private key; as specified by FIPS 205
+slhdsa-shake-128f-priv,         key,            0x1320,         draft,      SLH-DSA-SHAKE-128f private key; as specified by FIPS 205
+slhdsa-sha2-192s-priv,          key,            0x1321,         draft,      SLH-DSA-SHA2-192s private key; as specified by FIPS 205
+slhdsa-shake-192s-priv,         key,            0x1322,         draft,      SLH-DSA-SHAKE-192s private key; as specified by FIPS 205
+slhdsa-sha2-192f-priv,          key,            0x1323,         draft,      SLH-DSA-SHA2-192f private key; as specified by FIPS 205
+slhdsa-shake-192f-priv,         key,            0x1324,         draft,      SLH-DSA-SHAKE-192f private key; as specified by FIPS 205
+slhdsa-sha2-256s-priv,          key,            0x1325,         draft,      SLH-DSA-SHA2-256s private key; as specified by FIPS 205
+slhdsa-shake-256s-priv,         key,            0x1326,         draft,      SLH-DSA-SHAKE-256s private key; as specified by FIPS 205
+slhdsa-sha2-256f-priv,          key,            0x1327,         draft,      SLH-DSA-SHA2-256f private key; as specified by FIPS 205
+slhdsa-shake-256f-priv,         key,            0x1328,         draft,      SLH-DSA-SHAKE-256f private key; as specified by FIPS 205
+bip340-pub,                     key,            0x1340,         draft,      BIP340 public key
+bip340-priv,                    key,            0x1341,         draft,      BIP340 private key
 lamport-sha3-512-pub,           key,            0x1a14,         draft,      Lamport public key based on SHA3-512
 lamport-sha3-384-pub,           key,            0x1a15,         draft,      Lamport public key based on SHA3-384
 lamport-sha3-256-pub,           key,            0x1a16,         draft,      Lamport public key based on SHA3-256
@@ -240,6 +263,7 @@ lamport-sha3-256-sig-share,     multisig,       0x1a56,         draft,      Lamp
 kt-128,                         multihash,      0x1d01,         draft,      KangarooTwelve KT128 extendable-output hash function (XOF) as defined in RFC 9861
 kt-256,                         multihash,      0x1d02,         draft,      KangarooTwelve KT256 extendable-output hash function (XOF) as defined in RFC 9861
 aes-gcm-256,                    encryption,     0x2000,         draft,      AES Galois/Counter Mode with 256-bit key and 12-byte IV
+ech,                            multiaddr,      0x2679,         draft,      ECHConfigList as defined in RFC 9849 (0x2679 == 9849). See the multiaddr repo for more details.
 silverpine,                     multiaddr,      0x3f42,         draft,      Experimental QUIC over yggdrasil and ironwood routing protocol
 sm3-256,                        multihash,      0x534d,         draft,
 sha256a,                        hash,           0x7012,         draft,      The sum of multiple sha2-256 hashes; as specified by Ceramic CIP-124.
@@ -613,10 +637,13 @@ massa-gossip,                   namespace,      0xb59914,       draft,      Mass
 massa-mns,                      namespace,      0xb59915,       draft,      Massa Name Service target
 massa-sc,                       namespace,      0xb59916,       draft,      Massa smart-contract address target
 massa-gossip-id,                namespace,      0xb59917,       draft,      Massa Gossip ID target
+adnl,                           namespace,      0xb69910,       draft,      TON ADNL address: 32-byte SHA-256(0x4813b4c6_LE || Ed25519-pubkey)
+ton-storage,                    namespace,      0xb79910,       draft,      TON Storage BagID: 32-byte representation hash of a TorrentInfo cell
 es256,                          varsig,         0xd01200,       draft,      ES256 Signature Algorithm
 es384,                          varsig,         0xd01201,       draft,      ES384 Signature Algorithm
 es512,                          varsig,         0xd01202,       draft,      ES512 Signature Algorithm
 rs256,                          varsig,         0xd01205,       draft,      RS256 Signature Algorithm
+bip340,                         varsig,         0xd01206,       draft,      BIP340 Signature Algorithm
 es256k-msig,                    multisig,       0xd01300,       draft,      ES256K (secp256k1) Signature as Multisig
 bls12_381-g1-msig,              multisig,       0xd01301,       draft,      G1 signature for BLS-12381-G2 as Multisig
 bls12_381-g2-msig,              multisig,       0xd01302,       draft,      G2 signature for BLS-12381-G1 as Multisig
